@@ -36,6 +36,10 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,14 +52,20 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="BibleTextReader.cs" />
+    <Compile Include="Exceptions\EpubCompatibilityException.cs" />
     <Compile Include="Interfaces\IBookLister.cs" />
     <Compile Include="Interfaces\IVerseReader.cs" />
+    <Compile Include="Models\BibleBooksMetaData.cs" />
+    <Compile Include="Models\BibleBook.cs" />
     <Compile Include="Models\BibleBookData.cs" />
     <Compile Include="Models\BibleType.cs" />
-    <Compile Include="Models\LanguageData.cs" />
-    <Compile Include="Models\LanguageModel.cs" />
+    <Compile Include="Models\BookChapter.cs" />
+    <Compile Include="Models\EpubStyle.cs" />
     <Compile Include="Models\VerseRange.cs" />
     <Compile Include="Parser\BibleEpubParser.cs" />
+    <Compile Include="Parser\BookListHelper.cs" />
+    <Compile Include="Parser\EpubAsArchive.cs" />
+    <Compile Include="Parser\NumberParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

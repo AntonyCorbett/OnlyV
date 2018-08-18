@@ -13,6 +13,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionIt
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyV.VerseExtraction", "OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj", "{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{2D877438-D91B-4FBA-AC17-4D271E27A6F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D877438-D91B-4FBA-AC17-4D271E27A6F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D877438-D91B-4FBA-AC17-4D271E27A6F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D877438-D91B-4FBA-AC17-4D271E27A6F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D877438-D91B-4FBA-AC17-4D271E27A6F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,9 +1,10 @@
 ﻿namespace OnlyV.VerseExtraction.Interfaces
 {
+    using System.Collections.Generic;
     using Models;
 
     public interface IBookLister
     {
-        BibleBookData ExtractBookData();
+        IReadOnlyCollection<BibleBookData> ExtractBookData();
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace OnlyV.VerseExtraction
 {
+    using System.Collections.Generic;
     using Interfaces;
     using Models;
     using Serilog;
@@ -19,7 +20,7 @@
             throw new System.NotImplementedException();
         }
 
-        public BibleBookData ExtractBookData()
+        public IReadOnlyCollection<BibleBookData> ExtractBookData()
         {
             Log.Logger.Information("Extracting book data");
             throw new System.NotImplementedException();
