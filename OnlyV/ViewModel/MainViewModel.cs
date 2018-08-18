@@ -1,7 +1,7 @@
-using GalaSoft.MvvmLight;
-
 namespace OnlyV.ViewModel
 {
+    using GalaSoft.MvvmLight;
+
     internal class MainViewModel : ViewModelBase
     {
         private ViewModelBase _currentPage;

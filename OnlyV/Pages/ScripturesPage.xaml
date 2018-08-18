@@ -19,19 +19,21 @@
 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <Style x:Key="PanelCardStyle" TargetType="{x:Type materialDesign:Card}">
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+
         <Style x:Key="BibleSectionLabelStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="DockPanel.Dock" Value="Top" />
             <Setter Property="TextTrimming" Value="CharacterEllipsis" />
             <Setter Property="Margin" Value="5"/>
             <Setter Property="FontWeight" Value="Bold" />
-            <Setter Property="Foreground" Value="#16302b" />
         </Style>
 
         <Style x:Key="BookButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
             <Setter Property="Width" Value="58" />
             <Setter Property="Height" Value="45" />
-            <Setter Property="Background" Value="#16302b" />
-            <Setter Property="Foreground" Value="White" />
             <Setter Property="HorizontalContentAlignment" Value="Left" />
             <Setter Property="Padding" Value="5,0" />
             <Setter Property="Margin" Value="5,5,0,0" />
@@ -41,8 +43,6 @@
         <Style x:Key="ChapterButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
             <Setter Property="Width" Value="45" />
             <Setter Property="Height" Value="45" />
-            <Setter Property="Background" Value="#16302b" />
-            <Setter Property="Foreground" Value="White" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Padding" Value="5,0" />
             <Setter Property="Margin" Value="5,5,0,0" />
@@ -52,8 +52,6 @@
         <Style x:Key="VerseButtonStyle" TargetType="{x:Type ToggleButton}">
             <Setter Property="Width" Value="45" />
             <Setter Property="Height" Value="45" />
-            <Setter Property="Background" Value="#16302b" />
-            <Setter Property="Foreground" Value="White" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Padding" Value="5,0" />
             <Setter Property="Margin" Value="5,5,0,0" />
@@ -104,8 +102,9 @@
                     <ColumnDefinition Width="100*"/>
                 </Grid.ColumnDefinitions>
 
-                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" Grid.Column="0">
-                    <DockPanel Background="#b9a394">
+                <materialDesign:Card Grid.Column="0" Style="{StaticResource PanelCardStyle}">
+                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto">
+                    <DockPanel>
                         <TextBlock Style="{StaticResource BibleSectionLabelStyle}">
                                     <Run Text="HEBREW-ARAMAIC SCRIPTURES"/></TextBlock>
 
@@ -122,9 +121,11 @@
                         </ItemsControl>
                     </DockPanel>
                 </ScrollViewer>
+                </materialDesign:Card>
 
-                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" Grid.Column="1">
-                    <DockPanel Background="#b9a394">
+                <materialDesign:Card Grid.Column="1" Style="{StaticResource PanelCardStyle}">
+                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto">
+                    <DockPanel>
                         <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="CHAPTERS"/></TextBlock>
 
                         <ItemsControl ItemsSource="{Binding ChapterButtons}" DockPanel.Dock="Top" 
@@ -133,9 +134,11 @@
                         </ItemsControl>
                     </DockPanel>
                 </ScrollViewer>
+                </materialDesign:Card>
 
-                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" Grid.Column="2">
-                    <DockPanel Background="#b9a394">
+                <materialDesign:Card Grid.Column="2" Style="{StaticResource PanelCardStyle}">
+                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto">
+                    <DockPanel>
                         <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="VERSES"/></TextBlock>
 
                         <ItemsControl ItemsSource="{Binding VerseButtons}" DockPanel.Dock="Top" 
@@ -145,6 +148,7 @@
 
                     </DockPanel>
                 </ScrollViewer>
+                </materialDesign:Card>
 
             </Grid>
 
