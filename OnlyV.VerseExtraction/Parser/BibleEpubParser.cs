@@ -5,6 +5,7 @@
     using System.Linq;
     using Models;
     using Serilog;
+    using Utils;
 
     internal sealed class BibleEpubParser : IDisposable
     {
@@ -51,9 +52,25 @@
             return result;
         }
 
-        public string ExtractVerseText(int bibleBook, int chapter, int verse)
+        public string ExtractVersesText(
+            int bibleBook,
+            string chapterAndVerse,
+            FormattingOptions formattingOptions)
         {
-            throw new NotImplementedException();
+            Log.Logger.Information("Extracting Bible verse");
+
+            var verses = ChapterAndVerseStringParser.Parse(chapterAndVerse);
+            return _epub.GetBibleTexts(_bookChapters.Value, bibleBook, verses, formattingOptions);
+        }
+
+        public string ExtractVerseText(
+            int bibleBook, 
+            int chapter, 
+            int verse, 
+            FormattingOptions formattingOptions)
+        {
+            Log.Logger.Information("Extracting Bible verse");
+            return _epub.GetBibleText(_bookChapters.Value, bibleBook, chapter, verse, formattingOptions);
         }
 
         private List<BookChapter> GenerateChapterList()

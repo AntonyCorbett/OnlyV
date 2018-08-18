@@ -3,27 +3,31 @@
     using System.Collections.Generic;
     using Interfaces;
     using Models;
+    using Parser;
     using Serilog;
 
     public class BibleTextReader : IVerseReader, IBookLister
     {
-        private readonly string _epubPath;
+        private readonly BibleEpubParser _parser;
 
         public BibleTextReader(string epubPath)
         {
-            _epubPath = epubPath;
+            _parser = new BibleEpubParser(epubPath);
         }
 
-        public string ExtractVerseText(int bibleBook, string chapterAndVerse)
+        public string ExtractVerseText(
+            int bibleBook, 
+            string chapterAndVerse,
+            FormattingOptions formattingOptions)
         {
             Log.Logger.Information("Extracting verse for book {bibleBook}, {chapterAndVerse}", bibleBook, chapterAndVerse);
-            throw new System.NotImplementedException();
+            return _parser.ExtractVersesText(bibleBook, chapterAndVerse, formattingOptions);
         }
 
         public IReadOnlyCollection<BibleBookData> ExtractBookData()
         {
             Log.Logger.Information("Extracting book data");
-            throw new System.NotImplementedException();
+            return _parser.ExtractBookData();
         }
     }
 }

@@ -5,11 +5,13 @@
     using System.IO;
     using System.IO.Compression;
     using System.Linq;
+    using System.Text;
     using System.Xml;
     using System.Xml.Linq;
     using Exceptions;
     using Models;
     using Serilog;
+    using Utils;
 
     internal sealed class EpubAsArchive : IDisposable
     {
@@ -17,17 +19,15 @@
         private const string ContainerFileName = "container.xml";
         private const string NavigationDocumentName = "biblebooknav.xhtml";
         private const string NavigationDocumentOldName = "BIBLE_00.xhtml";
+        private const string Ellipises = "...";
 
         private readonly Lazy<ZipArchive> _zip;
         private readonly Lazy<string> _rootPath;
         private readonly Lazy<XDocument> _navigationDocument;
-        private readonly string _epubPath;
         private EpubStyle _epubStyle;
 
         public EpubAsArchive(string epubPath)
         {
-            _epubPath = epubPath;
-
             _zip = new Lazy<ZipArchive>(() => ZipFile.OpenRead(epubPath));
             _rootPath = new Lazy<string>(GetRootFilePath);
             _navigationDocument = new Lazy<XDocument>(GetBibleNavigationDoc);
@@ -40,7 +40,6 @@
                 _zip.Value.Dispose();
             }
         }
-
 
         public List<BookChapter> GenerateBibleChaptersList(IReadOnlyList<BibleBook> bibleBooks)
         {
@@ -145,6 +144,191 @@
             }
 
             return result;
+        }
+
+        public string GetBibleTexts(
+            IReadOnlyList<BookChapter> chapers,
+            int bibleBook,
+            ChapterAndVersesSpec chapterAndVerses,
+            FormattingOptions formattingOptions)
+        {
+            if (!chapterAndVerses.HasMultipleVerses())
+            {
+                formattingOptions.IncludeVerseNumbers = false;
+            }
+
+            var result = new StringBuilder();
+
+            foreach (var vs in chapterAndVerses.ContiguousVerses)
+            {
+                if (result.Length > 0 && formattingOptions.ShowBreakInVerses)
+                {
+                    char lastChar = result.ToString().Trim().Last();
+                    if (lastChar == '.')
+                    {
+                        // looks odd if we have an ellipses straight afetr a full stop!
+                        var tmpStr = result.ToString().Trim();
+                        tmpStr = tmpStr.Remove(tmpStr.Length - 1, 1);
+                        result.Clear();
+                        result.Append(tmpStr);
+                        result.Append(Ellipises);
+                        result.Append(" ");
+                    }
+                    else
+                    {
+                        result.Append(Ellipises);
+                    }
+
+                    result.Append(" ");
+                }
+
+                for (var verse = vs.StartVerse; verse <= vs.EndVerse; ++verse)
+                {
+                    string s = GetBibleText(chapers, bibleBook, vs.Chapter, verse, formattingOptions);
+                    if (!string.IsNullOrEmpty(s))
+                    {
+                        if (verse > vs.StartVerse)
+                        {
+                            result.Append(" ");
+                        }
+
+                        if (formattingOptions.IncludeVerseNumbers)
+                        {
+                            result.Append($"|{verse}|");
+                        }
+
+                        result.Append(s);
+                    }
+                }
+            }
+
+            return TrimPunctuationAndQuotationMarks(result.ToString(), formattingOptions);
+        }
+
+        public string GetBibleText(
+            IReadOnlyList<BookChapter> chapers, 
+            int bibleBook, 
+            int chapter, 
+            int verse,
+            FormattingOptions formattingOptions)
+        {
+            var x = GetChapter(chapers, bibleBook, chapter);
+
+            var attr = x?.Root?.Attribute("xmlns");
+            if (attr == null)
+            {
+                return null;
+            }
+
+            XNamespace ns = attr.Value;
+            var body = x.Root.Descendants(ns + "body").SingleOrDefault();
+            if (body == null)
+            {
+                return null;
+            }
+            
+            var idThisVerse = $"chapter{chapter}_verse{verse}";
+            var idNextVerse = $"chapter{chapter}_verse{verse + 1}";
+
+            var elem = body.Descendants().SingleOrDefault(n =>
+            {
+                var xAttribute = n.Attribute("id");
+                return xAttribute != null && xAttribute.Value.Equals(idThisVerse);
+            });
+
+            var parentPara = elem?.Parent;
+            if (parentPara == null)
+            {
+                return null;
+            }
+            
+            var sb = new StringBuilder();
+
+            var paras = new List<XElement> { parentPara };
+            paras.AddRange(parentPara.ElementsAfterSelf());
+
+            foreach (var para in paras)
+            {
+                var result = GetParagraph(para, parentPara, ns, idThisVerse, idNextVerse, formattingOptions);
+
+                sb.Append(result.Text);
+
+                if (result.Finished)
+                {
+                    break;
+                }
+            }
+
+            return sb.ToString().Trim().Trim('~');
+        }
+
+        private (string Text, bool Finished) GetParagraph(
+            XElement para, 
+            XElement parentPara,
+            XNamespace ns,
+            string idThisVerse,
+            string idNextVerse,
+            FormattingOptions formattingOptions)
+        {
+            var sb = new StringBuilder();
+            var started = false;
+            bool finished = false;
+
+            if (para != parentPara)
+            {
+                // typically in the Psalms where a verse may contain 2 or more paras...
+                sb.Append(formattingOptions.UseTildeSeparator ? " ~ " : " ");
+            }
+
+            var nodes = para.DescendantNodes();
+            foreach (var node in nodes)
+            {
+                switch (node.NodeType)
+                {
+                    case XmlNodeType.Element:
+                        XElement elem2 = (XElement)node;
+                        if (elem2.Name.Equals(ns + "div"))
+                        {
+                            finished = true;
+                        }
+                        else
+                        {
+                            var idAtt = elem2.Attribute("id");
+                            if (idAtt != null)
+                            {
+                                if (started)
+                                {
+                                    finished = idAtt.Value.StartsWith(idNextVerse);
+                                }
+                                else
+                                {
+                                    started = idAtt.Value.StartsWith(idThisVerse);
+                                }
+                            }
+                        }
+
+                        break;
+
+                    case XmlNodeType.Text:
+                        if (started)
+                        {
+                            XText txtNode = (XText)node;
+                            if (ShouldIncludeTextNode(txtNode, ns))
+                            {
+                                sb.Append(txtNode.Value);
+                            }
+                        }
+
+                        break;
+                }
+
+                if (finished)
+                {
+                    break;
+                }
+            }
+
+            return (sb.ToString(), finished);
         }
 
         private XDocument GetXmlFile(string entryPath)
@@ -429,12 +613,12 @@
                             var xAttribute = nodeElem.Attribute("href");
                             if (xAttribute != null)
                             {
-                                int pos = xAttribute.Value.IndexOf("#", StringComparison.Ordinal);
+                                var pos = xAttribute.Value.IndexOf("#", StringComparison.Ordinal);
                                 if (pos > 0)
                                 {
-                                    string href = xAttribute.Value.Substring(0, pos);
+                                    var href = xAttribute.Value.Substring(0, pos);
 
-                                    BookChapter bc = new BookChapter
+                                    var bc = new BookChapter
                                     {
                                         FullPath = GetFullPathInArchive(href),
                                         Book = book,
@@ -457,17 +641,113 @@
         
         private List<BookChapter> GetBookChapters(XNamespace ns, BibleBook book, XElement body)
         {
-            if (_epubStyle == EpubStyle.New)
+            switch (_epubStyle)
             {
-                return GetBookChaptersNewStyle(ns, book, body);
-            }
+                case EpubStyle.New:
+                    return GetBookChaptersNewStyle(ns, book, body);
 
-            if (_epubStyle == EpubStyle.Old)
-            {
-                return GetBookChaptersOldStyle(ns, book, body);
+                case EpubStyle.Old:
+                    return GetBookChaptersOldStyle(ns, book, body);
             }
 
             return null;
+        }
+
+        private XDocument GetChapter(IReadOnlyList<BookChapter> chapters, int book, int chapter)
+        {
+            Log.Logger.Debug($"Get chapter (book={book}, chapter={chapter}");
+
+            var c = chapters.FirstOrDefault(n => n.Book.BookNumber == book && n.Chapter == chapter);
+            if (c != null)
+            {
+                return GetXmlFile(c.FullPath);
+            }
+
+            return null;
+        }
+
+        private bool ShouldIncludeTextNode(XText txtNode, XNamespace ns)
+        {
+            int dummy;
+
+            if (!string.IsNullOrEmpty(txtNode.Value) && !int.TryParse(txtNode.Value, out dummy))
+            {
+                var parentNodeName = txtNode.Parent?.Name;
+                if (parentNodeName == null || (!parentNodeName.Equals(ns + "strong") &&
+                                               !parentNodeName.Equals(ns + "sup") &&
+                                               !parentNodeName.Equals(ns + "a")))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private string TrimPunctuationAndQuotationMarks(
+            string s, 
+            FormattingOptions formattingOptions)
+        {
+            if (formattingOptions.TrimQuotes)
+            {
+                s = TrimQuotes(s);
+            }
+
+            if (formattingOptions.TrimPunctuation)
+            {
+                var punctChars = s.Where(char.IsPunctuation).ToArray();
+                s = s.Trim(punctChars);
+            }
+
+            return s;
+        }
+
+        private string TrimQuotes(string s)
+        {
+            var leftQuote = "“";
+            var rightQuote = "”";
+
+            var leftCount = s.Count(x => x == leftQuote[0]);
+            var rightCount = s.Count(x => x == rightQuote[0]);
+
+            if (leftCount != rightCount)
+            {
+                while (leftCount > rightCount)
+                {
+                    s = ReplaceFirst(s, leftQuote, string.Empty);
+                    --leftCount;
+                }
+
+                while (rightCount > leftCount)
+                {
+                    s = ReplaceLast(s, rightQuote, string.Empty);
+                    --rightCount;
+                }
+            }
+
+            return s;
+        }
+
+        private string ReplaceFirst(string text, string search, string replace)
+        {
+            var pos = text.IndexOf(search, StringComparison.Ordinal);
+            if (pos < 0)
+            {
+                return text;
+            }
+
+            return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+        }
+
+        private string ReplaceLast(string text, string search, string replace)
+        {
+            var pos = text.LastIndexOf(search, StringComparison.Ordinal);
+            if (pos < 0)
+            {
+                return text;
+            }
+
+            return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
         }
     }
 }
