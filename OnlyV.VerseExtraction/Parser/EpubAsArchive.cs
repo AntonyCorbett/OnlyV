@@ -475,13 +475,46 @@
 
                 if (verseRange != null)
                 {
-                    result = GetVerseNumbers(verseRange.Value);
+                    result = GetVerseNumbers(verseRange);
                 }
             }
 
             return result;
         }
 
+        private VerseRange GetVerseNumbers(XElement verseHref)
+        {
+            VerseRange result = null;
+
+            if (verseHref != null)
+            {
+                result = new VerseRange();
+
+                string[] tokens = verseHref.Value.Split(' ');
+                foreach (var token in tokens)
+                {
+                    if (NumberParser.TryParseNumber(token, out int verseNum))
+                    {
+                        if (result.FirstVerse == 0)
+                        {
+                            result.FirstVerse = verseNum;
+                        }
+                        else if (result.LastVerse == 0)
+                        {
+                            result.LastVerse = verseNum;
+                        }
+                    }
+
+                    if (result.IsValid())
+                    {
+                        break;
+                    }
+                }
+            }
+
+            return result != null && result.IsValid() ? result : null;
+        }
+        
         private VerseRange GetVerseNumbersOldStyle(string fullPath)
         {
             VerseRange result = null;

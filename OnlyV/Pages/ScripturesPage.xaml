@@ -17,7 +17,7 @@
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="650" d:DesignWidth="900">
     <UserControl.Resources>
         <Style x:Key="PanelCardStyle" TargetType="{x:Type materialDesign:Card}">
             <Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -31,30 +31,51 @@
             <Setter Property="FontWeight" Value="Bold" />
         </Style>
 
-        <Style x:Key="BookButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+        <Style x:Key="BookButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Width" Value="58" />
             <Setter Property="Height" Value="45" />
             <Setter Property="HorizontalContentAlignment" Value="Left" />
             <Setter Property="Padding" Value="5,0" />
             <Setter Property="Margin" Value="5,5,0,0" />
             <Setter Property="GroupName" Value="Books" />
+            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0" />
+
+            <Style.Triggers>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryHueDarkBrush}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
-        <Style x:Key="ChapterButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}">
+        <Style x:Key="ChapterButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Width" Value="45" />
             <Setter Property="Height" Value="45" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Padding" Value="5,0" />
             <Setter Property="Margin" Value="5,5,0,0" />
             <Setter Property="GroupName" Value="Chapters" />
+            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0" />
+
+            <Style.Triggers>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryHueDarkBrush}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
-        <Style x:Key="VerseButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Style x:Key="VerseButtonStyle" TargetType="ToggleButton" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Width" Value="45" />
             <Setter Property="Height" Value="45" />
             <Setter Property="HorizontalContentAlignment" Value="Center" />
             <Setter Property="Padding" Value="5,0" />
             <Setter Property="Margin" Value="5,5,0,0" />
+            <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0" />
+
+            <Style.Triggers>
+                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                    <Setter Property="Background" Value="{StaticResource PrimaryHueDarkBrush}"/>
+                </Trigger>
+            </Style.Triggers>
         </Style>
 
         <DataTemplate x:Key="BibleBookTemplate">
@@ -103,41 +124,49 @@
                 </Grid.ColumnDefinitions>
 
                 <materialDesign:Card Grid.Column="0" Style="{StaticResource PanelCardStyle}">
-                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
                     <DockPanel>
                         <TextBlock Style="{StaticResource BibleSectionLabelStyle}">
                                     <Run Text="HEBREW-ARAMAIC SCRIPTURES"/></TextBlock>
 
-                        <ItemsControl ItemsSource="{Binding BookButtonsHebrew}" DockPanel.Dock="Top" 
-                                          ItemTemplate="{StaticResource BibleBookTemplate}"
-                                          ItemsPanel="{StaticResource BibleBookPanelTemplate}">
+                        <ItemsControl ItemsSource="{Binding BookButtonsHebrew}" 
+                                      DockPanel.Dock="Top" 
+                                      Margin="3,3,3,10"
+                                      ItemTemplate="{StaticResource BibleBookTemplate}"
+                                      ItemsPanel="{StaticResource BibleBookPanelTemplate}">
                         </ItemsControl>
 
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="CHRISTIAN GREEK SCRIPTURES"/></TextBlock>
+                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}">
+                            <Run Text="CHRISTIAN GREEK SCRIPTURES"/>
+                        </TextBlock>
 
-                        <ItemsControl ItemsSource="{Binding BookButtonsGreek}" DockPanel.Dock="Top" 
-                                          ItemTemplate="{StaticResource BibleBookTemplate}"
-                                          ItemsPanel="{StaticResource BibleBookPanelTemplate}">
+                        <ItemsControl ItemsSource="{Binding BookButtonsGreek}" 
+                                      DockPanel.Dock="Top" 
+                                      Margin="3"
+                                      ItemTemplate="{StaticResource BibleBookTemplate}"
+                                      ItemsPanel="{StaticResource BibleBookPanelTemplate}">
                         </ItemsControl>
                     </DockPanel>
                 </ScrollViewer>
                 </materialDesign:Card>
 
                 <materialDesign:Card Grid.Column="1" Style="{StaticResource PanelCardStyle}">
-                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
                     <DockPanel>
                         <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="CHAPTERS"/></TextBlock>
 
-                        <ItemsControl ItemsSource="{Binding ChapterButtons}" DockPanel.Dock="Top" 
-                                          ItemTemplate="{StaticResource ChapterTemplate}"
-                                          ItemsPanel="{StaticResource ChapterAndVersePanelTemplate}">
+                        <ItemsControl ItemsSource="{Binding ChapterButtons}" 
+                                      DockPanel.Dock="Top" 
+                                      Margin="3"
+                                      ItemTemplate="{StaticResource ChapterTemplate}"
+                                      ItemsPanel="{StaticResource ChapterAndVersePanelTemplate}">
                         </ItemsControl>
                     </DockPanel>
                 </ScrollViewer>
                 </materialDesign:Card>
 
                 <materialDesign:Card Grid.Column="2" Style="{StaticResource PanelCardStyle}">
-                <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto">
+                    <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
                     <DockPanel>
                         <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="VERSES"/></TextBlock>
 

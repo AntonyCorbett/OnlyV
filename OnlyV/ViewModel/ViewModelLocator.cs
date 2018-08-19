@@ -1,3 +1,7 @@
+using OnlyV.Services.Bible;
+using OnlyV.Services.CommandLine;
+using OnlyV.Services.Options;
+
 namespace OnlyV.ViewModel
 {
     using CommonServiceLocator;
@@ -19,7 +23,9 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<PreviewViewModel>();
 
+            SimpleIoc.Default.Register<ICommandLineService, CommandLineService>();
             SimpleIoc.Default.Register<IBibleVersesService, BibleVersesService>();
+            SimpleIoc.Default.Register<IOptionsService, OptionsService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

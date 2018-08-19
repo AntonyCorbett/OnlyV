@@ -10,6 +10,7 @@
         private bool _permanentBackdrop;
         private bool _alwaysOnTop;
         private LogEventLevel _logEventLevel;
+        private string _epubPath;
 
         public Options()
         {
@@ -26,6 +27,8 @@
         public event EventHandler AlwaysOnTopChangedEvent;
 
         public event EventHandler LogEventLevelChangedEvent;
+
+        public event EventHandler EpubPathChangedEvent;
 
         public event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
 
@@ -82,6 +85,19 @@
                 {
                     _logEventLevel = value;
                     LogEventLevelChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public string EpubPath
+        {
+            get => _epubPath;
+            set
+            {
+                if (_epubPath == null || _epubPath != value)
+                {
+                    _epubPath = value;
+                    EpubPathChangedEvent?.Invoke(this, EventArgs.Empty);
                 }
             }
         }

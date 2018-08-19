@@ -5,7 +5,7 @@
     using System.Windows;
     using System.Windows.Media;
     using GalaSoft.MvvmLight.Threading;
-    using OnlyV.Services;
+    using OnlyV.Helpers;
     using Serilog;
 
     /// <summary>

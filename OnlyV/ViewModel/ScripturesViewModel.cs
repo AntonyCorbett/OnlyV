@@ -6,19 +6,25 @@
     using System.Text;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Command;
-    using OnlyV.Services;
+    using OnlyV.Services.Bible;
+    using OnlyV.Services.Options;
     using OnlyV.VerseExtraction.Models;
 
     internal class ScripturesViewModel : ViewModelBase
     {
         private readonly IBibleVersesService _bibleService;
+        private readonly IOptionsService _optionsService;
         private int _bookNumber;
         private int _chapterNumber;
         private ObservableCollection<int> _selectedVerses = new ObservableCollection<int>();
 
-        public ScripturesViewModel(IBibleVersesService bibleService)
+        public ScripturesViewModel(
+            IBibleVersesService bibleService,
+            IOptionsService optionsService)
         {
             _bibleService = bibleService;
+            _optionsService = optionsService;
+
             InitCommands();
             UpdateBibleBooks();
         }
@@ -29,7 +35,17 @@
         public ObservableCollection<ButtonModel> BookButtonsGreek { get; } =
             new ObservableCollection<ButtonModel>();
 
+        public ObservableCollection<ButtonModel> ChapterButtons { get; } =
+            new ObservableCollection<ButtonModel>();
+
+        public ObservableCollection<VerseButtonModel> VerseButtons { get; } =
+            new ObservableCollection<VerseButtonModel>();
+
         public RelayCommand<object> BibleBookCommand { get; set; }
+
+        public RelayCommand<object> ChapterCommand { get; set; }
+
+        public RelayCommand<object> VerseCommand { get; set; }
 
         public int BookNumber
         {
@@ -42,6 +58,7 @@
                     RaisePropertyChanged();
                     ChapterNumber = 0;
                     RaisePropertyChanged(nameof(ScriptureText));
+                    UpdateChapters();
                 }
             }
         }
@@ -57,6 +74,7 @@
                     RaisePropertyChanged();
                     SelectedVerses.Clear();
                     RaisePropertyChanged(nameof(ScriptureText));
+                    UpdateVerses();
                 }
             }
         }
@@ -118,15 +136,19 @@
 
         private void UpdateBibleBooks()
         {
+            ClearBookButtons();
+
             var booksData = _bibleService.GetBookData();
+            if (booksData == null)
+            {
+                return;
+            }
 
             int numBooks = booksData.Count;
             if (numBooks != BibleBooksMetaData.NumBibleBooks && numBooks != BibleBooksMetaData.NumBibleBooksGreek)
             {
                 throw new Exception($"Found {numBooks} books. Expecting {BibleBooksMetaData.NumBibleBooks}");
             }
-
-            ClearBookButtons();
 
             int count = numBooks == BibleBooksMetaData.NumBibleBooksGreek
                 ? BibleBooksMetaData.NumBibleBooksHebrew
@@ -151,6 +173,17 @@
             BookNumber = 0;
         }
 
+        private void UpdateChapters()
+        {
+            ChapterButtons.Clear();
+
+            int chapters = _bibleService.GetChapterCount(BookNumber);
+            for (int n = 0; n < chapters; ++n)
+            {
+                ChapterButtons.Add(new ButtonModel((n + 1).ToString(), n + 1, ChapterCommand));
+            }
+        }
+
         private void ClearBookButtons()
         {
             BookButtonsGreek.Clear();
@@ -171,6 +204,53 @@
         private void InitCommands()
         {
             BibleBookCommand = new RelayCommand<object>(OnSelectBibleBook, CanSelectBook);
+            ChapterCommand = new RelayCommand<object>(OnSelectChapter, CanSelectChapter);
+            VerseCommand = new RelayCommand<object>(OnSelectVerse, CanSelectVerse);
+        }
+
+        private bool CanSelectVerse(object arg)
+        {
+            // todo:
+            return true;
+        }
+
+        private void OnSelectVerse(object commandParameter)
+        {
+            UpdateSelectedVerses();
+        }
+
+        private void UpdateSelectedVerses()
+        {
+            foreach (var b in VerseButtons)
+            {
+                var verse = (int)b.CommandParameter;
+                var alreadySelected = SelectedVerses.Contains(verse);
+
+                if (b.Selected != alreadySelected)
+                {
+                    if (alreadySelected)
+                    {
+                        SelectedVerses.Remove(verse);
+                    }
+                    else
+                    {
+                        SelectedVerses.Add(verse);
+                    }
+                }
+            }
+
+            RaisePropertyChanged(nameof(ScriptureText));
+        }
+
+        private bool CanSelectChapter(object arg)
+        {
+            // todo:
+            return true;
+        }
+
+        private void OnSelectChapter(object commandParameter)
+        {
+            ChapterNumber = (int)commandParameter;
         }
 
         // todo: move into another class
@@ -233,6 +313,20 @@
             }
 
             return sb.ToString();
+        }
+
+        private void UpdateVerses()
+        {
+            VerseButtons.Clear();
+
+            var verseRange = _bibleService.GetVerseRange(BookNumber, ChapterNumber);
+            if (verseRange != null)
+            {
+                for (int n = verseRange.FirstVerse; n <= verseRange.LastVerse; ++n)
+                {
+                    VerseButtons.Add(new VerseButtonModel(n.ToString(), n, VerseCommand));
+                }
+            }
         }
     }
 }
