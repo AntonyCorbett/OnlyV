@@ -68,5 +68,32 @@ namespace OnlyV.Properties {
                 return ResourceManager.GetString("CREATE_FOLDER_ERROR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bible epub not found!.
+        /// </summary>
+        internal static string EPUB_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("EPUB_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bible epub not specified!.
+        /// </summary>
+        internal static string EPUB_NOT_SPECIFIED {
+            get {
+                return ResourceManager.GetString("EPUB_NOT_SPECIFIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bible reader not initialised!.
+        /// </summary>
+        internal static string READER_NOT_INIT {
+            get {
+                return ResourceManager.GetString("READER_NOT_INIT", resourceCulture);
+            }
+        }
     }
 }

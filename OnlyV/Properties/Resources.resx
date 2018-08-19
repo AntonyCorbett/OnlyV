@@ -120,4 +120,13 @@
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Could not create folder {0}</value>
   </data>
+  <data name="EPUB_NOT_FOUND" xml:space="preserve">
+    <value>Bible epub not found!</value>
+  </data>
+  <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
+    <value>Bible epub not specified!</value>
+  </data>
+  <data name="READER_NOT_INIT" xml:space="preserve">
+    <value>Bible reader not initialised!</value>
+  </data>
 </root>

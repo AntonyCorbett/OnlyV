@@ -1,8 +1,9 @@
-using CommonServiceLocator;
-using GalaSoft.MvvmLight.Ioc;
-
 namespace OnlyV.ViewModel
 {
+    using CommonServiceLocator;
+    using GalaSoft.MvvmLight.Ioc;
+    using OnlyV.Services;
+
     /// <summary>
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.
@@ -17,6 +18,8 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<ScripturesViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<PreviewViewModel>();
+
+            SimpleIoc.Default.Register<IBibleVersesService, BibleVersesService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

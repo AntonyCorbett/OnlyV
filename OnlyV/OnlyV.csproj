@@ -26,6 +26,7 @@
     <CodeAnalysisRuleSet>..\OnlyV.ruleset</CodeAnalysisRuleSet>
     <DocumentationFile>
     </DocumentationFile>
+    <LangVersion>7.3</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -106,7 +107,10 @@
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\BibleVersesService.cs" />
     <Compile Include="Services\FileUtils.cs" />
+    <Compile Include="Services\IBibleVersesService.cs" />
+    <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PreviewViewModel.cs" />
     <Compile Include="ViewModel\ScripturesViewModel.cs" />
@@ -171,6 +175,11 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj">
+      <Project>{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}</Project>
+      <Name>OnlyV.VerseExtraction</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

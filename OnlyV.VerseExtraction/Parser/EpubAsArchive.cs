@@ -152,9 +152,11 @@
             ChapterAndVersesSpec chapterAndVerses,
             FormattingOptions formattingOptions)
         {
+            bool showVerseNumbers = formattingOptions.IncludeVerseNumbers;
+
             if (!chapterAndVerses.HasMultipleVerses())
             {
-                formattingOptions.IncludeVerseNumbers = false;
+                showVerseNumbers = false;
             }
 
             var result = new StringBuilder();
@@ -192,7 +194,7 @@
                             result.Append(" ");
                         }
 
-                        if (formattingOptions.IncludeVerseNumbers)
+                        if (showVerseNumbers)
                         {
                             result.Append($"|{verse}|");
                         }
