@@ -23,6 +23,7 @@
             _bookChapters = new Lazy<List<BookChapter>>(GenerateChapterList);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_epub", Justification = "False positive")]
         public void Dispose()
         {
             _epub?.Dispose();

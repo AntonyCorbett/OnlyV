@@ -8,13 +8,12 @@
     using OnlyV.VerseExtraction;
     using OnlyV.VerseExtraction.Models;
 
-    internal class BibleVersesService : IBibleVersesService
+    internal sealed class BibleVersesService : IBibleVersesService, IDisposable
     {
         private readonly IOptionsService _optionsService;
         private string _epubPath;
         private BibleTextReader _reader;
-        private Lazy<IReadOnlyCollection<BibleBookData>> _bookData;
-
+        
         public BibleVersesService(IOptionsService optionsService)
         {
             _optionsService = optionsService;
@@ -36,20 +35,25 @@
             }
         }
 
+        public void Dispose()
+        {
+            _reader?.Dispose();
+        }
+
         public IReadOnlyCollection<BibleBookData> GetBookData()
         {
-            return _bookData.Value;
+            return _reader.ExtractBookData();
         }
 
         public int GetChapterCount(int bookNumber)
         {
-            var book = _bookData.Value.Single(x => x.Number == bookNumber);
+            var book = _reader.ExtractBookData().Single(x => x.Number == bookNumber);
             return book.ChapterCount;
         }
 
         public VerseRange GetVerseRange(int bookNumber, int chapterNumber)
         {
-            var book = _bookData.Value.Single(x => x.Number == bookNumber);
+            var book = _reader.ExtractBookData().Single(x => x.Number == bookNumber);
             return book.GetVerseRange(chapterNumber);
         }
 
@@ -57,12 +61,6 @@
         {
             CheckEpubAvailable();
             _reader = new BibleTextReader(_epubPath);
-            _bookData = new Lazy<IReadOnlyCollection<BibleBookData>>(ReadBookData);
-        }
-
-        private IReadOnlyCollection<BibleBookData> ReadBookData()
-        {
-            return _reader?.ExtractBookData();
         }
 
         private void CheckEpubAvailable()

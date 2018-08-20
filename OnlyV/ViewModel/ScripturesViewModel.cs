@@ -3,28 +3,25 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Text;
     using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.Command;
+    using GalaSoft.MvvmLight.CommandWpf;
     using OnlyV.Services.Bible;
-    using OnlyV.Services.Options;
     using OnlyV.VerseExtraction.Models;
 
     internal class ScripturesViewModel : ViewModelBase
     {
         private readonly IBibleVersesService _bibleService;
-        private readonly IOptionsService _optionsService;
         private int _bookNumber;
         private int _chapterNumber;
         private ObservableCollection<int> _selectedVerses = new ObservableCollection<int>();
 
-        public ScripturesViewModel(
-            IBibleVersesService bibleService,
-            IOptionsService optionsService)
+        public ScripturesViewModel(IBibleVersesService bibleService)
+
         {
             _bibleService = bibleService;
-            _optionsService = optionsService;
-
+            
             InitCommands();
             UpdateBibleBooks();
         }
@@ -91,6 +88,11 @@
         }
 
         public string ScriptureText => GenerateScriptureTextString();
+
+        public bool ValidScripture()
+        {
+            return BookNumber > 0 && ChapterNumber > 0 && SelectedVerses.Any();
+        }
 
         private string GenerateScriptureTextString()
         {

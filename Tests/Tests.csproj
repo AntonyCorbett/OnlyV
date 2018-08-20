@@ -45,6 +45,7 @@
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.3.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>
@@ -60,6 +61,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlyV.ImageCreation\OnlyV.ImageCreation.csproj">
+      <Project>{ebf1cbf7-052c-4396-96dc-8347718bb6e5}</Project>
+      <Name>OnlyV.ImageCreation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj">
       <Project>{50de2fad-2092-492a-8c90-6b3688a6e9c2}</Project>
       <Name>OnlyV.VerseExtraction</Name>

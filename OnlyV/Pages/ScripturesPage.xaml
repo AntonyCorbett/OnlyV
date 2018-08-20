@@ -41,7 +41,7 @@
             <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0" />
 
             <Style.Triggers>
-                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Trigger Property="IsChecked" Value="True">
                     <Setter Property="Background" Value="{StaticResource PrimaryHueDarkBrush}"/>
                 </Trigger>
             </Style.Triggers>
@@ -57,7 +57,7 @@
             <Setter Property="materialDesign:ShadowAssist.ShadowDepth" Value="Depth0" />
 
             <Style.Triggers>
-                <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Trigger Property="IsChecked" Value="True">
                     <Setter Property="Background" Value="{StaticResource PrimaryHueDarkBrush}"/>
                 </Trigger>
             </Style.Triggers>
@@ -81,6 +81,7 @@
         <DataTemplate x:Key="BibleBookTemplate">
             <RadioButton Style="{StaticResource BookButtonStyle}" 
                          Command="{Binding Command}"
+                         IsChecked="{Binding Selected}"
                          CommandParameter="{Binding CommandParameter}">
                 <TextBlock Text="{Binding Content}" TextTrimming="CharacterEllipsis"/>
             </RadioButton>
@@ -94,6 +95,7 @@
             <RadioButton Style="{StaticResource ChapterButtonStyle}" 
                          Content="{Binding Content}" 
                          Command="{Binding Command}"
+                         IsChecked="{Binding Selected}"
                          CommandParameter="{Binding CommandParameter}"/>
         </DataTemplate>
 

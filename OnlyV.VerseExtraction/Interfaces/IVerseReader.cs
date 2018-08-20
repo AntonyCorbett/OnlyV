@@ -8,5 +8,7 @@
             int bibleBook, 
             string chapterAndVerse,
             FormattingOptions formattingOptions);
+
+        string GenerateVerseTitle(int bookNumber, string chapterAndVerses);
     }
 }
