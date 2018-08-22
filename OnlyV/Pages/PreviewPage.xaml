@@ -18,7 +18,103 @@
              FontFamily="{DynamicResource MaterialDesignFont}"
 
              d:DesignHeight="450" d:DesignWidth="800">
+    
+    <UserControl.Resources>
+        <Style x:Key="PreviewButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="Margin" Value="0,0,15,0" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="60" />
+        </Style>
+
+        <Style x:Key="PreviewNavButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="15,0,0,0" />
+            <Setter Property="DockPanel.Dock" Value="Right" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="60" />
+        </Style>
+
+        <Style x:Key="PreviewToggleButtonStyle" TargetType="{x:Type ToggleButton}" BasedOn="{StaticResource MaterialDesignRaisedDarkButton}">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0,0,25,0" />
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="60" />
+
+            <Style.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" Value="{StaticResource SecondaryAccentBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="66"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Margin="10,5">
+            <Button Style="{StaticResource PreviewButtonStyle}" 
+                    Command="{Binding SaveCommand}" 
+                    ToolTip="Save to destination folder">
+                <materialDesign:PackIcon
+                    Kind="ContentSave" 
+                    Height="32"
+                    Width="32"/>
+            </Button>
+
+            <Button Style="{StaticResource PreviewButtonStyle}" 
+                    Command="{Binding CopyToClipboardCommand}" 
+                    ToolTip="Copy image to clipboard">
+                <materialDesign:PackIcon
+                    Kind="ContentCopy" 
+                    Height="32"
+                    Width="32"/>
+                </Button>
+
+            <Button Style="{StaticResource PreviewNavButtonStyle}" 
+                    Command="{Binding NextImageCommand}"
+                    ToolTip="Next image">
+                <materialDesign:PackIcon
+                    Kind="ChevronRight" 
+                    Height="32"
+                    Width="32"/>
+            </Button>
+
+            <Button Style="{StaticResource PreviewNavButtonStyle}" 
+                    Command="{Binding PreviousImageCommand}" 
+                    ToolTip="Previous image">
+                <materialDesign:PackIcon
+                    Kind="ChevronLeft" 
+                    Height="32"
+                    Width="32"/>
+            </Button>
+
+
+            <ToggleButton HorizontalAlignment="Right" 
+                                      DockPanel.Dock="Right"
+                                      Style="{StaticResource PreviewToggleButtonStyle}" 
+                                      ToolTip="Display (F5)"
+                                      IsChecked="{Binding IsDisplayingImage, Mode=OneWay}"
+                                      Command="{Binding DisplayImageCommand}">
+                <materialDesign:PackIcon
+                    Kind="Monitor" 
+                    Height="28"
+                    Width="28"/>
+
+            </ToggleButton>
+
+        </DockPanel>
+
+        <Border Grid.Row="1" Margin="10" BorderThickness="1" BorderBrush="Black" 
+                            HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Border.Effect>
+                <DropShadowEffect Opacity="0.4" BlurRadius="10"/>
+            </Border.Effect>
+            <Image x:Name="PreviewImage" 
+                            RenderOptions.BitmapScalingMode="HighQuality"
+                            Source="{Binding PreviewImageSource}" />
+        </Border>
     </Grid>
 </UserControl>
