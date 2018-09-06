@@ -2,6 +2,7 @@
 {
     using System.Windows.Media;
     using GalaSoft.MvvmLight;
+    using GalaSoft.MvvmLight.CommandWpf;
     using OnlyV.Services.Images;
 
     // ReSharper disable once ClassNeverInstantiated.Global
@@ -14,6 +15,7 @@
         public PreviewViewModel(IImagesService imagesService)
         {
             _imagesService = imagesService;
+            InitCommands();
         }
 
         public ImageSource PreviewImageSource
@@ -45,6 +47,36 @@
                     RaisePropertyChanged();
                 }
             }
+        }
+
+        public RelayCommand NextImageCommand { get; set; }
+
+        public RelayCommand PreviousImageCommand { get; set; }
+
+        private void InitCommands()
+        {
+            NextImageCommand = new RelayCommand(ShowNextImage, CanShowNextImage);
+            PreviousImageCommand = new RelayCommand(ShowPreviousImage, CanShowPreviousImage);
+        }
+
+        private bool CanShowPreviousImage()
+        {
+            return ImageIndex > 0;
+        }
+
+        private void ShowPreviousImage()
+        {
+            ImageIndex = ImageIndex - 1;
+        }
+
+        private bool CanShowNextImage()
+        {
+            return ImageIndex < _imagesService.ImageCount - 1;
+        }
+
+        private void ShowNextImage()
+        {
+            ImageIndex = ImageIndex + 1;
         }
     }
 }

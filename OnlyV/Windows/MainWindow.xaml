@@ -52,7 +52,8 @@
             <Button
                 Grid.Column="0"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
-                ToolTip="MaterialDesignFloatingActionMiniButton">
+                Command="{Binding SettingsCommand}"
+                ToolTip="Settings">
                 <materialDesign:PackIcon
                     Kind="Settings"
                     Height="24"
@@ -62,7 +63,7 @@
                 Grid.Column="2"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 Command="{Binding BackPageCommand}"
-                ToolTip="MaterialDesignFloatingActionMiniButton">
+                ToolTip="{Binding PreviousPageToolTip}">
                 <materialDesign:PackIcon
                     Kind="ArrowLeftBold"
                     Height="24"
@@ -72,7 +73,7 @@
                 Grid.Column="3"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 Command="{Binding NextPageCommand}"
-                ToolTip="MaterialDesignFloatingActionMiniButton">
+                ToolTip="{Binding NextPageToolTip}">
                 <materialDesign:PackIcon
                     Kind="ArrowRightBold"
                     Height="24"

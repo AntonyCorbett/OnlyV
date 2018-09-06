@@ -88,6 +88,24 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show Preview Page.
+        /// </summary>
+        internal static string NEXT_PAGE_PREVIEW {
+            get {
+                return ResourceManager.GetString("NEXT_PAGE_PREVIEW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show Scriptures Page.
+        /// </summary>
+        internal static string PREV_PAGE_SCRIPS {
+            get {
+                return ResourceManager.GetString("PREV_PAGE_SCRIPS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bible reader not initialised!.
         /// </summary>
         internal static string READER_NOT_INIT {

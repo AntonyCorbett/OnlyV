@@ -9,24 +9,34 @@ namespace OnlyV.ViewModel
     {
         private readonly ScripturesViewModel _scripturesViewModel;
         private readonly PreviewViewModel _previewViewModel;
+        private readonly SettingsViewModel _settingsViewModel;
+
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
 
         private ViewModelBase _currentPage;
+        private string _nextPageTooltip;
+        private string _previousPageTooltip;
 
         public MainViewModel(
             ScripturesViewModel scripturesViewModel,
             PreviewViewModel previewViewModel,
+            SettingsViewModel settingsViewModel,
             IImagesService imagesService,
             IOptionsService optionsService)
         {
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
+            _settingsViewModel = settingsViewModel;
+
             _imagesService = imagesService;
             _optionsService = optionsService;
 
             InitCommands();
+
             _currentPage = scripturesViewModel;
+            
+            _nextPageTooltip = Properties.Resources.NEXT_PAGE_PREVIEW;
         }
 
         public ViewModelBase CurrentPage
@@ -38,6 +48,42 @@ namespace OnlyV.ViewModel
                 {
                     _currentPage = value;
                     RaisePropertyChanged();
+
+                    PreviousPageToolTip = 
+                        _currentPage == _previewViewModel || _currentPage == _settingsViewModel
+                            ? Properties.Resources.PREV_PAGE_SCRIPS
+                            : null;
+
+                    NextPageToolTip =
+                        _currentPage == _scripturesViewModel || _currentPage == _settingsViewModel
+                            ? Properties.Resources.NEXT_PAGE_PREVIEW
+                            : null;
+                }
+            }
+        }
+
+        public string NextPageToolTip
+        {
+            get => _nextPageTooltip;
+            set
+            {
+                if (_nextPageTooltip == null || _nextPageTooltip != value)
+                {
+                    _nextPageTooltip = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public string PreviousPageToolTip
+        {
+            get => _previousPageTooltip;
+            set
+            {
+                if (_previousPageTooltip == null || _previousPageTooltip != value)
+                {
+                    _previousPageTooltip = value;
+                    RaisePropertyChanged();
                 }
             }
         }
@@ -46,10 +92,23 @@ namespace OnlyV.ViewModel
 
         public RelayCommand BackPageCommand { get; set; }
 
+        public RelayCommand SettingsCommand { get; set; }
+
         private void InitCommands()
         {
             NextPageCommand = new RelayCommand(OnNext, CanDoNext);
             BackPageCommand = new RelayCommand(OnBack, CanDoBack);
+            SettingsCommand = new RelayCommand(OnSettings, CanShowSettings);
+        }
+
+        private bool CanShowSettings()
+        {
+            return CurrentPage != _settingsViewModel;
+        }
+
+        private void OnSettings()
+        {
+            CurrentPage = _settingsViewModel;
         }
 
         private bool CanDoBack()
@@ -59,7 +118,7 @@ namespace OnlyV.ViewModel
 
         private void OnBack()
         {
-            if (CurrentPage == _previewViewModel)
+            if (CurrentPage == _previewViewModel || CurrentPage == _settingsViewModel)
             {
                 CurrentPage = _scripturesViewModel;
             }
@@ -67,9 +126,7 @@ namespace OnlyV.ViewModel
 
         private bool CanDoNext()
         {
-            // todo:
-
-            if (CurrentPage == _scripturesViewModel)
+            if (CurrentPage == _scripturesViewModel || CurrentPage == _settingsViewModel)
             {
                 return _scripturesViewModel.ValidScripture();
             }
@@ -84,11 +141,12 @@ namespace OnlyV.ViewModel
 
         private void OnNext()
         {
-            if (CurrentPage == _scripturesViewModel)
+            if (CurrentPage == _scripturesViewModel || CurrentPage == _settingsViewModel)
             {
                 _previewViewModel.ImageIndex = null;
                 InitImagesService();
                 _previewViewModel.ImageIndex = 0;
+
                 CurrentPage = _previewViewModel;
             }
         }

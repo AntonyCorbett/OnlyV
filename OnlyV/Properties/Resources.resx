@@ -126,6 +126,12 @@
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
     <value>Bible epub not specified!</value>
   </data>
+  <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
+    <value>Show Preview Page</value>
+  </data>
+  <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
+    <value>Show Scriptures Page</value>
+  </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
   </data>

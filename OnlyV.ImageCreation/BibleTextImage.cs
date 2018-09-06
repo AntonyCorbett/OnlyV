@@ -17,7 +17,7 @@
     public class BibleTextImage
     {
         private const char Ellipsis = '…';
-        private const double VerseFontSizeFactor = 0.6;
+        private const double VerseFontSizeFactor = 0.5;
         private Color _continuationArrowColor;
         private double _continuationArrowOpacity;
 
@@ -74,7 +74,7 @@
             FlowDirection = FlowDirection.LeftToRight;
             AllowAutoFit = true;
             ShowBreakInVerses = true;
-            ShowContinuationArrow = true;
+            ShowContinuationArrow = false;
 
             ContinuationArrowOpacity = 1.0;
             ContinuationArrowColor = FromHtmlString("#FCBA04");
@@ -685,13 +685,15 @@
             switch (LineSpacing)
             {
                 case LineSpacing.VerySmall:
-                    return height * 0.8;
+                    return height * 0.85;
                 case LineSpacing.Small:
-                    return height * 0.9;
+                    return height * 0.95;
+                case LineSpacing.Normal:
+                    return height * 1.05;
                 case LineSpacing.Large:
-                    return height * 1.1;
+                    return height * 1.15;
                 case LineSpacing.VeryLarge:
-                    return height * 1.2;
+                    return height * 1.25;
             }
 
             return height;
