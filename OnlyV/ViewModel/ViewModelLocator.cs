@@ -1,12 +1,11 @@
-using OnlyV.Services.Bible;
-using OnlyV.Services.CommandLine;
-using OnlyV.Services.Options;
-
 namespace OnlyV.ViewModel
 {
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Ioc;
-    using OnlyV.Services;
+    using OnlyV.Services.Bible;
+    using OnlyV.Services.CommandLine;
+    using OnlyV.Services.Images;
+    using OnlyV.Services.Options;
 
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -26,6 +25,7 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<ICommandLineService, CommandLineService>();
             SimpleIoc.Default.Register<IBibleVersesService, BibleVersesService>();
             SimpleIoc.Default.Register<IOptionsService, OptionsService>();
+            SimpleIoc.Default.Register<IImagesService, ImagesService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

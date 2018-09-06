@@ -10,6 +10,7 @@
     using OnlyV.Services.Bible;
     using OnlyV.VerseExtraction.Models;
 
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class ScripturesViewModel : ViewModelBase
     {
         private readonly IBibleVersesService _bibleService;
@@ -89,6 +90,8 @@
 
         public string ScriptureText => GenerateScriptureTextString();
 
+        public string ChapterAndVersesString => GenerateChapterAndVersesString();
+
         public bool ValidScripture()
         {
             return BookNumber > 0 && ChapterNumber > 0 && SelectedVerses.Any();
@@ -99,17 +102,31 @@
             var b = GetBookButton(BookNumber);
             if (b != null)
             {
-                var sb = new StringBuilder(b.Content);
-                if (ChapterNumber > 0)
+                var chapterAndVs = GenerateChapterAndVersesString();
+                if (chapterAndVs != null)
                 {
-                    sb.Append(" ");
-                    sb.Append(ChapterNumber);
+                    var sb = new StringBuilder(b.Content);
+                    sb.Append(chapterAndVs);
+                    return sb.ToString();
+                }
+            }
 
-                    if (SelectedVerses != null)
-                    {
-                        sb.Append(":");
-                        sb.Append(VersesAsString(SelectedVerses));
-                    }
+            return null;
+        }
+
+        private string GenerateChapterAndVersesString()
+        {
+            if (ChapterNumber > 0)
+            {
+                var sb = new StringBuilder(ChapterNumber);
+
+                sb.Append(" ");
+                sb.Append(ChapterNumber);
+
+                if (SelectedVerses != null)
+                {
+                    sb.Append(":");
+                    sb.Append(VersesAsString(SelectedVerses));
                 }
 
                 return sb.ToString();

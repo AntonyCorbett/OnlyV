@@ -120,6 +120,8 @@
     <Compile Include="Services\CommandLine\ICommandLineService.cs" />
     <Compile Include="Services\Options\IOptionsService.cs" />
     <Compile Include="Services\Options\OptionsService.cs" />
+    <Compile Include="Services\Images\IImagesService.cs" />
+    <Compile Include="Services\Images\ImagesService.cs" />
     <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\PreviewViewModel.cs" />
@@ -187,6 +189,10 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\OnlyV.ImageCreation\OnlyV.ImageCreation.csproj">
+      <Project>{EBF1CBF7-052C-4396-96DC-8347718BB6E5}</Project>
+      <Name>OnlyV.ImageCreation</Name>
+    </ProjectReference>
     <ProjectReference Include="..\OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj">
       <Project>{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}</Project>
       <Name>OnlyV.VerseExtraction</Name>

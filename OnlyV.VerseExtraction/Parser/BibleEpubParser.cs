@@ -55,12 +55,12 @@
 
         public string ExtractVersesText(
             int bibleBook,
-            string chapterAndVerse,
+            string chapterAndVerses,
             FormattingOptions formattingOptions)
         {
             Log.Logger.Information("Extracting Bible verse");
 
-            var verses = ChapterAndVerseStringParser.Parse(chapterAndVerse);
+            var verses = ChapterAndVerseStringParser.Parse(chapterAndVerses);
             return _epub.GetBibleTexts(_bookChapters.Value, bibleBook, verses, formattingOptions);
         }
 

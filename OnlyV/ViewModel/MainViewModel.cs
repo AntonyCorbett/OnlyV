@@ -2,20 +2,28 @@ namespace OnlyV.ViewModel
 {
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using OnlyV.Services.Images;
+    using OnlyV.Services.Options;
 
     internal class MainViewModel : ViewModelBase
     {
         private readonly ScripturesViewModel _scripturesViewModel;
         private readonly PreviewViewModel _previewViewModel;
+        private readonly IImagesService _imagesService;
+        private readonly IOptionsService _optionsService;
 
         private ViewModelBase _currentPage;
 
         public MainViewModel(
             ScripturesViewModel scripturesViewModel,
-            PreviewViewModel previewViewModel)
+            PreviewViewModel previewViewModel,
+            IImagesService imagesService,
+            IOptionsService optionsService)
         {
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
+            _imagesService = imagesService;
+            _optionsService = optionsService;
 
             InitCommands();
             _currentPage = scripturesViewModel;
@@ -78,8 +86,19 @@ namespace OnlyV.ViewModel
         {
             if (CurrentPage == _scripturesViewModel)
             {
+                _previewViewModel.ImageIndex = null;
+                InitImagesService();
+                _previewViewModel.ImageIndex = 0;
                 CurrentPage = _previewViewModel;
             }
+        }
+
+        private void InitImagesService()
+        {
+            _imagesService.Init(
+                _optionsService.Options.EpubPath, 
+                _scripturesViewModel.BookNumber, 
+                _scripturesViewModel.ChapterAndVersesString);
         }
     }
 }

@@ -208,13 +208,13 @@
         }
 
         public string GetBibleText(
-            IReadOnlyList<BookChapter> chapers, 
+            IReadOnlyList<BookChapter> chapters, 
             int bibleBook, 
             int chapter, 
             int verse,
             FormattingOptions formattingOptions)
         {
-            var x = GetChapter(chapers, bibleBook, chapter);
+            var x = GetChapter(chapters, bibleBook, chapter);
 
             var attr = x?.Root?.Attribute("xmlns");
             if (attr == null)
@@ -249,9 +249,20 @@
             var paras = new List<XElement> { parentPara };
             paras.AddRange(parentPara.ElementsAfterSelf());
 
+            bool started = false;
+            bool finished = false;
+
             foreach (var para in paras)
             {
-                var result = GetParagraph(para, parentPara, ns, idThisVerse, idNextVerse, formattingOptions);
+                var result = GetParagraph(
+                    para, 
+                    parentPara, 
+                    ns, 
+                    idThisVerse, 
+                    idNextVerse, 
+                    formattingOptions,
+                    ref started,
+                    ref finished);
 
                 sb.Append(result.Text);
 
@@ -270,11 +281,11 @@
             XNamespace ns,
             string idThisVerse,
             string idNextVerse,
-            FormattingOptions formattingOptions)
+            FormattingOptions formattingOptions,
+            ref bool started,
+            ref bool finished)
         {
             var sb = new StringBuilder();
-            var started = false;
-            bool finished = false;
 
             if (para != parentPara)
             {
