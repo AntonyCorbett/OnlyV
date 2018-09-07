@@ -8,6 +8,7 @@ namespace OnlyV.ViewModel
     using OnlyV.Services.Images;
     using OnlyV.Services.Monitors;
     using OnlyV.Services.Options;
+    using OnlyV.Services.Snackbar;
 
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -32,6 +33,7 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<IMonitorsService, MonitorsService>();
             SimpleIoc.Default.Register<IDisplayWindowService, DisplayWindowService>();
             SimpleIoc.Default.Register<IImageSavingService, ImageSavingService>();
+            SimpleIoc.Default.Register<ISnackbarService, SnackbarService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

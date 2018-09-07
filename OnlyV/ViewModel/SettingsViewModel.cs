@@ -4,9 +4,9 @@
     using System.Linq;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Messaging;
-    using OnlyV.PubSubMessages;
-    using OnlyV.Services.Monitors;
-    using OnlyV.Services.Options;
+    using PubSubMessages;
+    using Services.Monitors;
+    using Services.Options;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class SettingsViewModel : ViewModelBase

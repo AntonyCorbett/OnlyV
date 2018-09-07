@@ -7,9 +7,7 @@
         bool IsWindowVisible { get; }
 
         void ShowWindow();
-
-        void HideWindow();
-
+        
         void ToggleWindow();
 
         void CloseWindow();

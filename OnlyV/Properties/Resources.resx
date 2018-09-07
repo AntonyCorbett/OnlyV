@@ -120,11 +120,17 @@
   <data name="BACK" xml:space="preserve">
     <value>Back</value>
   </data>
+  <data name="COPIED" xml:space="preserve">
+    <value>Copied to clipboard</value>
+  </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Could not create folder {0}</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
     <value>Destination Folder</value>
+  </data>
+  <data name="DISPLAY_CMD" xml:space="preserve">
+    <value>Display (F5)</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bible epub not found!</value>
@@ -132,19 +138,37 @@
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
     <value>Bible epub not specified!</value>
   </data>
+  <data name="ERROR_SAVING" xml:space="preserve">
+    <value>Error saving images!</value>
+  </data>
+  <data name="HIDE_CMD" xml:space="preserve">
+    <value>Hide (F5)</value>
+  </data>
   <data name="MONITOR_NONE" xml:space="preserve">
     <value>None</value>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show Preview Page</value>
+    <value>Show preview page</value>
+  </data>
+  <data name="NO_IMAGES" xml:space="preserve">
+    <value>No images to save!</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show Scriptures Page</value>
+    <value>Show scriptures page</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
   </data>
+  <data name="SAVED_IMAGE" xml:space="preserve">
+    <value>Saved image</value>
+  </data>
+  <data name="SAVED_X_IMAGES" xml:space="preserve">
+    <value>Saved {0} images</value>
+  </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Settings Page</value>
+    <value>Settings page</value>
   </data>
 </root>

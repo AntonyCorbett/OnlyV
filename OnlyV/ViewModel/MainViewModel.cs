@@ -2,6 +2,8 @@ namespace OnlyV.ViewModel
 {
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using MaterialDesignThemes.Wpf;
+    using OnlyV.Services.Snackbar;
     using Services.Images;
     using Services.Options;
 
@@ -11,9 +13,10 @@ namespace OnlyV.ViewModel
         private readonly ScripturesViewModel _scripturesViewModel;
         private readonly PreviewViewModel _previewViewModel;
         private readonly SettingsViewModel _settingsViewModel;
-
+        
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
+        private readonly ISnackbarService _snackbarService;
 
         private ViewModelBase _currentPage;
         private ViewModelBase _preSettingsPage;
@@ -25,7 +28,8 @@ namespace OnlyV.ViewModel
             PreviewViewModel previewViewModel,
             SettingsViewModel settingsViewModel,
             IImagesService imagesService,
-            IOptionsService optionsService)
+            IOptionsService optionsService,
+            ISnackbarService snackbarService)
         {
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
@@ -33,6 +37,7 @@ namespace OnlyV.ViewModel
 
             _imagesService = imagesService;
             _optionsService = optionsService;
+            _snackbarService = snackbarService;
 
             InitCommands();
 
@@ -106,6 +111,8 @@ namespace OnlyV.ViewModel
         public RelayCommand BackPageCommand { get; set; }
 
         public RelayCommand SettingsCommand { get; set; }
+
+        public ISnackbarMessageQueue TheSnackbarMessageQueue => _snackbarService.TheSnackbarMessageQueue;
 
         private void InitCommands()
         {

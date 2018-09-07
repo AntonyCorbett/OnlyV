@@ -154,6 +154,8 @@
     <Compile Include="Services\Options\OptionsService.cs" />
     <Compile Include="Services\Images\IImagesService.cs" />
     <Compile Include="Services\Images\ImagesService.cs" />
+    <Compile Include="Services\Snackbar\ISnackbarService.cs" />
+    <Compile Include="Services\Snackbar\SnackbarService.cs" />
     <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\DisplayViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

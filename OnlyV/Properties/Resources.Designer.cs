@@ -70,6 +70,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copied to clipboard.
+        /// </summary>
+        internal static string COPIED {
+            get {
+                return ResourceManager.GetString("COPIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not create folder {0}.
         /// </summary>
         internal static string CREATE_FOLDER_ERROR {
@@ -84,6 +93,15 @@ namespace OnlyV.Properties {
         internal static string DEST_FOLDER {
             get {
                 return ResourceManager.GetString("DEST_FOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Display (F5).
+        /// </summary>
+        internal static string DISPLAY_CMD {
+            get {
+                return ResourceManager.GetString("DISPLAY_CMD", resourceCulture);
             }
         }
         
@@ -106,6 +124,24 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Error saving images!.
+        /// </summary>
+        internal static string ERROR_SAVING {
+            get {
+                return ResourceManager.GetString("ERROR_SAVING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hide (F5).
+        /// </summary>
+        internal static string HIDE_CMD {
+            get {
+                return ResourceManager.GetString("HIDE_CMD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         internal static string MONITOR_NONE {
@@ -115,7 +151,7 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Preview Page.
+        ///   Looks up a localized string similar to Show preview page.
         /// </summary>
         internal static string NEXT_PAGE_PREVIEW {
             get {
@@ -124,7 +160,25 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Show Scriptures Page.
+        ///   Looks up a localized string similar to No images to save!.
+        /// </summary>
+        internal static string NO_IMAGES {
+            get {
+                return ResourceManager.GetString("NO_IMAGES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to OK.
+        /// </summary>
+        internal static string OK {
+            get {
+                return ResourceManager.GetString("OK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show scriptures page.
         /// </summary>
         internal static string PREV_PAGE_SCRIPS {
             get {
@@ -142,7 +196,25 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Settings Page.
+        ///   Looks up a localized string similar to Saved image.
+        /// </summary>
+        internal static string SAVED_IMAGE {
+            get {
+                return ResourceManager.GetString("SAVED_IMAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Saved {0} images.
+        /// </summary>
+        internal static string SAVED_X_IMAGES {
+            get {
+                return ResourceManager.GetString("SAVED_X_IMAGES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings page.
         /// </summary>
         internal static string SETTINGS_PAGE {
             get {

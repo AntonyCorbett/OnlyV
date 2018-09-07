@@ -37,11 +37,6 @@
             _displayWindow.Show();
         }
 
-        public void HideWindow()
-        {
-            _displayWindow?.Hide();
-        }
-
         public void CloseWindow()
         {
             _displayWindow?.Close();
@@ -52,7 +47,7 @@
         {
             if (IsWindowVisible)
             {
-                HideWindow();
+                CloseWindow();
             }
             else
             {

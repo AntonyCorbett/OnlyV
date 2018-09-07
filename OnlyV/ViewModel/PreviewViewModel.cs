@@ -1,4 +1,9 @@
-﻿namespace OnlyV.ViewModel
+﻿using System.Linq;
+using System.Windows.Media.Imaging;
+using OnlyV.Services.Snackbar;
+using Serilog;
+
+namespace OnlyV.ViewModel
 {
     using System;
     using System.Windows;
@@ -16,17 +21,21 @@
         private readonly IImagesService _imagesService;
         private readonly IDisplayWindowService _displayWindowService;
         private readonly IOptionsService _optionsService;
+        private readonly ISnackbarService _snackbarService;
+
         private ImageSource _previewImageSource;
         private int? _imageIndex;
 
         public PreviewViewModel(
             IImagesService imagesService,
             IDisplayWindowService displayWindowService,
-            IOptionsService optionsService)
+            IOptionsService optionsService,
+            ISnackbarService snackbarService)
         {
             _imagesService = imagesService;
             _displayWindowService = displayWindowService;
             _optionsService = optionsService;
+            _snackbarService = snackbarService;
 
             InitCommands();
         }
@@ -64,6 +73,11 @@
             }
         }
 
+        public string DisplayButtonToolTip =>
+            IsDisplayWindowVisible
+                ? Properties.Resources.HIDE_CMD
+                : Properties.Resources.DISPLAY_CMD;
+
         public string BookChapterAndVersesString { get; set; }
 
         public bool IsDisplayWindowVisible => _displayWindowService.IsWindowVisible;
@@ -76,12 +90,28 @@
 
         public RelayCommand SaveCommand { get; set; }
 
+        public RelayCommand CopyToClipboardCommand { get; set; }
+
         private void InitCommands()
         {
             NextImageCommand = new RelayCommand(ShowNextImage, CanShowNextImage);
             PreviousImageCommand = new RelayCommand(ShowPreviousImage, CanShowPreviousImage);
             DisplayImageCommand = new RelayCommand(ToggleDisplayImage, CanToggleDisplayImage);
             SaveCommand = new RelayCommand(SaveImage, CanSaveImage);
+            CopyToClipboardCommand = new RelayCommand(CopyToClipboard, CanCopyToClipboard);
+        }
+
+        private bool CanCopyToClipboard()
+        {
+            return true;
+        }
+
+        private void CopyToClipboard()
+        {
+            Clipboard.Clear();
+            Clipboard.SetImage((BitmapSource)PreviewImageSource);
+
+            _snackbarService.EnqueueWithOk("Copied to clipboard");
         }
 
         private bool CanSaveImage()
@@ -91,14 +121,34 @@
 
         private void SaveImage()
         {
-            var folder = GetDestinationFolder(); 
+            var folder = GetDestinationFolder();
+
+            var imagesToSave = _imagesService.Get();
+            if (imagesToSave == null || !imagesToSave.Any())
+            {
+                Log.Logger.Error("No images to save!");
+                _snackbarService.EnqueueWithOk(Properties.Resources.NO_IMAGES);
+                return;
+            }
 
             var s = new ImageSavingService(
-                _imagesService.Get(),
+                imagesToSave,
                 folder, 
                 BookChapterAndVersesString);
 
-            s.Execute();
+            _snackbarService.EnqueueWithOk(imagesToSave.Count > 1
+                ? string.Format(Properties.Resources.SAVED_X_IMAGES, imagesToSave.Count)
+                : Properties.Resources.SAVED_IMAGE);
+
+            try
+            {
+                s.Execute();
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error("Could not save", ex);
+                _snackbarService.EnqueueWithOk(Properties.Resources.ERROR_SAVING);
+            }
         }
 
         private string GetDestinationFolder()
@@ -131,6 +181,7 @@
             }
             
             RaisePropertyChanged(nameof(IsDisplayWindowVisible));
+            RaisePropertyChanged(nameof(DisplayButtonToolTip));
 
             // retain focus and so allow F5 to work.
             Application.Current?.MainWindow?.Focus();

@@ -100,7 +100,7 @@
             <ToggleButton HorizontalAlignment="Right" 
                                       DockPanel.Dock="Right"
                                       Style="{StaticResource PreviewToggleButtonStyle}" 
-                                      ToolTip="Display (F5)"
+                                      ToolTip="{Binding DisplayButtonToolTip}"
                                       IsChecked="{Binding IsDisplayWindowVisible, Mode=OneWay}"
                                       Command="{Binding DisplayImageCommand}">
                 <materialDesign:PackIcon

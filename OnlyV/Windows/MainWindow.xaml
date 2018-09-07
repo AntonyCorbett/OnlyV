@@ -82,6 +82,8 @@
                     Width="24" />
             </Button>
         </Grid>
+        <materialDesign:Snackbar Grid.Row="1" 
+                                 MessageQueue="{Binding TheSnackbarMessageQueue}"/>
     </Grid>
 </Window>
 
