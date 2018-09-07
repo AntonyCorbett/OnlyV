@@ -1,3 +1,5 @@
+using OnlyV.Services.DisplayWindow;
+
 namespace OnlyV.ViewModel
 {
     using CommonServiceLocator;
@@ -5,6 +7,7 @@ namespace OnlyV.ViewModel
     using OnlyV.Services.Bible;
     using OnlyV.Services.CommandLine;
     using OnlyV.Services.Images;
+    using OnlyV.Services.Monitors;
     using OnlyV.Services.Options;
 
     /// <summary>
@@ -18,6 +21,7 @@ namespace OnlyV.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<DisplayViewModel>();
             SimpleIoc.Default.Register<ScripturesViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<PreviewViewModel>();
@@ -26,9 +30,13 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<IBibleVersesService, BibleVersesService>();
             SimpleIoc.Default.Register<IOptionsService, OptionsService>();
             SimpleIoc.Default.Register<IImagesService, ImagesService>();
+            SimpleIoc.Default.Register<IMonitorsService, MonitorsService>();
+            SimpleIoc.Default.Register<IDisplayWindowService, DisplayWindowService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();
+
+        public DisplayViewModel Display => ServiceLocator.Current.GetInstance<DisplayViewModel>();
 
         public ScripturesViewModel Scriptures => ServiceLocator.Current.GetInstance<ScripturesViewModel>();
 

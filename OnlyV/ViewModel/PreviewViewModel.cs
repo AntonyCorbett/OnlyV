@@ -3,18 +3,25 @@
     using System.Windows.Media;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using OnlyV.Services.DisplayWindow;
     using OnlyV.Services.Images;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class PreviewViewModel : ViewModelBase
     {
         private readonly IImagesService _imagesService;
+        private readonly IDisplayWindowService _displayWindowService;
         private ImageSource _previewImageSource;
         private int? _imageIndex;
+        private bool _isDisplayingImage;
 
-        public PreviewViewModel(IImagesService imagesService)
+        public PreviewViewModel(
+            IImagesService imagesService,
+            IDisplayWindowService displayWindowService)
         {
             _imagesService = imagesService;
+            _displayWindowService = displayWindowService;
+
             InitCommands();
         }
 
@@ -49,14 +56,41 @@
             }
         }
 
+        public bool IsDisplayingImage
+        {
+            get => _isDisplayingImage;
+            set
+            {
+                if (_isDisplayingImage != value)
+                {
+                    _isDisplayingImage = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         public RelayCommand NextImageCommand { get; set; }
 
         public RelayCommand PreviousImageCommand { get; set; }
+
+        public RelayCommand DisplayImageCommand { get; set; }
 
         private void InitCommands()
         {
             NextImageCommand = new RelayCommand(ShowNextImage, CanShowNextImage);
             PreviousImageCommand = new RelayCommand(ShowPreviousImage, CanShowPreviousImage);
+            DisplayImageCommand = new RelayCommand(ToggleDisplayImage, CanToggleDisplayImage);
+        }
+
+        private void ToggleDisplayImage()
+        {
+            _displayWindowService.OpenWindow();
+        }
+
+        private bool CanToggleDisplayImage()
+        {
+            // todo:
+            return true;
         }
 
         private bool CanShowPreviousImage()

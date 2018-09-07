@@ -250,8 +250,7 @@
             paras.AddRange(parentPara.ElementsAfterSelf());
 
             bool started = false;
-            bool finished = false;
-
+            
             foreach (var para in paras)
             {
                 var result = GetParagraph(
@@ -261,8 +260,7 @@
                     idThisVerse, 
                     idNextVerse, 
                     formattingOptions,
-                    ref started,
-                    ref finished);
+                    started);
 
                 sb.Append(result.Text);
 
@@ -270,22 +268,25 @@
                 {
                     break;
                 }
+
+                started = result.Started;
             }
 
             return sb.ToString().Trim().Trim('~');
         }
 
-        private (string Text, bool Finished) GetParagraph(
+        private (string Text, bool Started, bool Finished) GetParagraph(
             XElement para, 
             XElement parentPara,
             XNamespace ns,
             string idThisVerse,
             string idNextVerse,
             FormattingOptions formattingOptions,
-            ref bool started,
-            ref bool finished)
+            bool started)
         {
             var sb = new StringBuilder();
+
+            bool finished = false;
 
             if (para != parentPara)
             {
@@ -341,7 +342,7 @@
                 }
             }
 
-            return (sb.ToString(), finished);
+            return (sb.ToString(), started, finished);
         }
 
         private XDocument GetXmlFile(string entryPath)
