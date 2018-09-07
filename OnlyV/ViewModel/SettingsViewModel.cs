@@ -1,11 +1,10 @@
-﻿using GalaSoft.MvvmLight.Messaging;
-using OnlyV.PubSubMessages;
-
-namespace OnlyV.ViewModel
+﻿namespace OnlyV.ViewModel
 {
     using System.Collections.Generic;
     using System.Linq;
     using GalaSoft.MvvmLight;
+    using GalaSoft.MvvmLight.Messaging;
+    using OnlyV.PubSubMessages;
     using OnlyV.Services.Monitors;
     using OnlyV.Services.Options;
 
@@ -58,7 +57,7 @@ namespace OnlyV.ViewModel
             return result;
         }
 
-        private void OnShutDown(ShutDownMessage obj)
+        private void OnShutDown(ShutDownMessage msg)
         {
             _optionsService.Save();
         }

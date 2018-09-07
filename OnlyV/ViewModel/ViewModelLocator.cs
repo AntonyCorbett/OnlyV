@@ -1,11 +1,10 @@
-using OnlyV.Services.DisplayWindow;
-
 namespace OnlyV.ViewModel
 {
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Ioc;
     using OnlyV.Services.Bible;
     using OnlyV.Services.CommandLine;
+    using OnlyV.Services.DisplayWindow;
     using OnlyV.Services.Images;
     using OnlyV.Services.Monitors;
     using OnlyV.Services.Options;
@@ -32,6 +31,7 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<IImagesService, ImagesService>();
             SimpleIoc.Default.Register<IMonitorsService, MonitorsService>();
             SimpleIoc.Default.Register<IDisplayWindowService, DisplayWindowService>();
+            SimpleIoc.Default.Register<IImageSavingService, ImageSavingService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

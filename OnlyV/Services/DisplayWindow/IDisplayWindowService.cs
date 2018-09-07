@@ -1,7 +1,11 @@
 ﻿namespace OnlyV.Services.DisplayWindow
 {
+    using System.Windows.Media;
+
     internal interface IDisplayWindowService
     {
+        bool IsWindowVisible { get; }
+
         void ShowWindow();
 
         void HideWindow();
@@ -10,6 +14,8 @@
 
         void CloseWindow();
 
-        bool IsWindowShowing { get; }
+        void SetImage(ImageSource image);
+
+        void ClearImage();
     }
 }

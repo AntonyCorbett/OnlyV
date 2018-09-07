@@ -76,6 +76,8 @@
 
         public bool JwLibraryCompatibilityMode { get; set; }
 
+        public string SaveToFolder { get; set; }
+
         public LogEventLevel LogEventLevel
         {
             get => _logEventLevel;

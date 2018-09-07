@@ -117,8 +117,14 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BACK" xml:space="preserve">
+    <value>Back</value>
+  </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Could not create folder {0}</value>
+  </data>
+  <data name="DEST_FOLDER" xml:space="preserve">
+    <value>Destination Folder</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bible epub not found!</value>
@@ -137,5 +143,8 @@
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
+  </data>
+  <data name="SETTINGS_PAGE" xml:space="preserve">
+    <value>Settings Page</value>
   </data>
 </root>

@@ -1,6 +1,7 @@
 ﻿namespace OnlyV.Pages
 {
     using System.Windows.Controls;
+    using System.Windows.Input;
 
     /// <summary>
     /// Interaction logic for PreviewPage.xaml
@@ -10,6 +11,10 @@
         public PreviewPage()
         {
             InitializeComponent();
+
+            // for keyboard binding (e.g. F5)
+            Focusable = true;
+            Loaded += (s, e) => Keyboard.Focus(this);
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿namespace OnlyV.Helpers
 {
     using System;
+    using System.Globalization;
     using System.IO;
+    using System.Linq;
 
     /// <summary>
     /// General file / folder utilities
@@ -10,6 +12,19 @@
     {
         private static readonly string AppNamePathSegment = "OnlyV";
         private static readonly string OptionsFileName = "options.json";
+
+        public static string CleanFileName(string filename)
+        {
+            return Path.GetInvalidFileNameChars().Aggregate(filename, (current, c) =>
+                current.Replace(c.ToString(CultureInfo.InvariantCulture), string.Empty));
+        }
+
+        public static string GetDefaultSaveToFolder()
+        {
+            string folder = Path.Combine(GetOnlyVMyDocsFolder(), @"BibleTextImages");
+            CreateDirectory(folder);
+            return folder;
+        }
 
         /// <summary>
         /// Creates directory if it doesn't exist. Throws if cannot be created
@@ -83,11 +98,11 @@
             // NB - user-specific folder
             // e.g. C:\Users\Antony\AppData\Roaming\OnlyV
             string folder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), AppNamePathSegment);
-            Directory.CreateDirectory(folder);
+            CreateDirectory(folder);
             return folder;
         }
 
-        private static bool DirectoryIsAvailable(string dir)
+        public static bool DirectoryIsAvailable(string dir)
         {
             if (string.IsNullOrEmpty(dir))
             {

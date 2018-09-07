@@ -2,9 +2,10 @@ namespace OnlyV.ViewModel
 {
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
-    using OnlyV.Services.Images;
-    using OnlyV.Services.Options;
+    using Services.Images;
+    using Services.Options;
 
+    // ReSharper disable once UnusedMember.Global
     internal class MainViewModel : ViewModelBase
     {
         private readonly ScripturesViewModel _scripturesViewModel;
@@ -15,6 +16,7 @@ namespace OnlyV.ViewModel
         private readonly IOptionsService _optionsService;
 
         private ViewModelBase _currentPage;
+        private ViewModelBase _preSettingsPage;
         private string _nextPageTooltip;
         private string _previousPageTooltip;
 
@@ -35,7 +37,8 @@ namespace OnlyV.ViewModel
             InitCommands();
 
             _currentPage = scripturesViewModel;
-            
+            _preSettingsPage = scripturesViewModel;
+
             _nextPageTooltip = Properties.Resources.NEXT_PAGE_PREVIEW;
         }
 
@@ -88,6 +91,16 @@ namespace OnlyV.ViewModel
             }
         }
 
+        public string SettingsButtonToolTip =>
+            CurrentPage == _settingsViewModel
+                ? Properties.Resources.BACK
+                : Properties.Resources.SETTINGS_PAGE;
+
+        public string SettingsIconKind => 
+            CurrentPage == _settingsViewModel
+                ? @"BackBurger"
+                : @"Settings";
+
         public RelayCommand NextPageCommand { get; set; }
 
         public RelayCommand BackPageCommand { get; set; }
@@ -103,22 +116,33 @@ namespace OnlyV.ViewModel
 
         private bool CanShowSettings()
         {
-            return CurrentPage != _settingsViewModel;
+            return true;
         }
 
         private void OnSettings()
         {
-            CurrentPage = _settingsViewModel;
+            if (CurrentPage == _settingsViewModel)
+            {
+                CurrentPage = _preSettingsPage;
+            }
+            else
+            {
+                _preSettingsPage = CurrentPage;
+                CurrentPage = _settingsViewModel;
+            }
+
+            RaisePropertyChanged(nameof(SettingsIconKind));
+            RaisePropertyChanged(nameof(SettingsButtonToolTip));
         }
 
         private bool CanDoBack()
         {
-            return CurrentPage != _scripturesViewModel;
+            return CurrentPage == _previewViewModel;
         }
 
         private void OnBack()
         {
-            if (CurrentPage == _previewViewModel || CurrentPage == _settingsViewModel)
+            if (CurrentPage == _previewViewModel)
             {
                 CurrentPage = _scripturesViewModel;
             }
@@ -126,14 +150,9 @@ namespace OnlyV.ViewModel
 
         private bool CanDoNext()
         {
-            if (CurrentPage == _scripturesViewModel || CurrentPage == _settingsViewModel)
+            if (CurrentPage == _scripturesViewModel)
             {
                 return _scripturesViewModel.ValidScripture();
-            }
-
-            if (CurrentPage == _previewViewModel)
-            {
-                return false;
             }
 
             return false;
@@ -141,11 +160,12 @@ namespace OnlyV.ViewModel
 
         private void OnNext()
         {
-            if (CurrentPage == _scripturesViewModel || CurrentPage == _settingsViewModel)
+            if (CurrentPage == _scripturesViewModel)
             {
                 _previewViewModel.ImageIndex = null;
                 InitImagesService();
                 _previewViewModel.ImageIndex = 0;
+                _previewViewModel.BookChapterAndVersesString = _scripturesViewModel.ScriptureText;
 
                 CurrentPage = _previewViewModel;
             }

@@ -18,8 +18,8 @@
         private int _chapterNumber;
         private ObservableCollection<int> _selectedVerses = new ObservableCollection<int>();
 
-        public ScripturesViewModel(IBibleVersesService bibleService)
-
+        public ScripturesViewModel(
+            IBibleVersesService bibleService)
         {
             _bibleService = bibleService;
             
@@ -128,7 +128,7 @@
                     sb.Append(":");
                     sb.Append(VersesAsString(SelectedVerses));
                 }
-
+                
                 return sb.ToString();
             }
 

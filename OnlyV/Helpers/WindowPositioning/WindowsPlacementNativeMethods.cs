@@ -14,11 +14,7 @@
 
     internal static class WindowsPlacementNativeMethods
     {
-        [DllImport("user32.dll")]
-        public static extern bool SetWindowPlacement(IntPtr hWnd, [In] ref WINDOWPLACEMENT lpwndpl);
-
-        [DllImport("user32.dll")]
-        public static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
+        private const int MAX_PATH = 260;
 
         public enum SHSTOCKICONID : uint
         {
@@ -131,30 +127,20 @@
             SHGSI_SHELLICONSIZE = 0x000000004
         }
 
-        private const int MAX_PATH = 260;
+        [DllImport("user32.dll")]
+        public static extern bool SetWindowPlacement(IntPtr hWnd, [In] ref WINDOWPLACEMENT lpwndpl);
 
-        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
-        public struct SHSTOCKICONINFO
-        {
-            public UInt32 cbSize;
-            public IntPtr hIcon;
-            public Int32 iSysIconIndex;
-            public Int32 iIcon;
-            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = MAX_PATH)]
-            public string szPath;
-        }
+        [DllImport("user32.dll")]
+        public static extern bool GetWindowPlacement(IntPtr hWnd, out WINDOWPLACEMENT lpwndpl);
 
         [DllImport("Shell32.dll", SetLastError = false)]
-        public static extern Int32 SHGetStockIconInfo(SHSTOCKICONID siid, SHGSI uFlags, ref SHSTOCKICONINFO psii);
-
-        [DllImport("user32.dll", SetLastError = true)]
-        private static extern bool DestroyIcon(IntPtr hIcon);
+        public static extern int SHGetStockIconInfo(SHSTOCKICONID siid, SHGSI uFlags, ref SHSTOCKICONINFO psii);
 
         public static BitmapSource GetElevatedShieldBitmap()
         {
             var sii = new SHSTOCKICONINFO
             {
-                cbSize = (UInt32)Marshal.SizeOf(typeof(SHSTOCKICONINFO))
+                cbSize = (uint)Marshal.SizeOf(typeof(SHSTOCKICONINFO))
             };
 
             Marshal.ThrowExceptionForHR(SHGetStockIconInfo(
@@ -170,6 +156,20 @@
             DestroyIcon(sii.hIcon);
 
             return shieldSource;
+        }
+
+        [DllImport("user32.dll", SetLastError = true)]
+        private static extern bool DestroyIcon(IntPtr hIcon);
+
+        [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Unicode)]
+        public struct SHSTOCKICONINFO
+        {
+            public uint cbSize;
+            public IntPtr hIcon;
+            public int iSysIconIndex;
+            public int iIcon;
+            [MarshalAs(UnmanagedType.ByValTStr, SizeConst = MAX_PATH)]
+            public string szPath;
         }
     }
 }

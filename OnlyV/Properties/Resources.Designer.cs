@@ -61,11 +61,29 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Back.
+        /// </summary>
+        internal static string BACK {
+            get {
+                return ResourceManager.GetString("BACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not create folder {0}.
         /// </summary>
         internal static string CREATE_FOLDER_ERROR {
             get {
                 return ResourceManager.GetString("CREATE_FOLDER_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Destination Folder.
+        /// </summary>
+        internal static string DEST_FOLDER {
+            get {
+                return ResourceManager.GetString("DEST_FOLDER", resourceCulture);
             }
         }
         
@@ -120,6 +138,15 @@ namespace OnlyV.Properties {
         internal static string READER_NOT_INIT {
             get {
                 return ResourceManager.GetString("READER_NOT_INIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Settings Page.
+        /// </summary>
+        internal static string SETTINGS_PAGE {
+            get {
+                return ResourceManager.GetString("SETTINGS_PAGE", resourceCulture);
             }
         }
     }

@@ -55,9 +55,9 @@
                 Grid.Column="0"
                 Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
                 Command="{Binding SettingsCommand}"
-                ToolTip="Settings">
+                ToolTip="{Binding SettingsButtonToolTip}">
                 <materialDesign:PackIcon
-                    Kind="Settings"
+                    Kind="{Binding SettingsIconKind}"
                     Height="24"
                     Width="24" />
             </Button>

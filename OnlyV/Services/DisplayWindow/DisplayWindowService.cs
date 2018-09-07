@@ -2,6 +2,7 @@
 {
     using System.Windows;
     using System.Windows.Forms;
+    using System.Windows.Media;
     using GalaSoft.MvvmLight.Messaging;
     using OnlyV.Helpers.WindowPositioning;
     using OnlyV.PubSubMessages;
@@ -28,6 +29,8 @@
             Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
         }
 
+        public bool IsWindowVisible => _displayWindow != null && _displayWindow.IsVisible;
+
         public void ShowWindow()
         {
             EnsureWindowCreated();
@@ -47,7 +50,7 @@
 
         public void ToggleWindow()
         {
-            if (IsWindowShowing)
+            if (IsWindowVisible)
             {
                 HideWindow();
             }
@@ -57,8 +60,22 @@
             }
         }
 
-        public bool IsWindowShowing => _displayWindow != null && _displayWindow.IsVisible;
+        public void ClearImage()
+        {
+            if (_displayWindow != null)
+            {
+                _displayWindow.TheImage.Source = null;
+            }
+        }
 
+        public void SetImage(ImageSource image)
+        {
+            if (_displayWindow != null)
+            {
+                _displayWindow.TheImage.Source = image;
+            }
+        }
+        
         private void EnsureWindowCreated()
         {
             if (_displayWindow == null)

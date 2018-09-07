@@ -48,6 +48,11 @@
         </Style>
     </UserControl.Resources>
 
+    <UserControl.InputBindings>
+        <KeyBinding Key="F5"
+                    Command="{Binding DisplayImageCommand}" />
+    </UserControl.InputBindings>
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="66"/>
@@ -96,7 +101,7 @@
                                       DockPanel.Dock="Right"
                                       Style="{StaticResource PreviewToggleButtonStyle}" 
                                       ToolTip="Display (F5)"
-                                      IsChecked="{Binding IsDisplayingImage, Mode=OneWay}"
+                                      IsChecked="{Binding IsDisplayWindowVisible, Mode=OneWay}"
                                       Command="{Binding DisplayImageCommand}">
                 <materialDesign:PackIcon
                     Kind="Monitor" 

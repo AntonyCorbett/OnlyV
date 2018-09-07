@@ -1,5 +1,7 @@
 ﻿namespace OnlyV.Helpers.WindowPositioning
 {
+    // ReSharper disable CommentTypo
+    // ReSharper disable IdentifierTypo
     // ReSharper disable InconsistentNaming
     // ReSharper disable StyleCop.SA1307
     // ReSharper disable MemberCanBePrivate.Global
@@ -18,6 +20,73 @@
     using System.Xml;
     using System.Xml.Serialization;
     using Serilog;
+
+    public static class WindowPlacement
+    {
+        private const int SwShowNormal = 1;
+        private const int SwShowMinimized = 2;
+
+        private static readonly Encoding Encoding = new UTF8Encoding();
+        private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(WINDOWPLACEMENT));
+
+        public static void SetPlacement(this Window window, string placementJson)
+        {
+            var windowHandle = new WindowInteropHelper(window).Handle;
+
+            if (!string.IsNullOrEmpty(placementJson))
+            {
+                byte[] xmlBytes = Encoding.GetBytes(placementJson);
+                try
+                {
+                    WINDOWPLACEMENT placement;
+                    using (var memoryStream = new MemoryStream(xmlBytes))
+                    {
+                        placement = (WINDOWPLACEMENT)Serializer.Deserialize(memoryStream);
+                    }
+
+                    placement.length = Marshal.SizeOf(typeof(WINDOWPLACEMENT));
+                    placement.flags = 0;
+                    placement.showCmd = placement.showCmd == SwShowMinimized ? SwShowNormal : placement.showCmd;
+                    WindowsPlacementNativeMethods.SetWindowPlacement(windowHandle, ref placement);
+                }
+                catch (InvalidOperationException ex)
+                {
+                    Log.Logger.Error(ex, "Parsing placement XML failed");
+                }
+            }
+        }
+
+        public static string GetPlacement(this Window window)
+        {
+            return GetPlacement(new WindowInteropHelper(window).Handle);
+        }
+
+        public static (int x, int y) GetDpiSettings()
+        {
+            var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
+            var dpiYProperty = typeof(SystemParameters).GetProperty("Dpi", BindingFlags.NonPublic | BindingFlags.Static);
+
+            if (dpiXProperty == null || dpiYProperty == null)
+            {
+                return (96, 96);
+            }
+
+            return ((int)dpiXProperty.GetValue(null, null), (int)dpiYProperty.GetValue(null, null));
+        }
+
+        private static string GetPlacement(IntPtr windowHandle)
+        {
+            WindowsPlacementNativeMethods.GetWindowPlacement(windowHandle, out var placement);
+
+            using (var memoryStream = new MemoryStream())
+            {
+                var xmlTextWriter = new XmlTextWriter(memoryStream, Encoding.UTF8);
+                Serializer.Serialize(xmlTextWriter, placement);
+                var xmlBytes = memoryStream.ToArray();
+                return Encoding.GetString(xmlBytes);
+            }
+        }
+    }
 
     // RECT structure required by WINDOWPLACEMENT structure
     [Serializable]
@@ -64,72 +133,5 @@
         public POINT minPosition;
         public POINT maxPosition;
         public RECT normalPosition;
-    }
-
-    public static class WindowPlacement
-    {
-        private static readonly Encoding Encoding = new UTF8Encoding();
-        private static readonly XmlSerializer Serializer = new XmlSerializer(typeof(WINDOWPLACEMENT));
-
-        private const int SW_SHOWNORMAL = 1;
-        private const int SW_SHOWMINIMIZED = 2;
-        
-        public static void SetPlacement(this Window window, string placementJson)
-        {
-            var windowHandle = new WindowInteropHelper(window).Handle;
-
-            if (!string.IsNullOrEmpty(placementJson))
-            {
-                byte[] xmlBytes = Encoding.GetBytes(placementJson);
-                try
-                {
-                    WINDOWPLACEMENT placement;
-                    using (MemoryStream memoryStream = new MemoryStream(xmlBytes))
-                    {
-                        placement = (WINDOWPLACEMENT)Serializer.Deserialize(memoryStream);
-                    }
-
-                    placement.length = Marshal.SizeOf(typeof(WINDOWPLACEMENT));
-                    placement.flags = 0;
-                    placement.showCmd = placement.showCmd == SW_SHOWMINIMIZED ? SW_SHOWNORMAL : placement.showCmd;
-                    WindowsPlacementNativeMethods.SetWindowPlacement(windowHandle, ref placement);
-                }
-                catch (InvalidOperationException ex)
-                {
-                    Log.Logger.Error(ex, "Parsing placement XML failed");
-                }
-            }
-        }
-
-        public static string GetPlacement(this Window window)
-        {
-            return GetPlacement(new WindowInteropHelper(window).Handle);
-        }
-
-        public static (int x, int y) GetDpiSettings()
-        {
-            var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
-            var dpiYProperty = typeof(SystemParameters).GetProperty("Dpi", BindingFlags.NonPublic | BindingFlags.Static);
-
-            if (dpiXProperty == null || dpiYProperty == null)
-            {
-                return (96, 96);
-            }
-
-            return ((int)dpiXProperty.GetValue(null, null), (int)dpiYProperty.GetValue(null, null));
-        }
-
-        private static string GetPlacement(IntPtr windowHandle)
-        {
-            WindowsPlacementNativeMethods.GetWindowPlacement(windowHandle, out var placement);
-
-            using (MemoryStream memoryStream = new MemoryStream())
-            {
-                XmlTextWriter xmlTextWriter = new XmlTextWriter(memoryStream, Encoding.UTF8);
-                Serializer.Serialize(xmlTextWriter, placement);
-                byte[] xmlBytes = memoryStream.ToArray();
-                return Encoding.GetString(xmlBytes);
-            }
-        }
     }
 }

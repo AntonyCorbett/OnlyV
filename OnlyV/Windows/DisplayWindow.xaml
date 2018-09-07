@@ -17,7 +17,7 @@
 
         <Image x:Name="TheImage"
                RenderOptions.BitmapScalingMode="HighQuality"
-               Source="{Binding ImageSource}" Grid.Row="0" >
+               Grid.Row="0" >
             <Image.Triggers>
                 <EventTrigger RoutedEvent="Image.Loaded">
                     <BeginStoryboard>
