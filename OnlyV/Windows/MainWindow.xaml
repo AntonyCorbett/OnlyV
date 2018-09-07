@@ -21,6 +21,8 @@
         MinWidth="450"
         MinHeight="450"
 
+        Closing="OnMainWindowClosing"
+
         Title="O N L Y - V" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:ScripturesViewModel}">

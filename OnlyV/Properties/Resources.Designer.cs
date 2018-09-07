@@ -88,6 +88,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to None.
+        /// </summary>
+        internal static string MONITOR_NONE {
+            get {
+                return ResourceManager.GetString("MONITOR_NONE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show Preview Page.
         /// </summary>
         internal static string NEXT_PAGE_PREVIEW {

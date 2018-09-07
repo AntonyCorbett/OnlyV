@@ -18,7 +18,46 @@
              FontFamily="{DynamicResource MaterialDesignFont}"
 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
-    </Grid>
+
+    <UserControl.Resources>
+
+        <Style x:Key="SettingsGroupBoxStyle" TargetType="{x:Type GroupBox}" BasedOn="{StaticResource MaterialDesignGroupBox}">
+            <Setter Property="Margin" Value="10,6" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+        <Style x:Key="SettingsComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MaterialDesignComboBox}">
+            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="Width" Value="420"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+    </UserControl.Resources>
+
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="UserControl.Loaded">
+            <BeginStoryboard>
+                <Storyboard >
+                    <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0.0" To="1.0" Duration="0:0:1" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </UserControl.Triggers>
+
+    <StackPanel Orientation="Vertical">
+        <GroupBox Header="Display" Style="{StaticResource SettingsGroupBoxStyle}">
+            <StackPanel Orientation="Vertical">
+
+                <ComboBox ItemsSource="{Binding Monitors}"
+                          Style="{StaticResource SettingsComboBoxStyle}" 
+                          materialDesign:HintAssist.IsFloating="True"
+                          materialDesign:HintAssist.Hint="Media Monitor"
+                          SelectedValuePath="MonitorId" 
+                          DisplayMemberPath="MonitorName"
+                          SelectedValue="{Binding MonitorId, Mode=TwoWay}">
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+    </StackPanel>
+
 </UserControl>

@@ -6,6 +6,8 @@
     using System.Windows.Media;
     using GalaSoft.MvvmLight.Threading;
     using OnlyV.Helpers;
+    using OnlyV.Services.Monitors;
+    using OnlyV.ViewModel;
     using Serilog;
 
     /// <summary>
@@ -19,6 +21,7 @@
         public App()
         {
             DispatcherHelper.Initialize();
+            RegisterMappings();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -72,6 +75,11 @@
         {
             _appMutex = new Mutex(true, _appString, out var newInstance);
             return !newInstance;
+        }
+
+        private void RegisterMappings()
+        {
+            AutoMapper.Mapper.Initialize(cfg => cfg.CreateMap<SystemMonitor, MonitorItem>());
         }
     }
 }

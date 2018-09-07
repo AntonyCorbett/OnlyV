@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-
-namespace OnlyV
+﻿namespace OnlyV
 {
+    using System;
+    using System.ComponentModel;
+    using System.Windows;
+    using CommonServiceLocator;
+    using GalaSoft.MvvmLight.Messaging;
+    using OnlyV.Helpers.WindowPositioning;
+    using OnlyV.PubSubMessages;
+    using OnlyV.Services.Options;
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -23,6 +17,37 @@ namespace OnlyV
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        protected override void OnSourceInitialized(System.EventArgs e)
+        {
+            AdjustMainWindowPositionAndSize();
+        }
+
+        private void AdjustMainWindowPositionAndSize()
+        {
+            var optionsService = ServiceLocator.Current.GetInstance<IOptionsService>();
+            if (!string.IsNullOrEmpty(optionsService.Options.AppWindowPlacement))
+            {
+                ResizeMode = WindowState == WindowState.Maximized
+                    ? ResizeMode.NoResize
+                    : ResizeMode.CanResizeWithGrip;
+
+                this.SetPlacement(optionsService.Options.AppWindowPlacement);
+            }
+        }
+
+        private void OnMainWindowClosing(object sender, CancelEventArgs e)
+        {
+            SaveWindowPos();
+            Messenger.Default.Send(new ShutDownMessage());
+        }
+
+        private void SaveWindowPos()
+        {
+            var optionsService = ServiceLocator.Current.GetInstance<IOptionsService>();
+            optionsService.Options.AppWindowPlacement = this.GetPlacement();
+            optionsService.Save();
         }
     }
 }
