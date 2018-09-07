@@ -84,7 +84,7 @@
 
         private void ToggleDisplayImage()
         {
-            _displayWindowService.OpenWindow();
+            _displayWindowService.ToggleWindow();
         }
 
         private bool CanToggleDisplayImage()

@@ -2,6 +2,14 @@
 {
     internal interface IDisplayWindowService
     {
-        void OpenWindow();
+        void ShowWindow();
+
+        void HideWindow();
+
+        void ToggleWindow();
+
+        void CloseWindow();
+
+        bool IsWindowShowing { get; }
     }
 }

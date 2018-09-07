@@ -2,7 +2,9 @@
 {
     using System.Windows;
     using System.Windows.Forms;
+    using GalaSoft.MvvmLight.Messaging;
     using OnlyV.Helpers.WindowPositioning;
+    using OnlyV.PubSubMessages;
     using OnlyV.Services.Monitors;
     using OnlyV.Services.Options;
     using Serilog;
@@ -22,12 +24,40 @@
             _optionsService = optionsService;
 
             _systemDpi = WindowPlacement.GetDpiSettings();
+
+            Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
         }
 
-        public void OpenWindow()
+        public void ShowWindow()
         {
             EnsureWindowCreated();
+            _displayWindow.Show();
         }
+
+        public void HideWindow()
+        {
+            _displayWindow?.Hide();
+        }
+
+        public void CloseWindow()
+        {
+            _displayWindow?.Close();
+            _displayWindow = null;
+        }
+
+        public void ToggleWindow()
+        {
+            if (IsWindowShowing)
+            {
+                HideWindow();
+            }
+            else
+            {
+                ShowWindow();
+            }
+        }
+
+        public bool IsWindowShowing => _displayWindow != null && _displayWindow.IsVisible;
 
         private void EnsureWindowCreated()
         {
@@ -43,8 +73,6 @@
                     LocateWindowAtOrigin(_displayWindow, targetMonitor.Monitor);
 
                     _displayWindow.Topmost = true;
-
-                    _displayWindow.Show();
                 }
             }
         }
@@ -66,6 +94,11 @@
 
             window.Left = left;
             window.Top = top;
+        }
+
+        private void OnShutDown(ShutDownMessage msg)
+        {
+            CloseWindow();
         }
     }
 }
