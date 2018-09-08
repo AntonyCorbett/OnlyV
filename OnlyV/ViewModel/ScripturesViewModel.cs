@@ -7,6 +7,8 @@
     using System.Text;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using GalaSoft.MvvmLight.Messaging;
+    using OnlyV.PubSubMessages;
     using Services.Bible;
     using VerseExtraction.Models;
 
@@ -25,6 +27,8 @@
             
             InitCommands();
             UpdateBibleBooks();
+
+            Messenger.Default.Register<EpubChangedMessage>(this, OnEpubChanged);
         }
 
         public ObservableCollection<ButtonModel> BookButtonsHebrew { get; } =
@@ -331,6 +335,11 @@
                     VerseButtons.Add(new VerseButtonModel(n.ToString(), n, VerseCommand));
                 }
             }
+        }
+
+        private void OnEpubChanged(EpubChangedMessage msg)
+        {
+            ////throw new NotImplementedException();
         }
     }
 }

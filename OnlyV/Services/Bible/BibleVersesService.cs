@@ -90,8 +90,11 @@
 
         private void InitReader()
         {
-            CheckEpubAvailable();
-            _reader = new BibleTextReader(_epubPath);
+            if (_epubPath != null)
+            {
+                CheckEpubAvailable();
+                _reader = new BibleTextReader(_epubPath);
+            }
         }
 
         private void CheckEpubAvailable()

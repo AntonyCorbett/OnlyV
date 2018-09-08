@@ -51,6 +51,7 @@
                 <Grid
                     Height="50"
                     Width="420"
+                    Background="Transparent"
                     HorizontalAlignment="Left"
                     Margin="0,0,0,10"
                     AllowDrop="True"

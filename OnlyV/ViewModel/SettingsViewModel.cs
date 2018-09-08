@@ -65,6 +65,8 @@
                 {
                     _optionsService.Options.EpubPath = value;
                     RaisePropertyChanged();
+
+                    Messenger.Default.Send(new EpubChangedMessage());
                 }
             }
         }
@@ -169,8 +171,12 @@
 
         private void UpdateBibleEpubsList()
         {
+            var currentSelection = CurrentEpubFilePath;
+
             _bibleEpubFiles = GetBibleEpubFiles().ToArray();
             RaisePropertyChanged(nameof(BibleEpubFiles));
+
+            CurrentEpubFilePath = currentSelection;
         }
 
         private string GetDoneMessage(int fileCount, int validFileCount)
