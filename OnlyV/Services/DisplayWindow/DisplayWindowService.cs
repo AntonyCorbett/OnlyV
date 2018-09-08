@@ -4,17 +4,22 @@
     using System.Windows.Forms;
     using System.Windows.Media;
     using GalaSoft.MvvmLight.Messaging;
-    using OnlyV.Helpers.WindowPositioning;
-    using OnlyV.PubSubMessages;
-    using OnlyV.Services.Monitors;
-    using OnlyV.Services.Options;
+    using Helpers.WindowPositioning;
+    using Monitors;
+    using Options;
+    using PubSubMessages;
     using Serilog;
 
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class DisplayWindowService : IDisplayWindowService
     {
         private readonly IMonitorsService _monitorsService;
         private readonly IOptionsService _optionsService;
+
+#pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
         private readonly (int dpiX, int dpiY) _systemDpi;
+#pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
+
         private Windows.DisplayWindow _displayWindow;
 
         public DisplayWindowService(

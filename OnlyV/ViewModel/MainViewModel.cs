@@ -3,11 +3,12 @@ namespace OnlyV.ViewModel
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using MaterialDesignThemes.Wpf;
-    using OnlyV.Services.Snackbar;
     using Services.Images;
     using Services.Options;
+    using Services.Snackbar;
 
     // ReSharper disable once UnusedMember.Global
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class MainViewModel : ViewModelBase
     {
         private readonly ScripturesViewModel _scripturesViewModel;

@@ -45,6 +45,26 @@
     </UserControl.Triggers>
 
     <StackPanel Orientation="Vertical">
+        <GroupBox Header="Bibles" Style="{StaticResource SettingsGroupBoxStyle}">
+            <StackPanel Orientation="Vertical" 
+                        AllowDrop="True"
+                        DragOver="OnBibleDragOver"
+                        Drop="OnBibleDrop">
+
+                <TextBlock Text="Download Bible epub files from jw.org and drag and drop here."
+                           Foreground="{StaticResource PrimaryHueDarkBrush}"/>
+
+                <ComboBox ItemsSource="{Binding BibleEpubFiles}"
+                          Style="{StaticResource SettingsComboBoxStyle}" 
+                          materialDesign:HintAssist.IsFloating="True"
+                          materialDesign:HintAssist.Hint="Epub files"
+                          SelectedValuePath="Path" 
+                          DisplayMemberPath="Name"
+                          SelectedValue="{Binding CurrentEpubFilePath, Mode=TwoWay}">
+                </ComboBox>
+            </StackPanel>
+        </GroupBox>
+
         <GroupBox Header="Display" Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
 

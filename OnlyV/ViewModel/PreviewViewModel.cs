@@ -1,19 +1,18 @@
-﻿using System.Linq;
-using System.Windows.Media.Imaging;
-using OnlyV.Services.Snackbar;
-using Serilog;
-
-namespace OnlyV.ViewModel
+﻿namespace OnlyV.ViewModel
 {
     using System;
+    using System.Linq;
     using System.Windows;
     using System.Windows.Media;
+    using System.Windows.Media.Imaging;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
-    using OnlyV.Helpers;
-    using OnlyV.Services.Options;
+    using Helpers;
+    using Serilog;
     using Services.DisplayWindow;
     using Services.Images;
+    using Services.Options;
+    using Services.Snackbar;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class PreviewViewModel : ViewModelBase
@@ -111,7 +110,7 @@ namespace OnlyV.ViewModel
             Clipboard.Clear();
             Clipboard.SetImage((BitmapSource)PreviewImageSource);
 
-            _snackbarService.EnqueueWithOk("Copied to clipboard");
+            _snackbarService.EnqueueWithOk(Properties.Resources.COPIED);
         }
 
         private bool CanSaveImage()
@@ -126,7 +125,7 @@ namespace OnlyV.ViewModel
             var imagesToSave = _imagesService.Get();
             if (imagesToSave == null || !imagesToSave.Any())
             {
-                Log.Logger.Error("No images to save!");
+                Log.Logger.Error(@"No images to save!");
                 _snackbarService.EnqueueWithOk(Properties.Resources.NO_IMAGES);
                 return;
             }
@@ -146,7 +145,7 @@ namespace OnlyV.ViewModel
             }
             catch (Exception ex)
             {
-                Log.Logger.Error("Could not save", ex);
+                Log.Logger.Error(@"Could not save", ex);
                 _snackbarService.EnqueueWithOk(Properties.Resources.ERROR_SAVING);
             }
         }
@@ -163,7 +162,7 @@ namespace OnlyV.ViewModel
 
             if (!FileUtils.DirectoryIsAvailable(folder))
             {
-                throw new Exception($"Folder is not available: {folder}");
+                throw new Exception($@"Folder is not available: {folder}");
             }
 
             return folder;

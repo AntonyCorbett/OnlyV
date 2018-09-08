@@ -2,13 +2,14 @@ namespace OnlyV.ViewModel
 {
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Ioc;
-    using OnlyV.Services.Bible;
-    using OnlyV.Services.CommandLine;
-    using OnlyV.Services.DisplayWindow;
-    using OnlyV.Services.Images;
-    using OnlyV.Services.Monitors;
-    using OnlyV.Services.Options;
-    using OnlyV.Services.Snackbar;
+    using Services.Bible;
+    using Services.CommandLine;
+    using Services.DisplayWindow;
+    using Services.DragDrop;
+    using Services.Images;
+    using Services.Monitors;
+    using Services.Options;
+    using Services.Snackbar;
 
     /// <summary>
     /// This class contains static references to all the view models in the
@@ -32,8 +33,8 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<IImagesService, ImagesService>();
             SimpleIoc.Default.Register<IMonitorsService, MonitorsService>();
             SimpleIoc.Default.Register<IDisplayWindowService, DisplayWindowService>();
-            SimpleIoc.Default.Register<IImageSavingService, ImageSavingService>();
             SimpleIoc.Default.Register<ISnackbarService, SnackbarService>();
+            SimpleIoc.Default.Register<IDragDropService, DragDropService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

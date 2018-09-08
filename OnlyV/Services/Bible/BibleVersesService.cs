@@ -4,10 +4,12 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using OnlyV.Services.Options;
-    using OnlyV.VerseExtraction;
-    using OnlyV.VerseExtraction.Models;
+    using Options;
+    using Serilog;
+    using VerseExtraction;
+    using VerseExtraction.Models;
 
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal sealed class BibleVersesService : IBibleVersesService, IDisposable
     {
         private readonly IOptionsService _optionsService;
@@ -38,6 +40,28 @@
         public void Dispose()
         {
             _reader?.Dispose();
+        }
+
+        public bool IsValidBibleEpub(string epubPath)
+        {
+            try
+            {
+                if (!File.Exists(epubPath))
+                {
+                    return false;
+                }
+
+                using (var reader = new BibleTextReader(epubPath))
+                {
+                    var bookData = reader.ExtractBookData();
+                    return bookData != null && bookData.Any();
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error($@"Could not read epub {epubPath}", ex);
+                return false;
+            }
         }
 
         public IReadOnlyCollection<BibleBookData> GetBookData()

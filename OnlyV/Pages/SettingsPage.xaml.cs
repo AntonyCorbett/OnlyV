@@ -1,6 +1,9 @@
 ﻿namespace OnlyV.Pages
 {
+    using System.Windows;
     using System.Windows.Controls;
+    using GalaSoft.MvvmLight.Messaging;
+    using PubSubMessages;
 
     /// <summary>
     /// Interaction logic for SettingsPage.xaml
@@ -10,6 +13,16 @@
         public SettingsPage()
         {
             InitializeComponent();
+        }
+
+        private void OnBibleDragOver(object sender, DragEventArgs e)
+        {
+            Messenger.Default.Send(new DragOverMessage { DragEventArgs = e });
+        }
+
+        private void OnBibleDrop(object sender, DragEventArgs e)
+        {
+            Messenger.Default.Send(new DragDropMessage { DragEventArgs = e });
         }
     }
 }

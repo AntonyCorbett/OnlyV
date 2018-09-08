@@ -27,6 +27,7 @@
     <DocumentationFile>
     </DocumentationFile>
     <LangVersion>7.3</LangVersion>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -133,6 +134,8 @@
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PubSubMessages\DragDropMessage.cs" />
+    <Compile Include="PubSubMessages\DragOverMessage.cs" />
     <Compile Include="PubSubMessages\ShutDownMessage.cs" />
     <Compile Include="Services\Bible\BibleVersesService.cs" />
     <Compile Include="Helpers\FileUtils.cs" />
@@ -141,6 +144,9 @@
     <Compile Include="Services\CommandLine\ICommandLineService.cs" />
     <Compile Include="Services\DisplayWindow\DisplayWindowService.cs" />
     <Compile Include="Services\DisplayWindow\IDisplayWindowService.cs" />
+    <Compile Include="Services\DragDrop\DragDropService.cs" />
+    <Compile Include="Services\DragDrop\EpubFileItem.cs" />
+    <Compile Include="Services\DragDrop\IDragDropService.cs" />
     <Compile Include="Services\Images\BitmapWriter.cs" />
     <Compile Include="Services\Images\IImageSavingService.cs" />
     <Compile Include="Services\Images\ImageSavingService.cs" />

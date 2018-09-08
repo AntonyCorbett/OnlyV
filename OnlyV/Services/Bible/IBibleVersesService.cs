@@ -12,5 +12,7 @@
         int GetChapterCount(int bookNumber);
 
         VerseRange GetVerseRange(int bookNumber, int chapterNumber);
+
+        bool IsValidBibleEpub(string epubPath);
     }
 }

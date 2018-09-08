@@ -34,11 +34,18 @@
         <DataTemplate DataType="{x:Type viewModel:PreviewViewModel}">
             <pages:PreviewPage />
         </DataTemplate>
+
+        <Style x:Key="NavigationButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFloatingActionMiniButton}">
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="50" />
+        </Style>
+
+        
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
         </Grid.RowDefinitions>
 
         <ContentControl Grid.Row="0" 
@@ -53,33 +60,33 @@
             </Grid.ColumnDefinitions>
             <Button
                 Grid.Column="0"
-                Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                Style="{StaticResource NavigationButtonStyle}"
                 Command="{Binding SettingsCommand}"
                 ToolTip="{Binding SettingsButtonToolTip}">
                 <materialDesign:PackIcon
                     Kind="{Binding SettingsIconKind}"
-                    Height="24"
-                    Width="24" />
+                    Height="30"
+                    Width="30" />
             </Button>
             <Button
                 Grid.Column="2"
-                Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                Style="{StaticResource NavigationButtonStyle}"
                 Command="{Binding BackPageCommand}"
                 ToolTip="{Binding PreviousPageToolTip}">
                 <materialDesign:PackIcon
                     Kind="ArrowLeftBold"
-                    Height="24"
-                    Width="24" />
+                    Height="30"
+                    Width="30" />
             </Button>
             <Button
                 Grid.Column="3"
-                Style="{StaticResource MaterialDesignFloatingActionMiniButton}"
+                Style="{StaticResource NavigationButtonStyle}"
                 Command="{Binding NextPageCommand}"
                 ToolTip="{Binding NextPageToolTip}">
                 <materialDesign:PackIcon
                     Kind="ArrowRightBold"
-                    Height="24"
-                    Width="24" />
+                    Height="30"
+                    Width="30" />
             </Button>
         </Grid>
         <materialDesign:Snackbar Grid.Row="1" 

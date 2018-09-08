@@ -64,6 +64,7 @@
             return name.Replace(@"\\.\", string.Empty);
         }
 
+#pragma warning disable SA1009 // Closing parenthesis must be spaced correctly
         private List<(Screen, DisplayDeviceData)> GetDisplayScreens(DisplayDeviceData[] devices)
         {
             var result = new List<(Screen, DisplayDeviceData)>();
@@ -84,5 +85,6 @@
 
             return result;
         }
+#pragma warning restore SA1009 // Closing parenthesis must be spaced correctly
     }
 }

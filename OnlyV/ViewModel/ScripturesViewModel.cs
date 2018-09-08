@@ -7,16 +7,16 @@
     using System.Text;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
-    using OnlyV.Services.Bible;
-    using OnlyV.VerseExtraction.Models;
+    using Services.Bible;
+    using VerseExtraction.Models;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class ScripturesViewModel : ViewModelBase
     {
         private readonly IBibleVersesService _bibleService;
+        private readonly List<int> _selectedVerses = new List<int>();
         private int _bookNumber;
         private int _chapterNumber;
-        private ObservableCollection<int> _selectedVerses = new ObservableCollection<int>();
 
         public ScripturesViewModel(
             IBibleVersesService bibleService)
@@ -39,16 +39,10 @@
         public ObservableCollection<VerseButtonModel> VerseButtons { get; } =
             new ObservableCollection<VerseButtonModel>();
 
-        public RelayCommand<object> BibleBookCommand { get; set; }
-
-        public RelayCommand<object> ChapterCommand { get; set; }
-
-        public RelayCommand<object> VerseCommand { get; set; }
-
         public int BookNumber
         {
             get => _bookNumber;
-            set
+            private set
             {
                 if (value != _bookNumber && value >= 0 && value <= BibleBooksMetaData.NumBibleBooks)
                 {
@@ -61,7 +55,17 @@
             }
         }
 
-        public int ChapterNumber
+        public string ScriptureText => GenerateScriptureTextString();
+
+        public string ChapterAndVersesString => GenerateChapterAndVersesString();
+
+        private RelayCommand<object> BibleBookCommand { get; set; }
+
+        private RelayCommand<object> ChapterCommand { get; set; }
+
+        private RelayCommand<object> VerseCommand { get; set; }
+
+        private int ChapterNumber
         {
             get => _chapterNumber;
             set
@@ -70,31 +74,16 @@
                 {
                     _chapterNumber = value;
                     RaisePropertyChanged();
-                    SelectedVerses.Clear();
+                    _selectedVerses.Clear();
                     RaisePropertyChanged(nameof(ScriptureText));
                     UpdateVerses();
                 }
             }
         }
 
-        public ObservableCollection<int> SelectedVerses
-        {
-            get => _selectedVerses;
-            set
-            {
-                _selectedVerses = value;
-                RaisePropertyChanged();
-                RaisePropertyChanged(nameof(ScriptureText));
-            }
-        }
-
-        public string ScriptureText => GenerateScriptureTextString();
-
-        public string ChapterAndVersesString => GenerateChapterAndVersesString();
-
         public bool ValidScripture()
         {
-            return BookNumber > 0 && ChapterNumber > 0 && SelectedVerses.Any();
+            return BookNumber > 0 && ChapterNumber > 0 && _selectedVerses.Any();
         }
 
         private string GenerateScriptureTextString()
@@ -123,10 +112,10 @@
                 sb.Append(" ");
                 sb.Append(ChapterNumber);
 
-                if (SelectedVerses != null)
+                if (_selectedVerses != null)
                 {
                     sb.Append(":");
-                    sb.Append(VersesAsString(SelectedVerses));
+                    sb.Append(VersesAsString());
                 }
                 
                 return sb.ToString();
@@ -216,7 +205,6 @@
 
         private bool CanSelectBook(object arg)
         {
-            // todo:
             return true;
         }
 
@@ -229,7 +217,6 @@
 
         private bool CanSelectVerse(object arg)
         {
-            // todo:
             return true;
         }
 
@@ -243,17 +230,17 @@
             foreach (var b in VerseButtons)
             {
                 var verse = (int)b.CommandParameter;
-                var alreadySelected = SelectedVerses.Contains(verse);
+                var alreadySelected = _selectedVerses.Contains(verse);
 
                 if (b.Selected != alreadySelected)
                 {
                     if (alreadySelected)
                     {
-                        SelectedVerses.Remove(verse);
+                        _selectedVerses.Remove(verse);
                     }
                     else
                     {
-                        SelectedVerses.Add(verse);
+                        _selectedVerses.Add(verse);
                     }
                 }
             }
@@ -263,7 +250,6 @@
 
         private bool CanSelectChapter(object arg)
         {
-            // todo:
             return true;
         }
 
@@ -271,13 +257,12 @@
         {
             ChapterNumber = (int)commandParameter;
         }
-
-        // todo: move into another class
-        private string VersesAsString(ObservableCollection<int> selectedVerses)
+        
+        private string VersesAsString()
         {
             var sb = new StringBuilder();
 
-            var verses = new List<int>(SelectedVerses);
+            var verses = new List<int>(_selectedVerses);
             verses.Sort();
 
             var ranges = new List<VerseRange>();

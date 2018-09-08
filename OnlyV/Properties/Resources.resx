@@ -117,11 +117,29 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ADDED_FILE" xml:space="preserve">
+    <value>Added file</value>
+  </data>
+  <data name="ADDED_X_FILES" xml:space="preserve">
+    <value>Added {0} files</value>
+  </data>
   <data name="BACK" xml:space="preserve">
     <value>Back</value>
   </data>
   <data name="COPIED" xml:space="preserve">
     <value>Copied to clipboard</value>
+  </data>
+  <data name="COULD_NOT_READ_1" xml:space="preserve">
+    <value>Could not read one of the files!</value>
+  </data>
+  <data name="COULD_NOT_READ_ANY" xml:space="preserve">
+    <value>Could not read any of the files!</value>
+  </data>
+  <data name="COULD_NOT_READ_FILE" xml:space="preserve">
+    <value>Could not read file!</value>
+  </data>
+  <data name="COULD_NOT_READ_X" xml:space="preserve">
+    <value>Could not read {0} files!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Could not create folder {0}</value>

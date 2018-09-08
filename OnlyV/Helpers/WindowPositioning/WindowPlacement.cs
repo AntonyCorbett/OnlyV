@@ -61,6 +61,7 @@
             return GetPlacement(new WindowInteropHelper(window).Handle);
         }
 
+#pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
         public static (int x, int y) GetDpiSettings()
         {
             var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
@@ -73,6 +74,7 @@
 
             return ((int)dpiXProperty.GetValue(null, null), (int)dpiYProperty.GetValue(null, null));
         }
+#pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
 
         private static string GetPlacement(IntPtr windowHandle)
         {
@@ -91,6 +93,7 @@
     // RECT structure required by WINDOWPLACEMENT structure
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
+#pragma warning disable SA1201 // Elements must appear in the correct order
     public struct RECT
     {
         public int Left;
@@ -106,6 +109,7 @@
             Bottom = bottom;
         }
     }
+#pragma warning restore SA1201 // Elements must appear in the correct order
 
     // POINT structure required by WINDOWPLACEMENT structure
     [Serializable]
@@ -127,11 +131,13 @@
     [StructLayout(LayoutKind.Sequential)]
     public struct WINDOWPLACEMENT
     {
+#pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
         public int length;
         public int flags;
         public int showCmd;
         public POINT minPosition;
         public POINT maxPosition;
         public RECT normalPosition;
+#pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
     }
 }

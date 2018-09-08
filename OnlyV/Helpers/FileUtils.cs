@@ -26,6 +26,13 @@
             return folder;
         }
 
+        public static string GetEpubFolder()
+        {
+            string folder = Path.Combine(GetOnlyVMyDocsFolder(), @"SourceEpubFiles");
+            CreateDirectory(folder);
+            return folder;
+        }
+
         /// <summary>
         /// Creates directory if it doesn't exist. Throws if cannot be created
         /// </summary>
@@ -59,8 +66,7 @@
         public static string GetLogFolder()
         {
             return Path.Combine(
-                Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
-                AppNamePathSegment,
+                GetOnlyVMyDocsFolder(),
                 "Logs");
         }
 

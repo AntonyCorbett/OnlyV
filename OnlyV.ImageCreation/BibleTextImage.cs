@@ -9,15 +9,16 @@
     using System.Windows.Media;
     using System.Windows.Media.Effects;
     using System.Windows.Media.Imaging;
-    using OnlyV.ImageCreation.Utils;
-    using OnlyV.VerseExtraction.Models;
     using TextSplitting;
+    using Utils;
     using VerseExtraction;
+    using VerseExtraction.Models;
 
     public class BibleTextImage
     {
         private const char Ellipsis = '…';
         private const double VerseFontSizeFactor = 0.5;
+        private const double PixelsPerDip = 1.0;
         private Color _continuationArrowColor;
         private double _continuationArrowOpacity;
 
@@ -294,7 +295,7 @@
         private FormattedText GetFormattedVerseNumber(int verse, bool startOfLine)
         {
             var s = startOfLine ? $"{verse} " : $"  {verse} ";
-            
+
             var tf = VerseFont.GetTypeface();
             return new FormattedText(
                 s, 
@@ -302,7 +303,8 @@
                 FlowDirection, 
                 tf, 
                 VerseFont.FontSize, 
-                VerseFont.GetBrush());
+                VerseFont.GetBrush(), 
+                PixelsPerDip);
         }
 
         private FormattedText GetFormattedTilde()
@@ -316,7 +318,8 @@
                 FlowDirection, 
                 tf, 
                 fontSize, 
-                MainFont.GetBrush());
+                MainFont.GetBrush(),
+                PixelsPerDip);
         }
 
         private FormattedText GetFormattedBodyText(string text)
@@ -328,7 +331,8 @@
                 FlowDirection, 
                 tf, 
                 MainFont.FontSize, 
-                MainFont.GetBrush());
+                MainFont.GetBrush(),
+                PixelsPerDip);
         }
 
         private FormattedText GetFormattedTitleText(string text)
@@ -340,7 +344,8 @@
                 FlowDirection, 
                 tf, 
                 TitleFont.FontSize, 
-                TitleFont.GetBrush());
+                TitleFont.GetBrush(),
+                PixelsPerDip);
 
             result.Trimming = TextTrimming.CharacterEllipsis;
             return result;

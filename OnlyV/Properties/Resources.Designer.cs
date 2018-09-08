@@ -61,6 +61,24 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Added file.
+        /// </summary>
+        internal static string ADDED_FILE {
+            get {
+                return ResourceManager.GetString("ADDED_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Added {0} files.
+        /// </summary>
+        internal static string ADDED_X_FILES {
+            get {
+                return ResourceManager.GetString("ADDED_X_FILES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         internal static string BACK {
@@ -75,6 +93,42 @@ namespace OnlyV.Properties {
         internal static string COPIED {
             get {
                 return ResourceManager.GetString("COPIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not read one of the files!.
+        /// </summary>
+        internal static string COULD_NOT_READ_1 {
+            get {
+                return ResourceManager.GetString("COULD_NOT_READ_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not read any of the files!.
+        /// </summary>
+        internal static string COULD_NOT_READ_ANY {
+            get {
+                return ResourceManager.GetString("COULD_NOT_READ_ANY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not read file!.
+        /// </summary>
+        internal static string COULD_NOT_READ_FILE {
+            get {
+                return ResourceManager.GetString("COULD_NOT_READ_FILE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Could not read {0} files!.
+        /// </summary>
+        internal static string COULD_NOT_READ_X {
+            get {
+                return ResourceManager.GetString("COULD_NOT_READ_X", resourceCulture);
             }
         }
         
