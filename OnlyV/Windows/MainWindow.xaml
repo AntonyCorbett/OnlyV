@@ -23,7 +23,7 @@
 
         Closing="OnMainWindowClosing"
 
-        Title="O N L Y - V" Height="450" Width="800" ResizeMode="CanResizeWithGrip">
+        Title="O N L Y - V" Height="450" Width="800" ResizeMode="CanResizeWithGrip" Icon="/OnlyV;component/icon.ico">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:ScripturesViewModel}">
             <pages:ScripturesPage />

@@ -42,6 +42,13 @@
             _reader?.Dispose();
         }
 
+        public void CloseReader()
+        {
+            _reader?.Dispose();
+            _reader = null;
+            _epubPath = null;
+        }
+
         public bool IsValidBibleEpub(string epubPath)
         {
             try
@@ -66,7 +73,7 @@
 
         public IReadOnlyCollection<BibleBookData> GetBookData()
         {
-            return _reader.ExtractBookData();
+            return _reader?.ExtractBookData();
         }
 
         public int GetChapterCount(int bookNumber)
