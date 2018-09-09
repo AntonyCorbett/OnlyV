@@ -68,6 +68,19 @@
             }
         }
 
+        public void ChangeTargetMonitor()
+        {
+            if (IsWindowVisible)
+            {
+                var originalImage = _displayWindow.TheImage.Source;
+
+                CloseWindow();
+                ShowWindow();
+
+                SetImage(originalImage);
+            }
+        }
+
         public void SetImage(ImageSource image)
         {
             if (_displayWindow != null)
@@ -82,7 +95,7 @@
             {
                 _displayWindow = new Windows.DisplayWindow();
 
-                var targetMonitor = _monitorsService.GetSystemMonitor(_optionsService.Options.MediaMonitorId);
+                var targetMonitor = _monitorsService.GetSystemMonitor(_optionsService.MediaMonitorId);
                 if (targetMonitor != null)
                 {
                     Log.Logger.Information("Opening display window");

@@ -32,6 +32,10 @@
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
 
+        <Style x:Key="SettingsCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
+            <Setter Property="Margin" Value="0,5,0,5"/>
+        </Style>
+
     </UserControl.Resources>
 
     <UserControl.Triggers>
@@ -98,6 +102,19 @@
                 </ComboBox>
             </StackPanel>
         </GroupBox>
+
+        <GroupBox Header="Miscellaneous" Style="{StaticResource SettingsGroupBoxStyle}">
+            <StackPanel Orientation="Vertical">
+
+                <CheckBox IsChecked="{Binding AlwaysOnTop, Mode=TwoWay}"
+                          Style="{StaticResource SettingsCheckBoxStyle}">
+                    Main window always on top
+                </CheckBox>
+
+            </StackPanel>
+        </GroupBox>
+
+
     </StackPanel>
 
 </UserControl>

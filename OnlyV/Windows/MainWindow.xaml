@@ -18,8 +18,9 @@
         TextOptions.TextRenderingMode="Auto"        
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        MinWidth="450"
+        MinWidth="520"
         MinHeight="450"
+        Topmost="{Binding AlwaysOnTop, Mode=OneWay}"
 
         Closing="OnMainWindowClosing"
 

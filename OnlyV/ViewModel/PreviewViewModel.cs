@@ -154,9 +154,9 @@
 
         private string GetDestinationFolder()
         {
-            if (FileUtils.DirectoryIsAvailable(_optionsService.Options.SaveToFolder))
+            if (FileUtils.DirectoryIsAvailable(_optionsService.SaveToFolder))
             {
-                return _optionsService.Options.SaveToFolder;
+                return _optionsService.SaveToFolder;
             }
 
             var folder = FileUtils.GetDefaultSaveToFolder();
@@ -215,12 +215,7 @@
 
         private void HandleMediaMonitorChangedEvent(object sender, OnlyV.EventArgs.MonitorChangedEventArgs e)
         {
-            if (_displayWindowService.IsWindowVisible)
-            {
-                _displayWindowService.CloseWindow();
-                _displayWindowService.ShowWindow();
-                _displayWindowService.SetImage(_imagesService.Get(_imageIndex ?? 0));
-            }
+            _displayWindowService.ChangeTargetMonitor();
         }
     }
 }

@@ -19,9 +19,9 @@
         public BibleVersesService(IOptionsService optionsService)
         {
             _optionsService = optionsService;
-            _optionsService.Options.EpubPathChangedEvent += HandleEpubPathChangedEvent;
+            _optionsService.EpubPathChangedEvent += HandleEpubPathChangedEvent;
 
-            EpubPath = _optionsService.Options.EpubPath;
+            EpubPath = _optionsService.EpubPath;
         }
 
         public string EpubPath
@@ -112,7 +112,7 @@
 
         private void HandleEpubPathChangedEvent(object sender, System.EventArgs e)
         {
-            EpubPath = _optionsService.Options.EpubPath;
+            EpubPath = _optionsService.EpubPath;
         }
     }
 }

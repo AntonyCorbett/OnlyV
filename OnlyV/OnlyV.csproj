@@ -165,6 +165,9 @@
     <Compile Include="Services\Images\ImagesService.cs" />
     <Compile Include="Services\Snackbar\ISnackbarService.cs" />
     <Compile Include="Services\Snackbar\SnackbarService.cs" />
+    <Compile Include="Services\UI\BusyCursor.cs" />
+    <Compile Include="Services\UI\IUserInterfaceService.cs" />
+    <Compile Include="Services\UI\UserInterfaceService.cs" />
     <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\DisplayViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />

@@ -1,13 +1,30 @@
 ﻿namespace OnlyV.Services.Options
 {
     using System;
-    using OnlyV.EventArgs;
+    using EventArgs;
+    using Serilog.Events;
 
     internal interface IOptionsService
     {
         event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
+        
+        event EventHandler AlwaysOnTopChangedEvent;
 
-        AppOptions.Options Options { get; }
+        event EventHandler LogEventLevelChangedEvent;
+
+        event EventHandler EpubPathChangedEvent;
+        
+        LogEventLevel LogEventLevel { get; set; }
+
+        bool AlwaysOnTop { get; set; }
+
+        string AppWindowPlacement { get; set; }
+
+        string MediaMonitorId { get; set; }
+
+        string EpubPath { get; set; }
+
+        string SaveToFolder { get; set; }
 
         void Save();
     }

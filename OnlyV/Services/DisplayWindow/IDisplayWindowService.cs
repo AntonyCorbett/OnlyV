@@ -15,5 +15,7 @@
         void SetImage(ImageSource image);
 
         void ClearImage();
+
+        void ChangeTargetMonitor();
     }
 }

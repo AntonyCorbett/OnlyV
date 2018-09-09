@@ -7,6 +7,7 @@
     using Helpers;
     using Newtonsoft.Json;
     using Serilog;
+    using Serilog.Events;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class OptionsService : IOptionsService
@@ -21,16 +22,96 @@
         public OptionsService(ICommandLineService commandLineService)
         {
             _commandLineService = commandLineService;
+            Init();
         }
 
         public event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
 
-        public AppOptions.Options Options
+        public event EventHandler AlwaysOnTopChangedEvent;
+
+        public event EventHandler LogEventLevelChangedEvent;
+
+        public event EventHandler EpubPathChangedEvent;
+
+        public string MediaMonitorId
         {
-            get
+            get => _options.MediaMonitorId;
+            set
             {
-                Init();
-                return _options;
+                if (_options.MediaMonitorId != value)
+                {
+                    var originalMonitorId = _options.MediaMonitorId;
+                    _options.MediaMonitorId = value;
+
+                    MediaMonitorChangedEvent?.Invoke(this, new MonitorChangedEventArgs
+                    {
+                        OriginalMonitorId = originalMonitorId,
+                        NewMonitorId = value
+                    });
+                }
+            }
+        }
+
+        public bool AlwaysOnTop
+        {
+            get => _options.AlwaysOnTop;
+            set
+            {
+                if (_options.AlwaysOnTop != value)
+                {
+                    _options.AlwaysOnTop = value;
+                    AlwaysOnTopChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public string AppWindowPlacement
+        {
+            get => _options.AppWindowPlacement;
+            set
+            {
+                if (_options.AppWindowPlacement == null || _options.AppWindowPlacement != value)
+                {
+                    _options.AppWindowPlacement = value;
+                }
+            }
+        }
+
+        public LogEventLevel LogEventLevel
+        {
+            get => _options.LogEventLevel;
+            set
+            {
+                if (_options.LogEventLevel != value)
+                {
+                    _options.LogEventLevel = value;
+                    LogEventLevelChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public string EpubPath
+        {
+            get => _options.EpubPath;
+            set
+            {
+                if (_options.EpubPath == null || _options.EpubPath != value)
+                {
+                    _options.EpubPath = value;
+                    EpubPathChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public string SaveToFolder
+        {
+            get => _options.SaveToFolder;
+            set
+            {
+                if (_options.SaveToFolder == null || _options.SaveToFolder != value)
+                {
+                    _options.SaveToFolder = value;
+                }
             }
         }
 
@@ -90,14 +171,7 @@
                     Log.Logger.Error(ex, "Could not read options file");
                     _options = new AppOptions.Options();
                 }
-
-                _options.MediaMonitorChangedEvent += HandleMediaMonitorChangedEvent;
             }
-        }
-
-        private void HandleMediaMonitorChangedEvent(object sender, MonitorChangedEventArgs e)
-        {
-            MediaMonitorChangedEvent?.Invoke(this, e);
         }
 
         private void ReadOptions()

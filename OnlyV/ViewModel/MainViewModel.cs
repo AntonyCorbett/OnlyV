@@ -6,6 +6,7 @@ namespace OnlyV.ViewModel
     using Services.Images;
     using Services.Options;
     using Services.Snackbar;
+    using Services.UI;
 
     // ReSharper disable once UnusedMember.Global
     // ReSharper disable once ClassNeverInstantiated.Global
@@ -18,6 +19,7 @@ namespace OnlyV.ViewModel
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
         private readonly ISnackbarService _snackbarService;
+        private readonly IUserInterfaceService _userInterfaceService;
 
         private ViewModelBase _currentPage;
         private ViewModelBase _preSettingsPage;
@@ -30,7 +32,8 @@ namespace OnlyV.ViewModel
             SettingsViewModel settingsViewModel,
             IImagesService imagesService,
             IOptionsService optionsService,
-            ISnackbarService snackbarService)
+            ISnackbarService snackbarService,
+            IUserInterfaceService userInterfaceService)
         {
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
@@ -41,6 +44,9 @@ namespace OnlyV.ViewModel
             _imagesService = imagesService;
             _optionsService = optionsService;
             _snackbarService = snackbarService;
+            _userInterfaceService = userInterfaceService;
+
+            _optionsService.AlwaysOnTopChangedEvent += HandleAlwaysOnTopChangedEvent;
 
             InitCommands();
 
@@ -72,6 +78,8 @@ namespace OnlyV.ViewModel
                 }
             }
         }
+
+        public bool AlwaysOnTop => _optionsService.AlwaysOnTop;
 
         public string NextPageToolTip
         {
@@ -180,7 +188,7 @@ namespace OnlyV.ViewModel
         private void InitImagesService()
         {
             _imagesService.Init(
-                _optionsService.Options.EpubPath, 
+                _optionsService.EpubPath, 
                 _scripturesViewModel.BookNumber, 
                 _scripturesViewModel.ChapterAndVersesString);
         }
@@ -197,10 +205,18 @@ namespace OnlyV.ViewModel
 
         private void PreparePreviewPage()
         {
-            _previewViewModel.ImageIndex = null;
-            InitImagesService();
-            _previewViewModel.ImageIndex = 0;
-            _previewViewModel.BookChapterAndVersesString = _scripturesViewModel.ScriptureText;
+            using (_userInterfaceService.GetBusy())
+            {
+                _previewViewModel.ImageIndex = null;
+                InitImagesService();
+                _previewViewModel.ImageIndex = 0;
+                _previewViewModel.BookChapterAndVersesString = _scripturesViewModel.ScriptureText;
+            }
+        }
+
+        private void HandleAlwaysOnTopChangedEvent(object sender, System.EventArgs e)
+        {
+            RaisePropertyChanged(nameof(AlwaysOnTop));
         }
     }
 }

@@ -7,7 +7,6 @@
     using System.Threading;
     using System.Threading.Tasks;
     using System.Windows;
-    using System.Windows.Input;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Threading;
@@ -19,6 +18,7 @@
     using Services.Monitors;
     using Services.Options;
     using Services.Snackbar;
+    using Services.UI;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class SettingsViewModel : ViewModelBase
@@ -30,6 +30,7 @@
         private readonly IDragDropService _dragDropService;
         private readonly IBibleVersesService _bibleVersesService;
         private readonly ISnackbarService _snackbarService;
+        private readonly IUserInterfaceService _userInterfaceService;
 
         private EpubFileItem[] _bibleEpubFiles;
 
@@ -38,13 +39,15 @@
             IOptionsService optionsService,
             IDragDropService dragDropService,
             IBibleVersesService bibleVersesService,
-            ISnackbarService snackbarService)
+            ISnackbarService snackbarService,
+            IUserInterfaceService userInterfaceService)
         {
             _monitorsService = monitorsService;
             _optionsService = optionsService;
             _dragDropService = dragDropService;
             _bibleVersesService = bibleVersesService;
             _snackbarService = snackbarService;
+            _userInterfaceService = userInterfaceService;
 
             _monitors = GetSystemMonitors().ToArray();
             _bibleEpubFiles = GetBibleEpubFiles().ToArray();
@@ -60,15 +63,31 @@
 
         public string CurrentEpubFilePath
         {
-            get => _optionsService.Options.EpubPath;
+            get => _optionsService.EpubPath;
             set
             {
-                if (_optionsService.Options.EpubPath != value)
+                if (_optionsService.EpubPath != value)
                 {
-                    _optionsService.Options.EpubPath = value;
+                    _optionsService.EpubPath = value;
                     RaisePropertyChanged();
 
-                    EpubChangedEvent?.Invoke(this, EventArgs.Empty);
+                    using (_userInterfaceService.GetBusy())
+                    {
+                        EpubChangedEvent?.Invoke(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
+
+        public bool AlwaysOnTop
+        {
+            get => _optionsService.AlwaysOnTop;
+            set
+            {
+                if (_optionsService.AlwaysOnTop != value)
+                {
+                    _optionsService.AlwaysOnTop = value;
+                    RaisePropertyChanged();
                 }
             }
         }
@@ -77,12 +96,12 @@
 
         public string MonitorId
         {
-            get => _optionsService.Options.MediaMonitorId;
+            get => _optionsService.MediaMonitorId;
             set
             {
-                if (_optionsService.Options.MediaMonitorId != value)
+                if (_optionsService.MediaMonitorId != value)
                 {
-                    _optionsService.Options.MediaMonitorId = value;
+                    _optionsService.MediaMonitorId = value;
                     RaisePropertyChanged();
                 }
             }
@@ -128,8 +147,8 @@
 
         private void OnDragDrop(DragDropMessage message)
         {
-            Mouse.OverrideCursor = Cursors.Wait;
-
+            var busyCursor = _userInterfaceService.GetBusy();
+            
             var origEpubPath = _bibleVersesService.EpubPath;
 
             Task.Run(() =>
@@ -165,8 +184,8 @@
 
                 DispatcherHelper.CheckBeginInvokeOnUI(() =>
                 {
-                    Mouse.OverrideCursor = null;
                     UpdateBibleEpubsList();
+                    busyCursor.Dispose();
                 });
             });
         }

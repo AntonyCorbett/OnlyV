@@ -6,11 +6,6 @@
 
     internal class Options
     {
-        private string _mediaMonitorId;
-        private bool _alwaysOnTop;
-        private LogEventLevel _logEventLevel;
-        private string _epubPath;
-
         public Options()
         {
             AlwaysOnTop = true;
@@ -20,89 +15,25 @@
             Sanitize();
         }
 
-        public event EventHandler AlwaysOnTopChangedEvent;
+        public string MediaMonitorId { get; set; }
 
-        public event EventHandler LogEventLevelChangedEvent;
-
-        public event EventHandler EpubPathChangedEvent;
-
-        public event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
-
-        public string MediaMonitorId
-        {
-            get => _mediaMonitorId;
-            set
-            {
-                if (_mediaMonitorId != value)
-                {
-                    var originalMonitorId = _mediaMonitorId;
-                    _mediaMonitorId = value;
-                    OnMediaMonitorChangedEvent(originalMonitorId, value);
-                }
-            }
-        }
-
-        public bool AlwaysOnTop
-        {
-            get => _alwaysOnTop;
-            set
-            {
-                if (_alwaysOnTop != value)
-                {
-                    _alwaysOnTop = value;
-                    AlwaysOnTopChangedEvent?.Invoke(this, EventArgs.Empty);
-                }
-            }
-        }
+        public bool AlwaysOnTop { get; set; }
 
         public string AppWindowPlacement { get; set; }
 
         public bool JwLibraryCompatibilityMode { get; set; }
 
+        public LogEventLevel LogEventLevel { get; set; }
+
         public string SaveToFolder { get; set; }
 
-        public LogEventLevel LogEventLevel
-        {
-            get => _logEventLevel;
-            set
-            {
-                if (_logEventLevel != value)
-                {
-                    _logEventLevel = value;
-                    LogEventLevelChangedEvent?.Invoke(this, EventArgs.Empty);
-                }
-            }
-        }
-
-        public string EpubPath
-        {
-            get => _epubPath;
-            set
-            {
-                if (_epubPath == null || _epubPath != value)
-                {
-                    _epubPath = value;
-                    EpubPathChangedEvent?.Invoke(this, EventArgs.Empty);
-                }
-            }
-        }
+        public string EpubPath { get; set; }
 
         /// <summary>
         /// Validates the data, correcting automatically as required
         /// </summary>
         public void Sanitize()
         {
-        }
-
-        private void OnMediaMonitorChangedEvent(string originalMonitorId, string newMonitorId)
-        {
-            MediaMonitorChangedEvent?.Invoke(
-                this,
-                new MonitorChangedEventArgs
-                {
-                    OriginalMonitorId = originalMonitorId,
-                    NewMonitorId = newMonitorId
-                });
         }
     }
 }
