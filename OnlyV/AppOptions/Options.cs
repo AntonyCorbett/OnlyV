@@ -1,7 +1,5 @@
 ﻿namespace OnlyV.AppOptions
 {
-    using System;
-    using EventArgs;
     using Serilog.Events;
 
     internal class Options

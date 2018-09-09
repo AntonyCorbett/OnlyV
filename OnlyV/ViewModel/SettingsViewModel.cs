@@ -11,8 +11,10 @@
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Threading;
     using Helpers;
+    using OnlyV.Extensions;
     using PubSubMessages;
     using Serilog;
+    using Serilog.Events;
     using Services.Bible;
     using Services.DragDrop;
     using Services.Monitors;
@@ -24,7 +26,8 @@
     internal class SettingsViewModel : ViewModelBase
     {
         private readonly MonitorItem[] _monitors;
-        
+        private readonly LoggingLevel[] _loggingLevels;
+
         private readonly IMonitorsService _monitorsService;
         private readonly IOptionsService _optionsService;
         private readonly IDragDropService _dragDropService;
@@ -50,6 +53,7 @@
             _userInterfaceService = userInterfaceService;
 
             _monitors = GetSystemMonitors().ToArray();
+            _loggingLevels = GetLoggingLevels().ToArray();
             _bibleEpubFiles = GetBibleEpubFiles().ToArray();
 
             Messenger.Default.Register<DragOverMessage>(this, OnDragOver);
@@ -105,6 +109,37 @@
                     RaisePropertyChanged();
                 }
             }
+        }
+
+        public IEnumerable<LoggingLevel> LoggingLevels => _loggingLevels;
+
+        public LogEventLevel LogEventLevel
+        {
+            get => _optionsService.LogEventLevel;
+            set
+            {
+                if (_optionsService.LogEventLevel != value)
+                {
+                    _optionsService.LogEventLevel = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        private IEnumerable<LoggingLevel> GetLoggingLevels()
+        {
+            var result = new List<LoggingLevel>();
+
+            foreach (LogEventLevel v in Enum.GetValues(typeof(LogEventLevel)))
+            {
+                result.Add(new LoggingLevel
+                {
+                    Level = v,
+                    Name = v.GetDescriptiveName()
+                });
+            }
+
+            return result;
         }
 
         private IEnumerable<MonitorItem> GetSystemMonitors()

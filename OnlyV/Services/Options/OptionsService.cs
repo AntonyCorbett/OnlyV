@@ -2,9 +2,12 @@
 {
     using System;
     using System.IO;
+    using System.Linq;
     using CommandLine;
     using EventArgs;
     using Helpers;
+    using LoggingLevel;
+    using Monitors;
     using Newtonsoft.Json;
     using Serilog;
     using Serilog.Events;
@@ -13,24 +16,30 @@
     internal class OptionsService : IOptionsService
     {
         private readonly ICommandLineService _commandLineService;
+        private readonly ILogLevelSwitchService _logLevelSwitchService;
+        private readonly IMonitorsService _monitorsService;
         private readonly int _optionsVersion = 1;
-
+        
         private AppOptions.Options _options;
         private string _optionsFilePath;
         private string _originalOptionsSignature;
 
-        public OptionsService(ICommandLineService commandLineService)
+        public OptionsService(
+            ICommandLineService commandLineService,
+            ILogLevelSwitchService logLevelSwitchService,
+            IMonitorsService monitorsService)
         {
             _commandLineService = commandLineService;
+            _logLevelSwitchService = logLevelSwitchService;
+            _monitorsService = monitorsService;
+
             Init();
         }
 
         public event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
 
         public event EventHandler AlwaysOnTopChangedEvent;
-
-        public event EventHandler LogEventLevelChangedEvent;
-
+        
         public event EventHandler EpubPathChangedEvent;
 
         public string MediaMonitorId
@@ -85,7 +94,7 @@
                 if (_options.LogEventLevel != value)
                 {
                     _options.LogEventLevel = value;
-                    LogEventLevelChangedEvent?.Invoke(this, EventArgs.Empty);
+                    _logLevelSwitchService.SetMinimumLevel(value);
                 }
             }
         }
@@ -148,7 +157,7 @@
             {
                 try
                 {
-                    string commandLineIdentifier = _commandLineService.OptionsIdentifier;
+                    var commandLineIdentifier = _commandLineService.OptionsIdentifier;
                     _optionsFilePath = FileUtils.GetUserOptionsFilePath(commandLineIdentifier, _optionsVersion);
                     var path = Path.GetDirectoryName(_optionsFilePath);
                     if (path != null)
@@ -195,6 +204,13 @@
         private void WriteDefaultOptions()
         {
             _options = new AppOptions.Options();
+
+            var monitor = _monitorsService.GetSystemMonitors()?.FirstOrDefault();
+            if (monitor != null)
+            {
+                _options.MediaMonitorId = monitor.MonitorId;
+            }
+
             WriteOptions();
         }
 

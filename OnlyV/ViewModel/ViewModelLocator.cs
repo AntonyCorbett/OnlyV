@@ -2,6 +2,7 @@ namespace OnlyV.ViewModel
 {
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Ioc;
+    using OnlyV.Services.LoggingLevel;
     using Services.Bible;
     using Services.CommandLine;
     using Services.DisplayWindow;
@@ -37,6 +38,7 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<ISnackbarService, SnackbarService>();
             SimpleIoc.Default.Register<IDragDropService, DragDropService>();
             SimpleIoc.Default.Register<IUserInterfaceService, UserInterfaceService>();
+            SimpleIoc.Default.Register<ILogLevelSwitchService, LogLevelSwitchService>();
         }
 
         public MainViewModel Main => ServiceLocator.Current.GetInstance<MainViewModel>();

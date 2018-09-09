@@ -190,7 +190,12 @@
 
         private bool CanToggleDisplayImage()
         {
-            return true;
+            if (IsDisplayWindowVisible)
+            {
+                return true;
+            }
+
+            return _optionsService.MediaMonitorId != null;
         }
 
         private bool CanShowPreviousImage()

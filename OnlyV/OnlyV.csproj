@@ -126,6 +126,7 @@
     </Compile>
     <Compile Include="AppOptions\Options.cs" />
     <Compile Include="EventArgs\MonitorChangedEventArgs.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
     <Compile Include="Pages\PreviewPage.xaml.cs">
@@ -153,6 +154,8 @@
     <Compile Include="Services\Images\BitmapWriter.cs" />
     <Compile Include="Services\Images\IImageSavingService.cs" />
     <Compile Include="Services\Images\ImageSavingService.cs" />
+    <Compile Include="Services\LoggingLevel\ILogLevelSwitchService.cs" />
+    <Compile Include="Services\LoggingLevel\LogLevelSwitchService.cs" />
     <Compile Include="Services\Monitors\DisplayDeviceData.cs" />
     <Compile Include="Services\Monitors\DisplayDevices.cs" />
     <Compile Include="Services\Monitors\EnumDisplayNativeMethods.cs" />
@@ -170,6 +173,7 @@
     <Compile Include="Services\UI\UserInterfaceService.cs" />
     <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\DisplayViewModel.cs" />
+    <Compile Include="ViewModel\LoggingLevel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MonitorItem.cs" />
     <Compile Include="ViewModel\PreviewViewModel.cs" />

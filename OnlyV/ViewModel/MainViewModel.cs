@@ -1,5 +1,6 @@
 namespace OnlyV.ViewModel
 {
+    using System.IO;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using MaterialDesignThemes.Wpf;
@@ -52,6 +53,11 @@ namespace OnlyV.ViewModel
 
             _currentPage = scripturesViewModel;
             _preSettingsPage = scripturesViewModel;
+
+            if (IsBadEpubPath())
+            {
+                _currentPage = settingsViewModel;
+            }
 
             _nextPageTooltip = Properties.Resources.NEXT_PAGE_PREVIEW;
         }
@@ -129,15 +135,20 @@ namespace OnlyV.ViewModel
         {
             NextPageCommand = new RelayCommand(OnNext, CanDoNext);
             BackPageCommand = new RelayCommand(OnBack, CanDoBack);
-            SettingsCommand = new RelayCommand(OnSettings, CanShowSettings);
+            SettingsCommand = new RelayCommand(OnToggleSettings, CanToggleSettings);
         }
 
-        private bool CanShowSettings()
+        private bool CanToggleSettings()
         {
+            if (CurrentPage == _settingsViewModel)
+            {
+                return !IsBadEpubPath();
+            }
+
             return true;
         }
 
-        private void OnSettings()
+        private void OnToggleSettings()
         {
             if (CurrentPage == _settingsViewModel)
             {
@@ -217,6 +228,12 @@ namespace OnlyV.ViewModel
         private void HandleAlwaysOnTopChangedEvent(object sender, System.EventArgs e)
         {
             RaisePropertyChanged(nameof(AlwaysOnTop));
+        }
+
+        private bool IsBadEpubPath()
+        {
+            return string.IsNullOrEmpty(_optionsService.EpubPath) ||
+                   !File.Exists(_optionsService.EpubPath);
         }
     }
 }

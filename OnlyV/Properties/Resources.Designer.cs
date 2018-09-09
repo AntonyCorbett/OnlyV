@@ -196,6 +196,60 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Debug.
+        /// </summary>
+        internal static string LOG_LEVEL_DEBUG {
+            get {
+                return ResourceManager.GetString("LOG_LEVEL_DEBUG", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error.
+        /// </summary>
+        internal static string LOG_LEVEL_ERROR {
+            get {
+                return ResourceManager.GetString("LOG_LEVEL_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fatal.
+        /// </summary>
+        internal static string LOG_LEVEL_FATAL {
+            get {
+                return ResourceManager.GetString("LOG_LEVEL_FATAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string LOG_LEVEL_INFORMATION {
+            get {
+                return ResourceManager.GetString("LOG_LEVEL_INFORMATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verbose.
+        /// </summary>
+        internal static string LOG_LEVEL_VERBOSE {
+            get {
+                return ResourceManager.GetString("LOG_LEVEL_VERBOSE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning.
+        /// </summary>
+        internal static string LOG_LEVEL_WARNING {
+            get {
+                return ResourceManager.GetString("LOG_LEVEL_WARNING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         internal static string MONITOR_NONE {

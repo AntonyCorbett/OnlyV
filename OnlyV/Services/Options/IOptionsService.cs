@@ -9,9 +9,7 @@
         event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
         
         event EventHandler AlwaysOnTopChangedEvent;
-
-        event EventHandler LogEventLevelChangedEvent;
-
+        
         event EventHandler EpubPathChangedEvent;
         
         LogEventLevel LogEventLevel { get; set; }

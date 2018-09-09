@@ -111,6 +111,14 @@
                     Main window always on top
                 </CheckBox>
 
+                <ComboBox ItemsSource="{Binding LoggingLevels}"
+                          Style="{StaticResource SettingsComboBoxStyle}" 
+                          materialDesign:HintAssist.IsFloating="True"
+                          materialDesign:HintAssist.Hint="Logging Level"
+                          SelectedValuePath="Level" 
+                          DisplayMemberPath="Name"
+                          SelectedValue="{Binding LogEventLevel, Mode=TwoWay}"/>
+
             </StackPanel>
         </GroupBox>
 

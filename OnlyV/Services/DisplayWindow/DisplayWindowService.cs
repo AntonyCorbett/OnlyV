@@ -75,7 +75,11 @@
                 var originalImage = _displayWindow.TheImage.Source;
 
                 CloseWindow();
-                ShowWindow();
+
+                if (_optionsService.MediaMonitorId != null)
+                {
+                    ShowWindow();
+                }
 
                 SetImage(originalImage);
             }

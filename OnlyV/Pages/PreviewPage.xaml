@@ -62,7 +62,7 @@
         <DockPanel Grid.Row="0" Margin="10,5">
             <Button Style="{StaticResource PreviewButtonStyle}" 
                     Command="{Binding SaveCommand}" 
-                    ToolTip="Save to destination folder">
+                    ToolTip="Save to images folder">
                 <materialDesign:PackIcon
                     Kind="ContentSave" 
                     Height="32"
