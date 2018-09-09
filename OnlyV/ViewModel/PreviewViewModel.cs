@@ -36,6 +36,8 @@
             _optionsService = optionsService;
             _snackbarService = snackbarService;
 
+            _optionsService.MediaMonitorChangedEvent += HandleMediaMonitorChangedEvent;
+            
             InitCommands();
         }
 
@@ -209,6 +211,16 @@
         private void ShowNextImage()
         {
             ImageIndex = ImageIndex + 1;
+        }
+
+        private void HandleMediaMonitorChangedEvent(object sender, OnlyV.EventArgs.MonitorChangedEventArgs e)
+        {
+            if (_displayWindowService.IsWindowVisible)
+            {
+                _displayWindowService.CloseWindow();
+                _displayWindowService.ShowWindow();
+                _displayWindowService.SetImage(_imagesService.Get(_imageIndex ?? 0));
+            }
         }
     }
 }

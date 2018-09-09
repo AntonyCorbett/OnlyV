@@ -2,11 +2,13 @@
 {
     using System;
     using System.IO;
+    using CommandLine;
+    using EventArgs;
+    using Helpers;
     using Newtonsoft.Json;
-    using OnlyV.Helpers;
-    using OnlyV.Services.CommandLine;
     using Serilog;
 
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class OptionsService : IOptionsService
     {
         private readonly ICommandLineService _commandLineService;
@@ -20,6 +22,8 @@
         {
             _commandLineService = commandLineService;
         }
+
+        public event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
 
         public AppOptions.Options Options
         {
@@ -76,7 +80,7 @@
                     {
                         _options = new AppOptions.Options();
                     }
-
+                    
                     // store the original settings so that we can determine if they have changed
                     // when we come to save them
                     _originalOptionsSignature = GetOptionsSignature(_options);
@@ -86,7 +90,14 @@
                     Log.Logger.Error(ex, "Could not read options file");
                     _options = new AppOptions.Options();
                 }
+
+                _options.MediaMonitorChangedEvent += HandleMediaMonitorChangedEvent;
             }
+        }
+
+        private void HandleMediaMonitorChangedEvent(object sender, MonitorChangedEventArgs e)
+        {
+            MediaMonitorChangedEvent?.Invoke(this, e);
         }
 
         private void ReadOptions()

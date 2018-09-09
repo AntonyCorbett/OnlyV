@@ -7,7 +7,6 @@
     internal class Options
     {
         private string _mediaMonitorId;
-        private bool _permanentBackdrop;
         private bool _alwaysOnTop;
         private LogEventLevel _logEventLevel;
         private string _epubPath;
@@ -16,13 +15,10 @@
         {
             AlwaysOnTop = true;
             LogEventLevel = LogEventLevel.Information;
-            PermanentBackdrop = true;
             JwLibraryCompatibilityMode = true;
 
             Sanitize();
         }
-
-        public event EventHandler PermanentBackdropChangedEvent;
 
         public event EventHandler AlwaysOnTopChangedEvent;
 
@@ -42,19 +38,6 @@
                     var originalMonitorId = _mediaMonitorId;
                     _mediaMonitorId = value;
                     OnMediaMonitorChangedEvent(originalMonitorId, value);
-                }
-            }
-        }
-
-        public bool PermanentBackdrop
-        {
-            get => _permanentBackdrop;
-            set
-            {
-                if (_permanentBackdrop != value)
-                {
-                    _permanentBackdrop = value;
-                    PermanentBackdropChangedEvent?.Invoke(this, EventArgs.Empty);
                 }
             }
         }
@@ -109,10 +92,6 @@
         /// </summary>
         public void Sanitize()
         {
-            if (JwLibraryCompatibilityMode)
-            {
-                PermanentBackdrop = false;
-            }
         }
 
         private void OnMediaMonitorChangedEvent(string originalMonitorId, string newMonitorId)
