@@ -139,7 +139,6 @@
     </Compile>
     <Compile Include="PubSubMessages\DragDropMessage.cs" />
     <Compile Include="PubSubMessages\DragOverMessage.cs" />
-    <Compile Include="PubSubMessages\EpubChangedMessage.cs" />
     <Compile Include="PubSubMessages\ShutDownMessage.cs" />
     <Compile Include="Services\Bible\BibleVersesService.cs" />
     <Compile Include="Helpers\FileUtils.cs" />

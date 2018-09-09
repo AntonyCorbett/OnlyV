@@ -78,14 +78,14 @@
 
         public int GetChapterCount(int bookNumber)
         {
-            var book = _reader.ExtractBookData().Single(x => x.Number == bookNumber);
-            return book.ChapterCount;
+            var book = _reader.ExtractBookData().SingleOrDefault(x => x.Number == bookNumber);
+            return book?.ChapterCount ?? 0;
         }
 
         public VerseRange GetVerseRange(int bookNumber, int chapterNumber)
         {
-            var book = _reader.ExtractBookData().Single(x => x.Number == bookNumber);
-            return book.GetVerseRange(chapterNumber);
+            var book = _reader.ExtractBookData().SingleOrDefault(x => x.Number == bookNumber);
+            return book?.GetVerseRange(chapterNumber);
         }
 
         private void InitReader()

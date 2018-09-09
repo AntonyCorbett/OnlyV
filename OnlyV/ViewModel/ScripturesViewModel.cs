@@ -8,7 +8,7 @@
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using GalaSoft.MvvmLight.Messaging;
-    using OnlyV.PubSubMessages;
+    using PubSubMessages;
     using Services.Bible;
     using VerseExtraction.Models;
 
@@ -27,8 +27,6 @@
             
             InitCommands();
             UpdateBibleBooks();
-
-            Messenger.Default.Register<EpubChangedMessage>(this, OnEpubChanged);
         }
 
         public ObservableCollection<ButtonModel> BookButtonsHebrew { get; } =
@@ -83,6 +81,19 @@
                     UpdateVerses();
                 }
             }
+        }
+
+        public void HandleEpubChanged()
+        {
+            var origBookNumber = _bookNumber;
+            var origChapter = _chapterNumber;
+            var origVerses = new List<int>();
+            origVerses.AddRange(_selectedVerses);
+
+            BookNumber = 0;
+            UpdateBibleBooks();
+
+            RestoreSelection(origBookNumber, origChapter, origVerses);
         }
 
         public bool ValidScripture()
@@ -149,7 +160,7 @@
         private void UpdateBibleBooks()
         {
             ClearBookButtons();
-
+           
             var booksData = _bibleService.GetBookData();
             if (booksData == null)
             {
@@ -337,9 +348,34 @@
             }
         }
 
-        private void OnEpubChanged(EpubChangedMessage msg)
+        private void RestoreSelection(
+            int origBookNumber, int origChapter, IReadOnlyCollection<int> origVerses)
         {
-            ////throw new NotImplementedException();
+            if (origBookNumber > 0)
+            {
+                var bookButton = GetBookButton(origBookNumber);
+                if (bookButton != null)
+                {
+                    bookButton.Selected = true;
+                    BookNumber = origBookNumber;
+
+                    if (origChapter > 0)
+                    {
+                        ChapterButtons[origChapter - 1].Selected = true;
+                        ChapterNumber = origChapter;
+
+                        if (origVerses != null && origVerses.Any())
+                        {
+                            foreach (var vs in origVerses)
+                            {
+                                VerseButtons[vs - 1].Selected = true;
+                            }
+
+                            UpdateSelectedVerses();
+                        }
+                    }
+                }
+            }
         }
     }
 }

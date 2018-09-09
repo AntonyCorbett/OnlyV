@@ -54,7 +54,7 @@
 
         public int? ImageIndex
         {
-            private get => _imageIndex;
+            get => _imageIndex;
             set
             {
                 if (_imageIndex != value)

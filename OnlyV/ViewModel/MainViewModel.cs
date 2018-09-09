@@ -36,6 +36,8 @@ namespace OnlyV.ViewModel
             _previewViewModel = previewViewModel;
             _settingsViewModel = settingsViewModel;
 
+            _settingsViewModel.EpubChangedEvent += HandleEpubChangedEvent;
+
             _imagesService = imagesService;
             _optionsService = optionsService;
             _snackbarService = snackbarService;
@@ -170,11 +172,7 @@ namespace OnlyV.ViewModel
         {
             if (CurrentPage == _scripturesViewModel)
             {
-                _previewViewModel.ImageIndex = null;
-                InitImagesService();
-                _previewViewModel.ImageIndex = 0;
-                _previewViewModel.BookChapterAndVersesString = _scripturesViewModel.ScriptureText;
-
+                PreparePreviewPage();
                 CurrentPage = _previewViewModel;
             }
         }
@@ -185,6 +183,24 @@ namespace OnlyV.ViewModel
                 _optionsService.Options.EpubPath, 
                 _scripturesViewModel.BookNumber, 
                 _scripturesViewModel.ChapterAndVersesString);
+        }
+
+        private void HandleEpubChangedEvent(object sender, System.EventArgs e)
+        {
+            _scripturesViewModel.HandleEpubChanged();
+
+            if (_previewViewModel.ImageIndex != null)
+            {
+                PreparePreviewPage();
+            }
+        }
+
+        private void PreparePreviewPage()
+        {
+            _previewViewModel.ImageIndex = null;
+            InitImagesService();
+            _previewViewModel.ImageIndex = 0;
+            _previewViewModel.BookChapterAndVersesString = _scripturesViewModel.ScriptureText;
         }
     }
 }

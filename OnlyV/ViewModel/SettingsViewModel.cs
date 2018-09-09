@@ -54,6 +54,8 @@
             Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
         }
 
+        public event EventHandler EpubChangedEvent;
+
         public IEnumerable<EpubFileItem> BibleEpubFiles => _bibleEpubFiles;
 
         public string CurrentEpubFilePath
@@ -66,7 +68,7 @@
                     _optionsService.Options.EpubPath = value;
                     RaisePropertyChanged();
 
-                    Messenger.Default.Send(new EpubChangedMessage());
+                    EpubChangedEvent?.Invoke(this, EventArgs.Empty);
                 }
             }
         }
