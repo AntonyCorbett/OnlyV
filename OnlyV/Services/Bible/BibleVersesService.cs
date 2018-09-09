@@ -20,7 +20,7 @@
         {
             _optionsService = optionsService;
             _optionsService.EpubPathChangedEvent += HandleEpubPathChangedEvent;
-
+            
             EpubPath = _optionsService.EpubPath;
         }
 

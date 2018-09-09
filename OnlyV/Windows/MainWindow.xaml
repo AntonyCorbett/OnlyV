@@ -35,6 +35,9 @@
         <DataTemplate DataType="{x:Type viewModel:PreviewViewModel}">
             <pages:PreviewPage />
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModel:StartupViewModel}">
+            <pages:StartupPage />
+        </DataTemplate>
 
         <Style x:Key="NavigationButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignFloatingActionMiniButton}">
             <Setter Property="Height" Value="50" />

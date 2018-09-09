@@ -23,7 +23,7 @@
         string EpubPath { get; set; }
 
         string SaveToFolder { get; set; }
-
+        
         void Save();
     }
 }

@@ -138,6 +138,9 @@
     <Compile Include="Pages\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\StartupPage.xaml.cs">
+      <DependentUpon>StartupPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PubSubMessages\DragDropMessage.cs" />
     <Compile Include="PubSubMessages\DragOverMessage.cs" />
     <Compile Include="PubSubMessages\ShutDownMessage.cs" />
@@ -179,6 +182,7 @@
     <Compile Include="ViewModel\PreviewViewModel.cs" />
     <Compile Include="ViewModel\ScripturesViewModel.cs" />
     <Compile Include="ViewModel\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\StartupViewModel.cs" />
     <Compile Include="ViewModel\VerseButtonModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="Pages\PreviewPage.xaml">
@@ -190,6 +194,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\StartupPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

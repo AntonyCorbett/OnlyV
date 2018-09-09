@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="OnlyV.Pages.StartupPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OnlyV.Pages"
+             mc:Ignorable="d" 
+
+             DataContext="{Binding Source={StaticResource Locator}, Path=Startup}"
+
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             TextOptions.TextFormattingMode="Ideal" 
+             TextOptions.TextRenderingMode="Auto"        
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid
+            Background="Transparent"
+            Margin="20"
+            AllowDrop="True"
+            DragOver="OnBibleDragOver"
+            Drop="OnBibleDrop">
+            <Rectangle 
+                StrokeDashArray="3 5" 
+                Stroke="White" 
+                StrokeThickness="1" 
+                RadiusX="20" RadiusY="20" />
+
+            <TextBlock
+                Margin="20"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                TextWrapping="Wrap"
+                Text="To get started, download a Bible epub file from jw.org and then drag and drop it here."
+                Foreground="{StaticResource PrimaryHueDarkBrush}"/>
+
+        </Grid>
+
+</Grid>
+</UserControl>

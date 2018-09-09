@@ -1,8 +1,10 @@
 namespace OnlyV.ViewModel
 {
     using System.IO;
+    using System.Linq;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using Helpers;
     using MaterialDesignThemes.Wpf;
     using Services.Images;
     using Services.Options;
@@ -16,7 +18,8 @@ namespace OnlyV.ViewModel
         private readonly ScripturesViewModel _scripturesViewModel;
         private readonly PreviewViewModel _previewViewModel;
         private readonly SettingsViewModel _settingsViewModel;
-        
+        private readonly StartupViewModel _startupViewModel;
+
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
         private readonly ISnackbarService _snackbarService;
@@ -31,6 +34,7 @@ namespace OnlyV.ViewModel
             ScripturesViewModel scripturesViewModel,
             PreviewViewModel previewViewModel,
             SettingsViewModel settingsViewModel,
+            StartupViewModel startupViewModel,
             IImagesService imagesService,
             IOptionsService optionsService,
             ISnackbarService snackbarService,
@@ -39,6 +43,7 @@ namespace OnlyV.ViewModel
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
             _settingsViewModel = settingsViewModel;
+            _startupViewModel = startupViewModel;
 
             _settingsViewModel.EpubChangedEvent += HandleEpubChangedEvent;
 
@@ -54,7 +59,11 @@ namespace OnlyV.ViewModel
             _currentPage = scripturesViewModel;
             _preSettingsPage = scripturesViewModel;
 
-            if (IsBadEpubPath())
+            if (IsNewInstallation())
+            {
+                _currentPage = startupViewModel;
+            }
+            else if (IsBadEpubPath())
             {
                 _currentPage = settingsViewModel;
             }
@@ -145,7 +154,7 @@ namespace OnlyV.ViewModel
                 return !IsBadEpubPath();
             }
 
-            return true;
+            return CurrentPage != _startupViewModel;
         }
 
         private void OnToggleSettings()
@@ -234,6 +243,11 @@ namespace OnlyV.ViewModel
         {
             return string.IsNullOrEmpty(_optionsService.EpubPath) ||
                    !File.Exists(_optionsService.EpubPath);
+        }
+
+        private bool IsNewInstallation()
+        {
+            return !Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub").Any();
         }
     }
 }

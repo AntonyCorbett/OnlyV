@@ -1,5 +1,6 @@
 ﻿namespace OnlyV.AppOptions
 {
+    using System.IO;
     using Serilog.Events;
 
     internal class Options
@@ -32,6 +33,10 @@
         /// </summary>
         public void Sanitize()
         {
+            if (!File.Exists(EpubPath))
+            {
+                EpubPath = null;
+            }
         }
     }
 }

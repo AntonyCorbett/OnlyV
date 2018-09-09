@@ -7,11 +7,11 @@
     using System.Threading;
     using System.Threading.Tasks;
     using System.Windows;
+    using Extensions;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Threading;
     using Helpers;
-    using OnlyV.Extensions;
     using PubSubMessages;
     using Serilog;
     using Serilog.Events;

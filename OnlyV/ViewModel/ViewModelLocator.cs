@@ -28,6 +28,7 @@ namespace OnlyV.ViewModel
             SimpleIoc.Default.Register<ScripturesViewModel>();
             SimpleIoc.Default.Register<SettingsViewModel>();
             SimpleIoc.Default.Register<PreviewViewModel>();
+            SimpleIoc.Default.Register<StartupViewModel>();
 
             SimpleIoc.Default.Register<ICommandLineService, CommandLineService>();
             SimpleIoc.Default.Register<IBibleVersesService, BibleVersesService>();
@@ -46,9 +47,11 @@ namespace OnlyV.ViewModel
         public DisplayViewModel Display => ServiceLocator.Current.GetInstance<DisplayViewModel>();
 
         public ScripturesViewModel Scriptures => ServiceLocator.Current.GetInstance<ScripturesViewModel>();
-
+        
         public SettingsViewModel Settings => ServiceLocator.Current.GetInstance<SettingsViewModel>();
 
         public PreviewViewModel Preview => ServiceLocator.Current.GetInstance<PreviewViewModel>();
+
+        public StartupViewModel Startup => ServiceLocator.Current.GetInstance<StartupViewModel>();
     }
 }
