@@ -19,7 +19,7 @@
         private const string ContainerFileName = "container.xml";
         private const string NavigationDocumentName = "biblebooknav.xhtml";
         private const string NavigationDocumentOldName = "BIBLE_00.xhtml";
-        private const string Ellipises = "...";
+        private const string Ellipses = "...";
 
         private readonly Lazy<ZipArchive> _zip;
         private readonly Lazy<string> _rootPath;
@@ -173,12 +173,12 @@
                         tmpStr = tmpStr.Remove(tmpStr.Length - 1, 1);
                         result.Clear();
                         result.Append(tmpStr);
-                        result.Append(Ellipises);
+                        result.Append(Ellipses);
                         result.Append(" ");
                     }
                     else
                     {
-                        result.Append(Ellipises);
+                        result.Append(Ellipses);
                     }
 
                     result.Append(" ");

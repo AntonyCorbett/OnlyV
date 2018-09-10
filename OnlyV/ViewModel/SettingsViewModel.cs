@@ -4,16 +4,11 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using System.Windows;
     using Extensions;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Messaging;
-    using GalaSoft.MvvmLight.Threading;
     using Helpers;
     using PubSubMessages;
-    using Serilog;
     using Serilog.Events;
     using Services.Bible;
     using Services.DragDrop;
@@ -31,8 +26,6 @@
         private readonly IMonitorsService _monitorsService;
         private readonly IOptionsService _optionsService;
         private readonly IDragDropService _dragDropService;
-        private readonly IBibleVersesService _bibleVersesService;
-        private readonly ISnackbarService _snackbarService;
         private readonly IUserInterfaceService _userInterfaceService;
 
         private EpubFileItem[] _bibleEpubFiles;
@@ -41,23 +34,19 @@
             IMonitorsService monitorsService,
             IOptionsService optionsService,
             IDragDropService dragDropService,
-            IBibleVersesService bibleVersesService,
-            ISnackbarService snackbarService,
             IUserInterfaceService userInterfaceService)
         {
             _monitorsService = monitorsService;
             _optionsService = optionsService;
             _dragDropService = dragDropService;
-            _bibleVersesService = bibleVersesService;
-            _snackbarService = snackbarService;
             _userInterfaceService = userInterfaceService;
+
+            dragDropService.EpubFileListChanged += HandleEpubFileListChanged;
 
             _monitors = GetSystemMonitors().ToArray();
             _loggingLevels = GetLoggingLevels().ToArray();
             _bibleEpubFiles = GetBibleEpubFiles().ToArray();
 
-            Messenger.Default.Register<DragOverMessage>(this, OnDragOver);
-            Messenger.Default.Register<DragDropMessage>(this, OnDragDrop);
             Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
         }
 
@@ -180,107 +169,24 @@
             _optionsService.Save();
         }
 
-        private void OnDragDrop(DragDropMessage message)
-        {
-            var busyCursor = _userInterfaceService.GetBusy();
-            
-            var origEpubPath = _bibleVersesService.EpubPath;
-
-            Task.Run(() =>
-            {
-                var files = _dragDropService.GetDroppedFiles(message.DragEventArgs);
-                
-                var validFileCount = 0;
-                
-                // close reader so that we can overwrite the current epub (if necessary)
-                _bibleVersesService.CloseReader();
-                
-                Parallel.ForEach(files, file =>
-                {
-                    try
-                    {
-                        if (_bibleVersesService.IsValidBibleEpub(file))
-                        {
-                            Interlocked.Increment(ref validFileCount);
-                            File.Copy(file, GetDestinationFileName(file), overwrite: true);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        Log.Logger.Error($@"Could not copy epub file {file}", ex);
-                    }
-                });
-
-                _snackbarService.EnqueueWithOk(GetDoneMessage(files.Count, validFileCount));
-                message.DragEventArgs.Handled = true;
-            }).ContinueWith(t =>
-            {
-                _bibleVersesService.EpubPath = origEpubPath;
-
-                DispatcherHelper.CheckBeginInvokeOnUI(() =>
-                {
-                    UpdateBibleEpubsList();
-                    busyCursor.Dispose();
-                });
-            });
-        }
-
-        private void UpdateBibleEpubsList()
+        private void HandleEpubFileListChanged(object sender, EventArgs e)
         {
             var currentSelection = CurrentEpubFilePath;
 
             _bibleEpubFiles = GetBibleEpubFiles().ToArray();
             RaisePropertyChanged(nameof(BibleEpubFiles));
 
-            CurrentEpubFilePath = currentSelection;
-        }
-
-        private string GetDoneMessage(int fileCount, int validFileCount)
-        {
-            if (fileCount == 0)
+            if (currentSelection == null)
             {
-                return Properties.Resources.COULD_NOT_READ_FILE;
+                if (_bibleEpubFiles.Any())
+                {
+                    CurrentEpubFilePath = _bibleEpubFiles.First().Path;
+                }
             }
-
-            if (validFileCount == 0)
+            else
             {
-                return fileCount == 1 
-                    ? Properties.Resources.COULD_NOT_READ_FILE 
-                    : Properties.Resources.COULD_NOT_READ_ANY;
+                CurrentEpubFilePath = currentSelection;
             }
-
-            if (validFileCount < fileCount)
-            {
-                var badFileCount = fileCount - validFileCount;
-
-                return badFileCount == 1 
-                    ? Properties.Resources.COULD_NOT_READ_1 
-                    : string.Format(Properties.Resources.COULD_NOT_READ_X, badFileCount);
-            }
-
-            return validFileCount == 1 
-                ? Properties.Resources.ADDED_FILE 
-                : string.Format(Properties.Resources.ADDED_X_FILES, validFileCount);
-        }
-
-        private string GetDestinationFileName(string file)
-        {
-            var filename = Path.GetFileName(file);
-            if (string.IsNullOrEmpty(filename))
-            {
-                throw new ArgumentException(nameof(file));
-            }
-
-            return Path.Combine(FileUtils.GetEpubFolder(), filename);
-        }
-
-        private void OnDragOver(DragOverMessage message)
-        {
-            message.DragEventArgs.Effects = _dragDropService.CanAcceptDrop(message.DragEventArgs)
-                ? DragDropEffects.Copy
-                : DragDropEffects.None;
-
-            message.DragEventArgs.Handled = true;
         }
     }
 }

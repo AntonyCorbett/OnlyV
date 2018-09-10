@@ -53,6 +53,7 @@ namespace OnlyV.ViewModel
             _userInterfaceService = userInterfaceService;
 
             _optionsService.AlwaysOnTopChangedEvent += HandleAlwaysOnTopChangedEvent;
+            _optionsService.EpubPathChangedEvent += HandleEpubPathChangedEvent;
 
             InitCommands();
 
@@ -248,6 +249,14 @@ namespace OnlyV.ViewModel
         private bool IsNewInstallation()
         {
             return !Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub").Any();
+        }
+
+        private void HandleEpubPathChangedEvent(object sender, System.EventArgs e)
+        {
+            if (CurrentPage == _startupViewModel)
+            {
+                CurrentPage = _scripturesViewModel;
+            }
         }
     }
 }
