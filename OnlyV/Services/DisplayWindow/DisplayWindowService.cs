@@ -1,9 +1,11 @@
 ﻿namespace OnlyV.Services.DisplayWindow
 {
+    using System.Threading;
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
     using GalaSoft.MvvmLight.Messaging;
+    using Helpers.JwLib;
     using Helpers.WindowPositioning;
     using Monitors;
     using Options;
@@ -46,6 +48,8 @@
         {
             _displayWindow?.Close();
             _displayWindow = null;
+
+            BringJwlToFront();
         }
 
         public void ToggleWindow()
@@ -133,6 +137,15 @@
         private void OnShutDown(ShutDownMessage msg)
         {
             CloseWindow();
+        }
+
+        private void BringJwlToFront()
+        {
+            if (_optionsService.JwLibraryCompatibilityMode)
+            {
+                JwLibHelper.BringToFront();
+                Thread.Sleep(100);
+            }
         }
     }
 }

@@ -104,9 +104,9 @@
             get => _options.JwLibraryCompatibilityMode;
             set
             {
-                if (JwLibraryCompatibilityMode != value)
+                if (_options.JwLibraryCompatibilityMode != value)
                 {
-                    JwLibraryCompatibilityMode = value;
+                    _options.JwLibraryCompatibilityMode = value;
                 }
             }
         }
