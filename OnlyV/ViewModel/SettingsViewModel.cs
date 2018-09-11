@@ -72,6 +72,8 @@
             }
         }
 
+        public string AppVersionStr => string.Format(Properties.Resources.APP_VER, VersionDetection.GetCurrentVersion());
+        
         public bool AlwaysOnTop
         {
             get => _optionsService.AlwaysOnTop;
@@ -95,6 +97,19 @@
                 if (_optionsService.MediaMonitorId != value)
                 {
                     _optionsService.MediaMonitorId = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
+        public bool JwLibraryCompatibilityMode
+        {
+            get => _optionsService.JwLibraryCompatibilityMode;
+            set
+            {
+                if (_optionsService.JwLibraryCompatibilityMode != value)
+                {
+                    _optionsService.JwLibraryCompatibilityMode = value;
                     RaisePropertyChanged();
                 }
             }

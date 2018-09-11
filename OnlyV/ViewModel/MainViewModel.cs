@@ -1,7 +1,9 @@
 namespace OnlyV.ViewModel
 {
+    using System.Diagnostics;
     using System.IO;
     using System.Linq;
+    using System.Threading.Tasks;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using Helpers;
@@ -70,6 +72,8 @@ namespace OnlyV.ViewModel
             }
 
             _nextPageTooltip = Properties.Resources.NEXT_PAGE_PREVIEW;
+
+            GetVersionData();
         }
 
         public ViewModelBase CurrentPage
@@ -123,6 +127,8 @@ namespace OnlyV.ViewModel
             }
         }
 
+        public bool ShowNewVersionButton { get; private set; }
+
         public string SettingsButtonToolTip =>
             CurrentPage == _settingsViewModel
                 ? Properties.Resources.BACK
@@ -139,6 +145,8 @@ namespace OnlyV.ViewModel
 
         public RelayCommand SettingsCommand { get; set; }
 
+        public RelayCommand LaunchHelpPageCommand { get; set; }
+
         public ISnackbarMessageQueue TheSnackbarMessageQueue => _snackbarService.TheSnackbarMessageQueue;
 
         private void InitCommands()
@@ -146,6 +154,7 @@ namespace OnlyV.ViewModel
             NextPageCommand = new RelayCommand(OnNext, CanDoNext);
             BackPageCommand = new RelayCommand(OnBack, CanDoBack);
             SettingsCommand = new RelayCommand(OnToggleSettings, CanToggleSettings);
+            LaunchHelpPageCommand = new RelayCommand(LaunchHelpPage);
         }
 
         private bool CanToggleSettings()
@@ -257,6 +266,38 @@ namespace OnlyV.ViewModel
             {
                 CurrentPage = _scripturesViewModel;
             }
+        }
+
+        private void GetVersionData()
+        {
+            Task.Delay(2000).ContinueWith(_ =>
+            {
+                var latestVersion = VersionDetection.GetLatestReleaseVersion();
+                if (latestVersion != null)
+                {
+                    if (latestVersion != VersionDetection.GetCurrentVersion())
+                    {
+                        // there is a new version....
+                        ShowNewVersionButton = true;
+                        RaisePropertyChanged(nameof(ShowNewVersionButton));
+
+                        _snackbarService.Enqueue(
+                            Properties.Resources.NEW_UPDATE_AVAILABLE,
+                            Properties.Resources.VIEW,
+                            LaunchReleasePage);
+                    }
+                }
+            });
+        }
+
+        private void LaunchReleasePage()
+        {
+            Process.Start(VersionDetection.LatestReleaseUrl);
+        }
+
+        private void LaunchHelpPage()
+        {
+            Process.Start(@"https://github.com/AntonyCorbett/OnlyV/wiki");
         }
     }
 }

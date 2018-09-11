@@ -20,6 +20,8 @@
 
         string MediaMonitorId { get; set; }
 
+        bool JwLibraryCompatibilityMode { get; set; }
+
         string EpubPath { get; set; }
 
         string SaveToFolder { get; set; }

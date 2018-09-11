@@ -123,6 +123,9 @@
   <data name="ADDED_X_FILES" xml:space="preserve">
     <value>Added {0} files</value>
   </data>
+  <data name="APP_VER" xml:space="preserve">
+    <value>Only-V software version: {0}</value>
+  </data>
   <data name="BACK" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -183,6 +186,9 @@
   <data name="MONITOR_NONE" xml:space="preserve">
     <value>None</value>
   </data>
+  <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
+    <value>New update available!</value>
+  </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
     <value>Show preview page</value>
   </data>
@@ -206,5 +212,8 @@
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
     <value>Settings page</value>
+  </data>
+  <data name="VIEW" xml:space="preserve">
+    <value>VIEW</value>
   </data>
 </root>

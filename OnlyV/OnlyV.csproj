@@ -127,6 +127,7 @@
     <Compile Include="AppOptions\Options.cs" />
     <Compile Include="EventArgs\MonitorChangedEventArgs.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Helpers\VersionDetection.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
     <Compile Include="Pages\PreviewPage.xaml.cs">

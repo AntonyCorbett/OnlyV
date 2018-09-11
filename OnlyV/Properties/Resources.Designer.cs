@@ -79,6 +79,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Only-V software version: {0}.
+        /// </summary>
+        internal static string APP_VER {
+            get {
+                return ResourceManager.GetString("APP_VER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         internal static string BACK {
@@ -259,6 +268,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to New update available!.
+        /// </summary>
+        internal static string NEW_UPDATE_AVAILABLE {
+            get {
+                return ResourceManager.GetString("NEW_UPDATE_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show preview page.
         /// </summary>
         internal static string NEXT_PAGE_PREVIEW {
@@ -327,6 +345,15 @@ namespace OnlyV.Properties {
         internal static string SETTINGS_PAGE {
             get {
                 return ResourceManager.GetString("SETTINGS_PAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VIEW.
+        /// </summary>
+        internal static string VIEW {
+            get {
+                return ResourceManager.GetString("VIEW", resourceCulture);
             }
         }
     }

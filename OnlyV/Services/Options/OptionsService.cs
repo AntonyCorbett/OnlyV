@@ -99,6 +99,18 @@
             }
         }
 
+        public bool JwLibraryCompatibilityMode
+        {
+            get => _options.JwLibraryCompatibilityMode;
+            set
+            {
+                if (JwLibraryCompatibilityMode != value)
+                {
+                    JwLibraryCompatibilityMode = value;
+                }
+            }
+        }
+
         public string EpubPath
         {
             get => _options.EpubPath;

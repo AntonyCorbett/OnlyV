@@ -211,6 +211,11 @@
 
         public IEnumerable<BitmapSource> Generate(string epubPath, int bookNumber, string chapterAndVerses)
         {
+            if (epubPath == null)
+            {
+                return null;
+            }
+
             NormaliseMargins();
 
             VerseFont.FontSize = MainFont.FontSize * VerseFontSizeFactor;

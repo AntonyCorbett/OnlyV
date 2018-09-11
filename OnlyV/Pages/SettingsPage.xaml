@@ -17,7 +17,7 @@
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="1000" d:DesignWidth="800">
 
     <UserControl.Resources>
 
@@ -48,12 +48,13 @@
         </EventTrigger>
     </UserControl.Triggers>
 
+    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden">
     <StackPanel Orientation="Vertical" Margin="5">
         <GroupBox Header="Bibles" Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
 
                 <Grid
-                    Height="50"
+                    Height="100"
                     Width="420"
                     Background="Transparent"
                     HorizontalAlignment="Left"
@@ -69,7 +70,7 @@
 
                     <TextBlock
                         Margin="5"
-                        HorizontalAlignment="Left"
+                        HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         TextWrapping="Wrap"
                         Text="Download Bible epub files from jw.org and drag and drop here."
@@ -100,11 +101,22 @@
                           DisplayMemberPath="MonitorName"
                           SelectedValue="{Binding MonitorId, Mode=TwoWay}">
                 </ComboBox>
+
+                <CheckBox IsChecked="{Binding JwLibraryCompatibilityMode, Mode=TwoWay}"
+                          Style="{StaticResource SettingsCheckBoxStyle}">
+                    JW Library compatibility mode
+                </CheckBox>
+
             </StackPanel>
         </GroupBox>
 
         <GroupBox Header="Miscellaneous" Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
+
+                <TextBlock Text="{Binding AppVersionStr}" 
+                           FontSize="12"
+                           Margin="0,0,0,15"
+                           Foreground="{StaticResource MaterialDesignBodyLight}" />
 
                 <CheckBox IsChecked="{Binding AlwaysOnTop, Mode=TwoWay}"
                           Style="{StaticResource SettingsCheckBoxStyle}">
@@ -124,5 +136,6 @@
 
 
     </StackPanel>
+    </ScrollViewer>
 
 </UserControl>
