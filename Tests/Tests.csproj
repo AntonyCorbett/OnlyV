@@ -92,7 +92,40 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Bible01.png">
+    <Content Include="..\SampleBackgroundImages\bible01.png">
+      <Link>bible01.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\blue01.png">
+      <Link>blue01.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\blue02.png">
+      <Link>blue02.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\chalkboard.png">
+      <Link>chalkboard.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\clouds01.png">
+      <Link>clouds01.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\marble01.png">
+      <Link>marble01.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\marble02.png">
+      <Link>marble02.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\paper01.png">
+      <Link>paper01.png</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\SampleBackgroundImages\water01.png">
+      <Link>water01.png</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

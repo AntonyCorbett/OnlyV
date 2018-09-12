@@ -17,13 +17,14 @@
         private const string ThemeEntryName = "theme.json";
         private const string ImageEntryName = "image.png";
         
-        private static ThemeCache Cache = new ThemeCache();
+        private static readonly ThemeCache Cache = new ThemeCache();
 
         public IReadOnlyCollection<string> GetAll(string folder)
         {
             return Directory.GetFiles(folder, $"*.{ThemeFileExtension}");
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "The.NET types should be safe and the suggested fix is ugly")]
         public void Create(string themePath, OnlyVTheme theme, string backgroundImagePath, bool overwrite)
         {
             if (string.IsNullOrEmpty(themePath) ||
@@ -110,6 +111,7 @@
             return result;
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification="The .NET types should be safe and the suggested fix is ugly")]
         private ThemeCacheEntry ReadInternal(string themePath)
         {
             try

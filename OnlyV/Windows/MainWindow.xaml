@@ -67,6 +67,8 @@
                 Grid.Column="0"
                 Style="{StaticResource NavigationButtonStyle}"
                 Command="{Binding SettingsCommand}"
+                IsEnabled="{Binding IsSettingsEnabled}"
+                ToolTipService.ShowOnDisabled="True"
                 ToolTip="{Binding SettingsButtonToolTip}">
                 <materialDesign:PackIcon
                     Kind="{Binding SettingsIconKind}"

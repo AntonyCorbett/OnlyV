@@ -20,6 +20,7 @@
             _cachedBookData = new Lazy<IReadOnlyCollection<BibleBookData>>(ReadBookData);
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_parser", Justification = "False positive")]
         public void Dispose()
         {
             _parser?.Dispose();

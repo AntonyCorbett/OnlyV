@@ -13,7 +13,7 @@
     using VerseExtraction.Models;
 
     // ReSharper disable once ClassNeverInstantiated.Global
-    internal class ScripturesViewModel : ViewModelBase
+    internal sealed class ScripturesViewModel : ViewModelBase
     {
         private readonly IBibleVersesService _bibleService;
         private readonly List<int> _selectedVerses = new List<int>();
@@ -192,7 +192,7 @@
 
                 ++count;
             }
-
+            
             BookNumber = 0;
         }
 

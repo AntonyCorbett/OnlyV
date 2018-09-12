@@ -37,6 +37,7 @@
             }
         }
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_reader", Justification = "False positive")]
         public void Dispose()
         {
             _reader?.Dispose();

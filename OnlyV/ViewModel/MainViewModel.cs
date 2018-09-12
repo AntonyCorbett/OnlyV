@@ -4,10 +4,13 @@ namespace OnlyV.ViewModel
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
+    using System.Windows.Interop;
+    using System.Windows.Media;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using Helpers;
     using MaterialDesignThemes.Wpf;
+    using Services.CommandLine;
     using Services.Images;
     using Services.Options;
     using Services.Snackbar;
@@ -26,6 +29,7 @@ namespace OnlyV.ViewModel
         private readonly IOptionsService _optionsService;
         private readonly ISnackbarService _snackbarService;
         private readonly IUserInterfaceService _userInterfaceService;
+        private readonly ICommandLineService _commandLineService;
 
         private ViewModelBase _currentPage;
         private ViewModelBase _preSettingsPage;
@@ -40,12 +44,20 @@ namespace OnlyV.ViewModel
             IImagesService imagesService,
             IOptionsService optionsService,
             ISnackbarService snackbarService,
-            IUserInterfaceService userInterfaceService)
+            IUserInterfaceService userInterfaceService,
+            ICommandLineService commandLineService)
         {
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
             _settingsViewModel = settingsViewModel;
             _startupViewModel = startupViewModel;
+            _commandLineService = commandLineService;
+
+            if (commandLineService.NoGpu || ForceSoftwareRendering())
+            {
+                // disable hardware (GPU) rendering so that it's all done by the CPU...
+                RenderOptions.ProcessRenderMode = RenderMode.SoftwareOnly;
+            }
 
             _settingsViewModel.EpubChangedEvent += HandleEpubChangedEvent;
 
@@ -75,6 +87,8 @@ namespace OnlyV.ViewModel
 
             GetVersionData();
         }
+
+        public bool IsSettingsEnabled => !_commandLineService.NoSettings;
 
         public ViewModelBase CurrentPage
         {
@@ -130,9 +144,11 @@ namespace OnlyV.ViewModel
         public bool ShowNewVersionButton { get; private set; }
 
         public string SettingsButtonToolTip =>
-            CurrentPage == _settingsViewModel
-                ? Properties.Resources.BACK
-                : Properties.Resources.SETTINGS_PAGE;
+            _commandLineService.NoSettings 
+                ? Properties.Resources.SETTINGS_DISABLED
+                : CurrentPage == _settingsViewModel
+                    ? Properties.Resources.BACK
+                    : Properties.Resources.SETTINGS_PAGE;
 
         public string SettingsIconKind => 
             CurrentPage == _settingsViewModel
@@ -297,6 +313,23 @@ namespace OnlyV.ViewModel
         private void LaunchHelpPage()
         {
             Process.Start(@"https://github.com/AntonyCorbett/OnlyV/wiki");
+        }
+
+        private bool ForceSoftwareRendering()
+        {
+            // https://blogs.msdn.microsoft.com/jgoldb/2010/06/22/software-rendering-usage-in-wpf/
+            // renderingTier values:
+            // 0 => No graphics hardware acceleration available for the application on the device
+            //      and DirectX version level is less than version 7.0
+            // 1 => Partial graphics hardware acceleration available on the video card. This 
+            //      corresponds to a DirectX version that is greater than or equal to 7.0 and 
+            //      less than 9.0.
+            // 2 => A rendering tier value of 2 means that most of the graphics features of WPF 
+            //      should use hardware acceleration provided the necessary system resources have 
+            //      not been exhausted. This corresponds to a DirectX version that is greater 
+            //      than or equal to 9.0.
+            int renderingTier = RenderCapability.Tier >> 16;
+            return renderingTier == 0;
         }
     }
 }

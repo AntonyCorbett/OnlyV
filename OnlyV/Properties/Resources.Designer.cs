@@ -359,6 +359,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings disabled by administrator!.
+        /// </summary>
+        internal static string SETTINGS_DISABLED {
+            get {
+                return ResourceManager.GetString("SETTINGS_DISABLED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings page.
         /// </summary>
         internal static string SETTINGS_PAGE {
