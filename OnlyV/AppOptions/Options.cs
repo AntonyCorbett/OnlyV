@@ -28,6 +28,8 @@
 
         public string EpubPath { get; set; }
 
+        public string ThemePath { get; set; }
+
         /// <summary>
         /// Validates the data, correcting automatically as required
         /// </summary>
@@ -36,6 +38,11 @@
             if (!File.Exists(EpubPath))
             {
                 EpubPath = null;
+            }
+
+            if (!File.Exists(ThemePath))
+            {
+                ThemePath = null;
             }
         }
     }

@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyV.ImageCreation", "OnlyV.ImageCreation\OnlyV.ImageCreation.csproj", "{EBF1CBF7-052C-4396-96DC-8347718BB6E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyV.Themes.Common", "OnlyV.Themes.Common\OnlyV.Themes.Common.csproj", "{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{EBF1CBF7-052C-4396-96DC-8347718BB6E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EBF1CBF7-052C-4396-96DC-8347718BB6E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EBF1CBF7-052C-4396-96DC-8347718BB6E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

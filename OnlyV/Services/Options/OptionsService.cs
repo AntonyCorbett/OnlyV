@@ -42,6 +42,8 @@
         
         public event EventHandler EpubPathChangedEvent;
 
+        public event EventHandler ThemePathChangedEvent;
+
         public string MediaMonitorId
         {
             get => _options.MediaMonitorId;
@@ -120,6 +122,19 @@
                 {
                     _options.EpubPath = value;
                     EpubPathChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public string ThemePath
+        {
+            get => _options.ThemePath;
+            set
+            {
+                if (_options.ThemePath == null || _options.ThemePath != value)
+                {
+                    _options.ThemePath = value;
+                    ThemePathChangedEvent?.Invoke(this, EventArgs.Empty);
                 }
             }
         }

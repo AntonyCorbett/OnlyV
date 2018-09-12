@@ -1,4 +1,9 @@
-﻿using OnlyV.ImageCreation;
+﻿using System;
+using System.IO;
+using Newtonsoft.Json;
+using OnlyV.ImageCreation;
+using OnlyV.Themes.Common;
+using OnlyV.Themes.Common.FileHandling;
 
 namespace Tests
 {
@@ -32,7 +37,24 @@ namespace Tests
         {
             BibleTextImage image = new BibleTextImage();
             var images = image.Generate(EpubPath, 1, "3:15");
+        }
 
+        [TestMethod]
+        public void TestThemeCreation()
+        {
+            var file = new ThemeFile();
+
+            var currentFolder = Environment.CurrentDirectory;
+            var themePath = Path.Combine(currentFolder, "myTheme.theme");
+
+            var theme = new OnlyVTheme();
+
+            file.Create(themePath, theme, null, overwrite: true);
+
+            var result = file.Read(themePath);
+            Assert.IsNotNull(result);
+
+            Assert.AreEqual(JsonConvert.SerializeObject(result.Theme), JsonConvert.SerializeObject(theme));
         }
     }
 }

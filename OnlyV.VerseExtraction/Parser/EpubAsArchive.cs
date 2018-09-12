@@ -147,7 +147,7 @@
         }
 
         public string GetBibleTexts(
-            IReadOnlyList<BookChapter> chapers,
+            IReadOnlyList<BookChapter> chapters,
             int bibleBook,
             ChapterAndVersesSpec chapterAndVerses,
             FormattingOptions formattingOptions)
@@ -168,7 +168,7 @@
                     char lastChar = result.ToString().Trim().Last();
                     if (lastChar == '.')
                     {
-                        // looks odd if we have an ellipses straight afetr a full stop!
+                        // looks odd if we have an ellipses straight after a full stop!
                         var tmpStr = result.ToString().Trim();
                         tmpStr = tmpStr.Remove(tmpStr.Length - 1, 1);
                         result.Clear();
@@ -186,7 +186,7 @@
 
                 for (var verse = vs.StartVerse; verse <= vs.EndVerse; ++verse)
                 {
-                    string s = GetBibleText(chapers, bibleBook, vs.Chapter, verse, formattingOptions);
+                    string s = GetBibleText(chapters, bibleBook, vs.Chapter, verse, formattingOptions);
                     if (!string.IsNullOrEmpty(s))
                     {
                         if (verse > vs.StartVerse)

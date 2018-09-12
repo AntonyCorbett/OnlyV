@@ -132,6 +132,7 @@
     <Compile Include="Helpers\VersionDetection.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
+    <Compile Include="Mappings\MappingProfile.cs" />
     <Compile Include="Pages\PreviewPage.xaml.cs">
       <DependentUpon>PreviewPage.xaml</DependentUpon>
     </Compile>
@@ -262,6 +263,10 @@
     <ProjectReference Include="..\OnlyV.ImageCreation\OnlyV.ImageCreation.csproj">
       <Project>{EBF1CBF7-052C-4396-96DC-8347718BB6E5}</Project>
       <Name>OnlyV.ImageCreation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OnlyV.Themes.Common\OnlyV.Themes.Common.csproj">
+      <Project>{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}</Project>
+      <Name>OnlyV.Themes.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj">
       <Project>{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}</Project>

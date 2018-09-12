@@ -10,6 +10,7 @@
     using System.Windows.Media.Effects;
     using System.Windows.Media.Imaging;
     using TextSplitting;
+    using Themes.Common.Specs;
     using Utils;
     using VerseExtraction;
     using VerseExtraction.Models;
@@ -48,7 +49,7 @@
             ShowVerseNumbers = true;
             HorzAlignment = TextAlignment.Center;
 
-            LineSpacing = LineSpacing.Normal;
+            LineSpacing = OnlyVLineSpacing.Normal;
 
             ShowTitle = true;
 
@@ -60,7 +61,7 @@
                 FontColor = FromHtmlString("#FCBA04")
             };
 
-            TitlePosition = TitlePosition.Bottom;
+            TitlePosition = OnlyVTitlePosition.Bottom;
             TitleHorzAlignment = TextAlignment.Right;
 
             VerseFont = new FontDefinition
@@ -128,13 +129,13 @@
 
         public int RightMargin { get; set; }
 
-        public LineSpacing LineSpacing { get; set; }
+        public OnlyVLineSpacing LineSpacing { get; set; }
 
         public bool ShowTitle { get; set; }
 
         public FontDefinition TitleFont { get; }
 
-        public TitlePosition TitlePosition { get; set; }
+        public OnlyVTitlePosition TitlePosition { get; set; }
 
         public TextAlignment TitleHorzAlignment { get; set; }
 
@@ -145,6 +146,8 @@
         public CultureInfo CultureInfo { get; set; }
 
         public string BackgroundImageFile { get; set; }
+
+        public ImageSource BackgroundImageSource { get; set; }
 
         public bool AllowAutoFit { get; set; }
 
@@ -462,7 +465,10 @@
                     break;
             }
 
-            var y = TitlePosition == TitlePosition.Top ? TopMargin : Height - BottomMargin - titleFormattedText.Height;
+            var y = TitlePosition == OnlyVTitlePosition.Top 
+                ? TopMargin 
+                : Height - BottomMargin - titleFormattedText.Height;
+
             return new Point(x, y);
         }
 
@@ -501,14 +507,17 @@
 
                 var moreImagesAfterThis = imageNumber < totalImageCount - 1;
 
-                var adjustmentForTitleAtTop = ShowTitle && TitlePosition == TitlePosition.Top ? spaceForTitle : 0;
+                var adjustmentForTitleAtTop = ShowTitle && TitlePosition == OnlyVTitlePosition.Top 
+                    ? spaceForTitle 
+                    : 0;
+
                 for (var lineNum = 0; lineNum < lineCount; ++lineNum)
                 {
                     var lineStr = linesForBmp[lineNum];
 
                     if (lineNum == 0 && lineStr.Length > 0 && !IsEndOfSentenceOrPhrase(linesForPreviousBmp?.LastOrDefault()))
                     {
-                        // ellipises at start of this line...
+                        // ellipsis at start of this line...
                         lineStr = string.Concat(Ellipsis, lineStr);
                     }
 
@@ -542,7 +551,7 @@
 
             var yStart = Height - BottomMargin - (spaceForTitle / 3);
 
-            if (ShowTitle && TitlePosition == TitlePosition.Bottom)
+            if (ShowTitle && TitlePosition == OnlyVTitlePosition.Bottom)
             {
                 yStart -= lineHeight;
             }
@@ -583,11 +592,11 @@
             {
                 var rect = new Rect(new Size(Width, Height));
 
-                if (BackgroundImageFile != null && File.Exists(BackgroundImageFile))
+                var imageSrc = GetBackgroundImageSource();
+
+                if (imageSrc != null)
                 {
-                    Uri uri = new Uri(BackgroundImageFile);
-                    ImageSource src = new BitmapImage(uri);
-                    c.DrawImage(src, rect);
+                    c.DrawImage(imageSrc, rect);
                 }
                 else
                 {
@@ -596,6 +605,22 @@
             }
 
             return visual;
+        }
+
+        private ImageSource GetBackgroundImageSource()
+        {
+            if (BackgroundImageSource != null)
+            {
+                return BackgroundImageSource;
+            }
+
+            if (BackgroundImageFile != null && File.Exists(BackgroundImageFile))
+            {
+                Uri uri = new Uri(BackgroundImageFile);
+                return new BitmapImage(uri);
+            }
+
+            return null;
         }
 
         private void DrawTextLine(DrawingContext c, string line, double y)
@@ -694,16 +719,20 @@
         {
             switch (LineSpacing)
             {
-                case LineSpacing.VerySmall:
-                    return height * 0.85;
-                case LineSpacing.Small:
+                case OnlyVLineSpacing.VerySmall:
                     return height * 0.95;
-                case LineSpacing.Normal:
+
+                case OnlyVLineSpacing.Small:
                     return height * 1.05;
-                case LineSpacing.Large:
+
+                case OnlyVLineSpacing.Normal:
                     return height * 1.15;
-                case LineSpacing.VeryLarge:
+
+                case OnlyVLineSpacing.Large:
                     return height * 1.25;
+
+                case OnlyVLineSpacing.VeryLarge:
+                    return height * 1.35;
             }
 
             return height;

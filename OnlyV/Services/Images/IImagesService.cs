@@ -8,7 +8,7 @@
     {
         int ImageCount { get; }
 
-        void Init(string epubPath, int bookNumber, string chapterAndVerses);
+        void Init(string epubPath, string themePath, int bookNumber, string chapterAndVerses);
 
         ImageSource Get(int index);
 

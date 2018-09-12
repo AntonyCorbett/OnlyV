@@ -24,6 +24,8 @@
 
         string EpubPath { get; set; }
 
+        string ThemePath { get; set; }
+
         string SaveToFolder { get; set; }
         
         void Save();

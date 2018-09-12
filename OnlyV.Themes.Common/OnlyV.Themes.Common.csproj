@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EBF1CBF7-052C-4396-96DC-8347718BB6E5}</ProjectGuid>
+    <ProjectGuid>{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>OnlyV.ImageCreation</RootNamespace>
-    <AssemblyName>OnlyV.ImageCreation</AssemblyName>
+    <RootNamespace>OnlyV.Themes.Common</RootNamespace>
+    <AssemblyName>OnlyV.Themes.Common</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -22,7 +22,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\OnlyV.ruleset</CodeAnalysisRuleSet>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -33,9 +32,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.2.7.1\lib\net46\Serilog.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.File, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.File.4.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
+    </Reference>
+    <Reference Include="Serilog.Sinks.RollingFile, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
+      <HintPath>..\packages\Serilog.Sinks.RollingFile.3.3.0\lib\net45\Serilog.Sinks.RollingFile.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,20 +62,25 @@
     <Compile Include="..\SolutionInfo.cs">
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
-    <Compile Include="BibleTextImage.cs" />
-    <Compile Include="Utils\FontDefinition.cs" />
+    <Compile Include="Cache\ThemeCache.cs" />
+    <Compile Include="Cache\ThemeCacheEntry.cs" />
+    <Compile Include="FileHandling\ThemeFile.cs" />
+    <Compile Include="Specs\OnlyVFontSpec.cs" />
+    <Compile Include="Specs\OnlyVFormatting.cs" />
+    <Compile Include="Specs\OnlyVBackground.cs" />
+    <Compile Include="Specs\OnlyVContinuationArrow.cs" />
+    <Compile Include="Specs\OnlyVDimensions.cs" />
+    <Compile Include="Specs\OnlyVDropShadowSpec.cs" />
+    <Compile Include="Specs\OnlyVBodyTextSpec.cs" />
+    <Compile Include="Specs\OnlyVFontStyle.cs" />
+    <Compile Include="Specs\OnlyVFontWeight.cs" />
+    <Compile Include="Specs\OnlyVHorizontalTextAlignment.cs" />
+    <Compile Include="Specs\OnlyVLineSpacing.cs" />
+    <Compile Include="OnlyVTheme.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextSplitting\TextSplitter.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\OnlyV.Themes.Common\OnlyV.Themes.Common.csproj">
-      <Project>{4e9c81b3-f2e8-4c67-ba0d-edf9e2638f04}</Project>
-      <Name>OnlyV.Themes.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj">
-      <Project>{50de2fad-2092-492a-8c90-6b3688a6e9c2}</Project>
-      <Name>OnlyV.VerseExtraction</Name>
-    </ProjectReference>
+    <Compile Include="Specs\OnlyVTitlePosition.cs" />
+    <Compile Include="Specs\OnlyVTitleTextSpec.cs" />
+    <Compile Include="Specs\OnlyVVerseNumberSpec.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -70,5 +89,6 @@
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.0.2\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

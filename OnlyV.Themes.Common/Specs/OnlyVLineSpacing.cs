@@ -1,15 +1,11 @@
-﻿namespace OnlyV.ImageCreation.Utils
+﻿namespace OnlyV.Themes.Common.Specs
 {
-    public enum LineSpacing
+    public enum OnlyVLineSpacing
     {
         VerySmall,
-
         Small,
-
         Normal,
-
         Large,
-
         VeryLarge
     }
 }

@@ -6,8 +6,7 @@
     using System.Windows.Media;
     using GalaSoft.MvvmLight.Threading;
     using OnlyV.Helpers;
-    using OnlyV.Services.Monitors;
-    using OnlyV.ViewModel;
+    using OnlyV.Mappings;
     using Serilog;
 
     /// <summary>
@@ -79,7 +78,7 @@
 
         private void RegisterMappings()
         {
-            AutoMapper.Mapper.Initialize(cfg => cfg.CreateMap<SystemMonitor, MonitorItem>());
+            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
         }
     }
 }
