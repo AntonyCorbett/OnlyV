@@ -365,7 +365,7 @@
                     var backgroundVisual = DrawBackground();
                     var bodyVisual = DrawBody(n, numBitmaps, lines, linesPerImage, bodyLineHeight, spaceForTitle);
                     var titleVisual = DrawTitle(titleFormattedText);
-
+                    
                     bmp.Render(backgroundVisual);
                     bmp.Render(bodyVisual);
 
@@ -373,7 +373,7 @@
                     {
                         bmp.Render(titleVisual);
                     }
-
+                    
                     result.Add(bmp);
                 }
             }

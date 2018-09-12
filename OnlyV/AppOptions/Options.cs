@@ -14,8 +14,6 @@
             AutoFit = true;
             ShowVerseBreaks = true;
             UseTildeMarker = true;
-            TrimPunctuation = true;
-            TrimQuotes = true;
             ShowVerseBreaks = true;
             TextScalingPercentage = 100;
 

@@ -45,16 +45,34 @@ namespace Tests
             var file = new ThemeFile();
 
             var currentFolder = Environment.CurrentDirectory;
-            var themePath = Path.Combine(currentFolder, "myTheme.theme");
+            var themePath = Path.Combine(currentFolder, "myTheme.onlyv");
 
             var theme = new OnlyVTheme();
+            theme.Background.UseImage = true;
+            theme.Background.Colour = "#fffcf9";
 
-            file.Create(themePath, theme, null, overwrite: true);
+            theme.BodyText.Font.Colour = "#2274a5";
+            theme.BodyText.DropShadow.Opacity = 0.3;
+            theme.BodyText.DropShadow.Depth = 7;
+            theme.BodyText.DropShadow.BlurRadius = 15;
+
+            theme.TitleText.Font.Colour = "#632b30";
+            theme.TitleText.DropShadow.Opacity = 0.3;
+            theme.TitleText.DropShadow.Depth = 7;
+            theme.TitleText.DropShadow.BlurRadius = 15;
+
+            theme.VerseNumbers.Colour = "#1a1423";
+            
+            theme.Dimensions.BottomMargin = 200;
+
+            file.Create(themePath, theme, "Bible01.png", overwrite: true);
 
             var result = file.Read(themePath);
             Assert.IsNotNull(result);
 
-            Assert.AreEqual(JsonConvert.SerializeObject(result.Theme), JsonConvert.SerializeObject(theme));
+            var s1 = JsonConvert.SerializeObject(result.Theme);
+            var s2 = JsonConvert.SerializeObject(theme);
+            Assert.AreEqual(s1, s2);
         }
     }
 }

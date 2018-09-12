@@ -1,6 +1,7 @@
 ﻿namespace OnlyV.ViewModel
 {
     using System;
+    using System.Diagnostics;
     using System.Linq;
     using System.Windows;
     using System.Windows.Media;
@@ -38,6 +39,7 @@
 
             _optionsService.MediaMonitorChangedEvent += HandleMediaMonitorChangedEvent;
             _optionsService.StyleChangedEvent += HandleStyleChangedEvent;
+            _optionsService.ThemePathChangedEvent += HandleThemePathChangedEvent;
 
             InitCommands();
         }
@@ -138,10 +140,11 @@
                 folder, 
                 BookChapterAndVersesString);
 
-            _snackbarService.EnqueueWithOk(imagesToSave.Count > 1
+            var msg = imagesToSave.Count > 1
                 ? string.Format(Properties.Resources.SAVED_X_IMAGES, imagesToSave.Count)
-                : Properties.Resources.SAVED_IMAGE);
+                : Properties.Resources.SAVED_IMAGE;
 
+            _snackbarService.Enqueue(msg, Properties.Resources.VIEW, LaunchFileExplorer);
             try
             {
                 s.Execute();
@@ -151,6 +154,11 @@
                 Log.Logger.Error(@"Could not save", ex);
                 _snackbarService.EnqueueWithOk(Properties.Resources.ERROR_SAVING);
             }
+        }
+
+        private void LaunchFileExplorer()
+        {
+            Process.Start(GetDestinationFolder());
         }
 
         private string GetDestinationFolder()
@@ -226,8 +234,18 @@
 
         private void HandleStyleChangedEvent(object sender, EventArgs e)
         {
-            // when the style is changed in the settings page we must ensure
-            // we display the first image (the style settings may change
+            RefreshImages();
+        }
+
+        private void HandleThemePathChangedEvent(object sender, EventArgs e)
+        {
+            RefreshImages();
+        }
+
+        private void RefreshImages()
+        {
+            // when the style or theme is changed in the settings page we must
+            // ensure we display the first image (the style settings may change
             // the number of images available).
             ImageIndex = null;
             _imagesService.Refresh();

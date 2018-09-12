@@ -16,13 +16,13 @@
         public static IEnumerable<DisplayDeviceData> ReadDisplayDevices()
         {
             Log.Logger.Debug("Reading display devices");
-                
+
             var result = new List<DisplayDeviceData>();
 
             for (uint id = 0; ; id++)
             {
                 Log.Logger.Verbose($"Seeking device {id}");
-                
+
                 EnumDisplayNativeMethods.DISPLAY_DEVICE device1 = default;
                 device1.cb = Marshal.SizeOf(device1);
 
@@ -35,21 +35,21 @@
                 }
 
                 Log.Logger.Verbose($"Device name: {device1.DeviceName}");
-                
+
                 if (device1.StateFlags.HasFlag(EnumDisplayNativeMethods.DisplayDeviceStateFlags.AttachedToDesktop))
                 {
                     Log.Logger.Verbose("Device attached to desktop");
-                    
+
                     EnumDisplayNativeMethods.DISPLAY_DEVICE device2 = default;
                     device2.cb = Marshal.SizeOf(device2);
 
                     rv = EnumDisplayNativeMethods.EnumDisplayDevices(device1.DeviceName, 0, ref device2, 0);
                     Log.Logger.Verbose($"Secondary EnumDisplayDevices retval = {rv}");
-                    
+
                     if (rv && device2.StateFlags.HasFlag(EnumDisplayNativeMethods.DisplayDeviceStateFlags.AttachedToDesktop))
                     {
                         Log.Logger.Verbose($"Display device data = {device2.DeviceName}, {device2.DeviceID}");
-                        
+
                         result.Add(new DisplayDeviceData
                         {
                             Name = device2.DeviceName,

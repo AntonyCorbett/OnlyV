@@ -13,9 +13,9 @@
 
     public class ThemeFile
     {
-        public const string ThemeFileExtension = ".theme";
+        public const string ThemeFileExtension = ".onlyv";
         private const string ThemeEntryName = "theme.json";
-        private const string ImageEntryName = "image";
+        private const string ImageEntryName = "image.png";
         
         private static ThemeCache Cache = new ThemeCache();
 
@@ -45,7 +45,9 @@
             var validBackgroundImage = false;
             if (!string.IsNullOrEmpty(backgroundImagePath))
             {
-                if (string.IsNullOrEmpty(Path.GetExtension(backgroundImagePath)) ||
+                var ext = Path.GetExtension(backgroundImagePath);
+                if (string.IsNullOrEmpty(ext) ||
+                    !ext.Equals(".png", StringComparison.OrdinalIgnoreCase) ||
                     !File.Exists(backgroundImagePath))
                 {
                     throw new ArgumentException(nameof(backgroundImagePath));
@@ -71,9 +73,7 @@
 
                     if (validBackgroundImage)
                     {
-                        var ext = Path.GetExtension(backgroundImagePath);
-
-                        zip.CreateEntryFromFile(backgroundImagePath, $"{ImageEntryName}{ext}");
+                        zip.CreateEntryFromFile(backgroundImagePath, ImageEntryName);
                     }
                 }
 
@@ -160,20 +160,13 @@
         {
             try
             {
-                var entry = zip.Entries.SingleOrDefault(x => x.Name.StartsWith(ImageEntryName, StringComparison.OrdinalIgnoreCase));
+                var entry = zip.Entries.SingleOrDefault(x => x.Name.Equals(ImageEntryName, StringComparison.OrdinalIgnoreCase));
                 if (entry != null)
                 {
                     using (var stream = entry.Open())
                     {
-                        var bitmap = new BitmapImage();
-
-                        bitmap.BeginInit();
-                        bitmap.StreamSource = stream;
-                        bitmap.CacheOption = BitmapCacheOption.OnLoad;
-                        bitmap.EndInit();
-                        bitmap.Freeze();
-
-                        return bitmap;
+                        var decoder = new PngBitmapDecoder(stream, BitmapCreateOptions.PreservePixelFormat, BitmapCacheOption.Default);
+                        return decoder.Frames[0];
                     }
                 }
             }
