@@ -20,13 +20,10 @@
         private const char Ellipsis = '…';
         private const double VerseFontSizeFactor = 0.5;
         private const double PixelsPerDip = 1.0;
-        private Color _continuationArrowColor;
-        private double _continuationArrowOpacity;
-
+        
         private Color _backgroundColor;
         private Brush _backgroundBrush;
-        private Brush _continuationBrush;
-
+        
         public BibleTextImage()
         {
             Width = 1920;
@@ -76,11 +73,7 @@
             FlowDirection = FlowDirection.LeftToRight;
             AllowAutoFit = true;
             ShowBreakInVerses = true;
-            ShowContinuationArrow = false;
-
-            ContinuationArrowOpacity = 1.0;
-            ContinuationArrowColor = FromHtmlString("#FCBA04");
-
+            
             TitleDropShadow = true;
             TitleDropShadowColor = Colors.Black;
             TitleDropShadowOpacity = 0.5;
@@ -152,41 +145,12 @@
         public bool AllowAutoFit { get; set; }
 
         public bool ShowBreakInVerses { get; set; }
-
-        public bool ShowContinuationArrow { get; set; }
-
+        
         public bool UseTildeParaSeparator { get; set; }
 
         public bool TrimPunctuation { get; set; }
 
         public bool TrimQuotes { get; set; }
-
-        public Color ContinuationArrowColor
-        {
-            get => _continuationArrowColor;
-            set
-            {
-                if (_continuationArrowColor != value)
-                {
-                    _continuationArrowColor = value;
-                    _continuationBrush = null;
-                }
-            }
-        }
-
-        public double ContinuationArrowOpacity
-        {
-            get => _continuationArrowOpacity;
-            set
-            {
-                // ReSharper disable once CompareOfFloatsByEqualityOperator
-                if (_continuationArrowOpacity != value)
-                {
-                    _continuationArrowOpacity = value;
-                    _continuationBrush = null;
-                }
-            }
-        }
 
         public bool TitleDropShadow { get; set; }
 
@@ -209,9 +173,7 @@
         public double BodyDropShadowDepth { get; set; }
 
         private Brush BackgroundBrush => _backgroundBrush ?? (_backgroundBrush = new SolidColorBrush(BackgroundColor));
-
-        private Brush ContinuationBrush => _continuationBrush ?? (_continuationBrush = new SolidColorBrush(ContinuationArrowColor) { Opacity = ContinuationArrowOpacity });
-
+        
         public IEnumerable<BitmapSource> Generate(string epubPath, int bookNumber, string chapterAndVerses)
         {
             if (epubPath == null)
@@ -529,44 +491,10 @@
 
                     var y = TopMargin + adjustmentForTitleAtTop + adjustmentForShortLineCount + (lineNum * lineHeight);
                     DrawTextLine(c, lineStr, y);
-
-                    if (ShowContinuationArrow && lineNum == linesForBmp.Length - 1 && moreImagesAfterThis)
-                    {
-                        DrawContinuationArrow(c, lineHeight, spaceForTitle);
-                    }
                 }
             }
 
             return visual;
-        }
-
-        private void DrawContinuationArrow(DrawingContext c, double lineHeight, double spaceForTitle)
-        {
-            var height = lineHeight / 2;
-            var width = height;
-
-            var xStart = FlowDirection == FlowDirection.LeftToRight
-               ? Width - RightMargin - width
-               : LeftMargin + width;
-
-            var yStart = Height - BottomMargin - (spaceForTitle / 3);
-
-            if (ShowTitle && TitlePosition == OnlyVTitlePosition.Bottom)
-            {
-                yStart -= lineHeight;
-            }
-
-            var start = new Point(xStart, yStart);
-
-            var segments = new[]
-            {
-                new LineSegment(new Point(xStart, yStart + height), false),
-                new LineSegment(new Point(xStart + width, yStart + (height / 2)), false)
-            };
-
-            var figure = new PathFigure(start, segments, true);
-            var geo = new PathGeometry(new[] { figure });
-            c.DrawGeometry(ContinuationBrush, null, geo);
         }
 
         private bool IsEndOfSentenceOrPhrase(string lastOrDefault)

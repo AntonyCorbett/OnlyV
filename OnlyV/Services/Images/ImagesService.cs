@@ -6,26 +6,58 @@
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using Extensions;
+    using Helpers;
     using ImageCreation;
+    using Options;
     using Themes.Common;
     using Themes.Common.FileHandling;
+    using UI;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class ImagesService : IImagesService
     {
+        private readonly IOptionsService _optionsService;
+        private readonly IUserInterfaceService _userInterfaceService;
         private BitmapSource[] _images;
+        private int _currentBookNumber;
+        private string _currentChapterAndVerses;
+        
+        public ImagesService(
+            IOptionsService optionsService,
+            IUserInterfaceService userInterfaceService)
+        {
+            _optionsService = optionsService;
+            _userInterfaceService = userInterfaceService;
+        }
 
         public int ImageCount => _images?.Length ?? 0;
 
-        public void Init(string epubPath, string themePath, int bookNumber, string chapterAndVerses)
+        public void Init(int bookNumber, string chapterAndVerses)
         {
-            var bibleTextImage = new BibleTextImage();
+            _currentBookNumber = bookNumber;
+            _currentChapterAndVerses = chapterAndVerses;
 
-            ApplyFormatting(bibleTextImage, themePath);
+            Refresh();
+        }
 
-            _images = epubPath != null 
-                ? bibleTextImage.Generate(epubPath, bookNumber, chapterAndVerses).ToArray() 
-                : null;
+        public void Refresh()
+        {
+            if (_currentBookNumber > 0 && !string.IsNullOrEmpty(_currentChapterAndVerses))
+            {
+                using (_userInterfaceService.GetBusy())
+                {
+                    var bibleTextImage = new BibleTextImage();
+
+                    ApplyFormatting(bibleTextImage, _optionsService.ThemePath);
+
+                    _images = _optionsService.EpubPath != null
+                        ? bibleTextImage.Generate(
+                                _optionsService.EpubPath, 
+                                _currentBookNumber,
+                                _currentChapterAndVerses).ToArray()
+                        : null;
+                }
+            }
         }
 
         public ImageSource Get(int index)
@@ -48,12 +80,21 @@
             var file = new ThemeFile();
             var cacheEntry = file.Read(themePath);
 
-            var theme = cacheEntry == null
-                ? new OnlyVTheme()
-                : cacheEntry.Theme;
-
-            var backgroundImage = cacheEntry?.BackgroundImage;
-
+            OnlyVTheme theme;
+            ImageSource backgroundImage;
+            if (cacheEntry == null)
+            {
+                // must use default...
+                theme = new OnlyVTheme();
+                theme.Background.UseImage = true;
+                backgroundImage = BitmapHelper.ConvertBitmap(Properties.Resources.Blue);
+            }
+            else
+            {
+                theme = cacheEntry.Theme;
+                backgroundImage = cacheEntry.BackgroundImage;
+            }
+            
             ApplyFormatting(bibleTextImage, theme, backgroundImage);
         }
 
@@ -90,23 +131,20 @@
 
             // background...
             bibleTextImage.BackgroundColor = ConvertFromString(theme.Background.Colour, Colors.Blue);
-            bibleTextImage.BackgroundImageSource = theme.Background.UseImage ? backgroundImage : null;
+            bibleTextImage.BackgroundImageSource = theme.Background.UseImage && _optionsService.UseBackgroundImage
+                ? backgroundImage
+                : null;
 
             // formatting...
-            bibleTextImage.AllowAutoFit = theme.Formatting.AutoFit;
-            bibleTextImage.ShowBreakInVerses = theme.Formatting.ShowVerseBreaks;
-            bibleTextImage.UseTildeParaSeparator = theme.Formatting.UseTildeMarker;
-            bibleTextImage.TrimPunctuation = theme.Formatting.TrimPunctuation;
-            bibleTextImage.TrimQuotes = theme.Formatting.TrimQuotes;
-
-            // Continuation arrow...
-            bibleTextImage.ShowContinuationArrow = theme.ContinuationArrow.Show;
-            bibleTextImage.ContinuationArrowColor = ConvertFromString(theme.ContinuationArrow.Colour, Colors.Azure);
-            bibleTextImage.ContinuationArrowOpacity = theme.ContinuationArrow.Opacity;
+            bibleTextImage.AllowAutoFit = _optionsService.AutoFit;
+            bibleTextImage.ShowBreakInVerses = _optionsService.ShowVerseBreaks;
+            bibleTextImage.UseTildeParaSeparator = _optionsService.UseTildeMarker;
+            bibleTextImage.TrimPunctuation = _optionsService.TrimPunctuation;
+            bibleTextImage.TrimQuotes = _optionsService.TrimQuotes;
 
             // body text...
             bibleTextImage.MainFont.FontFamily = new FontFamily(theme.BodyText.Font.Family);
-            bibleTextImage.MainFont.FontSize = theme.BodyText.Font.Size;
+            bibleTextImage.MainFont.FontSize = AdaptToScaling(theme.BodyText.Font.Size);
             bibleTextImage.MainFont.FontColor = ConvertFromString(theme.BodyText.Font.Colour, Colors.White);
             bibleTextImage.MainFont.FontStyle = theme.BodyText.Font.Style.AsWindowsFontStyle();
             bibleTextImage.MainFont.FontWeight = theme.BodyText.Font.Weight.AsWindowsFontWeight();
@@ -121,7 +159,7 @@
 
             // title text...
             bibleTextImage.TitleFont.FontFamily = new FontFamily(theme.TitleText.Font.Family);
-            bibleTextImage.TitleFont.FontSize = theme.TitleText.Font.Size;
+            bibleTextImage.TitleFont.FontSize = AdaptToScaling(theme.TitleText.Font.Size);
             bibleTextImage.TitleFont.FontColor = ConvertFromString(theme.TitleText.Font.Colour, Colors.White);
             bibleTextImage.TitleFont.FontStyle = theme.TitleText.Font.Style.AsWindowsFontStyle();
             bibleTextImage.TitleFont.FontWeight = theme.TitleText.Font.Weight.AsWindowsFontWeight();
@@ -138,12 +176,17 @@
             // font family same as body font
             var verseNosFontFamily = theme.BodyText.Font.Family;
 
-            bibleTextImage.ShowVerseNumbers = theme.VerseNumbers.Show;
+            bibleTextImage.ShowVerseNumbers = theme.VerseNumbers.Show && _optionsService.ShowVerseNos;
             bibleTextImage.VerseFont.FontFamily = new FontFamily(verseNosFontFamily);
             bibleTextImage.VerseFont.FontColor = ConvertFromString(theme.VerseNumbers.Colour, Colors.White);
             bibleTextImage.VerseFont.FontStyle = theme.VerseNumbers.Style.AsWindowsFontStyle();
             bibleTextImage.VerseFont.FontWeight = theme.VerseNumbers.Weight.AsWindowsFontWeight();
             bibleTextImage.VerseFont.Opacity = theme.VerseNumbers.Opacity;
+        }
+
+        private double AdaptToScaling(double fontSize)
+        {
+            return (fontSize * _optionsService.TextScalingPercentage) / 100;
         }
     }
 }

@@ -8,7 +8,7 @@
             Show = true;
             Style = OnlyVFontStyle.Normal;
             Weight = OnlyVFontWeight.Light;
-            Colour = "#7a5c61";
+            Colour = "#f0e100";
             Opacity = 1.0;
         }
 

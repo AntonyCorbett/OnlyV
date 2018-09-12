@@ -97,6 +97,16 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Blue {
+            get {
+                object obj = ResourceManager.GetObject("Blue", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copied to clipboard.
         /// </summary>
         internal static string COPIED {
@@ -147,6 +157,15 @@ namespace OnlyV.Properties {
         internal static string CREATE_FOLDER_ERROR {
             get {
                 return ResourceManager.GetString("CREATE_FOLDER_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Default.
+        /// </summary>
+        internal static string DEFAULT_THEME {
+            get {
+                return ResourceManager.GetString("DEFAULT_THEME", resourceCulture);
             }
         }
         

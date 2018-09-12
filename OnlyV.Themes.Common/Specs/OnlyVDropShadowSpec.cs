@@ -8,9 +8,9 @@
         public OnlyVDropShadowSpec()
         {
             Show = true;
-            Colour = ColorTranslator.ToHtml(Color.DarkGray);
-            Opacity = 0.8;
-            BlurRadius = 10;
+            Colour = ColorTranslator.ToHtml(Color.Black);
+            Opacity = 0.7;
+            BlurRadius = 20;
             Depth = 10;
         }
 

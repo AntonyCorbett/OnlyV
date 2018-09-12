@@ -6,10 +6,10 @@
         {
             ImageWidth = 1920;
             ImageHeight = 1080;
-            TopMargin = 60;
-            BottomMargin = 60;
-            LeftMargin = 60;
-            RightMargin = 60;
+            TopMargin = 150;
+            BottomMargin = 100;
+            LeftMargin = 150;
+            RightMargin = 150;
         }
     
         public int ImageWidth { get; set; }

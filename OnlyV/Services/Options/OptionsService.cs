@@ -5,6 +5,7 @@
     using System.Linq;
     using CommandLine;
     using EventArgs;
+    using GalaSoft.MvvmLight.Threading;
     using Helpers;
     using LoggingLevel;
     using Monitors;
@@ -19,7 +20,8 @@
         private readonly ILogLevelSwitchService _logLevelSwitchService;
         private readonly IMonitorsService _monitorsService;
         private readonly int _optionsVersion = 1;
-        
+        private readonly SingleExecAction _textScalingAction = new SingleExecAction(TimeSpan.FromMilliseconds(500));
+
         private AppOptions.Options _options;
         private string _optionsFilePath;
         private string _originalOptionsSignature;
@@ -43,6 +45,8 @@
         public event EventHandler EpubPathChangedEvent;
 
         public event EventHandler ThemePathChangedEvent;
+
+        public event EventHandler StyleChangedEvent;
 
         public string MediaMonitorId
         {
@@ -101,6 +105,25 @@
             }
         }
 
+        public int TextScalingPercentage
+        {
+            get => _options.TextScalingPercentage;
+            set
+            {
+                if (_options.TextScalingPercentage != value)
+                {
+                    _options.TextScalingPercentage = value;
+                    _textScalingAction.Execute(() =>
+                    {
+                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                        {
+                            StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                        });
+                    });
+                }
+            }
+        }
+
         public bool JwLibraryCompatibilityMode
         {
             get => _options.JwLibraryCompatibilityMode;
@@ -135,6 +158,97 @@
                 {
                     _options.ThemePath = value;
                     ThemePathChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool UseBackgroundImage
+        {
+            get => _options.UseBackgroundImage;
+            set
+            {
+                if (_options.UseBackgroundImage != value)
+                {
+                    _options.UseBackgroundImage = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool AutoFit
+        {
+            get => _options.AutoFit;
+            set
+            {
+                if (_options.AutoFit != value)
+                {
+                    _options.AutoFit = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool ShowVerseBreaks
+        {
+            get => _options.ShowVerseBreaks;
+            set
+            {
+                if (_options.ShowVerseBreaks != value)
+                {
+                    _options.ShowVerseBreaks = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool UseTildeMarker
+        {
+            get => _options.UseTildeMarker;
+            set
+            {
+                if (_options.UseTildeMarker != value)
+                {
+                    _options.UseTildeMarker = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool TrimPunctuation
+        {
+            get => _options.TrimPunctuation;
+            set
+            {
+                if (_options.TrimPunctuation != value)
+                {
+                    _options.TrimPunctuation = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool TrimQuotes
+        {
+            get => _options.TrimQuotes;
+            set
+            {
+                if (_options.TrimQuotes != value)
+                {
+                    _options.TrimQuotes = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
+        public bool ShowVerseNos
+        {
+            get => _options.ShowVerseNos;
+            set
+            {
+                if (_options.ShowVerseNos != value)
+                {
+                    _options.ShowVerseNos = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
                 }
             }
         }

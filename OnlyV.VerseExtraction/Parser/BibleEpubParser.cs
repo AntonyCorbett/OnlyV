@@ -9,8 +9,6 @@
 
     internal sealed class BibleEpubParser : IDisposable
     {
-        private const char Ellipsis = '…';
-        
         private readonly EpubAsArchive _epub;
         private readonly Lazy<IReadOnlyList<BibleBook>> _bibleBooks;
         private readonly Lazy<List<BookChapter>> _bookChapters;

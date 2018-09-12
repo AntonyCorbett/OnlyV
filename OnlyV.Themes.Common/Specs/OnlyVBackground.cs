@@ -5,7 +5,7 @@
     {
         public OnlyVBackground()
         {
-            Colour = "#e8f0ff";
+            Colour = "#027bce";
         }
 
         public bool UseImage { get; set; }

@@ -37,7 +37,8 @@
             _snackbarService = snackbarService;
 
             _optionsService.MediaMonitorChangedEvent += HandleMediaMonitorChangedEvent;
-            
+            _optionsService.StyleChangedEvent += HandleStyleChangedEvent;
+
             InitCommands();
         }
 
@@ -221,6 +222,16 @@
         private void HandleMediaMonitorChangedEvent(object sender, OnlyV.EventArgs.MonitorChangedEventArgs e)
         {
             _displayWindowService.ChangeTargetMonitor();
+        }
+
+        private void HandleStyleChangedEvent(object sender, EventArgs e)
+        {
+            // when the style is changed in the settings page we must ensure
+            // we display the first image (the style settings may change
+            // the number of images available).
+            ImageIndex = null;
+            _imagesService.Refresh();
+            ImageIndex = 0;
         }
     }
 }

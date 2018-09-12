@@ -127,8 +127,10 @@
     <Compile Include="AppOptions\Options.cs" />
     <Compile Include="EventArgs\MonitorChangedEventArgs.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
+    <Compile Include="Helpers\BitmapHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelperNativeMethods.cs" />
+    <Compile Include="Helpers\SingleExecAction.cs" />
     <Compile Include="Helpers\VersionDetection.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
@@ -275,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

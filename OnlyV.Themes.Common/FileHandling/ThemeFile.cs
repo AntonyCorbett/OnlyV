@@ -13,21 +13,21 @@
 
     public class ThemeFile
     {
+        public const string ThemeFileExtension = ".theme";
         private const string ThemeEntryName = "theme.json";
         private const string ImageEntryName = "image";
-        private const string ZipFileExtension = ".theme";
-
+        
         private static ThemeCache Cache = new ThemeCache();
 
         public IReadOnlyCollection<string> GetAll(string folder)
         {
-            return Directory.GetFiles(folder, $"*.{ZipFileExtension}");
+            return Directory.GetFiles(folder, $"*.{ThemeFileExtension}");
         }
 
         public void Create(string themePath, OnlyVTheme theme, string backgroundImagePath, bool overwrite)
         {
             if (string.IsNullOrEmpty(themePath) ||
-                !Path.GetExtension(themePath).Equals(ZipFileExtension, StringComparison.OrdinalIgnoreCase))
+                !Path.GetExtension(themePath).Equals(ThemeFileExtension, StringComparison.OrdinalIgnoreCase))
             {
                 throw new ArgumentException(nameof(themePath));
             }

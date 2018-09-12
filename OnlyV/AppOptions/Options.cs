@@ -10,6 +10,14 @@
             AlwaysOnTop = true;
             LogEventLevel = LogEventLevel.Information;
             JwLibraryCompatibilityMode = true;
+            UseBackgroundImage = true;
+            AutoFit = true;
+            ShowVerseBreaks = true;
+            UseTildeMarker = true;
+            TrimPunctuation = true;
+            TrimQuotes = true;
+            ShowVerseBreaks = true;
+            TextScalingPercentage = 100;
 
             Sanitize();
         }
@@ -30,6 +38,22 @@
 
         public string ThemePath { get; set; }
 
+        public bool UseBackgroundImage { get; set; }
+
+        public bool AutoFit { get; set; }
+
+        public bool ShowVerseBreaks { get; set; }
+
+        public bool UseTildeMarker { get; set; }
+
+        public bool TrimPunctuation { get; set; }
+
+        public bool TrimQuotes { get; set; }
+        
+        public bool ShowVerseNos { get; set; }
+
+        public int TextScalingPercentage { get; set; }
+
         /// <summary>
         /// Validates the data, correcting automatically as required
         /// </summary>
@@ -43,6 +67,15 @@
             if (!File.Exists(ThemePath))
             {
                 ThemePath = null;
+            }
+
+            if (TextScalingPercentage < 50)
+            {
+                TextScalingPercentage = 50;
+            }
+            else if (TextScalingPercentage > 150)
+            {
+                TextScalingPercentage = 150;
             }
         }
     }

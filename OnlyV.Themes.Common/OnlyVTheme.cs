@@ -9,8 +9,6 @@
         {
             Dimensions = new OnlyVDimensions();
             Background = new OnlyVBackground();
-            Formatting = new OnlyVFormatting();
-            ContinuationArrow = new OnlyVContinuationArrow();
             BodyText = new OnlyVBodyTextSpec();
             TitleText = new OnlyVTitleTextSpec();
             VerseNumbers = new OnlyVVerseNumberSpec();
@@ -19,11 +17,7 @@
         public OnlyVDimensions Dimensions { get; set; }
 
         public OnlyVBackground Background { get; set; }
-
-        public OnlyVFormatting Formatting { get; set; }
-
-        public OnlyVContinuationArrow ContinuationArrow { get; set; }
-
+        
         public OnlyVBodyTextSpec BodyText { get; set; }
 
         public OnlyVTitleTextSpec TitleText { get; set; }

@@ -7,7 +7,7 @@
         {
             Font = new OnlyVFontSpec
             {
-                Colour = "#392759",
+                Colour = "#fbfbff",
                 Size = 64
             };
 

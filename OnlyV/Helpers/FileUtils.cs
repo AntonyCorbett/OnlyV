@@ -33,6 +33,13 @@
             return folder;
         }
 
+        public static string GetThemeFolder()
+        {
+            string folder = Path.Combine(GetOnlyVMyDocsFolder(), @"ThemeFiles");
+            CreateDirectory(folder);
+            return folder;
+        }
+
         /// <summary>
         /// Creates directory if it doesn't exist. Throws if cannot be created
         /// </summary>

@@ -7,14 +7,14 @@
         {
             Font = new OnlyVFontSpec
             {
-                Colour = "#392759",
+                Colour = "#fbfbff",
                 Size = 86
             };
 
             HorizontalAlignment = OnlyVHorizontalTextAlignment.Centre;
             LineSpacing = OnlyVLineSpacing.Normal;
 
-            DropShadow = new OnlyVDropShadowSpec { Show = false };
+            DropShadow = new OnlyVDropShadowSpec { Show = true };
         }
 
         public OnlyVFontSpec Font { get; set; }

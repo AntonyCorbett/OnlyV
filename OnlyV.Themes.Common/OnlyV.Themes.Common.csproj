@@ -65,10 +65,10 @@
     <Compile Include="Cache\ThemeCache.cs" />
     <Compile Include="Cache\ThemeCacheEntry.cs" />
     <Compile Include="FileHandling\ThemeFile.cs" />
+    <Compile Include="FileHandling\ThemeFileItem.cs" />
     <Compile Include="Specs\OnlyVFontSpec.cs" />
     <Compile Include="Specs\OnlyVFormatting.cs" />
     <Compile Include="Specs\OnlyVBackground.cs" />
-    <Compile Include="Specs\OnlyVContinuationArrow.cs" />
     <Compile Include="Specs\OnlyVDimensions.cs" />
     <Compile Include="Specs\OnlyVDropShadowSpec.cs" />
     <Compile Include="Specs\OnlyVBodyTextSpec.cs" />

@@ -27,7 +27,7 @@
         </Style>
 
         <Style x:Key="SettingsComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MaterialDesignComboBox}">
-            <Setter Property="Margin" Value="0,5,0,5"/>
+            <Setter Property="Margin" Value="0,5,0,10"/>
             <Setter Property="Width" Value="420"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
@@ -48,7 +48,7 @@
         </EventTrigger>
     </UserControl.Triggers>
 
-    <ScrollViewer VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Hidden">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
     <StackPanel Orientation="Vertical" Margin="5">
         <GroupBox Header="Bibles" Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
@@ -103,12 +103,65 @@
                 </ComboBox>
 
                 <CheckBox IsChecked="{Binding JwLibraryCompatibilityMode, Mode=TwoWay}"
-                          Style="{StaticResource SettingsCheckBoxStyle}">
-                    JW Library compatibility mode
-                </CheckBox>
+                          Content="JW Library compatibility mode"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
 
             </StackPanel>
         </GroupBox>
+
+
+        <GroupBox Header="Image Style" Style="{StaticResource SettingsGroupBoxStyle}">
+            <StackPanel Orientation="Vertical">
+
+                <ComboBox ItemsSource="{Binding ThemeFiles}"
+                          Style="{StaticResource SettingsComboBoxStyle}" 
+                          materialDesign:HintAssist.IsFloating="True"
+                          materialDesign:HintAssist.Hint="Theme"
+                          SelectedValuePath="Path" 
+                          DisplayMemberPath="Name"
+                          SelectedValue="{Binding CurrentThemePath, Mode=TwoWay}">
+                </ComboBox>
+
+                <Label Margin="-5,0,0,0">Text scaling:</Label>
+                <Slider Width="420"
+                        Margin="0,0,0,10"
+                        Minimum="50"
+                        Maximum="150"
+                        Value="{Binding TextScalingPercentage}"
+                        TickPlacement="BottomRight"
+                        TickFrequency="10"
+                        HorizontalAlignment="Left" />
+
+                <CheckBox IsChecked="{Binding UseBackgroundImage, Mode=TwoWay}"
+                          Content="Use background image"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+
+                <CheckBox IsChecked="{Binding AutoFit, Mode=TwoWay}"
+                          Content="Auto fit"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+
+                <CheckBox IsChecked="{Binding ShowVerseBreaks, Mode=TwoWay}"
+                          Content="Use ellipses to indicate non-contiguous verses"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+
+                <CheckBox IsChecked="{Binding UseTildeMarker, Mode=TwoWay}"
+                          Content="Show a tilde between paragraphs in a single verse"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+
+                <CheckBox IsChecked="{Binding TrimPunctuation, Mode=TwoWay}"
+                          Content="Trim punctuation"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+
+                <CheckBox IsChecked="{Binding TrimQuotes, Mode=TwoWay}"
+                          Content="Trim quotation marks"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+            
+                <CheckBox IsChecked="{Binding ShowVerseNos, Mode=TwoWay}"
+                          Content="Show verse numbers"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+            </StackPanel>
+        </GroupBox>
+
 
         <GroupBox Header="Miscellaneous" Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
@@ -119,9 +172,8 @@
                            Foreground="{StaticResource MaterialDesignBodyLight}" />
 
                 <CheckBox IsChecked="{Binding AlwaysOnTop, Mode=TwoWay}"
-                          Style="{StaticResource SettingsCheckBoxStyle}">
-                    Main window always on top
-                </CheckBox>
+                          Content="Main window always on top"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <ComboBox ItemsSource="{Binding LoggingLevels}"
                           Style="{StaticResource SettingsComboBoxStyle}" 

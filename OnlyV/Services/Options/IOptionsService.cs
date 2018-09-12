@@ -11,7 +11,11 @@
         event EventHandler AlwaysOnTopChangedEvent;
         
         event EventHandler EpubPathChangedEvent;
-        
+
+        event EventHandler ThemePathChangedEvent;
+
+        event EventHandler StyleChangedEvent;
+
         LogEventLevel LogEventLevel { get; set; }
 
         bool AlwaysOnTop { get; set; }
@@ -26,8 +30,24 @@
 
         string ThemePath { get; set; }
 
-        string SaveToFolder { get; set; }
+        bool UseBackgroundImage { get; set; }
+
+        bool AutoFit { get; set; }
+
+        bool ShowVerseBreaks { get; set; }
+
+        bool UseTildeMarker { get; set; }
+
+        bool TrimPunctuation { get; set; }
+
+        bool TrimQuotes { get; set; }
         
+        bool ShowVerseNos { get; set; }
+
+        string SaveToFolder { get; set; }
+
+        int TextScalingPercentage { get; set; }
+
         void Save();
     }
 }

@@ -218,8 +218,6 @@ namespace OnlyV.ViewModel
         private void InitImagesService()
         {
             _imagesService.Init(
-                _optionsService.EpubPath,
-                _optionsService.ThemePath,
                 _scripturesViewModel.BookNumber, 
                 _scripturesViewModel.ChapterAndVersesString);
         }
