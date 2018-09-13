@@ -19,4 +19,5 @@ AutoMapper (Jimmy Bogard et al) is used under the MIT License.
 GalaSoft MVVM Light (Laurent Bugnion et al). 
 MaterialDesign themes (James Willock, Mulholland Software and Contributors) is used under the MIT license. 
 Serilog is used under the Apache License Version 2.0, January 2004.
+Bible image used courtesy Mariah Harwood.
 
