@@ -8,10 +8,10 @@
     using Extensions;
     using Helpers;
     using ImageCreation;
+    using OnlyV.Themes.Common.Services.UI;
     using Options;
     using Themes.Common;
     using Themes.Common.FileHandling;
-    using UI;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class ImagesService : IImagesService

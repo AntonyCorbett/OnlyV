@@ -8,12 +8,13 @@
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.Messaging;
     using Helpers;
+    using OnlyV.Themes.Common.Models;
+    using OnlyV.Themes.Common.Services.UI;
     using PubSubMessages;
     using Serilog.Events;
     using Services.DragDrop;
     using Services.Monitors;
     using Services.Options;
-    using Services.UI;
     using Themes.Common.FileHandling;
 
     // ReSharper disable once ClassNeverInstantiated.Global

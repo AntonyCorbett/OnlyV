@@ -10,11 +10,11 @@ namespace OnlyV.ViewModel
     using GalaSoft.MvvmLight.CommandWpf;
     using Helpers;
     using MaterialDesignThemes.Wpf;
+    using OnlyV.Themes.Common.Services.UI;
     using Services.CommandLine;
     using Services.Images;
     using Services.Options;
     using Services.Snackbar;
-    using Services.UI;
 
     // ReSharper disable once UnusedMember.Global
     // ReSharper disable once ClassNeverInstantiated.Global

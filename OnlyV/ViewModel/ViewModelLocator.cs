@@ -3,6 +3,7 @@ namespace OnlyV.ViewModel
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Ioc;
     using OnlyV.Services.LoggingLevel;
+    using OnlyV.Themes.Common.Services.UI;
     using Services.Bible;
     using Services.CommandLine;
     using Services.DisplayWindow;
@@ -11,7 +12,6 @@ namespace OnlyV.ViewModel
     using Services.Monitors;
     using Services.Options;
     using Services.Snackbar;
-    using Services.UI;
 
     /// <summary>
     /// This class contains static references to all the view models in the

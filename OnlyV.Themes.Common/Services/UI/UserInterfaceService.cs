@@ -1,7 +1,7 @@
-﻿namespace OnlyV.Services.UI
+﻿namespace OnlyV.Themes.Common.Services.UI
 {
     // ReSharper disable once ClassNeverInstantiated.Global
-    internal class UserInterfaceService : IUserInterfaceService
+    public class UserInterfaceService : IUserInterfaceService
     {
         public BusyCursor GetBusy()
         {

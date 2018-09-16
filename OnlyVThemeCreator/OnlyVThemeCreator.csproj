@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DBFF9EEC-BE27-4D14-B9A6-790AFF75E49F}</ProjectGuid>
+    <ProjectGuid>{09BB9523-9475-482C-B637-C3EC5F76C1BB}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>OnlyV</RootNamespace>
-    <AssemblyName>OnlyV</AssemblyName>
+    <RootNamespace>OnlyVThemeCreator</RootNamespace>
+    <AssemblyName>OnlyVThemeCreator</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -24,9 +25,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>..\OnlyV.ruleset</CodeAnalysisRuleSet>
-    <DocumentationFile>
-    </DocumentationFile>
-    <LangVersion>7.3</LangVersion>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -37,45 +35,25 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>..\OnlyV.ruleset</CodeAnalysisRuleSet>
-    <LangVersion>7.1</LangVersion>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoMapper, Version=7.0.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
-      <HintPath>..\packages\AutoMapper.7.0.1\lib\net45\AutoMapper.dll</HintPath>
-    </Reference>
     <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.2.0.4\lib\net47\CommonServiceLocator.dll</HintPath>
     </Reference>
-    <Reference Include="FluentCommandLineParser, Version=1.4.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FluentCommandLineParser.1.4.3\lib\net35\FluentCommandLineParser.dll</HintPath>
-    </Reference>
     <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
     </Reference>
     <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
     <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.1.1101, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignThemes.2.4.1.1101\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -94,14 +72,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\MvvmLightLibs.5.4.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -121,93 +93,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="..\SolutionInfo.cs">
-      <Link>Properties\SolutionInfo.cs</Link>
-    </Compile>
     <Compile Include="AppOptions\Options.cs" />
-    <Compile Include="EventArgs\MonitorChangedEventArgs.cs" />
-    <Compile Include="Extensions\EnumExtensions.cs" />
-    <Compile Include="Helpers\BitmapHelper.cs" />
-    <Compile Include="Helpers\JwLib\JwLibHelper.cs" />
-    <Compile Include="Helpers\JwLib\JwLibHelperNativeMethods.cs" />
-    <Compile Include="Helpers\SingleExecAction.cs" />
-    <Compile Include="Helpers\VersionDetection.cs" />
-    <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
-    <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
-    <Compile Include="Mappings\MappingProfile.cs" />
-    <Compile Include="Pages\PreviewPage.xaml.cs">
-      <DependentUpon>PreviewPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\ScripturesPage.xaml.cs">
-      <DependentUpon>ScripturesPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\StartupPage.xaml.cs">
-      <DependentUpon>StartupPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PubSubMessages\DragDropMessage.cs" />
-    <Compile Include="PubSubMessages\DragOverMessage.cs" />
-    <Compile Include="PubSubMessages\ShutDownMessage.cs" />
-    <Compile Include="Services\Bible\BibleVersesService.cs" />
     <Compile Include="Helpers\FileUtils.cs" />
-    <Compile Include="Services\Bible\IBibleVersesService.cs" />
-    <Compile Include="Services\CommandLine\CommandLineService.cs" />
-    <Compile Include="Services\CommandLine\ICommandLineService.cs" />
-    <Compile Include="Services\DisplayWindow\DisplayWindowService.cs" />
-    <Compile Include="Services\DisplayWindow\IDisplayWindowService.cs" />
-    <Compile Include="Services\DragDrop\DragDropService.cs" />
-    <Compile Include="Services\DragDrop\IDragDropService.cs" />
-    <Compile Include="Services\Images\BitmapWriter.cs" />
-    <Compile Include="Services\Images\IImageSavingService.cs" />
-    <Compile Include="Services\Images\ImageSavingService.cs" />
-    <Compile Include="Services\LoggingLevel\ILogLevelSwitchService.cs" />
-    <Compile Include="Services\LoggingLevel\LogLevelSwitchService.cs" />
-    <Compile Include="Services\Monitors\DisplayDeviceData.cs" />
-    <Compile Include="Services\Monitors\DisplayDevices.cs" />
-    <Compile Include="Services\Monitors\EnumDisplayNativeMethods.cs" />
-    <Compile Include="Services\Monitors\IMonitorsService.cs" />
-    <Compile Include="Services\Monitors\MonitorsService.cs" />
-    <Compile Include="Services\Monitors\SystemMonitor.cs" />
-    <Compile Include="Services\Options\IOptionsService.cs" />
-    <Compile Include="Services\Options\OptionsService.cs" />
-    <Compile Include="Services\Images\IImagesService.cs" />
-    <Compile Include="Services\Images\ImagesService.cs" />
-    <Compile Include="Services\Snackbar\ISnackbarService.cs" />
-    <Compile Include="Services\Snackbar\SnackbarService.cs" />
-    <Compile Include="ViewModel\ButtonModel.cs" />
-    <Compile Include="ViewModel\DisplayViewModel.cs" />
-    <Compile Include="ViewModel\LoggingLevel.cs" />
+    <Compile Include="Helpers\StandardTextSample.cs" />
+    <Compile Include="Services\IOptionsService.cs" />
+    <Compile Include="Services\OptionsService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\MonitorItem.cs" />
-    <Compile Include="ViewModel\PreviewViewModel.cs" />
-    <Compile Include="ViewModel\ScripturesViewModel.cs" />
-    <Compile Include="ViewModel\SettingsViewModel.cs" />
-    <Compile Include="ViewModel\StartupViewModel.cs" />
-    <Compile Include="ViewModel\VerseButtonModel.cs" />
+    <Compile Include="ViewModel\VerseTextItem.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Page Include="Pages\PreviewPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\ScripturesPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\SettingsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\StartupPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\DisplayWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Windows\MainWindow.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -215,10 +109,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Windows\DisplayWindow.xaml.cs">
-      <DependentUpon>DisplayWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Windows\MainWindow.xaml.cs">
+    <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -241,9 +132,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <AdditionalFiles Include="..\OnlyV.ruleset">
-      <Link>OnlyV.ruleset</Link>
-    </AdditionalFiles>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -259,23 +147,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OnlyV.ImageCreation\OnlyV.ImageCreation.csproj">
-      <Project>{EBF1CBF7-052C-4396-96DC-8347718BB6E5}</Project>
+      <Project>{ebf1cbf7-052c-4396-96dc-8347718bb6e5}</Project>
       <Name>OnlyV.ImageCreation</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlyV.Themes.Common\OnlyV.Themes.Common.csproj">
-      <Project>{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}</Project>
+      <Project>{4e9c81b3-f2e8-4c67-ba0d-edf9e2638f04}</Project>
       <Name>OnlyV.Themes.Common</Name>
     </ProjectReference>
     <ProjectReference Include="..\OnlyV.VerseExtraction\OnlyV.VerseExtraction.csproj">
-      <Project>{50DE2FAD-2092-492A-8C90-6B3688A6E9C2}</Project>
+      <Project>{50de2fad-2092-492a-8c90-6b3688a6e9c2}</Project>
       <Name>OnlyV.VerseExtraction</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Blue.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

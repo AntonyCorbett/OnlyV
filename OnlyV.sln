@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyV.ImageCreation", "Only
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyV.Themes.Common", "OnlyV.Themes.Common\OnlyV.Themes.Common.csproj", "{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyVThemeCreator", "OnlyVThemeCreator\OnlyVThemeCreator.csproj", "{09BB9523-9475-482C-B637-C3EC5F76C1BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4E9C81B3-F2E8-4C67-BA0D-EDF9E2638F04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09BB9523-9475-482C-B637-C3EC5F76C1BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BB9523-9475-482C-B637-C3EC5F76C1BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BB9523-9475-482C-B637-C3EC5F76C1BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BB9523-9475-482C-B637-C3EC5F76C1BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

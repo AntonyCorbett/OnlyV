@@ -10,10 +10,10 @@
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Threading;
     using Helpers;
+    using OnlyV.Themes.Common.Services.UI;
     using PubSubMessages;
     using Serilog;
     using Snackbar;
-    using UI;
 
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class DragDropService : IDragDropService

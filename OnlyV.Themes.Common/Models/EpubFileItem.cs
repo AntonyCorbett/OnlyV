@@ -1,6 +1,6 @@
-﻿namespace OnlyV.Services.DragDrop
+﻿namespace OnlyV.Themes.Common.Models
 {
-    internal class EpubFileItem
+    public class EpubFileItem
     {
         public string Path { get; set; }
 
