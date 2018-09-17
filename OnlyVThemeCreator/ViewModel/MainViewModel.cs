@@ -7,6 +7,7 @@ namespace OnlyVThemeCreator.ViewModel
     using System.Linq;
     using System.Windows.Media;
     using GalaSoft.MvvmLight;
+    using OnlyV.ImageCreation;
     using OnlyV.Themes.Common.Models;
     using OnlyV.Themes.Common.Services.UI;
     using OnlyV.VerseExtraction;
@@ -17,7 +18,9 @@ namespace OnlyVThemeCreator.ViewModel
     {
         private readonly IUserInterfaceService _userInterfaceService;
         private readonly IOptionsService _optionsService;
+        private readonly BibleTextImage _imageService;
         private int _currentSampleTextId;
+        private ImageSource _imageSource;
 
         public MainViewModel(
             IUserInterfaceService userInterfaceService,
@@ -25,13 +28,27 @@ namespace OnlyVThemeCreator.ViewModel
         {
             _userInterfaceService = userInterfaceService;
             _optionsService = optionsService;
+            _imageService = new BibleTextImage();
 
             BibleEpubFiles = GetBibleEpubFiles();
         }
 
         public event EventHandler EpubChangedEvent;
 
-        public ImageSource ImageSource { get; set; }
+        public event EventHandler SampleTextChangedEvent;
+
+        public ImageSource ImageSource
+        {
+            get => _imageSource;
+            set
+            {
+                if (_imageSource != value)
+                {
+                    _imageSource = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
 
         public IEnumerable<EpubFileItem> BibleEpubFiles { get; }
 
@@ -48,6 +65,8 @@ namespace OnlyVThemeCreator.ViewModel
                     using (_userInterfaceService.GetBusy())
                     {
                         UpdateTextSamples();
+
+                        UpdateImage();
                         EpubChangedEvent?.Invoke(this, EventArgs.Empty);
                     }
                 }
@@ -63,6 +82,9 @@ namespace OnlyVThemeCreator.ViewModel
                 {
                     _currentSampleTextId = value;
                     RaisePropertyChanged();
+                    
+                    UpdateImage();
+                    SampleTextChangedEvent?.Invoke(this, EventArgs.Empty);
                 }
             }
         }
@@ -115,7 +137,7 @@ namespace OnlyVThemeCreator.ViewModel
         {
             var result = new List<VerseTextItem>();
 
-            if (!string.IsNullOrEmpty(CurrentEpubFilePath) && File.Exists(CurrentEpubFilePath))
+            if (IsValidEpub())
             {
                 using (var reader = new BibleTextReader(CurrentEpubFilePath))
                 {
@@ -133,9 +155,39 @@ namespace OnlyVThemeCreator.ViewModel
             return result;
         }
 
+        private bool IsValidEpub()
+        {
+            return !string.IsNullOrEmpty(CurrentEpubFilePath) && File.Exists(CurrentEpubFilePath);
+        }
+
         private string GetSampleName(BibleTextReader reader, StandardTextSample sample)
         {
             return reader.GenerateVerseTitle(sample.BookNumber, sample.ChapterAndVerses);
+        }
+
+        private void UpdateImage()
+        {
+            if (CurrentSampleTextId == 0 || !IsValidEpub())
+            {
+                ImageSource = null;
+                return;
+            }
+
+            var sample = TextSamples.SingleOrDefault(x => x.Id.Equals(CurrentSampleTextId));
+            if (sample == null)
+            {
+                ImageSource = null;
+                return;
+            }
+
+            var images = _imageService.Generate(CurrentEpubFilePath, sample.BookNumber, sample.ChapterAndVerses);
+            if (images == null || !images.Any())
+            {
+                ImageSource = null;
+                return;
+            }
+
+            ImageSource = images.First();
         }
     }
 }

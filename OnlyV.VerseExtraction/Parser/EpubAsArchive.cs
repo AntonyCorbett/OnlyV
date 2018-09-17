@@ -214,8 +214,8 @@
             int verse,
             FormattingOptions formattingOptions)
         {
-            var x = GetChapter(chapters, bibleBook, chapter);
-
+            XDocument x = GetChapter(chapters, bibleBook, chapter);
+            
             var attr = x?.Root?.Attribute("xmlns");
             if (attr == null)
             {
@@ -349,17 +349,58 @@
         {
             XDocument result = null;
 
-            var entry = _zip.Value.GetEntry(entryPath);
+            ZipArchiveEntry entry = _zip.Value.GetEntry(entryPath);
             if (entry != null)
             {
                 using (var stream = entry.Open())
+                using (var sr = new StreamReader(stream))
                 {
-                    result = XDocument.Load(stream);
+                    var txt = sr.ReadToEnd();
+                    result = XDocument.Parse(RemoveExtraneousMarkup(txt));
                 }
             }
 
             return result;
         }
+
+        private string RemoveExtraneousMarkup(string text)
+        {
+            // this markup is found in bi12 format Bibles. It must be removed
+            // before converting to xhtml otherwise the "HS" component is treated
+            // as a text node!
+            const string token1 = "HS-<sup>";
+            const string token2 = "HS<sup>";
+            const string closingToken = "</sup>,";
+
+            {
+                var startIndex = text.IndexOf(token1, StringComparison.OrdinalIgnoreCase);
+                if (startIndex >= 0)
+                {
+                    var endIndex = text.IndexOf(closingToken, startIndex + token1.Length,
+                        StringComparison.OrdinalIgnoreCase);
+                    if (endIndex >= 0 && endIndex - startIndex < 12)
+                    {
+                        text = text.Remove(startIndex, endIndex + closingToken.Length - startIndex);
+                    }
+                }
+            }
+
+            {
+                var startIndex = text.IndexOf(token2, StringComparison.OrdinalIgnoreCase);
+                if (startIndex >= 0)
+                {
+                    var endIndex = text.IndexOf(closingToken, startIndex + token2.Length,
+                        StringComparison.OrdinalIgnoreCase);
+                    if (endIndex >= 0 && endIndex - startIndex < 12)
+                    {
+                        text = text.Remove(startIndex, endIndex + closingToken.Length - startIndex);
+                    }
+                }
+            }
+
+            return text;
+        }
+
 
         private string GetFullPathInArchive(string path)
         {

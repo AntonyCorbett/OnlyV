@@ -96,7 +96,7 @@
 
         </ToolBar>
 
-        <Image Grid.Row="1" Source="{Binding ImageSource}"/>
+        <Image Grid.Row="1" Margin="5" Source="{Binding ImageSource}"/>
         <GridSplitter Grid.Row="2" Height="5" HorizontalAlignment="Stretch" />
         <TextBlock Grid.Row="3" FontSize="55" HorizontalAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap">Bottom</TextBlock>
 
