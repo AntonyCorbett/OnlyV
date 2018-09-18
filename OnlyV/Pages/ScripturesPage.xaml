@@ -17,7 +17,7 @@
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
 
-             d:DesignHeight="650" d:DesignWidth="900">
+             d:DesignHeight="650" d:DesignWidth="900" Loaded="UserControl_Loaded">
     <UserControl.Resources>
         <Style x:Key="PanelCardStyle" TargetType="{x:Type materialDesign:Card}">
             <Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -25,7 +25,6 @@
         </Style>
 
         <Style x:Key="BibleSectionLabelStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignTitleTextBlock}">
-            <Setter Property="DockPanel.Dock" Value="Top" />
             <Setter Property="TextTrimming" Value="CharacterEllipsis" />
             <Setter Property="Margin" Value="5"/>
         </Style>
@@ -125,61 +124,88 @@
                 </Grid.ColumnDefinitions>
 
                 <materialDesign:Card Grid.Column="0" Style="{StaticResource PanelCardStyle}">
-                    <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
-                    <DockPanel>
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}" 
-                                   Visibility="{Binding Path=ContainsHebrew, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                   Text="HEBREW-ARAMAIC SCRIPTURES"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                        <ItemsControl ItemsSource="{Binding BookButtonsHebrew}" 
+                        <TextBlock Grid.Row="0" 
+                                   Style="{StaticResource BibleSectionLabelStyle}" 
+                                   Text="BOOK"/>
+
+                        <ScrollViewer Grid.Row="1" 
+                                      Margin="4" 
+                                      VerticalScrollBarVisibility="Auto" 
+                                      PanningMode="VerticalOnly">
+                        <DockPanel>
+                        <ItemsControl x:Name="HebrewBooksControl" 
+                                      ItemsSource="{Binding BookButtonsHebrew}" 
                                       DockPanel.Dock="Top" 
-                                      Visibility="{Binding Path=ContainsHebrew, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                      Margin="3,3,3,10"
+                                      Margin="3,0,3,10"
                                       ItemTemplate="{StaticResource BibleBookTemplate}"
-                                      ItemsPanel="{StaticResource BibleBookPanelTemplate}">
-                        </ItemsControl>
+                                      ItemsPanel="{StaticResource BibleBookPanelTemplate}" />
 
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}" 
-                                   Visibility="{Binding Path=ContainsGreek, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                   Text="CHRISTIAN GREEK SCRIPTURES"/>
-                        
-                        <ItemsControl ItemsSource="{Binding BookButtonsGreek}" 
+                        <ItemsControl x:Name="GreekBooksControl" 
+                                      ItemsSource="{Binding BookButtonsGreek}" 
                                       DockPanel.Dock="Top" 
                                       Margin="3"
                                       ItemTemplate="{StaticResource BibleBookTemplate}"
-                                      ItemsPanel="{StaticResource BibleBookPanelTemplate}">
-                        </ItemsControl>
-                    </DockPanel>
-                </ScrollViewer>
+                                      ItemsPanel="{StaticResource BibleBookPanelTemplate}"/>
+                        </DockPanel>
+                        </ScrollViewer>
+                    </Grid>
                 </materialDesign:Card>
 
                 <materialDesign:Card Grid.Column="1" Style="{StaticResource PanelCardStyle}">
-                    <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
-                    <DockPanel>
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="CHAPTERS"/></TextBlock>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                        <ItemsControl ItemsSource="{Binding ChapterButtons}" 
+                        <TextBlock Grid.Row="0" 
+                                   Text="CHAPTER"
+                                   Style="{StaticResource BibleSectionLabelStyle}"/>
+
+                        <ScrollViewer Grid.Row="1" Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
+                    
+                        <ItemsControl x:Name="ChaptersControl"
+                                      ItemsSource="{Binding ChapterButtons}" 
                                       DockPanel.Dock="Top" 
-                                      Margin="3"
+                                      Margin="3,0,3,3"
                                       ItemTemplate="{StaticResource ChapterTemplate}"
-                                      ItemsPanel="{StaticResource ChapterAndVersePanelTemplate}">
-                        </ItemsControl>
-                    </DockPanel>
-                </ScrollViewer>
+                                      ItemsPanel="{StaticResource ChapterAndVersePanelTemplate}"/>
+                    
+                        </ScrollViewer>
+                    </Grid>
                 </materialDesign:Card>
 
                 <materialDesign:Card Grid.Column="2" Style="{StaticResource PanelCardStyle}">
-                    <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
-                    <DockPanel>
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}"><Run Text="VERSES"/></TextBlock>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
 
-                        <ItemsControl ItemsSource="{Binding VerseButtons}" DockPanel.Dock="Top" 
-                                          ItemTemplate="{StaticResource VerseTemplate}"
-                                          ItemsPanel="{StaticResource ChapterAndVersePanelTemplate}">
-                        </ItemsControl>
+                        <TextBlock Grid.Row="0" 
+                                   Text="VERSES"
+                                   Style="{StaticResource BibleSectionLabelStyle}"/>
 
-                    </DockPanel>
-                </ScrollViewer>
+                        <ScrollViewer Grid.Row="1" 
+                                      Margin="4" 
+                                      VerticalScrollBarVisibility="Auto" 
+                                      PanningMode="VerticalOnly">
+                    
+                        <ItemsControl 
+                            x:Name="VersesControl"
+                            Margin="3,0,3,3"
+                            ItemsSource="{Binding VerseButtons}" DockPanel.Dock="Top" 
+                            ItemTemplate="{StaticResource VerseTemplate}"
+                            ItemsPanel="{StaticResource ChapterAndVersePanelTemplate}"/>
+                    
+                        </ScrollViewer>
+                    </Grid>
                 </materialDesign:Card>
 
             </Grid>
