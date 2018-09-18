@@ -5,18 +5,21 @@
     using System.IO;
     using Models;
 
-    internal class BibleBookDataCache
+    internal class BibleBooksListCache
     {
-        private readonly Dictionary<string, IReadOnlyCollection<BibleBookData>> _data = 
-            new Dictionary<string, IReadOnlyCollection<BibleBookData>>();
+        private readonly Dictionary<string, IReadOnlyList<BibleBook>> _data =
+            new Dictionary<string, IReadOnlyList<BibleBook>>();
 
-        public IReadOnlyCollection<BibleBookData> Get(string epubPath, DateTime epubCreationStamp)
+        public IReadOnlyList<BibleBook> Get(string epubPath, DateTime epubCreationStamp)
         {
             _data.TryGetValue(GenerateKey(epubPath, epubCreationStamp), out var data);
             return data;
         }
 
-        public void Add(string epubPath, DateTime epubCreationStamp, IReadOnlyCollection<BibleBookData> data)
+        public void Add(
+            string epubPath,
+            DateTime epubCreationStamp,
+            IReadOnlyList<BibleBook> data)
         {
             if (data != null)
             {

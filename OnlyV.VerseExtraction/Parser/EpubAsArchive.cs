@@ -8,6 +8,7 @@
     using System.Text;
     using System.Xml;
     using System.Xml.Linq;
+    using Cache;
     using Exceptions;
     using Models;
     using Serilog;
@@ -20,6 +21,13 @@
         private const string NavigationDocumentName = "biblebooknav.xhtml";
         private const string NavigationDocumentOldName = "BIBLE_00.xhtml";
         private const string Ellipsis = "...";
+        
+        private static readonly BibleChaptersListCache BibleChaptersCache = new BibleChaptersListCache();
+        private static readonly BibleBooksListCache BibleBooksCache = new BibleBooksListCache();
+        private static readonly XDocumentCache XDocCache = new XDocumentCache();
+
+        private readonly string _epubPath;
+        private readonly DateTime _epubCreationStampUtc;
 
         private readonly Lazy<ZipArchive> _zip;
         private readonly Lazy<string> _rootPath;
@@ -28,6 +36,11 @@
 
         public EpubAsArchive(string epubPath)
         {
+            _epubPath = epubPath;
+
+            var fi = new FileInfo(epubPath);
+            _epubCreationStampUtc = fi.CreationTimeUtc;
+
             _zip = new Lazy<ZipArchive>(() => ZipFile.OpenRead(epubPath));
             _rootPath = new Lazy<string>(GetRootFilePath);
             _navigationDocument = new Lazy<XDocument>(GetBibleNavigationDoc);
@@ -41,8 +54,14 @@
             }
         }
 
-        public List<BookChapter> GenerateBibleChaptersList(IReadOnlyList<BibleBook> bibleBooks)
+        public IReadOnlyList<BookChapter> GenerateBibleChaptersList(IReadOnlyList<BibleBook> bibleBooks)
         {
+            var cachedResult = BibleChaptersCache.Get(_epubPath, _epubCreationStampUtc);
+            if (cachedResult != null)
+            {
+                return cachedResult;
+            }
+
             Log.Logger.Information("Initialising chapters");
 
             var result = new List<BookChapter>();
@@ -82,11 +101,19 @@
                 }
             }
 
+            BibleChaptersCache.Add(_epubPath, _epubCreationStampUtc, result);
+
             return result;
         }
 
         public IReadOnlyList<BibleBook> GenerateBibleBooksList()
         {
+            var cachedResult = BibleBooksCache.Get(_epubPath, _epubCreationStampUtc);
+            if (cachedResult != null)
+            {
+                return cachedResult;
+            }
+
             Log.Logger.Information("Initialising books");
 
             var nav = _navigationDocument.Value;
@@ -142,6 +169,8 @@
                     }
                 }
             }
+
+            BibleBooksCache.Add(_epubPath, _epubCreationStampUtc, result);
 
             return result;
         }
@@ -275,6 +304,7 @@
             return sb.ToString().Trim().Trim('~');
         }
 
+#pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
         private (string Text, bool Started, bool Finished) GetParagraph(
             XElement para, 
             XElement parentPara,
@@ -344,10 +374,20 @@
 
             return (sb.ToString(), started, finished);
         }
+#pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
 
-        private XDocument GetXmlFile(string entryPath)
+        private XDocument GetXmlFile(string entryPath, bool canCache = false)
         {
             XDocument result = null;
+
+            if (canCache)
+            {
+                result = XDocCache.Get(_epubPath, _epubCreationStampUtc, entryPath);
+                if (result != null)
+                {
+                    return result;
+                }
+            }
 
             ZipArchiveEntry entry = _zip.Value.GetEntry(entryPath);
             if (entry != null)
@@ -360,6 +400,11 @@
                 }
             }
 
+            if (canCache)
+            {
+                XDocCache.Add(_epubPath, _epubCreationStampUtc, entryPath, result);
+            }
+
             return result;
         }
 
@@ -370,37 +415,33 @@
             // as a text node!
             const string token1 = "HS-<sup>";
             const string token2 = "HS<sup>";
+
+            text = RemoveExtraneousMarkup(text, token1);
+            text = RemoveExtraneousMarkup(text, token2);
+
+            return text;
+        }
+
+        private string RemoveExtraneousMarkup(string text, string token)
+        {
             const string closingToken = "</sup>,";
-
+            
+            var startIndex = text.IndexOf(token, StringComparison.OrdinalIgnoreCase);
+            if (startIndex >= 0)
             {
-                var startIndex = text.IndexOf(token1, StringComparison.OrdinalIgnoreCase);
-                if (startIndex >= 0)
-                {
-                    var endIndex = text.IndexOf(closingToken, startIndex + token1.Length,
-                        StringComparison.OrdinalIgnoreCase);
-                    if (endIndex >= 0 && endIndex - startIndex < 12)
-                    {
-                        text = text.Remove(startIndex, endIndex + closingToken.Length - startIndex);
-                    }
-                }
-            }
+                var endIndex = text.IndexOf(
+                    closingToken,
+                    startIndex + token.Length,
+                    StringComparison.OrdinalIgnoreCase);
 
-            {
-                var startIndex = text.IndexOf(token2, StringComparison.OrdinalIgnoreCase);
-                if (startIndex >= 0)
+                if (endIndex >= 0 && endIndex - startIndex < 12)
                 {
-                    var endIndex = text.IndexOf(closingToken, startIndex + token2.Length,
-                        StringComparison.OrdinalIgnoreCase);
-                    if (endIndex >= 0 && endIndex - startIndex < 12)
-                    {
-                        text = text.Remove(startIndex, endIndex + closingToken.Length - startIndex);
-                    }
+                    text = text.Remove(startIndex, endIndex + closingToken.Length - startIndex);
                 }
             }
 
             return text;
         }
-
 
         private string GetFullPathInArchive(string path)
         {
@@ -413,7 +454,7 @@
 
             var entryPath = string.Concat(MetaInfFolderName, "/", ContainerFileName);
 
-            var x = GetXmlFile(entryPath);
+            var x = GetXmlFile(entryPath, canCache: true);
             var attr = x?.Root?.Attribute("xmlns");
             if (attr != null)
             {
@@ -436,14 +477,14 @@
 
         private XDocument GetBibleNavigationDoc()
         {
-            var x = GetXmlFile(GetFullPathInArchive(NavigationDocumentName));
+            var x = GetXmlFile(GetFullPathInArchive(NavigationDocumentName), canCache: true);
             if (x != null)
             {
                 _epubStyle = EpubStyle.New;
             }
             else
             {
-                x = GetXmlFile(GetFullPathInArchive(NavigationDocumentOldName));
+                x = GetXmlFile(GetFullPathInArchive(NavigationDocumentOldName), canCache: true);
                 _epubStyle = x != null ? EpubStyle.Old : EpubStyle.Unknown;
             }
 
@@ -748,7 +789,7 @@
             var c = chapters.FirstOrDefault(n => n.Book.BookNumber == book && n.Chapter == chapter);
             if (c != null)
             {
-                return GetXmlFile(c.FullPath);
+                return GetXmlFile(c.FullPath, canCache: true);
             }
 
             return null;

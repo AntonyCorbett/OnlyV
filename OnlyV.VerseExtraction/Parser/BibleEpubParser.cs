@@ -11,14 +11,14 @@
     {
         private readonly EpubAsArchive _epub;
         private readonly Lazy<IReadOnlyList<BibleBook>> _bibleBooks;
-        private readonly Lazy<List<BookChapter>> _bookChapters;
+        private readonly Lazy<IReadOnlyList<BookChapter>> _bookChapters;
 
         public BibleEpubParser(string epubPath)
         {
             _epub = new EpubAsArchive(epubPath);
             
             _bibleBooks = new Lazy<IReadOnlyList<BibleBook>>(GenerateBibleBooksList);
-            _bookChapters = new Lazy<List<BookChapter>>(GenerateChapterList);
+            _bookChapters = new Lazy<IReadOnlyList<BookChapter>>(GenerateChapterList);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_epub", Justification = "False positive")]
@@ -72,7 +72,7 @@
             return _epub.GetBibleText(_bookChapters.Value, bibleBook, chapter, verse, formattingOptions);
         }
 
-        private List<BookChapter> GenerateChapterList()
+        private IReadOnlyList<BookChapter> GenerateChapterList()
         {
             Log.Logger.Information("Generating chapter list");
             return _epub.GenerateBibleChaptersList(_bibleBooks.Value);

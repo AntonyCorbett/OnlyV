@@ -1,9 +1,8 @@
-﻿using AutoMapper;
-using OnlyV.Mappings;
-
-namespace Tests
+﻿namespace Tests
 {
+    using AutoMapper;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using OnlyV.Mappings;
 
     [TestClass]
     public class UnitTests

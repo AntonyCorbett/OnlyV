@@ -1,10 +1,10 @@
-﻿using OnlyV.VerseExtraction.Cache;
-
-namespace OnlyV.VerseExtraction
+﻿namespace OnlyV.VerseExtraction
 {
     using System;
     using System.Collections.Generic;
+    using System.IO;
     using System.Linq;
+    using Cache;
     using Interfaces;
     using Models;
     using Parser;
@@ -13,14 +13,19 @@ namespace OnlyV.VerseExtraction
 
     public sealed class BibleTextReader : IVerseReader, IBookLister, IDisposable
     {
-        private static BibleBookDataCache Cache = new BibleBookDataCache();
+        private static readonly BibleBookDataCache Cache = new BibleBookDataCache();
 
         private readonly string _epubPath;
+        private readonly DateTime _epubCreationStampUtc;
         private readonly BibleEpubParser _parser;
 
         public BibleTextReader(string epubPath)
         {
             _epubPath = epubPath;
+
+            var fi = new FileInfo(_epubPath);
+            _epubCreationStampUtc = fi.CreationTimeUtc;
+
             _parser = new BibleEpubParser(epubPath);
         }
 
@@ -41,11 +46,11 @@ namespace OnlyV.VerseExtraction
 
         public IReadOnlyCollection<BibleBookData> ExtractBookData()
         {
-            var result = Cache.Get(_epubPath);
+            var result = Cache.Get(_epubPath, _epubCreationStampUtc);
             if (result == null)
             {
                 result = ReadBookData();
-                Cache.Add(_epubPath, result);
+                Cache.Add(_epubPath, _epubCreationStampUtc, result);
             }
 
             return result;

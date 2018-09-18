@@ -1,13 +1,12 @@
-﻿using System;
-using System.IO;
-using Newtonsoft.Json;
-using OnlyV.ImageCreation;
-using OnlyV.Themes.Common;
-using OnlyV.Themes.Common.FileHandling;
-
-namespace Tests
+﻿namespace Tests
 {
+    using System;
+    using System.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using Newtonsoft.Json;
+    using OnlyV.ImageCreation;
+    using OnlyV.Themes.Common;
+    using OnlyV.Themes.Common.FileHandling;
     using OnlyV.VerseExtraction.Models;
     using OnlyV.VerseExtraction.Parser;
 
