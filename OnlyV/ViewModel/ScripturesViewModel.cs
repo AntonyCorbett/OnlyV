@@ -7,8 +7,6 @@
     using System.Text;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
-    using GalaSoft.MvvmLight.Messaging;
-    using PubSubMessages;
     using Services.Bible;
     using VerseExtraction.Models;
 
@@ -28,6 +26,10 @@
             InitCommands();
             UpdateBibleBooks();
         }
+
+        public bool ContainsHebrew => BookButtonsHebrew.Any();
+
+        public bool ContainsGreek => BookButtonsGreek.Any();
 
         public ObservableCollection<ButtonModel> BookButtonsHebrew { get; } =
             new ObservableCollection<ButtonModel>();
@@ -139,17 +141,33 @@
             return null;
         }
 
+        private ButtonModel GetFirstBookButton()
+        {
+            return BookButtonsHebrew.FirstOrDefault() ??
+                   BookButtonsGreek.FirstOrDefault();
+        }
+
         private ButtonModel GetBookButton(int bookNumber)
         {
             if (bookNumber > 0)
             {
                 if (bookNumber <= BibleBooksMetaData.NumBibleBooksHebrew)
                 {
+                    if (bookNumber > BookButtonsHebrew.Count)
+                    {
+                        return null;
+                    }
+
                     return BookButtonsHebrew[bookNumber - 1];
                 }
 
                 if (bookNumber <= BibleBooksMetaData.NumBibleBooks)
                 {
+                    if (bookNumber - BibleBooksMetaData.NumBibleBooksHebrew > BookButtonsGreek.Count)
+                    {
+                        return null;
+                    }
+
                     return BookButtonsGreek[bookNumber - BibleBooksMetaData.NumBibleBooksHebrew - 1];
                 }
             }
@@ -194,6 +212,9 @@
             }
             
             BookNumber = 0;
+
+            RaisePropertyChanged(nameof(ContainsHebrew));
+            RaisePropertyChanged(nameof(ContainsGreek));
         }
 
         private void UpdateChapters()
@@ -353,26 +374,39 @@
         {
             if (origBookNumber > 0)
             {
-                var bookButton = GetBookButton(origBookNumber);
-                if (bookButton != null)
+                var verses = new List<int>();
+                if (origVerses != null)
                 {
-                    bookButton.Selected = true;
-                    BookNumber = origBookNumber;
+                    verses.AddRange(origVerses);
+                }
 
-                    if (origChapter > 0)
+                var bookButton = GetBookButton(origBookNumber);
+                if (bookButton == null)
+                {
+                    // e.g. if we switched to a Bible that contains Greek Scrips only.
+                    bookButton = GetFirstBookButton();
+                    origBookNumber = (int)bookButton.CommandParameter;
+                    origChapter = 1;
+                    verses.Clear();
+                    verses.Add(1);
+                }
+
+                bookButton.Selected = true;
+                BookNumber = origBookNumber;
+
+                if (origChapter > 0)
+                {
+                    ChapterButtons[origChapter - 1].Selected = true;
+                    ChapterNumber = origChapter;
+
+                    if (verses.Any())
                     {
-                        ChapterButtons[origChapter - 1].Selected = true;
-                        ChapterNumber = origChapter;
-
-                        if (origVerses != null && origVerses.Any())
+                        foreach (var vs in verses)
                         {
-                            foreach (var vs in origVerses)
-                            {
-                                VerseButtons[vs - 1].Selected = true;
-                            }
-
-                            UpdateSelectedVerses();
+                            VerseButtons[vs - 1].Selected = true;
                         }
+
+                        UpdateSelectedVerses();
                     }
                 }
             }

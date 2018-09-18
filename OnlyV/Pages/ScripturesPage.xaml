@@ -24,11 +24,10 @@
             <Setter Property="Margin" Value="5"/>
         </Style>
 
-        <Style x:Key="BibleSectionLabelStyle" TargetType="{x:Type TextBlock}">
+        <Style x:Key="BibleSectionLabelStyle" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource MaterialDesignTitleTextBlock}">
             <Setter Property="DockPanel.Dock" Value="Top" />
             <Setter Property="TextTrimming" Value="CharacterEllipsis" />
             <Setter Property="Margin" Value="5"/>
-            <Setter Property="FontWeight" Value="Bold" />
         </Style>
 
         <Style x:Key="BookButtonStyle" TargetType="RadioButton" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
@@ -128,20 +127,22 @@
                 <materialDesign:Card Grid.Column="0" Style="{StaticResource PanelCardStyle}">
                     <ScrollViewer Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
                     <DockPanel>
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}">
-                                    <Run Text="HEBREW-ARAMAIC SCRIPTURES"/></TextBlock>
+                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}" 
+                                   Visibility="{Binding Path=ContainsHebrew, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   Text="HEBREW-ARAMAIC SCRIPTURES"/>
 
                         <ItemsControl ItemsSource="{Binding BookButtonsHebrew}" 
                                       DockPanel.Dock="Top" 
+                                      Visibility="{Binding Path=ContainsHebrew, Converter={StaticResource BooleanToVisibilityConverter}}"
                                       Margin="3,3,3,10"
                                       ItemTemplate="{StaticResource BibleBookTemplate}"
                                       ItemsPanel="{StaticResource BibleBookPanelTemplate}">
                         </ItemsControl>
 
-                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}">
-                            <Run Text="CHRISTIAN GREEK SCRIPTURES"/>
-                        </TextBlock>
-
+                        <TextBlock Style="{StaticResource BibleSectionLabelStyle}" 
+                                   Visibility="{Binding Path=ContainsGreek, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                   Text="CHRISTIAN GREEK SCRIPTURES"/>
+                        
                         <ItemsControl ItemsSource="{Binding BookButtonsGreek}" 
                                       DockPanel.Dock="Top" 
                                       Margin="3"
