@@ -53,6 +53,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="BibleTextReader.cs" />
+    <Compile Include="Cache\BibleBookDataCache.cs" />
     <Compile Include="Exceptions\EpubCompatibilityException.cs" />
     <Compile Include="Interfaces\IBookLister.cs" />
     <Compile Include="Interfaces\IVerseReader.cs" />

@@ -1,4 +1,6 @@
-﻿namespace OnlyV.VerseExtraction
+﻿using OnlyV.VerseExtraction.Cache;
+
+namespace OnlyV.VerseExtraction
 {
     using System;
     using System.Collections.Generic;
@@ -11,13 +13,15 @@
 
     public sealed class BibleTextReader : IVerseReader, IBookLister, IDisposable
     {
+        private static BibleBookDataCache Cache = new BibleBookDataCache();
+
+        private readonly string _epubPath;
         private readonly BibleEpubParser _parser;
-        private readonly Lazy<IReadOnlyCollection<BibleBookData>> _cachedBookData;
 
         public BibleTextReader(string epubPath)
         {
+            _epubPath = epubPath;
             _parser = new BibleEpubParser(epubPath);
-            _cachedBookData = new Lazy<IReadOnlyCollection<BibleBookData>>(ReadBookData);
         }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_parser", Justification = "False positive")]
@@ -37,7 +41,14 @@
 
         public IReadOnlyCollection<BibleBookData> ExtractBookData()
         {
-            return _cachedBookData.Value;
+            var result = Cache.Get(_epubPath);
+            if (result == null)
+            {
+                result = ReadBookData();
+                Cache.Add(_epubPath, result);
+            }
+
+            return result;
         }
 
         public string GenerateVerseTitle(int bookNumber, string chapterAndVerses)
