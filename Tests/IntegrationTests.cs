@@ -67,7 +67,6 @@
             var themePath = Path.Combine(currentFolder, $"{descriptiveName}.onlyv");
 
             var theme = new OnlyVTheme();
-            theme.Background.UseImage = true;
             theme.Background.Colour = backgroundColor;
 
             theme.BodyText.Font.Family = fontFamily;

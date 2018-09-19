@@ -1,4 +1,4 @@
-﻿namespace OnlyV.Helpers
+﻿namespace OnlyV.Themes.Common.Services
 {
     using System;
     using System.Threading;

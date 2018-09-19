@@ -25,6 +25,14 @@
         Icon="icon.ico">
     <Window.Resources>
         
+        <CollectionViewSource Source="{Binding Source={x:Static Fonts.SystemFontFamilies}}" x:Key="SysFonts"/>
+
+        <Style x:Key="ColorPickerStyle" TargetType="{x:Type xctk:ColorPicker}">
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="Margin" Value="0,5,0,10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
         <Style x:Key="ToolbarComboStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MaterialDesignComboBox}">
             <Setter Property="Margin" Value="15,0"/>
             <Setter Property="Width" Value="150"/>
@@ -39,6 +47,33 @@
             <Setter Property="Width" Value="200"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
             <Setter Property="Margin" Value="0,0,0,15" />
+        </Style>
+
+        <Style x:Key="ComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MaterialDesignComboBox}">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style x:Key="FloatingHintComboBoxStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource MaterialDesignFloatingHintComboBox}">
+            <Setter Property="materialDesign:HintAssist.IsFloating" Value="True"/>
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style x:Key="SliderStyle" TargetType="{x:Type Slider}" BasedOn="{StaticResource MaterialDesignSlider}">
+            <Setter Property="Margin" Value="0,0,0,10"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="{x:Type Label}" BasedOn="{StaticResource MaterialDesignLabel}">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="Foreground" Value="DarkGray"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="Width" Value="240"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
 
     </Window.Resources>
@@ -116,12 +151,26 @@
                 <ColumnDefinition Width="300" />
             </Grid.ColumnDefinitions>
 
-            <Image Grid.Column="0"
-                   Margin="10,0,0,0"
+            <StackPanel Grid.Column="0" 
+                        Margin="10,0,0,0">
+
+                <Image 
                    VerticalAlignment="Top"
                    RenderOptions.BitmapScalingMode="HighQuality"
                    Source="{Binding ImageSource}"/>
-            
+
+                <StackPanel Visibility="{Binding Path=IsSampleImageAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            Margin="0,20,0,0">
+                    <Label>Toggle background image</Label>
+                    <ToggleButton
+                        IsChecked="{Binding IsSampleBackgroundImageUsed}"
+                        HorizontalAlignment="Left"
+                        Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
+                        ToolTip="Toggle background" />
+                </StackPanel>
+
+            </StackPanel>
+
             <ScrollViewer Grid.Column="1" Padding="10,0,10,0">
                 <StackPanel Orientation="Vertical">
                     <GroupBox Header="Image Dimensions (pixels)" Style="{StaticResource GroupBoxStyle}">
@@ -184,7 +233,7 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         TextWrapping="Wrap"
-                                        Text="Drop your background image here."
+                                        Text="Optionally drop a background image here."
                                         Foreground="{StaticResource PrimaryHueDarkBrush}"/>
 
                                     <Button
@@ -199,10 +248,10 @@
 
                             </Grid>
 
-                            <CheckBox>Use image</CheckBox>
-
-                            <Label>Background colour</Label>
-                            <xctk:ColorPicker />
+                            <Label Style="{StaticResource LabelStyle}">Background colour</Label>
+                            <xctk:ColorPicker 
+                                Style="{StaticResource ColorPickerStyle}"
+                                SelectedColor="{Binding BackgroundColour}"/>
 
                         </StackPanel>
                     </GroupBox>
@@ -210,26 +259,53 @@
                     <GroupBox Header="Body Text" Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
-                            <TextBox
-                        materialDesign:HintAssist.Hint="Font family"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <ComboBox Style="{StaticResource ComboBoxStyle}"
+                                      ItemsSource="{Binding Source={StaticResource SysFonts}}"
+                                      SelectedValue="{Binding Path=BodyTextFontFamilyName}" 
+                                      Height="38" >
 
-                            <Label>Font size</Label>
-                            <Slider></Slider>
+                                <ComboBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <VirtualizingStackPanel />
+                                    </ItemsPanelTemplate>
+                                </ComboBox.ItemsPanel>
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock 
+                                            Text="{Binding}" 
+                                            FontFamily="{Binding}" 
+                                            FontSize="18"
+                                            Height="28"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
-                            <ComboBox materialDesign:HintAssist.Hint="Font style"
-                              materialDesign:HintAssist.IsFloating="True"
-                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
+                            <TextBox Style="{StaticResource TextBoxStyle}"
+                                     materialDesign:HintAssist.Hint="Font size"
+                                     Text="{Binding BodyTextSize}" />
 
-                            <ComboBox materialDesign:HintAssist.Hint="Font weight"
-                              materialDesign:HintAssist.IsFloating="True"
-                              Style="{StaticResource MaterialDesignFloatingHintComboBox}" />
+                            <ComboBox ItemsSource="{Binding FontStyles}"
+                                      SelectedValue="{Binding BodyTextFontStyle}"
+                                      materialDesign:HintAssist.Hint="Font style"
+                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
 
-                            <Label>Font colour</Label>
-                            <xctk:ColorPicker />
+                            <ComboBox ItemsSource="{Binding FontWeights}"
+                                      SelectedValue="{Binding BodyTextFontWeight}"
+                                      materialDesign:HintAssist.Hint="Font weight"
+                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
 
-                            <Label>Font opacity</Label>
-                            <Slider></Slider>
+                            <Label Style="{StaticResource LabelStyle}">Colour</Label>
+                            <xctk:ColorPicker 
+                                SelectedColor="{Binding BodyTextColour}"
+                                Style="{StaticResource ColorPickerStyle}" />
+
+                            <Label Style="{StaticResource LabelStyle}">Opacity</Label>
+                            <Slider Style="{StaticResource SliderStyle}"
+                                    Minimum="0"
+                                    Maximum="1"
+                                    Value="{Binding BodyTextOpacity}"
+                                    TickPlacement="BottomRight"
+                                    TickFrequency="0.1" />
 
                             <ComboBox materialDesign:HintAssist.Hint="Horizontal alignment"
                               materialDesign:HintAssist.IsFloating="True"

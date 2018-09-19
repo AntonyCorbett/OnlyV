@@ -68,5 +68,23 @@ namespace OnlyVThemeCreator.Properties {
                 return ResourceManager.GetString("CREATE_FOLDER_ERROR", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save Theme.
+        /// </summary>
+        internal static string SAVE_THEME {
+            get {
+                return ResourceManager.GetString("SAVE_THEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Theme file.
+        /// </summary>
+        internal static string THEME_FILE {
+            get {
+                return ResourceManager.GetString("THEME_FILE", resourceCulture);
+            }
+        }
     }
 }

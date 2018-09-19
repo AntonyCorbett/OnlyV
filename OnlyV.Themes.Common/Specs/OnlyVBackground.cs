@@ -7,9 +7,7 @@
         {
             Colour = "#027bce";
         }
-
-        public bool UseImage { get; set; }
-
+        
         public string Colour { get; set; }
     }
 }

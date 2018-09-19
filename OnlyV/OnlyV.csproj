@@ -130,7 +130,6 @@
     <Compile Include="Helpers\BitmapHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelperNativeMethods.cs" />
-    <Compile Include="Helpers\SingleExecAction.cs" />
     <Compile Include="Helpers\VersionDetection.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
     <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
@@ -159,7 +158,6 @@
     <Compile Include="Services\DisplayWindow\IDisplayWindowService.cs" />
     <Compile Include="Services\DragDrop\DragDropService.cs" />
     <Compile Include="Services\DragDrop\IDragDropService.cs" />
-    <Compile Include="Services\Images\BitmapWriter.cs" />
     <Compile Include="Services\Images\IImageSavingService.cs" />
     <Compile Include="Services\Images\ImageSavingService.cs" />
     <Compile Include="Services\LoggingLevel\ILogLevelSwitchService.cs" />

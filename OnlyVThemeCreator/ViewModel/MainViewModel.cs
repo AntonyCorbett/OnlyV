@@ -11,10 +11,16 @@ namespace OnlyVThemeCreator.ViewModel
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using GalaSoft.MvvmLight.Messaging;
+    using GalaSoft.MvvmLight.Threading;
+    using Microsoft.WindowsAPICodePack.Dialogs;
     using OnlyV.ImageCreation;
     using OnlyV.Themes.Common;
+    using OnlyV.Themes.Common.Extensions;
+    using OnlyV.Themes.Common.FileHandling;
     using OnlyV.Themes.Common.Models;
+    using OnlyV.Themes.Common.Services;
     using OnlyV.Themes.Common.Services.UI;
+    using OnlyV.Themes.Common.Specs;
     using OnlyV.VerseExtraction;
     using OnlyVThemeCreator.Helpers;
     using OnlyVThemeCreator.PubSubMessages;
@@ -25,11 +31,15 @@ namespace OnlyVThemeCreator.ViewModel
         private readonly IUserInterfaceService _userInterfaceService;
         private readonly IOptionsService _optionsService;
         private readonly BibleTextImage _imageService;
+        private readonly SingleExecAction _singleExecAction = new SingleExecAction(TimeSpan.FromMilliseconds(500));
         private int _currentSampleTextId;
         private ImageSource _imageSource;
         private OnlyVTheme _currentTheme;
         private BitmapImage _backgroundImage;
-
+        private Color _defaultBackgroundColor = Colors.Blue;
+        private Color _defaultTextColor = Colors.White;
+        private bool _isSampleBackgroundImageUsed;
+        
         public MainViewModel(
             IUserInterfaceService userInterfaceService,
             IOptionsService optionsService)
@@ -41,6 +51,7 @@ namespace OnlyVThemeCreator.ViewModel
             InitCommands();
 
             _currentTheme = new OnlyVTheme();
+            _isSampleBackgroundImageUsed = true;
 
             BibleEpubFiles = GetBibleEpubFiles();
 
@@ -61,10 +72,42 @@ namespace OnlyVThemeCreator.ViewModel
                 {
                     _imageSource = value;
                     RaisePropertyChanged();
+                    RaisePropertyChanged(nameof(IsSampleImageAvailable));
                 }
             }
         }
-        
+
+        public OnlyVFontStyle[] FontStyles { get; } = new OnlyVFontStyle[]
+        {
+            OnlyVFontStyle.Normal,
+            OnlyVFontStyle.Italic,
+            OnlyVFontStyle.Oblique
+        };
+
+        public OnlyVFontWeight[] FontWeights { get; } = new OnlyVFontWeight[]
+        {
+            OnlyVFontWeight.Light,
+            OnlyVFontWeight.Normal,
+            OnlyVFontWeight.SemiBold,
+            OnlyVFontWeight.Bold
+        };
+
+        public bool IsSampleImageAvailable => ImageSource != null;
+
+        public bool IsSampleBackgroundImageUsed
+        {
+            get => _isSampleBackgroundImageUsed;
+            set
+            {
+                if (_isSampleBackgroundImageUsed != value)
+                {
+                    _isSampleBackgroundImageUsed = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
         public IEnumerable<EpubFileItem> BibleEpubFiles { get; }
 
         public string CurrentEpubFilePath
@@ -208,6 +251,122 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
+        public Color? BackgroundColour
+        {
+            get => ConvertFromString(_currentTheme.Background.Colour, _defaultBackgroundColor);
+            set
+            {
+                if (value == null)
+                {
+                    value = _defaultBackgroundColor;
+                }
+
+                if (ConvertFromString(_currentTheme.Background.Colour, _defaultBackgroundColor) != value)
+                {
+                    _currentTheme.Background.Colour = value.Value.ToString();
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public string BodyTextFontFamilyName
+        {
+            get => _currentTheme.BodyText.Font.Family;
+            set
+            {
+                if (_currentTheme.BodyText.Font.Family != value)
+                {
+                    _currentTheme.BodyText.Font.Family = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double BodyTextSize
+        {
+            get => _currentTheme.BodyText.Font.Size;
+            set
+            {
+                if (_currentTheme.BodyText.Font.Size != value)
+                {
+                    _currentTheme.BodyText.Font.Size = value;
+
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double BodyTextOpacity
+        {
+            get => _currentTheme.BodyText.Font.Opacity;
+            set
+            {
+                if (_currentTheme.BodyText.Font.Opacity != value && IsValidOpacity(value))
+                {
+                    _currentTheme.BodyText.Font.Opacity = value;
+
+                    _singleExecAction.Execute(() =>
+                    {
+                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                        {
+                            RaisePropertyChanged();
+                            UpdateImage();
+                        });
+                    });
+                }
+            }
+        }
+
+        public OnlyVFontStyle BodyTextFontStyle
+        {
+            get => _currentTheme.BodyText.Font.Style;
+            set
+            {
+                if (_currentTheme.BodyText.Font.Style != value)
+                {
+                    _currentTheme.BodyText.Font.Style = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVFontWeight BodyTextFontWeight
+        {
+            get => _currentTheme.BodyText.Font.Weight;
+            set
+            {
+                if (_currentTheme.BodyText.Font.Weight != value)
+                {
+                    _currentTheme.BodyText.Font.Weight = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public Color? BodyTextColour
+        {
+            get => ConvertFromString(_currentTheme.BodyText.Font.Colour, _defaultTextColor);
+            set
+            {
+                if (value == null)
+                {
+                    value = _defaultTextColor;
+                }
+
+                if (ConvertFromString(_currentTheme.BodyText.Font.Colour, _defaultTextColor) != value)
+                {
+                    _currentTheme.BodyText.Font.Colour = value.Value.ToString();
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
         public RelayCommand NewFileCommand { get; set; }
 
         public RelayCommand OpenFileCommand { get; set; }
@@ -217,7 +376,7 @@ namespace OnlyVThemeCreator.ViewModel
         public RelayCommand SaveAsFileCommand { get; set; }
 
         public RelayCommand ClearBackgroundImageCommand { get; set; }
-
+        
         private void UpdateTextSamples()
         {
             var originalSampleId = CurrentSampleTextId;
@@ -294,33 +453,37 @@ namespace OnlyVThemeCreator.ViewModel
 
         private void UpdateImage()
         {
-            if (CurrentSampleTextId == 0 || !IsValidEpub())
+            using (_userInterfaceService.GetBusy())
             {
-                ImageSource = null;
-                return;
+                if (CurrentSampleTextId == 0 || !IsValidEpub())
+                {
+                    ImageSource = null;
+                    return;
+                }
+
+                var sample = TextSamples.SingleOrDefault(x => x.Id.Equals(CurrentSampleTextId));
+                if (sample == null)
+                {
+                    ImageSource = null;
+                    return;
+                }
+
+                ApplyFormatting();
+
+                var images = _imageService.Generate(CurrentEpubFilePath, sample.BookNumber, sample.ChapterAndVerses);
+                if (images == null || !images.Any())
+                {
+                    ImageSource = null;
+                    return;
+                }
+
+                ImageSource = images.First();
             }
-
-            var sample = TextSamples.SingleOrDefault(x => x.Id.Equals(CurrentSampleTextId));
-            if (sample == null)
-            {
-                ImageSource = null;
-                return;
-            }
-
-            ApplyFormatting();
-
-            var images = _imageService.Generate(CurrentEpubFilePath, sample.BookNumber, sample.ChapterAndVerses);
-            if (images == null || !images.Any())
-            {
-                ImageSource = null;
-                return;
-            }
-
-            ImageSource = images.First();
         }
 
         private void ApplyFormatting()
         {
+            // dimensions...
             _imageService.Width = Width;
             _imageService.Height = Height;
             _imageService.LeftMargin = LeftMargin;
@@ -328,7 +491,20 @@ namespace OnlyVThemeCreator.ViewModel
             _imageService.RightMargin = RightMargin;
             _imageService.BottomMargin = BottomMargin;
 
-            _imageService.BackgroundImageSource = _backgroundImage;
+            // background...
+            _imageService.BackgroundImageSource = IsSampleBackgroundImageUsed 
+                ? _backgroundImage 
+                : null;
+
+            _imageService.BackgroundColor = BackgroundColour ?? _defaultBackgroundColor;
+
+            // body text...
+            _imageService.MainFont.FontFamily = new FontFamily(BodyTextFontFamilyName);
+            _imageService.MainFont.FontSize = BodyTextSize;
+            _imageService.MainFont.FontStyle = BodyTextFontStyle.AsWindowsFontStyle();
+            _imageService.MainFont.FontWeight = BodyTextFontWeight.AsWindowsFontWeight();
+            _imageService.MainFont.FontColor = BodyTextColour ?? _defaultTextColor;
+            _imageService.MainFont.Opacity = BodyTextOpacity;
         }
 
         private void InitCommands()
@@ -357,7 +533,25 @@ namespace OnlyVThemeCreator.ViewModel
 
         private void SaveAsFile()
         {
-            // todo:
+            using (var d = new CommonSaveFileDialog())
+            {
+                d.OverwritePrompt = true;
+                d.AlwaysAppendDefaultExtension = true;
+                d.IsExpandedMode = true;
+                d.DefaultDirectory = FileUtils.GetThemeFolder();
+                d.DefaultExtension = ThemeFile.ThemeFileExtension;
+                d.Filters.Add(new CommonFileDialogFilter(Properties.Resources.THEME_FILE, $"*{ThemeFile.ThemeFileExtension}"));
+                d.Title = Properties.Resources.SAVE_THEME;
+
+                var rv = d.ShowDialog();
+                if (rv == CommonFileDialogResult.Ok)
+                {
+                    var themeName = d.FileName;
+
+                    ThemeFile f = new ThemeFile();
+                    f.Create(themeName, _currentTheme, _backgroundImage, overwrite: true);
+                }
+            }
         }
 
         private bool CanExecuteSaveFile()
@@ -457,6 +651,29 @@ namespace OnlyVThemeCreator.ViewModel
                 ext.Equals(".png", StringComparison.OrdinalIgnoreCase) ||
                 ext.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||
                 ext.Equals(".jpeg", StringComparison.OrdinalIgnoreCase);
+        }
+
+        private Color ConvertFromString(string htmlColor, Color defaultColor)
+        {
+            if (string.IsNullOrEmpty(htmlColor))
+            {
+                return defaultColor;
+            }
+
+            try
+            {
+                var color = ColorConverter.ConvertFromString(htmlColor);
+                return (Color?)color ?? defaultColor;
+            }
+            catch (FormatException)
+            {
+                return defaultColor;
+            }
+        }
+
+        private bool IsValidOpacity(double value)
+        {
+            return value >= 0 && value <= 1.0;
         }
     }
 }

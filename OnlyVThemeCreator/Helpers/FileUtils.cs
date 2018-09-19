@@ -96,5 +96,12 @@
 
             return true;
         }
+
+        public static string GetThemeFolder()
+        {
+            string folder = Path.Combine(GetOnlyVMyDocsFolder(), @"ThemeFiles");
+            CreateDirectory(folder);
+            return folder;
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace OnlyV.Services.Images
+﻿namespace OnlyV.Themes.Common.Services
 {
     using System.IO;
     using System.Windows.Media.Imaging;

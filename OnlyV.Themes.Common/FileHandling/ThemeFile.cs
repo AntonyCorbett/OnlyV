@@ -9,6 +9,7 @@
     using System.Windows.Media.Imaging;
     using Cache;
     using Newtonsoft.Json;
+    using OnlyV.Themes.Common.Services;
     using Serilog;
 
     public class ThemeFile
@@ -91,6 +92,31 @@
             }
         }
 
+        public void Create(
+            string themePath, 
+            OnlyVTheme theme, 
+            BitmapImage backgroundImage, 
+            bool overwrite)
+        {
+            string backgroundImagePath = null;
+
+            if (backgroundImage != null)
+            {
+                backgroundImagePath = Path.GetRandomFileName();
+                backgroundImagePath = Path.ChangeExtension(backgroundImagePath, ".png");
+                backgroundImagePath = Path.Combine(Path.GetTempPath(), backgroundImagePath);
+                
+                BitmapWriter.WritePng(backgroundImagePath, backgroundImage);
+            }
+            
+            Create(themePath, theme, backgroundImagePath, overwrite);
+
+            if (backgroundImagePath != null)
+            {
+                File.Delete(backgroundImagePath);
+            }
+        }
+
         public ThemeCacheEntry Read(string themePath)
         {
             if (string.IsNullOrEmpty(themePath))
@@ -137,11 +163,6 @@
                                         Theme = theme,
                                         BackgroundImage = ReadBackgroundImage(zip)
                                     };
-
-                                    if (result.BackgroundImage == null && result.Theme.Background != null)
-                                    {
-                                        result.Theme.Background.UseImage = false;
-                                    }
 
                                     return result;
                                 }

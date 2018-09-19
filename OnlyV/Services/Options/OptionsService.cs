@@ -10,6 +10,7 @@
     using LoggingLevel;
     using Monitors;
     using Newtonsoft.Json;
+    using OnlyV.Themes.Common.Services;
     using Serilog;
     using Serilog.Events;
 

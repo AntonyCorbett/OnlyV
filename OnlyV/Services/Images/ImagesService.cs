@@ -5,9 +5,9 @@
     using System.Linq;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
-    using Extensions;
     using Helpers;
     using ImageCreation;
+    using OnlyV.Themes.Common.Extensions;
     using OnlyV.Themes.Common.Services.UI;
     using Options;
     using Themes.Common;
@@ -86,7 +86,6 @@
             {
                 // must use default...
                 theme = new OnlyVTheme();
-                theme.Background.UseImage = true;
                 backgroundImage = BitmapHelper.ConvertBitmap(Properties.Resources.Blue);
             }
             else
@@ -131,7 +130,7 @@
 
             // background...
             bibleTextImage.BackgroundColor = ConvertFromString(theme.Background.Colour, Colors.Blue);
-            bibleTextImage.BackgroundImageSource = theme.Background.UseImage && _optionsService.UseBackgroundImage
+            bibleTextImage.BackgroundImageSource = _optionsService.UseBackgroundImage
                 ? backgroundImage
                 : null;
 

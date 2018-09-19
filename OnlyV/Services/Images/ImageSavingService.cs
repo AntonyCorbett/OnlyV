@@ -6,6 +6,7 @@
     using System.Windows.Media.Imaging;
     using Helpers;
     using Microsoft.WindowsAPICodePack.Dialogs;
+    using OnlyV.Themes.Common.Services;
 
     internal class ImageSavingService : IImageSavingService
     {

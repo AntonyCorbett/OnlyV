@@ -80,9 +80,12 @@
     </Compile>
     <Compile Include="Cache\ThemeCache.cs" />
     <Compile Include="Cache\ThemeCacheEntry.cs" />
+    <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="FileHandling\ThemeFile.cs" />
     <Compile Include="FileHandling\ThemeFileItem.cs" />
     <Compile Include="Models\EpubFileItem.cs" />
+    <Compile Include="Services\BitmapWriter.cs" />
+    <Compile Include="Services\SingleExecAction.cs" />
     <Compile Include="Specs\OnlyVFontSpec.cs" />
     <Compile Include="Specs\OnlyVFormatting.cs" />
     <Compile Include="Specs\OnlyVBackground.cs" />
