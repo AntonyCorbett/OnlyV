@@ -23,8 +23,8 @@
 
         public static readonly DependencyProperty CancelClosingProperty
             = DependencyProperty.RegisterAttached(
-                "CancelClosing", 
-                typeof(ICommand), 
+                "CancelClosing",
+                typeof(ICommand),
                 typeof(WindowClosingBehaviour));
 
         public static ICommand GetClosed(DependencyObject obj)
