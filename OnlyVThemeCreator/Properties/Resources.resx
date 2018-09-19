@@ -120,6 +120,9 @@
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Could not create folder {0}</value>
   </data>
+  <data name="OPEN_THEME" xml:space="preserve">
+    <value>OpenTheme</value>
+  </data>
   <data name="SAVE_THEME" xml:space="preserve">
     <value>Save Theme</value>
   </data>

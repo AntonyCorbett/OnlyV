@@ -131,8 +131,6 @@
     <Compile Include="Helpers\JwLib\JwLibHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelperNativeMethods.cs" />
     <Compile Include="Helpers\VersionDetection.cs" />
-    <Compile Include="Helpers\WindowPositioning\WindowPlacement.cs" />
-    <Compile Include="Helpers\WindowPositioning\WindowsPlacementNativeMethods.cs" />
     <Compile Include="Mappings\MappingProfile.cs" />
     <Compile Include="Pages\PreviewPage.xaml.cs">
       <DependentUpon>PreviewPage.xaml</DependentUpon>

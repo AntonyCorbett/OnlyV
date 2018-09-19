@@ -6,8 +6,8 @@
     using System.Windows.Media;
     using GalaSoft.MvvmLight.Messaging;
     using Helpers.JwLib;
-    using Helpers.WindowPositioning;
     using Monitors;
+    using OnlyV.Themes.Common.Services.WindowPositioning;
     using Options;
     using PubSubMessages;
     using Serilog;

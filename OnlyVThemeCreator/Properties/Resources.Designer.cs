@@ -70,6 +70,15 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OpenTheme.
+        /// </summary>
+        internal static string OPEN_THEME {
+            get {
+                return ResourceManager.GetString("OPEN_THEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save Theme.
         /// </summary>
         internal static string SAVE_THEME {

@@ -1,13 +1,12 @@
-﻿namespace OnlyV
+﻿namespace OnlyV.Windows
 {
-    using System;
     using System.ComponentModel;
     using System.Windows;
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Messaging;
-    using OnlyV.Helpers.WindowPositioning;
-    using OnlyV.PubSubMessages;
-    using OnlyV.Services.Options;
+    using OnlyV.Themes.Common.Services.WindowPositioning;
+    using PubSubMessages;
+    using Services.Options;
 
     /// <summary>
     /// Interaction logic for MainWindow.xaml

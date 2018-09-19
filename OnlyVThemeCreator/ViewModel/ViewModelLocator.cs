@@ -12,7 +12,7 @@ namespace OnlyVThemeCreator.ViewModel
             ServiceLocator.SetLocatorProvider(() => SimpleIoc.Default);
 
             SimpleIoc.Default.Register<MainViewModel>();
-
+            
             SimpleIoc.Default.Register<IOptionsService, OptionsService>();
             SimpleIoc.Default.Register<IUserInterfaceService, UserInterfaceService>();
         }

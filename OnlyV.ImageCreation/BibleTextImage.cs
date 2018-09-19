@@ -657,10 +657,10 @@
                     return height * 1.15;
 
                 case OnlyVLineSpacing.Large:
-                    return height * 1.25;
+                    return height * 1.30;
 
                 case OnlyVLineSpacing.VeryLarge:
-                    return height * 1.35;
+                    return height * 1.50;
             }
 
             return height;

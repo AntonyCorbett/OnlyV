@@ -49,6 +49,7 @@
       <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="Serilog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>..\packages\Serilog.2.7.1\lib\net46\Serilog.dll</HintPath>
     </Reference>
@@ -86,6 +87,8 @@
     <Compile Include="Models\EpubFileItem.cs" />
     <Compile Include="Services\BitmapWriter.cs" />
     <Compile Include="Services\SingleExecAction.cs" />
+    <Compile Include="Services\WindowPositioning\WindowPlacement.cs" />
+    <Compile Include="Services\WindowPositioning\WindowsPlacementNativeMethods.cs" />
     <Compile Include="Specs\OnlyVFontSpec.cs" />
     <Compile Include="Specs\OnlyVFormatting.cs" />
     <Compile Include="Specs\OnlyVBackground.cs" />

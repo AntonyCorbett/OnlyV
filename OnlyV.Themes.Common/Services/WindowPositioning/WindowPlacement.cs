@@ -1,4 +1,4 @@
-﻿namespace OnlyV.Helpers.WindowPositioning
+﻿namespace OnlyV.Themes.Common.Services.WindowPositioning
 {
     // ReSharper disable CommentTypo
     // ReSharper disable IdentifierTypo

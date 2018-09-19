@@ -3,16 +3,20 @@ namespace OnlyVThemeCreator.ViewModel
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using System.Windows;
+    using System.Windows.Input;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using GalaSoft.MvvmLight.Messaging;
     using GalaSoft.MvvmLight.Threading;
+    using Helpers;
     using Microsoft.WindowsAPICodePack.Dialogs;
+    using Newtonsoft.Json;
     using OnlyV.ImageCreation;
     using OnlyV.Themes.Common;
     using OnlyV.Themes.Common.Extensions;
@@ -22,24 +26,35 @@ namespace OnlyVThemeCreator.ViewModel
     using OnlyV.Themes.Common.Services.UI;
     using OnlyV.Themes.Common.Specs;
     using OnlyV.VerseExtraction;
-    using OnlyVThemeCreator.Helpers;
-    using OnlyVThemeCreator.PubSubMessages;
-    using OnlyVThemeCreator.Services;
+    using PubSubMessages;
+    using Services;
 
+    // ReSharper disable once UnusedMember.Global
     public class MainViewModel : ViewModelBase
     {
+        private const string AppName = @"OnlyV Theme Creator";
+        private const double TextSizeTolerance = 0.1;
+        private const double BlurRadiusTolerance = 0.5;
+        private const double ShadowDepthTolerance = 0.5;
+        private const double OpacityTolerance = 0.01;
+
         private readonly IUserInterfaceService _userInterfaceService;
         private readonly IOptionsService _optionsService;
         private readonly BibleTextImage _imageService;
         private readonly SingleExecAction _singleExecAction = new SingleExecAction(TimeSpan.FromMilliseconds(500));
+        private readonly Color _defaultBackgroundColor = Colors.Blue;
+        private readonly Color _defaultTextColor = Colors.White;
+        private readonly Color _defaultDropShadowColor = Colors.Black;
         private int _currentSampleTextId;
         private ImageSource _imageSource;
         private OnlyVTheme _currentTheme;
         private BitmapImage _backgroundImage;
-        private Color _defaultBackgroundColor = Colors.Blue;
-        private Color _defaultTextColor = Colors.White;
         private bool _isSampleBackgroundImageUsed;
-        
+        private string _currentThemePath;
+        private string _defaultFileSaveFolder;
+        private string _defaultFileOpenFolder;
+        private string _lastSavedThemeSignature;
+
         public MainViewModel(
             IUserInterfaceService userInterfaceService,
             IOptionsService optionsService)
@@ -50,6 +65,8 @@ namespace OnlyVThemeCreator.ViewModel
 
             InitCommands();
 
+            SystemFonts = GetSystemFonts();
+
             _currentTheme = new OnlyVTheme();
             _isSampleBackgroundImageUsed = true;
 
@@ -57,11 +74,69 @@ namespace OnlyVThemeCreator.ViewModel
 
             Messenger.Default.Register<DragOverMessage>(this, OnDragOver);
             Messenger.Default.Register<DragDropMessage>(this, OnDragDrop);
+
+            UpdateTextSamples();
+
+            SaveSignature();
         }
 
         public event EventHandler EpubChangedEvent;
 
         public event EventHandler SampleTextChangedEvent;
+
+        public double MaxBlurRadiusValue => 50;
+
+        public double BlurRadiusLargeChange => MaxBlurRadiusValue / 10;
+
+        public double MaxShadowDepthValue => 50;
+
+        public double ShadowDepthLargeChange => MaxShadowDepthValue / 10;
+
+        public SystemFont[] SystemFonts { get; }
+
+        public bool IsDirty => !CreateThemeSignature().Equals(_lastSavedThemeSignature);
+        
+        public OnlyVTheme CurrentTheme
+        {
+            get => _currentTheme;
+            set
+            {
+                if (_currentTheme != value)
+                {
+                    _currentTheme = value;
+
+                    // notifies that all properties have changed...
+                    RaisePropertyChanged(string.Empty);
+                }
+            }
+        }
+
+        public string CurrentThemePath
+        {
+            get => _currentThemePath;
+            set
+            {
+                if (_currentThemePath == null || _currentThemePath != value)
+                {
+                    _currentThemePath = value;
+                    RaisePropertyChanged();
+                    RaisePropertyChanged(nameof(MainWindowCaption));
+                }
+            }
+        }
+
+        public string MainWindowCaption
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(_currentThemePath))
+                {
+                    return $"{Path.GetFileNameWithoutExtension(_currentThemePath)} - {AppName}";
+                }
+
+                return AppName; 
+            }
+        }
 
         public ImageSource ImageSource
         {
@@ -77,14 +152,14 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        public OnlyVFontStyle[] FontStyles { get; } = new OnlyVFontStyle[]
+        public OnlyVFontStyle[] FontStyles { get; } = 
         {
             OnlyVFontStyle.Normal,
             OnlyVFontStyle.Italic,
             OnlyVFontStyle.Oblique
         };
 
-        public OnlyVFontWeight[] FontWeights { get; } = new OnlyVFontWeight[]
+        public OnlyVFontWeight[] FontWeights { get; } = 
         {
             OnlyVFontWeight.Light,
             OnlyVFontWeight.Normal,
@@ -92,6 +167,28 @@ namespace OnlyVThemeCreator.ViewModel
             OnlyVFontWeight.Bold
         };
 
+        public OnlyVHorizontalTextAlignment[] HorizontalAlignments { get; } = 
+        {
+            OnlyVHorizontalTextAlignment.Left,
+            OnlyVHorizontalTextAlignment.Centre,
+            OnlyVHorizontalTextAlignment.Right
+        };
+
+        public OnlyVLineSpacing[] LineSpacings { get; } = 
+        {
+            OnlyVLineSpacing.VerySmall,
+            OnlyVLineSpacing.Small,
+            OnlyVLineSpacing.Normal,
+            OnlyVLineSpacing.Large,
+            OnlyVLineSpacing.VeryLarge
+        };
+
+        public OnlyVTitlePosition[] TitlePositions { get; } = 
+        {
+            OnlyVTitlePosition.Top,
+            OnlyVTitlePosition.Bottom
+        };
+        
         public bool IsSampleImageAvailable => ImageSource != null;
 
         public bool IsSampleBackgroundImageUsed
@@ -289,7 +386,7 @@ namespace OnlyVThemeCreator.ViewModel
             get => _currentTheme.BodyText.Font.Size;
             set
             {
-                if (_currentTheme.BodyText.Font.Size != value)
+                if (Math.Abs(_currentTheme.BodyText.Font.Size - value) > TextSizeTolerance)
                 {
                     _currentTheme.BodyText.Font.Size = value;
 
@@ -304,19 +401,7 @@ namespace OnlyVThemeCreator.ViewModel
             get => _currentTheme.BodyText.Font.Opacity;
             set
             {
-                if (_currentTheme.BodyText.Font.Opacity != value && IsValidOpacity(value))
-                {
-                    _currentTheme.BodyText.Font.Opacity = value;
-
-                    _singleExecAction.Execute(() =>
-                    {
-                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
-                        {
-                            RaisePropertyChanged();
-                            UpdateImage();
-                        });
-                    });
-                }
+                SetOpacityProperty(nameof(BodyTextOpacity), _currentTheme.BodyText.Font.Opacity, value, v => _currentTheme.BodyText.Font.Opacity = v);
             }
         }
 
@@ -367,6 +452,389 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
+        public OnlyVHorizontalTextAlignment BodyTextHorizontalAlignment
+        {
+            get => _currentTheme.BodyText.HorizontalAlignment;
+            set
+            {
+                if (_currentTheme.BodyText.HorizontalAlignment != value)
+                {
+                    _currentTheme.BodyText.HorizontalAlignment = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVLineSpacing LineSpacing
+        {
+            get => _currentTheme.BodyText.LineSpacing;
+            set
+            {
+                if (_currentTheme.BodyText.LineSpacing != value)
+                {
+                    _currentTheme.BodyText.LineSpacing = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public bool BodyTextDropShadow
+        {
+            get => _currentTheme.BodyText.DropShadow.Show;
+            set
+            {
+                if (_currentTheme.BodyText.DropShadow.Show != value)
+                {
+                    _currentTheme.BodyText.DropShadow.Show = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public Color? BodyDropShadowColour
+        {
+            get => ConvertFromString(_currentTheme.BodyText.DropShadow.Colour, _defaultDropShadowColor);
+            set
+            {
+                if (value == null)
+                {
+                    value = _defaultDropShadowColor;
+                }
+
+                if (ConvertFromString(_currentTheme.BodyText.DropShadow.Colour, _defaultDropShadowColor) != value)
+                {
+                    _currentTheme.BodyText.DropShadow.Colour = value.Value.ToString();
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double BodyDropShadowOpacity
+        {
+            get => _currentTheme.BodyText.DropShadow.Opacity;
+            set
+            {
+                SetOpacityProperty(nameof(BodyDropShadowOpacity), _currentTheme.BodyText.DropShadow.Opacity, value, v => _currentTheme.BodyText.DropShadow.Opacity = v);
+            }
+        }
+
+        public double BodyDropShadowBlurRadius
+        {
+            get => _currentTheme.BodyText.DropShadow.BlurRadius;
+            set
+            {
+                if (Math.Abs(_currentTheme.BodyText.DropShadow.BlurRadius - value) > BlurRadiusTolerance && 
+                    IsValidBlurRadius(value))
+                {
+                    _currentTheme.BodyText.DropShadow.BlurRadius = value;
+
+                    _singleExecAction.Execute(() =>
+                    {
+                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                        {
+                            RaisePropertyChanged();
+                            UpdateImage();
+                        });
+                    });
+                }
+            }
+        }
+
+        public double BodyDropShadowDepth
+        {
+            get => _currentTheme.BodyText.DropShadow.Depth;
+            set
+            {
+                if (Math.Abs(_currentTheme.BodyText.DropShadow.Depth - value) > ShadowDepthTolerance && 
+                    IsValidShadowDepth(value))
+                {
+                    _currentTheme.BodyText.DropShadow.Depth = value;
+
+                    _singleExecAction.Execute(() =>
+                    {
+                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                        {
+                            RaisePropertyChanged();
+                            UpdateImage();
+                        });
+                    });
+                }
+            }
+        }
+
+        public string TitleTextFontFamilyName
+        {
+            get => _currentTheme.TitleText.Font.Family;
+            set
+            {
+                if (_currentTheme.TitleText.Font.Family != value)
+                {
+                    _currentTheme.TitleText.Font.Family = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double TitleTextSize
+        {
+            get => _currentTheme.TitleText.Font.Size;
+            set
+            {
+                if (Math.Abs(_currentTheme.TitleText.Font.Size - value) > TextSizeTolerance)
+                {
+                    _currentTheme.TitleText.Font.Size = value;
+
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double TitleTextOpacity
+        {
+            get => _currentTheme.TitleText.Font.Opacity;
+            set
+            {
+                SetOpacityProperty(nameof(TitleTextOpacity), _currentTheme.TitleText.Font.Opacity, value, v => _currentTheme.TitleText.Font.Opacity = v);
+            }
+        }
+
+        public OnlyVFontStyle TitleTextFontStyle
+        {
+            get => _currentTheme.TitleText.Font.Style;
+            set
+            {
+                if (_currentTheme.TitleText.Font.Style != value)
+                {
+                    _currentTheme.TitleText.Font.Style = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVFontWeight TitleTextFontWeight
+        {
+            get => _currentTheme.TitleText.Font.Weight;
+            set
+            {
+                if (_currentTheme.TitleText.Font.Weight != value)
+                {
+                    _currentTheme.TitleText.Font.Weight = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public Color? TitleTextColour
+        {
+            get => ConvertFromString(_currentTheme.TitleText.Font.Colour, _defaultTextColor);
+            set
+            {
+                if (value == null)
+                {
+                    value = _defaultTextColor;
+                }
+
+                if (ConvertFromString(_currentTheme.TitleText.Font.Colour, _defaultTextColor) != value)
+                {
+                    _currentTheme.TitleText.Font.Colour = value.Value.ToString();
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVHorizontalTextAlignment TitleTextHorizontalAlignment
+        {
+            get => _currentTheme.TitleText.HorizontalAlignment;
+            set
+            {
+                if (_currentTheme.TitleText.HorizontalAlignment != value)
+                {
+                    _currentTheme.TitleText.HorizontalAlignment = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVTitlePosition TitlePosition
+        {
+            get => _currentTheme.TitleText.Position;
+            set
+            {
+                if (_currentTheme.TitleText.Position != value)
+                {
+                    _currentTheme.TitleText.Position = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+        
+        public bool TitleTextDropShadow
+        {
+            get => _currentTheme.TitleText.DropShadow.Show;
+            set
+            {
+                if (_currentTheme.TitleText.DropShadow.Show != value)
+                {
+                    _currentTheme.TitleText.DropShadow.Show = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public Color? TitleDropShadowColour
+        {
+            get => ConvertFromString(_currentTheme.TitleText.DropShadow.Colour, _defaultDropShadowColor);
+            set
+            {
+                if (value == null)
+                {
+                    value = _defaultDropShadowColor;
+                }
+
+                if (ConvertFromString(_currentTheme.TitleText.DropShadow.Colour, _defaultDropShadowColor) != value)
+                {
+                    _currentTheme.TitleText.DropShadow.Colour = value.Value.ToString();
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double TitleDropShadowOpacity
+        {
+            get => _currentTheme.TitleText.DropShadow.Opacity;
+            set
+            {
+                SetOpacityProperty(nameof(TitleDropShadowOpacity), _currentTheme.TitleText.DropShadow.Opacity, value, v => _currentTheme.TitleText.DropShadow.Opacity = v);
+            }
+        }
+
+        public double TitleDropShadowBlurRadius
+        {
+            get => _currentTheme.TitleText.DropShadow.BlurRadius;
+            set
+            {
+                if (Math.Abs(_currentTheme.TitleText.DropShadow.BlurRadius - value) > BlurRadiusTolerance && 
+                    IsValidBlurRadius(value))
+                {
+                    _currentTheme.TitleText.DropShadow.BlurRadius = value;
+
+                    _singleExecAction.Execute(() =>
+                    {
+                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                        {
+                            RaisePropertyChanged();
+                            UpdateImage();
+                        });
+                    });
+                }
+            }
+        }
+
+        public double TitleDropShadowDepth
+        {
+            get => _currentTheme.TitleText.DropShadow.Depth;
+            set
+            {
+                if (Math.Abs(_currentTheme.TitleText.DropShadow.Depth - value) > ShadowDepthTolerance && 
+                    IsValidShadowDepth(value))
+                {
+                    _currentTheme.TitleText.DropShadow.Depth = value;
+
+                    _singleExecAction.Execute(() =>
+                    {
+                        DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                        {
+                            RaisePropertyChanged();
+                            UpdateImage();
+                        });
+                    });
+                }
+            }
+        }
+
+        public bool ShowVerseNumbers
+        {
+            get => _currentTheme.VerseNumbers.Show;
+            set
+            {
+                if (_currentTheme.VerseNumbers.Show != value)
+                {
+                    _currentTheme.VerseNumbers.Show = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVFontStyle VerseFontStyle
+        {
+            get => _currentTheme.VerseNumbers.Style;
+            set
+            {
+                if (_currentTheme.VerseNumbers.Style != value)
+                {
+                    _currentTheme.VerseNumbers.Style = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVFontWeight VerseFontWeight
+        {
+            get => _currentTheme.VerseNumbers.Weight;
+            set
+            {
+                if (_currentTheme.VerseNumbers.Weight != value)
+                {
+                    _currentTheme.VerseNumbers.Weight = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public Color? VerseColour
+        {
+            get => ConvertFromString(_currentTheme.VerseNumbers.Colour, _defaultTextColor);
+            set
+            {
+                if (value == null)
+                {
+                    value = _defaultTextColor;
+                }
+
+                if (ConvertFromString(_currentTheme.VerseNumbers.Colour, _defaultTextColor) != value)
+                {
+                    _currentTheme.VerseNumbers.Colour = value.Value.ToString();
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public double VerseOpacity
+        {
+            get => _currentTheme.VerseNumbers.Opacity;
+            set
+            {
+                SetOpacityProperty(nameof(VerseOpacity), _currentTheme.VerseNumbers.Opacity, value, v => _currentTheme.VerseNumbers.Opacity = v);
+            }
+        }
+
         public RelayCommand NewFileCommand { get; set; }
 
         public RelayCommand OpenFileCommand { get; set; }
@@ -383,8 +851,7 @@ namespace OnlyVThemeCreator.ViewModel
             CurrentSampleTextId = 0;
 
             TextSamples.Clear();
-
-            var newSamples = CreateTextSampleItems();
+            
             foreach (var sample in CreateTextSampleItems())
             {
                 TextSamples.Add(sample);
@@ -470,7 +937,7 @@ namespace OnlyVThemeCreator.ViewModel
 
                 ApplyFormatting();
 
-                var images = _imageService.Generate(CurrentEpubFilePath, sample.BookNumber, sample.ChapterAndVerses);
+                var images = _imageService.Generate(CurrentEpubFilePath, sample.BookNumber, sample.ChapterAndVerses)?.ToArray();
                 if (images == null || !images.Any())
                 {
                     ImageSource = null;
@@ -505,6 +972,44 @@ namespace OnlyVThemeCreator.ViewModel
             _imageService.MainFont.FontWeight = BodyTextFontWeight.AsWindowsFontWeight();
             _imageService.MainFont.FontColor = BodyTextColour ?? _defaultTextColor;
             _imageService.MainFont.Opacity = BodyTextOpacity;
+            _imageService.HorzAlignment = BodyTextHorizontalAlignment.AsWindowsTextAlignment();
+            _imageService.LineSpacing = LineSpacing;
+            _imageService.BodyDropShadow = BodyTextDropShadow;
+            _imageService.BodyDropShadowColor = BodyDropShadowColour ?? _defaultDropShadowColor;
+            _imageService.BodyDropShadowOpacity = BodyDropShadowOpacity;
+            _imageService.BodyDropShadowBlurRadius = BodyDropShadowBlurRadius;
+            _imageService.BodyDropShadowDepth = BodyDropShadowDepth;
+
+            // title text...
+            _imageService.TitleFont.FontFamily = new FontFamily(TitleTextFontFamilyName);
+            _imageService.TitleFont.FontSize = TitleTextSize;
+            _imageService.TitleFont.FontStyle = TitleTextFontStyle.AsWindowsFontStyle();
+            _imageService.TitleFont.FontWeight = TitleTextFontWeight.AsWindowsFontWeight();
+            _imageService.TitleFont.FontColor = TitleTextColour ?? _defaultTextColor;
+            _imageService.TitleFont.Opacity = TitleTextOpacity;
+            _imageService.TitleHorzAlignment = TitleTextHorizontalAlignment.AsWindowsTextAlignment();
+            _imageService.TitlePosition = TitlePosition;
+            _imageService.TitleDropShadow = TitleTextDropShadow;
+            _imageService.TitleDropShadowColor = TitleDropShadowColour ?? _defaultDropShadowColor;
+            _imageService.TitleDropShadowOpacity = TitleDropShadowOpacity;
+            _imageService.TitleDropShadowBlurRadius = TitleDropShadowBlurRadius;
+            _imageService.TitleDropShadowDepth = TitleDropShadowDepth;
+
+            // verse numbers...
+            _imageService.ShowVerseNumbers = ShowVerseNumbers;
+            _imageService.VerseFont.FontFamily = _imageService.MainFont.FontFamily;
+            _imageService.VerseFont.FontStyle = VerseFontStyle.AsWindowsFontStyle();
+            _imageService.VerseFont.FontWeight = VerseFontWeight.AsWindowsFontWeight();
+            _imageService.VerseFont.FontColor = VerseColour ?? _defaultTextColor;
+            _imageService.VerseFont.Opacity = VerseOpacity;
+
+            // misc (hard-coded here)...
+            _imageService.UseTildeParaSeparator = false;
+            _imageService.TrimQuotes = false;
+            _imageService.TrimPunctuation = false;
+            _imageService.AllowAutoFit = false;
+            _imageService.FlowDirection = FlowDirection.LeftToRight;
+            _imageService.CultureInfo = CultureInfo.CurrentUICulture;
         }
 
         private void InitCommands()
@@ -528,6 +1033,11 @@ namespace OnlyVThemeCreator.ViewModel
 
         private bool CanExecuteSaveAsFile()
         {
+            if (string.IsNullOrEmpty(_currentThemePath))
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -538,7 +1048,7 @@ namespace OnlyVThemeCreator.ViewModel
                 d.OverwritePrompt = true;
                 d.AlwaysAppendDefaultExtension = true;
                 d.IsExpandedMode = true;
-                d.DefaultDirectory = FileUtils.GetThemeFolder();
+                d.DefaultDirectory = _defaultFileSaveFolder ?? FileUtils.GetThemeFolder();
                 d.DefaultExtension = ThemeFile.ThemeFileExtension;
                 d.Filters.Add(new CommonFileDialogFilter(Properties.Resources.THEME_FILE, $"*{ThemeFile.ThemeFileExtension}"));
                 d.Title = Properties.Resources.SAVE_THEME;
@@ -546,22 +1056,40 @@ namespace OnlyVThemeCreator.ViewModel
                 var rv = d.ShowDialog();
                 if (rv == CommonFileDialogResult.Ok)
                 {
-                    var themeName = d.FileName;
+                    _defaultFileSaveFolder = Path.GetDirectoryName(d.FileName);
+                    var themePath = d.FileName;
 
-                    ThemeFile f = new ThemeFile();
-                    f.Create(themeName, _currentTheme, _backgroundImage, overwrite: true);
+                    var f = new ThemeFile();
+                    f.Create(themePath, _currentTheme, _backgroundImage, overwrite: true);
+
+                    CurrentThemePath = themePath;
+                    SaveSignature();
                 }
             }
         }
 
         private bool CanExecuteSaveFile()
         {
-            return true;
+            if (string.IsNullOrEmpty(_currentThemePath))
+            {
+                return true;
+            }
+
+            return IsDirty;
         }
 
         private void SaveFile()
         {
-            // todo:
+            if (string.IsNullOrEmpty(_currentThemePath))
+            {
+                SaveAsFile();
+            }
+            else
+            {
+                ThemeFile f = new ThemeFile();
+                f.Create(_currentThemePath, _currentTheme, _backgroundImage, overwrite: true);
+                SaveSignature();
+            }
         }
 
         private bool CanExecuteOpenFile()
@@ -571,7 +1099,64 @@ namespace OnlyVThemeCreator.ViewModel
 
         private void OpenFile()
         {
-            // todo:
+            if (IsDirty)
+            {
+                // todo: Save Changes?
+                // Yes, No, Cancel
+            }
+
+            using (var d = new CommonOpenFileDialog())
+            {
+                d.DefaultDirectory = _defaultFileOpenFolder ?? FileUtils.GetThemeFolder();
+                d.DefaultExtension = ThemeFile.ThemeFileExtension;
+                d.Filters.Add(new CommonFileDialogFilter(Properties.Resources.THEME_FILE, $"*{ThemeFile.ThemeFileExtension}"));
+                d.Title = Properties.Resources.OPEN_THEME;
+
+                var rv = d.ShowDialog();
+                if (rv == CommonFileDialogResult.Ok)
+                {
+                    _defaultFileOpenFolder = Path.GetDirectoryName(d.FileName);
+                    
+                    var f = new ThemeFile();
+                    var t = f.Read(d.FileName);
+                    if (t != null)
+                    {
+                        CurrentTheme = t.Theme;
+                        CurrentThemePath = d.FileName;
+
+                        BackgroundImage = t.BackgroundImage == null 
+                            ? null 
+                            : ConvertImageSourceToBitmapImage(t.BackgroundImage);
+
+                        UpdateImage();
+                        SaveSignature();
+                    }
+                }
+            }
+        }
+
+        private BitmapImage ConvertImageSourceToBitmapImage(ImageSource backgroundImage)
+        {
+            var bitmapSource = backgroundImage as BitmapSource;
+            if (bitmapSource == null)
+            {
+                return null;
+            }
+            
+            BitmapEncoder encoder = new PngBitmapEncoder();
+            encoder.Frames.Add(BitmapFrame.Create(bitmapSource));
+
+            var stream = new MemoryStream();
+            
+            encoder.Save(stream);
+            var result = new BitmapImage();
+            
+            result.BeginInit();
+            stream.Seek(0, SeekOrigin.Begin);
+            result.StreamSource = stream;
+            result.EndInit();
+
+            return result;
         }
 
         private bool CanExecuteNewFile()
@@ -598,8 +1183,6 @@ namespace OnlyVThemeCreator.ViewModel
 
         private string GetDroppedFile(DragEventArgs e)
         {
-            var result = new List<string>();
-
             if (e.Data is DataObject dataObject && dataObject.ContainsFileDropList())
             {
                 foreach (var filePath in dataObject.GetFileDropList())
@@ -674,6 +1257,67 @@ namespace OnlyVThemeCreator.ViewModel
         private bool IsValidOpacity(double value)
         {
             return value >= 0 && value <= 1.0;
+        }
+
+        private bool IsValidBlurRadius(double value)
+        {
+            return value >= 0.0 && value <= MaxBlurRadiusValue;
+        }
+
+        private bool IsValidShadowDepth(double value)
+        {
+            return value >= 0.0 && value <= MaxShadowDepthValue;
+        }
+
+        private void SetOpacityProperty(
+            string propertyName,
+            double currentValue, 
+            double newValue, 
+            Action<double> setter)
+        {
+            if (Math.Abs(currentValue - newValue) > OpacityTolerance && 
+                IsValidOpacity(newValue))
+            {
+                setter(newValue);
+
+                _singleExecAction.Execute(() =>
+                {
+                    DispatcherHelper.CheckBeginInvokeOnUI(() =>
+                    {
+                        RaisePropertyChanged(propertyName);
+                        UpdateImage();
+                    });
+                });
+            }
+        }
+
+        private SystemFont[] GetSystemFonts()
+        {
+            var result = new List<SystemFont>();
+
+            foreach (var f in Fonts.SystemFontFamilies)
+            {
+                result.Add(new SystemFont
+                {
+                    FamilyName = f.Source
+                });
+            }
+
+            return result.ToArray();
+        }
+
+        private string CreateThemeSignature()
+        {
+            var signature = JsonConvert.SerializeObject(_currentTheme);
+            return string.Concat(signature, _backgroundImage?.GetHashCode());
+        }
+
+        private void SaveSignature()
+        {
+            _lastSavedThemeSignature = CreateThemeSignature();
+            RaisePropertyChanged(nameof(IsDirty));
+
+            CommandManager.InvalidateRequerySuggested();
         }
     }
 }

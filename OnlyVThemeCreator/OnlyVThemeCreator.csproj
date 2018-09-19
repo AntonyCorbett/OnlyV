@@ -131,6 +131,7 @@
     <Compile Include="Services\IOptionsService.cs" />
     <Compile Include="Services\OptionsService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\SystemFont.cs" />
     <Compile Include="ViewModel\VerseTextItem.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Page Include="MainWindow.xaml">
