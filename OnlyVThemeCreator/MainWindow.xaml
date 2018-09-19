@@ -20,7 +20,7 @@
 
         mc:Ignorable="d"
         Title="OnlyV Theme Creator" 
-        Height="700" Width="800" 
+        Height="2173" Width="800" 
         MinHeight="450" MinWidth="700"
         Icon="icon.ico">
     <Window.Resources>
@@ -33,6 +33,12 @@
 
         <Style x:Key="GroupBoxStyle" TargetType="{x:Type GroupBox}" BasedOn="{StaticResource MaterialDesignGroupBox}">
             <Setter Property="Margin" Value="0,0,0,20"/>
+        </Style>
+
+        <Style x:Key="TextBoxStyle" TargetType="{x:Type TextBox}" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="Margin" Value="0,0,0,15" />
         </Style>
 
     </Window.Resources>
@@ -122,28 +128,34 @@
                         <StackPanel>
 
                             <TextBox
-                        materialDesign:HintAssist.Hint="Width"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                Text="{Binding Width}"
+                                materialDesign:HintAssist.Hint="Width"
+                                Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
-                        materialDesign:HintAssist.Hint="Height"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                Text="{Binding Height}"
+                                materialDesign:HintAssist.Hint="Height"
+                                Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
-                        materialDesign:HintAssist.Hint="Left margin"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                Text="{Binding LeftMargin}"
+                                materialDesign:HintAssist.Hint="Left margin"
+                                Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
-                        materialDesign:HintAssist.Hint="Top margin"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                Text="{Binding TopMargin}"
+                                materialDesign:HintAssist.Hint="Top margin"
+                                Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
-                        materialDesign:HintAssist.Hint="Right margin"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                Text="{Binding RightMargin}"
+                                materialDesign:HintAssist.Hint="Right margin"
+                                Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
-                        materialDesign:HintAssist.Hint="Bottom margin"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                                Text="{Binding BottomMargin}"
+                                materialDesign:HintAssist.Hint="Bottom margin"
+                                Style="{StaticResource TextBoxStyle}" />
 
                         </StackPanel>
                     </GroupBox>
@@ -151,9 +163,41 @@
                     <GroupBox Header="Background" Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
-                            <TextBox
-                        materialDesign:HintAssist.Hint="Image"
-                        Style="{StaticResource MaterialDesignFloatingHintTextBox}" />
+                            <Grid
+                                Height="100"
+                                Width="242"
+                                Background="Transparent"
+                                HorizontalAlignment="Left"
+                                Margin="0,0,0,10"
+                                AllowDrop="True"
+                                DragOver="OnImageDragOver"
+                                Drop="OnImageDrop">
+                                <Rectangle 
+                                    StrokeDashArray="3 3" 
+                                    Stroke="White" 
+                                    StrokeThickness="1" 
+                                    RadiusX="10" RadiusY="10" />
+
+                                <StackPanel Orientation="Vertical" VerticalAlignment="Center">
+                                    <TextBlock
+                                        Margin="5"
+                                        HorizontalAlignment="Center"
+                                        VerticalAlignment="Center"
+                                        TextWrapping="Wrap"
+                                        Text="Drop your background image here."
+                                        Foreground="{StaticResource PrimaryHueDarkBrush}"/>
+
+                                    <Button
+                                        Command="{Binding ClearBackgroundImageCommand}"
+                                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                                        VerticalAlignment="Bottom"
+                                        Margin="10,0,10,0"
+                                        Visibility="{Binding Path=IsBackgroundImageSpecified, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                        Content="Clear"
+                                        ToolTip="Resource name: MaterialDesignRaisedLightButton"/>
+                                </StackPanel>
+
+                            </Grid>
 
                             <CheckBox>Use image</CheckBox>
 

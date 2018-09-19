@@ -117,6 +117,8 @@
     <Compile Include="AppOptions\Options.cs" />
     <Compile Include="Helpers\FileUtils.cs" />
     <Compile Include="Helpers\StandardTextSample.cs" />
+    <Compile Include="PubSubMessages\DragDropMessage.cs" />
+    <Compile Include="PubSubMessages\DragOverMessage.cs" />
     <Compile Include="Services\IOptionsService.cs" />
     <Compile Include="Services\OptionsService.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
