@@ -10,6 +10,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewModel="clr-namespace:OnlyVThemeCreator.ViewModel"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:behaviours="clr-namespace:OnlyVThemeCreator.Behaviours"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
@@ -18,11 +19,16 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
 
+        behaviours:WindowClosingBehaviour.Closed="{Binding ClosedCommand}"
+        behaviours:WindowClosingBehaviour.Closing="{Binding ClosingCommand}"
+        behaviours:WindowClosingBehaviour.CancelClosing="{Binding CancelClosingCommand}"
+
         mc:Ignorable="d"
         Title="{Binding MainWindowCaption}" 
         Height="600" Width="800" 
         MinHeight="450" MinWidth="700"
-        Icon="icon.ico" Closing="OnWindowClosing">
+        Icon="icon.ico" 
+        Closing="OnWindowClosing">
     <Window.Resources>
 
         <Style x:Key="ColorPickerStyle" TargetType="{x:Type xctk:ColorPicker}">
@@ -82,6 +88,7 @@
 
     </Window.Resources>
 
+    <materialDesign:DialogHost>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -504,4 +511,10 @@
 
 
     </Grid>
+        <materialDesign:DialogHost.DialogContent>
+            <StackPanel Margin="16">
+            </StackPanel>
+        </materialDesign:DialogHost.DialogContent>
+    </materialDesign:DialogHost>
+
 </Window>

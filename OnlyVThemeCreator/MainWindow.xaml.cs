@@ -1,9 +1,12 @@
 ﻿namespace OnlyVThemeCreator
 {
+    using System.Threading.Tasks;
     using System.Windows;
     using CommonServiceLocator;
     using GalaSoft.MvvmLight.Messaging;
+    using GalaSoft.MvvmLight.Threading;
     using OnlyV.Themes.Common.Services.WindowPositioning;
+    using OnlyVThemeCreator.ViewModel;
     using PubSubMessages;
     using Services;
 
@@ -15,6 +18,8 @@
         public MainWindow()
         {
             InitializeComponent();
+
+            Messenger.Default.Register<CloseAppMessage>(this, OnCloseAppMessage);
         }
 
         protected override void OnSourceInitialized(System.EventArgs e)
@@ -55,6 +60,11 @@
             var optionsService = ServiceLocator.Current.GetInstance<IOptionsService>();
             optionsService.AppWindowPlacement = this.GetPlacement();
             optionsService.Save();
+        }
+
+        private void OnCloseAppMessage(CloseAppMessage obj)
+        {
+            Close();
         }
     }
 }

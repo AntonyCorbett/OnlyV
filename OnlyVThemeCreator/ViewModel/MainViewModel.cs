@@ -6,6 +6,7 @@ namespace OnlyVThemeCreator.ViewModel
     using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -30,6 +31,7 @@ namespace OnlyVThemeCreator.ViewModel
     using Services;
 
     // ReSharper disable once UnusedMember.Global
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class MainViewModel : ViewModelBase
     {
         private const string AppName = @"OnlyV Theme Creator";
@@ -41,6 +43,7 @@ namespace OnlyVThemeCreator.ViewModel
         private readonly IUserInterfaceService _userInterfaceService;
         private readonly IOptionsService _optionsService;
         private readonly BibleTextImage _imageService;
+        private readonly IDialogService _dialogService;
         private readonly SingleExecAction _singleExecAction = new SingleExecAction(TimeSpan.FromMilliseconds(500));
         private readonly Color _defaultBackgroundColor = Colors.Blue;
         private readonly Color _defaultTextColor = Colors.White;
@@ -54,13 +57,15 @@ namespace OnlyVThemeCreator.ViewModel
         private string _defaultFileSaveFolder;
         private string _defaultFileOpenFolder;
         private string _lastSavedThemeSignature;
-
+        
         public MainViewModel(
             IUserInterfaceService userInterfaceService,
-            IOptionsService optionsService)
+            IOptionsService optionsService,
+            IDialogService dialogService)
         {
             _userInterfaceService = userInterfaceService;
             _optionsService = optionsService;
+            _dialogService = dialogService;
             _imageService = new BibleTextImage();
 
             InitCommands();
@@ -74,7 +79,7 @@ namespace OnlyVThemeCreator.ViewModel
 
             Messenger.Default.Register<DragOverMessage>(this, OnDragOver);
             Messenger.Default.Register<DragDropMessage>(this, OnDragDrop);
-
+            
             UpdateTextSamples();
 
             SaveSignature();
@@ -844,7 +849,13 @@ namespace OnlyVThemeCreator.ViewModel
         public RelayCommand SaveAsFileCommand { get; set; }
 
         public RelayCommand ClearBackgroundImageCommand { get; set; }
-        
+
+        public RelayCommand ClosedCommand { get; set; }
+
+        public RelayCommand ClosingCommand { get; set; }
+
+        public RelayCommand CancelClosingCommand { get; set; }
+
         private void UpdateTextSamples()
         {
             var originalSampleId = CurrentSampleTextId;
@@ -1015,10 +1026,15 @@ namespace OnlyVThemeCreator.ViewModel
         private void InitCommands()
         {
             NewFileCommand = new RelayCommand(NewFile, CanExecuteNewFile);
-            OpenFileCommand = new RelayCommand(OpenFile, CanExecuteOpenFile);
+            OpenFileCommand = new RelayCommand(
+                async () => { await OpenFile().ConfigureAwait(true); }, CanExecuteOpenFile);
             SaveFileCommand = new RelayCommand(SaveFile, CanExecuteSaveFile);
             SaveAsFileCommand = new RelayCommand(SaveAsFile, CanExecuteSaveAsFile);
             ClearBackgroundImageCommand = new RelayCommand(ClearBackgroundImage, CanExecuteClearBackgroundImage);
+
+            ClosedCommand = new RelayCommand(ExecuteClosed);
+            ClosingCommand = new RelayCommand(ExecuteClosing, CanExecuteClosing);
+            CancelClosingCommand = new RelayCommand(ExecuteCancelClosing);
         }
 
         private bool CanExecuteClearBackgroundImage()
@@ -1097,12 +1113,19 @@ namespace OnlyVThemeCreator.ViewModel
             return true;
         }
 
-        private void OpenFile()
+        private async Task OpenFile()
         {
             if (IsDirty)
             {
-                // todo: Save Changes?
-                // Yes, No, Cancel
+                var result = await _dialogService.ShouldSaveDirtyDataAsync().ConfigureAwait(true);
+                if (result == true)
+                {
+                    SaveFile();
+                }
+                else if (result == null)
+                {
+                    return;
+                }
             }
 
             using (var d = new CommonOpenFileDialog())
@@ -1318,6 +1341,35 @@ namespace OnlyVThemeCreator.ViewModel
             RaisePropertyChanged(nameof(IsDirty));
 
             CommandManager.InvalidateRequerySuggested();
+        }
+
+        private void ExecuteClosed()
+        {
+        }
+        
+        private void ExecuteClosing()
+        {
+        }
+
+        private bool CanExecuteClosing()
+        {
+            return !IsDirty;
+        }
+
+        private async void ExecuteCancelClosing()
+        {
+            var rv = await _dialogService.ShouldSaveDirtyDataAsync().ConfigureAwait(true);
+            if (rv == true)
+            {
+                SaveFile();
+            }
+
+            if (rv != null)
+            {
+                // User answered "No". Make the data not dirty by saving current sig...
+                SaveSignature();
+                Messenger.Default.Send(new CloseAppMessage());
+            }
         }
     }
 }
