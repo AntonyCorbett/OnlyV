@@ -1353,11 +1353,16 @@ namespace OnlyVThemeCreator.ViewModel
 
         private bool CanExecuteClosing()
         {
-            return !IsDirty;
+            return !_dialogService.IsDialogVisible() && !IsDirty;
         }
 
         private async void ExecuteCancelClosing()
         {
+            if (_dialogService.IsDialogVisible())
+            {
+                return;
+            }
+
             var rv = await _dialogService.ShouldSaveDirtyDataAsync().ConfigureAwait(true);
             if (rv == true)
             {
