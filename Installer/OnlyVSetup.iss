@@ -2,9 +2,11 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "OnlyV"
+#define ThemeCreatorAppName "OnlyV Theme Creator"
 #define MyAppPublisher "Antony Corbett"
 #define MyAppURL "https://soundboxsoftware.com"
 #define MyAppExeName "OnlyV.exe"
+#define ThemeCreatorAppExeName "OnlyVThemeCreator.exe"
 #define MySource "d:\ProjectsPersonal\OnlyV\OnlyV"
 
 #define MyAppVersion GetFileVersion(MySource + '\bin\Release\OnlyV.exe');
@@ -33,7 +35,7 @@ DisableWelcomePage=false
 SetupLogging=True
 RestartApplications=False
 CloseApplications=False
-AppMutex=OnlyVBibleTextImageTool
+AppMutex=OnlyVBibleTextImageTool,OnlyVThemeCreator
 
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
@@ -56,18 +58,22 @@ Source: "bin\Release\OnlyV.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\OnlyV.ImageCreation.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\OnlyV.Themes.Common.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\OnlyV.VerseExtraction.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\OnlyVThemeCreator.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\OnlyVThemeCreator.exe.config"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\Serilog.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\Serilog.Sinks.Console.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\Serilog.Sinks.File.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\Serilog.Sinks.RollingFile.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\System.ValueTuple.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\System.Windows.Interactivity.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\ReleaseThemes\*"; DestDir: "{userdocs}\OnlyV\ThemeFiles"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
+Name: "{group}\{#ThemeCreatorAppName}"; Filename: "{app}\{#ThemeCreatorAppExeName}"
 Name: "{commondesktop}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; Tasks: desktopicon
+Name: "{commondesktop}\{#ThemeCreatorAppName}"; Filename: "{app}\{#ThemeCreatorAppExeName}"; Tasks: desktopicon
 
 [ThirdParty]
 UseRelativePaths=True
-
