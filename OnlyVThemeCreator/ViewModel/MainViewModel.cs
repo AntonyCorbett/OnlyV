@@ -6,7 +6,6 @@ namespace OnlyVThemeCreator.ViewModel
     using System.Globalization;
     using System.IO;
     using System.Linq;
-    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Input;
     using System.Windows.Media;
@@ -1026,8 +1025,7 @@ namespace OnlyVThemeCreator.ViewModel
         private void InitCommands()
         {
             NewFileCommand = new RelayCommand(NewFile, CanExecuteNewFile);
-            OpenFileCommand = new RelayCommand(
-                async () => { await OpenFile().ConfigureAwait(true); }, CanExecuteOpenFile);
+            OpenFileCommand = new RelayCommand(OpenFile, CanExecuteOpenFile);
             SaveFileCommand = new RelayCommand(SaveFile, CanExecuteSaveFile);
             SaveAsFileCommand = new RelayCommand(SaveAsFile, CanExecuteSaveAsFile);
             ClearBackgroundImageCommand = new RelayCommand(ClearBackgroundImage, CanExecuteClearBackgroundImage);
@@ -1113,7 +1111,7 @@ namespace OnlyVThemeCreator.ViewModel
             return true;
         }
 
-        private async Task OpenFile()
+        private async void OpenFile()
         {
             if (IsDirty)
             {
@@ -1187,9 +1185,28 @@ namespace OnlyVThemeCreator.ViewModel
             return true;
         }
 
-        private void NewFile()
+        private async void NewFile()
         {
-            // todo:
+            if (IsDirty)
+            {
+                var result = await _dialogService.ShouldSaveDirtyDataAsync().ConfigureAwait(true);
+                if (result == true)
+                {
+                    SaveFile();
+                }
+                else if (result == null)
+                {
+                    return;
+                }
+
+                CurrentThemePath = null;
+                CurrentTheme = new OnlyVTheme();
+                BackgroundImage = null;
+
+                SaveSignature();
+
+                UpdateImage();
+            }
         }
 
         private void OnDragDrop(DragDropMessage message)
