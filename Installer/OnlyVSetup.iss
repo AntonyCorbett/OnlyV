@@ -67,7 +67,7 @@ Source: "bin\Release\Serilog.Sinks.RollingFile.dll"; DestDir: "{app}"; Flags: ig
 Source: "bin\Release\System.ValueTuple.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "bin\Release\System.Windows.Interactivity.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "..\ReleaseThemes\*"; DestDir: "{userdocs}\OnlyV\ThemeFiles"; Flags: ignoreversion createallsubdirs recursesubdirs
+Source: "..\ReleaseThemes\*"; DestDir: "{commonappdata}\OnlyV\ThemeFiles"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"

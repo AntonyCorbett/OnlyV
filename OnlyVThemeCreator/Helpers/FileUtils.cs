@@ -97,7 +97,7 @@
             return true;
         }
 
-        public static string GetThemeFolder()
+        public static string GetPrivateThemeFolder()
         {
             string folder = Path.Combine(GetOnlyVMyDocsFolder(), @"ThemeFiles");
             CreateDirectory(folder);

@@ -1062,7 +1062,7 @@ namespace OnlyVThemeCreator.ViewModel
                 d.OverwritePrompt = true;
                 d.AlwaysAppendDefaultExtension = true;
                 d.IsExpandedMode = true;
-                d.DefaultDirectory = _defaultFileSaveFolder ?? FileUtils.GetThemeFolder();
+                d.DefaultDirectory = _defaultFileSaveFolder ?? FileUtils.GetPrivateThemeFolder();
                 d.DefaultExtension = ThemeFile.ThemeFileExtension;
                 d.Filters.Add(new CommonFileDialogFilter(Properties.Resources.THEME_FILE, $"*{ThemeFile.ThemeFileExtension}"));
                 d.Title = Properties.Resources.SAVE_THEME;
@@ -1128,7 +1128,7 @@ namespace OnlyVThemeCreator.ViewModel
 
             using (var d = new CommonOpenFileDialog())
             {
-                d.DefaultDirectory = _defaultFileOpenFolder ?? FileUtils.GetThemeFolder();
+                d.DefaultDirectory = _defaultFileOpenFolder ?? FileUtils.GetPrivateThemeFolder();
                 d.DefaultExtension = ThemeFile.ThemeFileExtension;
                 d.Filters.Add(new CommonFileDialogFilter(Properties.Resources.THEME_FILE, $"*{ThemeFile.ThemeFileExtension}"));
                 d.Title = Properties.Resources.OPEN_THEME;

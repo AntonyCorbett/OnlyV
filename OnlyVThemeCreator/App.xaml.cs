@@ -1,11 +1,10 @@
-﻿using System.IO;
-using OnlyVThemeCreator.Helpers;
-
-namespace OnlyVThemeCreator
+﻿namespace OnlyVThemeCreator
 {
+    using System.IO;
     using System.Threading;
     using System.Windows;
     using GalaSoft.MvvmLight.Threading;
+    using Helpers;
     using Serilog;
 
     /// <summary>

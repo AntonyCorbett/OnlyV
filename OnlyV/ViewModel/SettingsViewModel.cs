@@ -308,10 +308,18 @@
         private IReadOnlyCollection<ThemeFileItem> GetThemeFiles()
         {
             var result = new List<ThemeFileItem>();
+            
+            var allThemes = new List<string>();
 
-            var files = Directory.GetFiles(FileUtils.GetThemeFolder(), $"*{ThemeFile.ThemeFileExtension}").ToList();
+            var stdThemeFolder = FileUtils.GetStandardThemeFolder();
+            if (stdThemeFolder != null)
+            {
+                allThemes.AddRange(Directory.GetFiles(stdThemeFolder, $"*{ThemeFile.ThemeFileExtension}"));
+            }
 
-            foreach (var file in files)
+            allThemes.AddRange(Directory.GetFiles(FileUtils.GetPrivateThemeFolder(), $"*{ThemeFile.ThemeFileExtension}"));
+
+            foreach (var file in allThemes)
             {
                 result.Add(new ThemeFileItem
                 {

@@ -33,7 +33,13 @@
             return folder;
         }
 
-        public static string GetThemeFolder()
+        public static string GetStandardThemeFolder()
+        {
+            var folder = Path.Combine(GetOnlyVCommonAppDataFolder(), @"ThemeFiles");
+            return !Directory.Exists(folder) ? null : folder;
+        }
+
+        public static string GetPrivateThemeFolder()
         {
             string folder = Path.Combine(GetOnlyVMyDocsFolder(), @"ThemeFiles");
             CreateDirectory(folder);
@@ -84,6 +90,15 @@
         public static string GetOnlyVMyDocsFolder()
         {
             return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), AppNamePathSegment);
+        }
+
+        /// <summary>
+        /// Gets the application's common appData folder.
+        /// </summary>
+        /// <returns>Folder path</returns>
+        public static string GetOnlyVCommonAppDataFolder()
+        {
+            return Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), AppNamePathSegment);
         }
 
         /// <summary>
