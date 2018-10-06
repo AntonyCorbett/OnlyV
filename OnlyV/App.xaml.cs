@@ -3,7 +3,6 @@
     using System.IO;
     using System.Threading;
     using System.Windows;
-    using System.Windows.Media;
     using GalaSoft.MvvmLight.Threading;
     using OnlyV.Helpers;
     using OnlyV.Mappings;
