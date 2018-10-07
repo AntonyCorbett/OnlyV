@@ -183,8 +183,6 @@
 
         private void ToggleDisplayImage()
         {
-            ////_displayWindowService.ClearImage();
-
             _displayWindowService.ToggleWindow();
 
             if (IsDisplayWindowVisible)

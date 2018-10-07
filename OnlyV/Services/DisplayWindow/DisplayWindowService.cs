@@ -5,6 +5,7 @@
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
+    using Behaviours;
     using GalaSoft.MvvmLight.Messaging;
     using Helpers.JwLib;
     using Monitors;
@@ -49,8 +50,8 @@
         {
             _displayWindow?.Close();
             _displayWindow = null;
-
-            Task.Delay(750).ContinueWith(t =>
+            
+            Task.Delay(FadeCloseBehaviour.FadeTime).ContinueWith(t =>
             {
                 BringJwlToFront(); 
             });

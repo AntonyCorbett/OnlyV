@@ -175,7 +175,7 @@
             // font family same as body font
             var verseNosFontFamily = theme.BodyText.Font.Family;
 
-            bibleTextImage.ShowVerseNumbers = theme.VerseNumbers.Show && _optionsService.ShowVerseNos;
+            bibleTextImage.ShowVerseNumbers = _optionsService.ShowVerseNos;
             bibleTextImage.VerseFont.FontFamily = new FontFamily(verseNosFontFamily);
             bibleTextImage.VerseFont.FontColor = ConvertFromString(theme.VerseNumbers.Colour, Colors.White);
             bibleTextImage.VerseFont.FontStyle = theme.VerseNumbers.Style.AsWindowsFontStyle();

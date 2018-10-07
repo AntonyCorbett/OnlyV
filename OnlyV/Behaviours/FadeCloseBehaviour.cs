@@ -7,6 +7,8 @@
 
     public class FadeCloseBehaviour : Behavior<Window>
     {
+        public static TimeSpan FadeTime { get; } = TimeSpan.FromMilliseconds(750);
+
         protected override void OnAttached()
         {
             AssociatedObject.Closing += OnAssociatedObjectClosing;
@@ -24,7 +26,7 @@
                 window.Closing -= OnAssociatedObjectClosing;
                 e.Cancel = true;
 
-                var anim = new DoubleAnimation(1.0, 0.0, TimeSpan.FromSeconds(0.75));
+                var anim = new DoubleAnimation(1.0, 0.0, FadeTime);
                 anim.Completed += (s, _) => window.Close();
                 window.BeginAnimation(UIElement.OpacityProperty, anim);
             }

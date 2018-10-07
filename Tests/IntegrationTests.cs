@@ -1,6 +1,8 @@
 ﻿namespace Tests
 {
     using System;
+    using System.Collections.Generic;
+    using System.Diagnostics;
     using System.IO;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Newtonsoft.Json;
@@ -29,6 +31,35 @@
 
             var s2 = parser.ExtractVersesText(1, "1:1-3", formattingOptions);
             Assert.IsNotNull(s2);
+        }
+
+        [TestMethod]
+        public void TestEachVerseHasContent()
+        {
+            var parser = new BibleEpubParser(EpubPath);
+            IReadOnlyCollection<BibleBookData> bookData = parser.ExtractBookData();
+            Assert.IsNotNull(bookData);
+
+            var formattingOptions = new FormattingOptions();
+            
+            foreach (BibleBookData book in bookData)
+            {
+                var chapters = book.ChapterAndVerseCount;
+
+                foreach (var chapter in chapters)
+                {
+                    var chapterNumber = chapter.Key;
+                    var verseRange = chapter.Value;
+
+                    for (int verseNumber = verseRange.FirstVerse; verseNumber <= verseRange.LastVerse; ++verseNumber)
+                    {
+                        var s = parser.ExtractVerseText(
+                            book.Number, chapterNumber, verseNumber, formattingOptions);
+
+                        Assert.IsFalse(string.IsNullOrWhiteSpace(s));
+                    }
+                }
+            }
         }
 
         [TestMethod]

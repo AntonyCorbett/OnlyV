@@ -101,6 +101,8 @@
                 }
             }
 
+            ElideRogueVerses(result);
+
             BibleChaptersCache.Add(_epubPath, _epubCreationStampUtc, result);
 
             return result;
@@ -877,6 +879,27 @@
             }
 
             return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
+        }
+
+        private void ElideRogueVerses(IReadOnlyCollection<BookChapter> data)
+        {
+            var markChapter16 = data.SingleOrDefault(x => x.Book.BookNumber == 41 && x.Chapter == 16);
+            if (markChapter16 != null)
+            {
+                markChapter16.VerseRange.LastVerse = 8;
+            }
+
+            var johnChapter7 = data.SingleOrDefault(x => x.Book.BookNumber == 43 && x.Chapter == 7);
+            if (johnChapter7 != null)
+            {
+                johnChapter7.VerseRange.LastVerse = 52;
+            }
+
+            var johnChapter8 = data.SingleOrDefault(x => x.Book.BookNumber == 43 && x.Chapter == 8);
+            if (johnChapter8 != null)
+            {
+                johnChapter8.VerseRange.FirstVerse = 12;
+            }
         }
     }
 }
