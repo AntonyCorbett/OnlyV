@@ -125,6 +125,7 @@
       <Link>Properties\SolutionInfo.cs</Link>
     </Compile>
     <Compile Include="AppOptions\Options.cs" />
+    <Compile Include="Behaviours\FadeCloseBehaviour.cs" />
     <Compile Include="EventArgs\MonitorChangedEventArgs.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="Helpers\BitmapHelper.cs" />

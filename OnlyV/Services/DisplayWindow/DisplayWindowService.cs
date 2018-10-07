@@ -1,6 +1,7 @@
 ﻿namespace OnlyV.Services.DisplayWindow
 {
     using System.Threading;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Forms;
     using System.Windows.Media;
@@ -49,7 +50,10 @@
             _displayWindow?.Close();
             _displayWindow = null;
 
-            BringJwlToFront();
+            Task.Delay(750).ContinueWith(t =>
+            {
+                BringJwlToFront(); 
+            });
         }
 
         public void ToggleWindow()

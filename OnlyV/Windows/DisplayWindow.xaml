@@ -3,7 +3,9 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:OnlyV.Windows"
+        xmlns:behaviours="clr-namespace:OnlyV.Behaviours"
 
         DataContext="{Binding Source={StaticResource Locator}, Path=Display}"
 
@@ -11,8 +13,14 @@
         ResizeMode="NoResize"
         WindowStyle="None"
         ShowInTaskbar="False"
+        Background="Black"
         Loaded="OnDisplayWindowLoaded"
         Title="DisplayWindow" Height="450" Width="800">
+
+    <i:Interaction.Behaviors>
+        <behaviours:FadeCloseBehaviour />
+    </i:Interaction.Behaviors>
+
     <Grid Background="Black">
 
         <Image x:Name="TheImage"
@@ -28,19 +36,7 @@
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
-
-                <EventTrigger RoutedEvent="Image.Unloaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetProperty="Opacity" 
-                                             Storyboard.TargetName="TheImage" From="1.0" To="0.0" 
-                                             Duration="0:0:1" />
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
             </Image.Triggers>
-
         </Image>
-
     </Grid>
 </Window>

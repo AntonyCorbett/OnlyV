@@ -3,11 +3,13 @@
     using System;
     using System.Diagnostics;
     using System.Linq;
+    using System.Threading.Tasks;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using GalaSoft.MvvmLight.Threading;
     using Helpers;
     using Serilog;
     using Services.DisplayWindow;
@@ -181,7 +183,7 @@
 
         private void ToggleDisplayImage()
         {
-            _displayWindowService.ClearImage();
+            ////_displayWindowService.ClearImage();
 
             _displayWindowService.ToggleWindow();
 
@@ -189,7 +191,7 @@
             {
                 _displayWindowService.SetImage(_imagesService.Get(_imageIndex ?? 0));
             }
-            
+
             RaisePropertyChanged(nameof(IsDisplayWindowVisible));
             RaisePropertyChanged(nameof(DisplayButtonToolTip));
 
