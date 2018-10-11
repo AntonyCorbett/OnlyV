@@ -118,8 +118,9 @@
                 <DropShadowEffect Opacity="0.4" BlurRadius="10"/>
             </Border.Effect>
             <Image x:Name="PreviewImage" 
-                            RenderOptions.BitmapScalingMode="HighQuality"
-                            Source="{Binding PreviewImageSource}" />
+                   MouseMove="ImageMouseMove"
+                   RenderOptions.BitmapScalingMode="HighQuality"
+                   Source="{Binding PreviewImageSource}" />
         </Border>
     </Grid>
 </UserControl>

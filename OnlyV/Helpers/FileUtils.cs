@@ -73,6 +73,15 @@
         }
 
         /// <summary>
+        /// Gets OnlyV temp folder
+        /// </summary>
+        /// <returns>Temp folder</returns>
+        public static string GetTempOnlyVFolder()
+        {
+            return Path.Combine(Path.GetTempPath(), AppNamePathSegment);
+        }
+
+        /// <summary>
         /// Gets the log folder
         /// </summary>
         /// <returns>Log folder</returns>

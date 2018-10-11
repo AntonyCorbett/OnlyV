@@ -1,5 +1,6 @@
 ﻿namespace OnlyV.Services.Images
 {
+    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
@@ -79,6 +80,11 @@
 
                     if (Directory.Exists(folder))
                     {
+                        if (Directory.EnumerateFiles(folder).Any())
+                        {
+                            throw new Exception("Could not clear folder!");
+                        }
+
                         result = folder;
 
                         int count = 1;

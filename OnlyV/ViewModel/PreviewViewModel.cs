@@ -98,6 +98,31 @@
 
         public RelayCommand CopyToClipboardCommand { get; set; }
 
+        // returns the name of the saved file (if only 1), or the
+        // name of the folder in which multiple files are stored
+        public string SaveImagesToFolder(string folder)
+        {
+            var imagesToSave = _imagesService.Get();
+            if (imagesToSave == null || !imagesToSave.Any())
+            {
+                return null;
+            }
+
+            var s = new ImageSavingService(
+                imagesToSave,
+                folder,
+                BookChapterAndVersesString);
+            try
+            {
+                return s.Execute();
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error(@"Could not save", ex);
+                return null;
+            }
+        }
+
         private void InitCommands()
         {
             NextImageCommand = new RelayCommand(ShowNextImage, CanShowNextImage);
