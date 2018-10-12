@@ -112,15 +112,32 @@
 
         </DockPanel>
 
-        <Border Grid.Row="1" Margin="10" BorderThickness="1" BorderBrush="Black" 
-                            HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Border.Effect>
-                <DropShadowEffect Opacity="0.4" BlurRadius="10"/>
-            </Border.Effect>
-            <Image x:Name="PreviewImage" 
-                   MouseMove="ImageMouseMove"
-                   RenderOptions.BitmapScalingMode="HighQuality"
-                   Source="{Binding PreviewImageSource}" />
-        </Border>
+        <Grid Grid.Row="1" Background="{StaticResource MaterialDesignBody}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       Text="{Binding PreviewDescription}"
+                       Foreground="{StaticResource MaterialDesignBackground}"
+                       VerticalAlignment="Center"
+                       Margin="10,10,10,0"/>
+
+            <Border Grid.Row="1" 
+                    Margin="10" 
+                    BorderThickness="1" 
+                    BorderBrush="Black" 
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.4" BlurRadius="10"/>
+                </Border.Effect>
+                <Image x:Name="PreviewImage" 
+                       MouseMove="ImageMouseMove"
+                       RenderOptions.BitmapScalingMode="HighQuality"
+                       Source="{Binding PreviewImageSource}" />
+            </Border>
+        </Grid>
     </Grid>
 </UserControl>

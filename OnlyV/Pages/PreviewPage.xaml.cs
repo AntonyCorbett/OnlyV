@@ -7,6 +7,7 @@
     using System.Windows.Controls;
     using System.Windows.Input;
     using OnlyV.Helpers;
+    using OnlyV.Services.DragDrop;
     using OnlyV.ViewModel;
 
     /// <summary>
@@ -30,6 +31,10 @@
                 var files = CreateImageFileList();
 
                 var obj = new DataObject(DataFormats.FileDrop, files.ToArray());
+                
+                var vm = (PreviewViewModel)DataContext;
+                var fileNameBase = vm.GetSuitableFileNameWithoutExtension();
+                obj.SetData(DataFormats.StringFormat, $"OnlyV|{fileNameBase}");
                 
                 DragDrop.DoDragDrop(this, obj, DragDropEffects.Copy);
             }

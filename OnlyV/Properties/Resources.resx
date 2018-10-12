@@ -160,6 +160,9 @@
   <data name="DISPLAY_CMD" xml:space="preserve">
     <value>Display (F5)</value>
   </data>
+  <data name="DRAG_INTO_ONLYM" xml:space="preserve">
+    <value>Drag and drop into OnlyM to create a slideshow</value>
+  </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bible epub not found!</value>
   </data>
@@ -205,6 +208,9 @@
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
+  <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
+    <value>1 image generated</value>
+  </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
     <value>Show scriptures page</value>
   </data>
@@ -225,5 +231,8 @@
   </data>
   <data name="VIEW" xml:space="preserve">
     <value>VIEW</value>
+  </data>
+  <data name="X_IMAGES_GENERATED" xml:space="preserve">
+    <value>{0} images generated.</value>
   </data>
 </root>

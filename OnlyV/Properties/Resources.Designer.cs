@@ -188,6 +188,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Drag and drop into OnlyM to create a slideshow.
+        /// </summary>
+        internal static string DRAG_INTO_ONLYM {
+            get {
+                return ResourceManager.GetString("DRAG_INTO_ONLYM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bible epub not found!.
         /// </summary>
         internal static string EPUB_NOT_FOUND {
@@ -323,6 +332,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 1 image generated.
+        /// </summary>
+        internal static string ONE_IMAGE_GENERATED {
+            get {
+                return ResourceManager.GetString("ONE_IMAGE_GENERATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show scriptures page.
         /// </summary>
         internal static string PREV_PAGE_SCRIPS {
@@ -382,6 +400,15 @@ namespace OnlyV.Properties {
         internal static string VIEW {
             get {
                 return ResourceManager.GetString("VIEW", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} images generated..
+        /// </summary>
+        internal static string X_IMAGES_GENERATED {
+            get {
+                return ResourceManager.GetString("X_IMAGES_GENERATED", resourceCulture);
             }
         }
     }

@@ -3,13 +3,12 @@
     using System;
     using System.Diagnostics;
     using System.Linq;
-    using System.Threading.Tasks;
+    using System.Text;
     using System.Windows;
     using System.Windows.Media;
     using System.Windows.Media.Imaging;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
-    using GalaSoft.MvvmLight.Threading;
     using Helpers;
     using Serilog;
     using Services.DisplayWindow;
@@ -44,6 +43,25 @@
             _optionsService.ThemePathChangedEvent += HandleThemePathChangedEvent;
 
             InitCommands();
+        }
+
+        public string PreviewDescription
+        {
+            get
+            {
+                var imageCount = _imagesService.ImageCount;
+
+                if (imageCount == 1)
+                {
+                    return string.Format(Properties.Resources.ONE_IMAGE_GENERATED);
+                }
+
+                var sb = new StringBuilder();
+                sb.Append(string.Format(Properties.Resources.X_IMAGES_GENERATED, _imagesService.ImageCount));
+                sb.Append(" ");
+                sb.Append(Properties.Resources.DRAG_INTO_ONLYM);
+                return sb.ToString();
+            }
         }
 
         public ImageSource PreviewImageSource
@@ -121,6 +139,11 @@
                 Log.Logger.Error(@"Could not save", ex);
                 return null;
             }
+        }
+
+        public string GetSuitableFileNameWithoutExtension()
+        {
+            return ImageSavingService.GetSuitableFilenameWithoutExtension(BookChapterAndVersesString);
         }
 
         private void InitCommands()

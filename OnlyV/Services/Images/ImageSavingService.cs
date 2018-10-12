@@ -26,6 +26,12 @@
             _scriptureText = scriptureText;
         }
 
+        public static string GetSuitableFilenameWithoutExtension(string bibleBookChapterAndVersesString)
+        {
+            var s = bibleBookChapterAndVersesString.Replace(":", " v ").Replace(".", string.Empty);
+            return FileUtils.CleanFileName(s);
+        }
+
         public string GetFolder()
         {
             string result = null;
@@ -60,15 +66,17 @@
 
             if (_images.Any())
             {
+                var baseFileName = GetSuitableFilenameWithoutExtension(_scriptureText);
+
                 if (_images.Count == 1)
                 {
-                    var path = Path.Combine(_folder, Path.ChangeExtension(GetBaseFileName(), ".png"));
+                    var path = Path.Combine(_folder, Path.ChangeExtension(baseFileName, ".png"));
                     BitmapWriter.WritePng(path, _images.First());
                     result = path;
                 }
                 else
                 {
-                    string folder = Path.Combine(_folder, GetBaseFileName());
+                    string folder = Path.Combine(_folder, baseFileName);
                     if (Directory.Exists(folder))
                     {
                         ClearFiles(folder);
@@ -90,7 +98,7 @@
                         int count = 1;
                         foreach (var image in _images)
                         {
-                            var baseNameWithDigitPrefix = $"{count:D3} {GetBaseFileName()}";
+                            var baseNameWithDigitPrefix = $"{count:D3} {baseFileName}";
                             var path = Path.Combine(folder, Path.ChangeExtension(baseNameWithDigitPrefix, ".png"));
                             BitmapWriter.WritePng(path, image);
 
@@ -110,12 +118,6 @@
             {
                 File.Delete(file);
             }
-        }
-
-        private string GetBaseFileName()
-        {
-            var s = _scriptureText.Replace(":", " v ").Replace(".", string.Empty);
-            return FileUtils.CleanFileName(s);
         }
     }
 }
