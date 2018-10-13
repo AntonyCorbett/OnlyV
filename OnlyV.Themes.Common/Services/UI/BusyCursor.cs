@@ -4,7 +4,7 @@
     using System.Windows.Input;
     using GalaSoft.MvvmLight.Threading;
 
-    public class BusyCursor : IDisposable
+    public sealed class BusyCursor : IDisposable
     {
         private Cursor _originalCursor;
 

@@ -10,6 +10,7 @@
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1001:TypesThatOwnDisposableFieldsShouldBeDisposable", Justification = "app is closing")]
     public partial class App : Application
     {
         private readonly string _appString = "OnlyVThemeCreator";

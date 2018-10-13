@@ -378,6 +378,7 @@
         }
 #pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
 
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "trust streams behave properly")]
         private XDocument GetXmlFile(string entryPath, bool canCache = false)
         {
             XDocument result = null;
