@@ -79,7 +79,7 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Only-V software version: {0}.
+        ///   Looks up a localized string similar to OnlyV software version: {0}.
         /// </summary>
         internal static string APP_VER {
             get {

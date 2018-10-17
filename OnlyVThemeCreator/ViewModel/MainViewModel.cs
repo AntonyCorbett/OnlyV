@@ -33,7 +33,7 @@ namespace OnlyVThemeCreator.ViewModel
     // ReSharper disable once ClassNeverInstantiated.Global
     public class MainViewModel : ViewModelBase
     {
-        private const string AppName = @"OnlyV Theme Creator";
+        private const string AppName = @"O N L Y V  Theme Creator";
         private const double TextSizeTolerance = 0.1;
         private const double BlurRadiusTolerance = 0.5;
         private const double ShadowDepthTolerance = 0.5;

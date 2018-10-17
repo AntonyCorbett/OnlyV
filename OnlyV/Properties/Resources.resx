@@ -124,7 +124,7 @@
     <value>Added {0} files</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>Only-V software version: {0}</value>
+    <value>OnlyV software version: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
     <value>Back</value>
