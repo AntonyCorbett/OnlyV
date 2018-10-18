@@ -290,7 +290,7 @@ namespace OnlyV.ViewModel
                 var latestVersion = VersionDetection.GetLatestReleaseVersion();
                 if (latestVersion != null)
                 {
-                    if (latestVersion != VersionDetection.GetCurrentVersion())
+                    if (latestVersion > VersionDetection.GetCurrentVersion())
                     {
                         // there is a new version....
                         ShowNewVersionButton = true;
