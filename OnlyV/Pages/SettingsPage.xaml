@@ -112,7 +112,7 @@
                           materialDesign:HintAssist.IsFloating="True"
                           materialDesign:HintAssist.Hint="Media Monitor"
                           SelectedValuePath="MonitorId" 
-                          DisplayMemberPath="MonitorName"
+                          DisplayMemberPath="FriendlyName"
                           SelectedValue="{Binding MonitorId, Mode=TwoWay}">
                 </ComboBox>
 
