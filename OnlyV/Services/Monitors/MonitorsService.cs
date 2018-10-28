@@ -35,10 +35,14 @@
                 {
                     Monitor = screen,
                     MonitorName = deviceData?.DeviceString ?? SanitizeScreenDeviceName(screen.DeviceName),
-                    MonitorId = deviceData?.DeviceId ?? screen.DeviceName
+                    MonitorId = deviceData?.DeviceId ?? screen.DeviceName,
+                    FriendlyName = screen.DeviceFriendlyName()
                 };
 
-                monitor.FriendlyName = screen.DeviceFriendlyName() ?? monitor.MonitorName;
+                if (string.IsNullOrEmpty(monitor.FriendlyName))
+                {
+                    monitor.FriendlyName = monitor.MonitorName;
+                }
 
                 result.Add(monitor);
             }
