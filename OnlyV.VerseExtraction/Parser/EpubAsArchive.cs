@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Diagnostics;
     using System.IO;
     using System.IO.Compression;
     using System.Linq;
@@ -360,7 +359,7 @@
                         if (started)
                         {
                             XText txtNode = (XText)node;
-                            if (ShouldIncludeTextNode(para, txtNode, ns))
+                            if (ShouldIncludeTextNode(txtNode, ns))
                             {
                                 sb.Append(txtNode.Value);
                             }
@@ -799,35 +798,21 @@
             return null;
         }
 
-        private bool ShouldIncludeTextNode(XElement para, XText txtNode, XNamespace ns)
+        private bool ShouldIncludeTextNode(XText txtNode, XNamespace ns)
         {
-            if (string.IsNullOrEmpty(txtNode.Value) || int.TryParse(txtNode.Value, out _))
-            {
-                return false;
-            }
-            
-            var parentNodeName = txtNode.Parent?.Name;
+            int dummy;
 
-            if (parentNodeName == null)
+            if (!string.IsNullOrEmpty(txtNode.Value) && !int.TryParse(txtNode.Value, out dummy))
             {
-                return true;
-            }
-
-            // omit superscription (class ss)...
-            var c = para.Attribute("class");
-            if (c != null && c.Value.Contains("ss")) 
-            {
-                Debug.WriteLine(txtNode.Value);
-                return false;
+                var parentNodeName = txtNode.Parent?.Name;
+                if (parentNodeName == null || (!parentNodeName.Equals(ns + "strong") &&
+                                               !parentNodeName.Equals(ns + "sup") &&
+                                               !parentNodeName.Equals(ns + "a")))
+                {
+                    return true;
+                }
             }
 
-            if (!parentNodeName.Equals(ns + "strong") && 
-                !parentNodeName.Equals(ns + "sup") &&
-                !parentNodeName.Equals(ns + "a"))
-            {
-                return true;
-            }
-            
             return false;
         }
 
