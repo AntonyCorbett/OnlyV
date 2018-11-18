@@ -359,7 +359,7 @@
                         if (started)
                         {
                             XText txtNode = (XText)node;
-                            if (ShouldIncludeTextNode(txtNode, ns))
+                            if (ShouldIncludeTextNode(para, txtNode, ns))
                             {
                                 sb.Append(txtNode.Value);
                             }
@@ -798,19 +798,32 @@
             return null;
         }
 
-        private bool ShouldIncludeTextNode(XText txtNode, XNamespace ns)
+        private bool ShouldIncludeTextNode(XElement para, XText txtNode, XNamespace ns)
         {
-            int dummy;
-
-            if (!string.IsNullOrEmpty(txtNode.Value) && !int.TryParse(txtNode.Value, out dummy))
+            if (string.IsNullOrEmpty(txtNode.Value) || int.TryParse(txtNode.Value, out _))
             {
-                var parentNodeName = txtNode.Parent?.Name;
-                if (parentNodeName == null || (!parentNodeName.Equals(ns + "strong") &&
-                                               !parentNodeName.Equals(ns + "sup") &&
-                                               !parentNodeName.Equals(ns + "a")))
-                {
-                    return true;
-                }
+                return false;
+            }
+
+            var parentNodeName = txtNode.Parent?.Name;
+
+            if (parentNodeName == null)
+            {
+                return true;
+            }
+
+            // omit superscription (class ss)...
+            var c = para.Attribute("class");
+            if (c != null && c.Value.Contains("ss"))
+            {
+                return false;
+            }
+
+            if (!parentNodeName.Equals(ns + "strong") &&
+                !parentNodeName.Equals(ns + "sup") &&
+                !parentNodeName.Equals(ns + "a"))
+            {
+                return true;
             }
 
             return false;
