@@ -45,6 +45,8 @@
             InitCommands();
         }
 
+        public event EventHandler EditTextCommandEvent;
+
         public string PreviewDescription
         {
             get
@@ -116,6 +118,8 @@
 
         public RelayCommand CopyToClipboardCommand { get; set; }
 
+        public RelayCommand EditTextCommand { get; set; }
+
         // returns the name of the saved file (if only 1), or the
         // name of the folder in which multiple files are stored
         public string SaveImagesToFolder(string folder)
@@ -153,6 +157,18 @@
             DisplayImageCommand = new RelayCommand(ToggleDisplayImage, CanToggleDisplayImage);
             SaveCommand = new RelayCommand(SaveImage, CanSaveImage);
             CopyToClipboardCommand = new RelayCommand(CopyToClipboard, CanCopyToClipboard);
+            EditTextCommand = new RelayCommand(EditText, CanEditText);
+        }
+
+        private bool CanEditText()
+        {
+            return true;
+        }
+
+        private void EditText()
+        {
+            // display the "edit verse text" page...
+            EditTextCommandEvent?.Invoke(this, EventArgs.Empty);
         }
 
         private bool CanCopyToClipboard()

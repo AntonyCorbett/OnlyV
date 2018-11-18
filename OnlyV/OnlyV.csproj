@@ -65,8 +65,8 @@
     <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
     </Reference>
-    <Reference Include="MaterialDesignThemes.Wpf, Version=2.4.1.1101, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MaterialDesignThemes.2.4.1.1101\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.0.1205, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.0.1205\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
@@ -131,8 +131,12 @@
     <Compile Include="Helpers\BitmapHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelperNativeMethods.cs" />
+    <Compile Include="Helpers\LoremIpsum.cs" />
     <Compile Include="Helpers\VersionDetection.cs" />
     <Compile Include="Mappings\MappingProfile.cs" />
+    <Compile Include="Pages\EditTextPage.xaml.cs">
+      <DependentUpon>EditTextPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PreviewPage.xaml.cs">
       <DependentUpon>PreviewPage.xaml</DependentUpon>
     </Compile>
@@ -176,6 +180,8 @@
     <Compile Include="Services\Snackbar\SnackbarService.cs" />
     <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\DisplayViewModel.cs" />
+    <Compile Include="ViewModel\EditTextViewModel.cs" />
+    <Compile Include="ViewModel\EditVerseTextViewModel.cs" />
     <Compile Include="ViewModel\LoggingLevel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MonitorItem.cs" />
@@ -185,6 +191,10 @@
     <Compile Include="ViewModel\StartupViewModel.cs" />
     <Compile Include="ViewModel\VerseButtonModel.cs" />
     <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Page Include="Pages\EditTextPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\PreviewPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -236,7 +246,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <AdditionalFiles Include="..\OnlyV.ruleset">

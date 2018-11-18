@@ -1,0 +1,65 @@
+﻿<UserControl x:Class="OnlyV.Pages.EditTextPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OnlyV.Pages"
+             mc:Ignorable="d" 
+             
+             DataContext="{Binding Source={StaticResource Locator}, Path=EditText}"
+             xmlns:resx="clr-namespace:OnlyV.Properties"
+
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:viewModel="clr-namespace:OnlyV.ViewModel"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Medium"
+             TextElement.FontSize="14"
+             TextOptions.TextFormattingMode="Ideal" 
+             TextOptions.TextRenderingMode="Auto"        
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+
+             d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <DataTemplate DataType="{x:Type viewModel:EditVerseTextViewModel}">
+
+            <GroupBox
+                Header="{Binding BookChapterAndVerse}"
+                Margin="16"
+                materialDesign:ColorZoneAssist.Mode="Light">
+
+                <TextBox 
+                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
+                    MaxLines="10" MinLines="3"></TextBox>
+
+            </GroupBox>
+            
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <DockPanel Margin="10">
+
+            <TextBlock TextWrapping="Wrap" 
+                       DockPanel.Dock="Top"
+                       Margin="0,0,0,10"
+                       Text="{x:Static resx:Resources.EDIT_INSTRUCTIONS}"/>
+
+            <ScrollViewer 
+                DockPanel.Dock="Top"
+                VerticalScrollBarVisibility="Auto">
+
+                <ItemsControl ItemsSource="{Binding Verses}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                </ItemsControl>
+
+            </ScrollViewer>
+
+        </DockPanel>
+    </Grid>
+</UserControl>

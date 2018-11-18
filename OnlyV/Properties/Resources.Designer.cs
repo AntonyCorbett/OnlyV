@@ -22,7 +22,7 @@ namespace OnlyV.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace OnlyV.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OnlyV.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace OnlyV.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Added file.
         /// </summary>
-        internal static string ADDED_FILE {
+        public static string ADDED_FILE {
             get {
                 return ResourceManager.GetString("ADDED_FILE", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Added {0} files.
         /// </summary>
-        internal static string ADDED_X_FILES {
+        public static string ADDED_X_FILES {
             get {
                 return ResourceManager.GetString("ADDED_X_FILES", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to OnlyV software version: {0}.
         /// </summary>
-        internal static string APP_VER {
+        public static string APP_VER {
             get {
                 return ResourceManager.GetString("APP_VER", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        internal static string BACK {
+        public static string BACK {
             get {
                 return ResourceManager.GetString("BACK", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Blue {
+        public static System.Drawing.Bitmap Blue {
             get {
                 object obj = ResourceManager.GetObject("Blue", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -109,7 +109,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Copied to clipboard.
         /// </summary>
-        internal static string COPIED {
+        public static string COPIED {
             get {
                 return ResourceManager.GetString("COPIED", resourceCulture);
             }
@@ -118,7 +118,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Could not read one of the files!.
         /// </summary>
-        internal static string COULD_NOT_READ_1 {
+        public static string COULD_NOT_READ_1 {
             get {
                 return ResourceManager.GetString("COULD_NOT_READ_1", resourceCulture);
             }
@@ -127,7 +127,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Could not read any of the files!.
         /// </summary>
-        internal static string COULD_NOT_READ_ANY {
+        public static string COULD_NOT_READ_ANY {
             get {
                 return ResourceManager.GetString("COULD_NOT_READ_ANY", resourceCulture);
             }
@@ -136,7 +136,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Could not read file!.
         /// </summary>
-        internal static string COULD_NOT_READ_FILE {
+        public static string COULD_NOT_READ_FILE {
             get {
                 return ResourceManager.GetString("COULD_NOT_READ_FILE", resourceCulture);
             }
@@ -145,7 +145,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Could not read {0} files!.
         /// </summary>
-        internal static string COULD_NOT_READ_X {
+        public static string COULD_NOT_READ_X {
             get {
                 return ResourceManager.GetString("COULD_NOT_READ_X", resourceCulture);
             }
@@ -154,7 +154,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Could not create folder {0}.
         /// </summary>
-        internal static string CREATE_FOLDER_ERROR {
+        public static string CREATE_FOLDER_ERROR {
             get {
                 return ResourceManager.GetString("CREATE_FOLDER_ERROR", resourceCulture);
             }
@@ -163,7 +163,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Default.
         /// </summary>
-        internal static string DEFAULT_THEME {
+        public static string DEFAULT_THEME {
             get {
                 return ResourceManager.GetString("DEFAULT_THEME", resourceCulture);
             }
@@ -172,7 +172,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Destination Folder.
         /// </summary>
-        internal static string DEST_FOLDER {
+        public static string DEST_FOLDER {
             get {
                 return ResourceManager.GetString("DEST_FOLDER", resourceCulture);
             }
@@ -181,7 +181,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Display (F5).
         /// </summary>
-        internal static string DISPLAY_CMD {
+        public static string DISPLAY_CMD {
             get {
                 return ResourceManager.GetString("DISPLAY_CMD", resourceCulture);
             }
@@ -190,16 +190,25 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Drag and drop into OnlyM to create a slideshow.
         /// </summary>
-        internal static string DRAG_INTO_ONLYM {
+        public static string DRAG_INTO_ONLYM {
             get {
                 return ResourceManager.GetString("DRAG_INTO_ONLYM", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV..
+        /// </summary>
+        public static string EDIT_INSTRUCTIONS {
+            get {
+                return ResourceManager.GetString("EDIT_INSTRUCTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bible epub not found!.
         /// </summary>
-        internal static string EPUB_NOT_FOUND {
+        public static string EPUB_NOT_FOUND {
             get {
                 return ResourceManager.GetString("EPUB_NOT_FOUND", resourceCulture);
             }
@@ -208,7 +217,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Bible epub not specified!.
         /// </summary>
-        internal static string EPUB_NOT_SPECIFIED {
+        public static string EPUB_NOT_SPECIFIED {
             get {
                 return ResourceManager.GetString("EPUB_NOT_SPECIFIED", resourceCulture);
             }
@@ -217,7 +226,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Error saving images!.
         /// </summary>
-        internal static string ERROR_SAVING {
+        public static string ERROR_SAVING {
             get {
                 return ResourceManager.GetString("ERROR_SAVING", resourceCulture);
             }
@@ -226,7 +235,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Hide (F5).
         /// </summary>
-        internal static string HIDE_CMD {
+        public static string HIDE_CMD {
             get {
                 return ResourceManager.GetString("HIDE_CMD", resourceCulture);
             }
@@ -235,7 +244,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Debug.
         /// </summary>
-        internal static string LOG_LEVEL_DEBUG {
+        public static string LOG_LEVEL_DEBUG {
             get {
                 return ResourceManager.GetString("LOG_LEVEL_DEBUG", resourceCulture);
             }
@@ -244,7 +253,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Error.
         /// </summary>
-        internal static string LOG_LEVEL_ERROR {
+        public static string LOG_LEVEL_ERROR {
             get {
                 return ResourceManager.GetString("LOG_LEVEL_ERROR", resourceCulture);
             }
@@ -253,7 +262,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Fatal.
         /// </summary>
-        internal static string LOG_LEVEL_FATAL {
+        public static string LOG_LEVEL_FATAL {
             get {
                 return ResourceManager.GetString("LOG_LEVEL_FATAL", resourceCulture);
             }
@@ -262,7 +271,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
-        internal static string LOG_LEVEL_INFORMATION {
+        public static string LOG_LEVEL_INFORMATION {
             get {
                 return ResourceManager.GetString("LOG_LEVEL_INFORMATION", resourceCulture);
             }
@@ -271,7 +280,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Verbose.
         /// </summary>
-        internal static string LOG_LEVEL_VERBOSE {
+        public static string LOG_LEVEL_VERBOSE {
             get {
                 return ResourceManager.GetString("LOG_LEVEL_VERBOSE", resourceCulture);
             }
@@ -280,7 +289,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Warning.
         /// </summary>
-        internal static string LOG_LEVEL_WARNING {
+        public static string LOG_LEVEL_WARNING {
             get {
                 return ResourceManager.GetString("LOG_LEVEL_WARNING", resourceCulture);
             }
@@ -289,7 +298,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
-        internal static string MONITOR_NONE {
+        public static string MONITOR_NONE {
             get {
                 return ResourceManager.GetString("MONITOR_NONE", resourceCulture);
             }
@@ -298,7 +307,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to New update available!.
         /// </summary>
-        internal static string NEW_UPDATE_AVAILABLE {
+        public static string NEW_UPDATE_AVAILABLE {
             get {
                 return ResourceManager.GetString("NEW_UPDATE_AVAILABLE", resourceCulture);
             }
@@ -307,7 +316,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Show preview page.
         /// </summary>
-        internal static string NEXT_PAGE_PREVIEW {
+        public static string NEXT_PAGE_PREVIEW {
             get {
                 return ResourceManager.GetString("NEXT_PAGE_PREVIEW", resourceCulture);
             }
@@ -316,7 +325,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to No images to save!.
         /// </summary>
-        internal static string NO_IMAGES {
+        public static string NO_IMAGES {
             get {
                 return ResourceManager.GetString("NO_IMAGES", resourceCulture);
             }
@@ -325,7 +334,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
-        internal static string OK {
+        public static string OK {
             get {
                 return ResourceManager.GetString("OK", resourceCulture);
             }
@@ -334,7 +343,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to 1 image generated.
         /// </summary>
-        internal static string ONE_IMAGE_GENERATED {
+        public static string ONE_IMAGE_GENERATED {
             get {
                 return ResourceManager.GetString("ONE_IMAGE_GENERATED", resourceCulture);
             }
@@ -343,7 +352,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Show scriptures page.
         /// </summary>
-        internal static string PREV_PAGE_SCRIPS {
+        public static string PREV_PAGE_SCRIPS {
             get {
                 return ResourceManager.GetString("PREV_PAGE_SCRIPS", resourceCulture);
             }
@@ -352,7 +361,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Bible reader not initialised!.
         /// </summary>
-        internal static string READER_NOT_INIT {
+        public static string READER_NOT_INIT {
             get {
                 return ResourceManager.GetString("READER_NOT_INIT", resourceCulture);
             }
@@ -361,7 +370,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Saved image.
         /// </summary>
-        internal static string SAVED_IMAGE {
+        public static string SAVED_IMAGE {
             get {
                 return ResourceManager.GetString("SAVED_IMAGE", resourceCulture);
             }
@@ -370,7 +379,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Saved {0} images.
         /// </summary>
-        internal static string SAVED_X_IMAGES {
+        public static string SAVED_X_IMAGES {
             get {
                 return ResourceManager.GetString("SAVED_X_IMAGES", resourceCulture);
             }
@@ -379,7 +388,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Settings disabled by administrator!.
         /// </summary>
-        internal static string SETTINGS_DISABLED {
+        public static string SETTINGS_DISABLED {
             get {
                 return ResourceManager.GetString("SETTINGS_DISABLED", resourceCulture);
             }
@@ -388,7 +397,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to Settings page.
         /// </summary>
-        internal static string SETTINGS_PAGE {
+        public static string SETTINGS_PAGE {
             get {
                 return ResourceManager.GetString("SETTINGS_PAGE", resourceCulture);
             }
@@ -397,7 +406,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to VIEW.
         /// </summary>
-        internal static string VIEW {
+        public static string VIEW {
             get {
                 return ResourceManager.GetString("VIEW", resourceCulture);
             }
@@ -406,7 +415,7 @@ namespace OnlyV.Properties {
         /// <summary>
         ///   Looks up a localized string similar to {0} images generated..
         /// </summary>
-        internal static string X_IMAGES_GENERATED {
+        public static string X_IMAGES_GENERATED {
             get {
                 return ResourceManager.GetString("X_IMAGES_GENERATED", resourceCulture);
             }

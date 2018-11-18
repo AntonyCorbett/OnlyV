@@ -24,6 +24,7 @@ namespace OnlyV.ViewModel
         private readonly PreviewViewModel _previewViewModel;
         private readonly SettingsViewModel _settingsViewModel;
         private readonly StartupViewModel _startupViewModel;
+        private readonly EditTextViewModel _editVerseTextViewModel;
 
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
@@ -40,6 +41,7 @@ namespace OnlyV.ViewModel
             ScripturesViewModel scripturesViewModel,
             PreviewViewModel previewViewModel,
             SettingsViewModel settingsViewModel,
+            EditTextViewModel editVerseTextViewModel,
             StartupViewModel startupViewModel,
             IImagesService imagesService,
             IOptionsService optionsService,
@@ -50,6 +52,7 @@ namespace OnlyV.ViewModel
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
             _settingsViewModel = settingsViewModel;
+            _editVerseTextViewModel = editVerseTextViewModel;
             _startupViewModel = startupViewModel;
             _commandLineService = commandLineService;
 
@@ -60,6 +63,8 @@ namespace OnlyV.ViewModel
             }
 
             _settingsViewModel.EpubChangedEvent += HandleEpubChangedEvent;
+
+            _previewViewModel.EditTextCommandEvent += HandleEditTextCommandEvent;
 
             _imagesService = imagesService;
             _optionsService = optionsService;
@@ -330,6 +335,11 @@ namespace OnlyV.ViewModel
             //      than or equal to 9.0.
             int renderingTier = RenderCapability.Tier >> 16;
             return renderingTier == 0;
+        }
+
+        private void HandleEditTextCommandEvent(object sender, System.EventArgs e)
+        {
+            CurrentPage = _editVerseTextViewModel;
         }
     }
 }

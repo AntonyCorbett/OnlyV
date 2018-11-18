@@ -26,6 +26,14 @@
             <Setter Property="Width" Value="60" />
         </Style>
 
+        <Style x:Key="EditTextButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+            <Setter Property="Height" Value="50" />
+            <Setter Property="Width" Value="60" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="HorizontalAlignment" Value="Left" />
+        </Style>
+
         <Style x:Key="PreviewNavButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Padding" Value="0" />
             <Setter Property="Margin" Value="15,0,0,0" />
@@ -133,10 +141,20 @@
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
-                <Image x:Name="PreviewImage" 
+                <Grid>
+                    <Image x:Name="PreviewImage" 
                        MouseMove="ImageMouseMove"
                        RenderOptions.BitmapScalingMode="HighQuality"
                        Source="{Binding PreviewImageSource}" />
+
+                    <Button Style="{StaticResource EditTextButtonStyle}"
+                            Command="{Binding EditTextCommand}">
+                        <materialDesign:PackIcon
+                            Kind="LeadPencil" 
+                            Height="32"
+                            Width="32"/>
+                    </Button>
+                </Grid>
             </Border>
         </Grid>
     </Grid>

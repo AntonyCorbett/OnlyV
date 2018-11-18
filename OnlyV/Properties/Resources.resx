@@ -163,6 +163,9 @@
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
     <value>Drag and drop into OnlyM to create a slideshow</value>
   </data>
+  <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
+    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+  </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bible epub not found!</value>
   </data>
