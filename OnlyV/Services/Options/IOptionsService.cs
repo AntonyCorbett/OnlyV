@@ -20,6 +20,8 @@
 
         bool AlwaysOnTop { get; set; }
 
+        bool AllowVerseEditing { get; set; }
+
         string AppWindowPlacement { get; set; }
 
         string MediaMonitorId { get; set; }

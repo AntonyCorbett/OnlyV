@@ -29,7 +29,6 @@
         <Style x:Key="EditTextButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
             <Setter Property="Height" Value="50" />
             <Setter Property="Width" Value="60" />
-            <Setter Property="Margin" Value="10" />
             <Setter Property="VerticalAlignment" Value="Top" />
             <Setter Property="HorizontalAlignment" Value="Left" />
         </Style>
@@ -147,13 +146,19 @@
                        RenderOptions.BitmapScalingMode="HighQuality"
                        Source="{Binding PreviewImageSource}" />
 
+                    <materialDesign:Badged
+                        Margin="10"
+                        Badge="{Binding EditBadgePackIcon}"
+                        BadgeColorZoneMode="Accent">
                     <Button Style="{StaticResource EditTextButtonStyle}"
+                            Visibility="{Binding AllowVerseEditing, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Command="{Binding EditTextCommand}">
                         <materialDesign:PackIcon
                             Kind="LeadPencil" 
                             Height="32"
                             Width="32"/>
                     </Button>
+                    </materialDesign:Badged>
                 </Grid>
             </Border>
         </Grid>

@@ -109,6 +109,19 @@
             }
         }
 
+        public bool AllowVerseEditing
+        {
+            get => _optionsService.AllowVerseEditing;
+            set
+            {
+                if (_optionsService.AllowVerseEditing != value)
+                {
+                    _optionsService.AllowVerseEditing = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         public IEnumerable<MonitorItem> Monitors => _monitors;
 
         public string MonitorId

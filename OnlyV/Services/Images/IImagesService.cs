@@ -8,6 +8,8 @@
     {
         int ImageCount { get; }
 
+        bool VerseTextIsModified { get; }
+
         void Init(int bookNumber, string chapterAndVerses);
 
         void Refresh();

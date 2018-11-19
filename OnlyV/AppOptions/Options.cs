@@ -24,6 +24,8 @@
 
         public bool AlwaysOnTop { get; set; }
 
+        public bool AllowVerseEditing { get; set; }
+
         public string AppWindowPlacement { get; set; }
 
         public bool JwLibraryCompatibilityMode { get; set; }

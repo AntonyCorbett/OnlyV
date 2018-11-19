@@ -189,6 +189,10 @@
                           Content="Main window always on top"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
+                <CheckBox IsChecked="{Binding AllowVerseEditing, Mode=TwoWay}"
+                          Content="Allow verse editing"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+
                 <ComboBox ItemsSource="{Binding LoggingLevels}"
                           Style="{StaticResource SettingsComboBoxStyle}" 
                           materialDesign:HintAssist.IsFloating="True"

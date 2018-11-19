@@ -10,6 +10,8 @@
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
     using Helpers;
+    using MaterialDesignThemes.Wpf;
+    using OnlyV.Services.VerseEditor;
     using Serilog;
     using Services.DisplayWindow;
     using Services.Images;
@@ -23,6 +25,7 @@
         private readonly IDisplayWindowService _displayWindowService;
         private readonly IOptionsService _optionsService;
         private readonly ISnackbarService _snackbarService;
+        private readonly IVerseEditorService _verseEditorService;
 
         private ImageSource _previewImageSource;
         private int? _imageIndex;
@@ -31,12 +34,14 @@
             IImagesService imagesService,
             IDisplayWindowService displayWindowService,
             IOptionsService optionsService,
-            ISnackbarService snackbarService)
+            ISnackbarService snackbarService,
+            IVerseEditorService verseEditorService)
         {
             _imagesService = imagesService;
             _displayWindowService = displayWindowService;
             _optionsService = optionsService;
             _snackbarService = snackbarService;
+            _verseEditorService = verseEditorService;
 
             _optionsService.MediaMonitorChangedEvent += HandleMediaMonitorChangedEvent;
             _optionsService.StyleChangedEvent += HandleStyleChangedEvent;
@@ -108,6 +113,8 @@
 
         public bool IsDisplayWindowVisible => _displayWindowService.IsWindowVisible;
 
+        public bool AllowVerseEditing => _optionsService.AllowVerseEditing;
+
         public RelayCommand NextImageCommand { get; set; }
 
         public RelayCommand PreviousImageCommand { get; set; }
@@ -120,6 +127,10 @@
 
         public RelayCommand EditTextCommand { get; set; }
 
+        public PackIcon EditBadgePackIcon => VerseTextIsModified()
+            ? new PackIcon { Kind = PackIconKind.Check }
+            : null;
+    
         // returns the name of the saved file (if only 1), or the
         // name of the folder in which multiple files are stored
         public string SaveImagesToFolder(string folder)
@@ -314,6 +325,11 @@
             ImageIndex = null;
             _imagesService.Refresh();
             ImageIndex = 0;
+        }
+
+        private bool VerseTextIsModified()
+        {
+            return _imagesService.VerseTextIsModified;
         }
     }
 }

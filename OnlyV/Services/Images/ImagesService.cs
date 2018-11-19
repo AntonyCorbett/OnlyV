@@ -37,6 +37,8 @@
 
         public int ImageCount => _images?.Length ?? 0;
 
+        public bool VerseTextIsModified { get; private set; }
+
         public void Init(int bookNumber, string chapterAndVerses)
         {
             _currentBookNumber = bookNumber;
@@ -49,6 +51,8 @@
         {
             if (_currentBookNumber > 0 && !string.IsNullOrEmpty(_currentChapterAndVerses))
             {
+                VerseTextIsModified = false;
+
                 using (_userInterfaceService.GetBusy())
                 {
                     var bibleTextImage = new BibleTextImage();
@@ -199,6 +203,7 @@
             var modifiedVerse = _verseEditorService.Get(_optionsService.EpubPath, e.BookNumber, e.ChapterNumber, e.VerseNumber);
             if (!string.IsNullOrEmpty(modifiedVerse))
             {
+                VerseTextIsModified = true;
                 e.Text = modifiedVerse.Trim();
             }
         }

@@ -81,6 +81,18 @@
             }
         }
 
+        public bool AllowVerseEditing
+        {
+            get => _options.AllowVerseEditing;
+            set
+            {
+                if (_options.AllowVerseEditing != value)
+                {
+                    _options.AllowVerseEditing = value;
+                }
+            }
+        }
+
         public string AppWindowPlacement
         {
             get => _options.AppWindowPlacement;
