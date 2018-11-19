@@ -22,6 +22,14 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <UserControl.Resources>
+
+        <Style x:Key="QuoteButtonStyle" TargetType="{x:Type Button}" BasedOn="{StaticResource MaterialDesignRaisedButton}">
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Width" Value="35" />
+            <Setter Property="Grid.Row" Value="1" />
+        </Style>
+
         <DataTemplate DataType="{x:Type viewModel:EditVerseTextViewModel}">
 
             <GroupBox
@@ -45,22 +53,54 @@
                         AcceptsReturn="False"
                         FontSize="16"
                         Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
-                        MaxLines="20" MinLines="1"/>
+                        MaxLines="20" MinLines="1" 
+                        GotKeyboardFocus="HandleGotKeyboardFocus" 
+                        LostKeyboardFocus="HandleLostKeyboardFocus"/>
 
-                    <Button 
-                        Grid.Column="1"
-                        Margin="10,0,0,0"
-                        VerticalAlignment="Bottom"
-                        IsEnabled="{Binding IsModified}"
-                        Command="{Binding ResetCommand}"
-                        Style="{StaticResource MaterialDesignRaisedLightButton}"
-                        ToolTip="Reset the verse text"
-                        Content="RESET" />
+                    <Grid Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="100"/>
+                        </Grid.RowDefinitions>
 
+                        <Button Style="{StaticResource QuoteButtonStyle}" 
+                                Margin="10,0,0,0"
+                                IsEnabled="{Binding IsFocused}"
+                                Focusable="False"
+                                ToolTip="Insert opening quotation mark"
+                                HorizontalAlignment="Left" Click="OpeningQuoteButtonClick">
+                            <materialDesign:PackIcon
+                                Kind="FormatQuoteOpen" 
+                                Height="22"
+                                Width="22"/>
+                        </Button>
+                        <Button Style="{StaticResource QuoteButtonStyle}" 
+                                IsEnabled="{Binding IsFocused}"
+                                Focusable="False"
+                                ToolTip="Insert closing quotation mark"
+                                HorizontalAlignment="Right" Click="ClosingQuoteButtonClick">
+                            <materialDesign:PackIcon
+                                Kind="FormatQuoteClose" 
+                                Height="22"
+                                Width="22"/>
+                        </Button>
+
+                        <Button 
+                            Grid.Row="1"
+                            Margin="10,0,0,0"
+                            VerticalAlignment="Bottom"
+                            IsEnabled="{Binding IsModified}"
+                            Command="{Binding ResetCommand}"
+                            Style="{StaticResource MaterialDesignRaisedLightButton}"
+                            ToolTip="Reset the verse text"
+                            Content="RESET" />
+                    </Grid>
                 </Grid>
             </GroupBox>
             
         </DataTemplate>
+
+
     </UserControl.Resources>
 
     <Grid>

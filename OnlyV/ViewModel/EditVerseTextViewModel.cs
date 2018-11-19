@@ -6,6 +6,7 @@
     internal class EditVerseTextViewModel : ViewModelBase
     {
         private string _modifiedVerseText;
+        private bool _isFocused;
 
         public EditVerseTextViewModel()
         {
@@ -41,6 +42,19 @@
         public string BookChapterAndVerse => $"{BookName} {Chapter}:{Verse}";
 
         public bool IsModified => OriginalVerseText.Trim() != ModifiedVerseText.Trim();
+
+        public bool IsFocused
+        {
+            get => _isFocused;
+            set
+            {
+                if (_isFocused != value)
+                {
+                    _isFocused = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
 
         public RelayCommand ResetCommand { get; set; }
 

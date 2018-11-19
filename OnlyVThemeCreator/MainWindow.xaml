@@ -252,7 +252,7 @@
                                         Margin="10,0,10,0"
                                         Visibility="{Binding Path=IsBackgroundImageSpecified, Converter={StaticResource BooleanToVisibilityConverter}}"
                                         Content="Clear"
-                                        ToolTip="Resource name: MaterialDesignRaisedLightButton"/>
+                                        ToolTip="Clear background image"/>
                                 </StackPanel>
 
                             </Grid>
