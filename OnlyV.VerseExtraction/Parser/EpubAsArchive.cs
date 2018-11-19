@@ -46,6 +46,8 @@
             _navigationDocument = new Lazy<XDocument>(GetBibleNavigationDoc);
         }
 
+        public event EventHandler<VerseAndText> VerseFetchEvent;
+
         public void Dispose()
         {
             if (_zip.IsValueCreated)
@@ -238,6 +240,35 @@
             return TrimPunctuationAndQuotationMarks(result.ToString(), formattingOptions);
         }
 
+        public IReadOnlyCollection<VerseAndText> GetBibleTextsArray(
+            IReadOnlyList<BookChapter> chapters,
+            int bibleBook,
+            ChapterAndVersesSpec chapterAndVerses,
+            FormattingOptions formattingOptions)
+        {
+            var result = new List<VerseAndText>();
+            
+            foreach (var vs in chapterAndVerses.ContiguousVerses)
+            {
+                for (var verse = vs.StartVerse; verse <= vs.EndVerse; ++verse)
+                {
+                    string s = GetBibleText(chapters, bibleBook, vs.Chapter, verse, formattingOptions);
+                    if (!string.IsNullOrEmpty(s))
+                    {
+                        result.Add(new VerseAndText
+                        {
+                            BookNumber = bibleBook,
+                            ChapterNumber = vs.Chapter,
+                            VerseNumber = verse,
+                            Text = s
+                        });
+                    }
+                }
+            }
+
+            return result.ToArray();
+        }
+
         public string GetBibleText(
             IReadOnlyList<BookChapter> chapters, 
             int bibleBook, 
@@ -245,7 +276,13 @@
             int verse,
             FormattingOptions formattingOptions)
         {
-            XDocument x = GetChapter(chapters, bibleBook, chapter);
+            var verseText = OverrideVerseFetch(bibleBook, chapter, verse);
+            if (!string.IsNullOrEmpty(verseText))
+            {
+                return verseText;
+            }
+
+            var x = GetChapter(chapters, bibleBook, chapter);
             
             var attr = x?.Root?.Attribute("xmlns");
             if (attr == null)
@@ -304,6 +341,25 @@
             }
 
             return sb.ToString().Trim().Trim('~');
+        }
+
+        private string OverrideVerseFetch(int bookNumber, int chapter, int verse)
+        {
+            if (VerseFetchEvent != null)
+            {
+                var v = new VerseAndText
+                {
+                    BookNumber = bookNumber,
+                    ChapterNumber = chapter,
+                    VerseNumber = verse
+                };
+
+                VerseFetchEvent.Invoke(this, v);
+
+                return v.Text;
+            }
+
+            return null;
         }
 
 #pragma warning disable SA1008 // Opening parenthesis must be spaced correctly

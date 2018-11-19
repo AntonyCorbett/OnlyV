@@ -91,6 +91,8 @@
             TrimQuotes = false;
         }
 
+        public event EventHandler<VerseAndText> VerseFetchEvent;
+
         public int Width { get; set; }
 
         public int Height { get; set; }
@@ -187,6 +189,7 @@
 
             using (var reader = new BibleTextReader(epubPath))
             {
+                reader.VerseFetchEvent += HandleVerseFetchEvent;
                 string title = reader.GenerateVerseTitle(bookNumber, chapterAndVerses);
 
                 var formattingOptions = new FormattingOptions
@@ -216,6 +219,11 @@
 
                 return result;
             }
+        }
+
+        private void HandleVerseFetchEvent(object sender, VerseAndText e)
+        {
+            VerseFetchEvent?.Invoke(this, e);
         }
 
         private Size MeasureAString(string s)

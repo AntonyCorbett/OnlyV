@@ -16,10 +16,13 @@
         public BibleEpubParser(string epubPath)
         {
             _epub = new EpubAsArchive(epubPath);
+            _epub.VerseFetchEvent += HandleVerseFetchEvent;
             
             _bibleBooks = new Lazy<IReadOnlyList<BibleBook>>(GenerateBibleBooksList);
             _bookChapters = new Lazy<IReadOnlyList<BookChapter>>(GenerateChapterList);
         }
+
+        public event EventHandler<VerseAndText> VerseFetchEvent;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_epub", Justification = "False positive")]
         public void Dispose()
@@ -56,10 +59,21 @@
             string chapterAndVerses,
             FormattingOptions formattingOptions)
         {
-            Log.Logger.Information("Extracting Bible verse");
+            Log.Logger.Information("Extracting Bible verses");
 
             var verses = ChapterAndVerseStringParser.Parse(chapterAndVerses);
             return _epub.GetBibleTexts(_bookChapters.Value, bibleBook, verses, formattingOptions);
+        }
+
+        public IReadOnlyCollection<VerseAndText> ExtractVersesTextArray(
+            int bibleBook,
+            string chapterAndVerses,
+            FormattingOptions formattingOptions)
+        {
+            Log.Logger.Information("Extracting Bible verse array");
+
+            var verses = ChapterAndVerseStringParser.Parse(chapterAndVerses);
+            return _epub.GetBibleTextsArray(_bookChapters.Value, bibleBook, verses, formattingOptions);
         }
 
         public string ExtractVerseText(
@@ -82,6 +96,11 @@
         {
             Log.Logger.Information("Initialising books");
             return _epub.GenerateBibleBooksList();
+        }
+
+        private void HandleVerseFetchEvent(object sender, VerseAndText e)
+        {
+            VerseFetchEvent?.Invoke(this, e);
         }
     }
 }

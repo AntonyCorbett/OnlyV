@@ -68,6 +68,7 @@
     <Compile Include="Models\BookChapter.cs" />
     <Compile Include="Models\EpubStyle.cs" />
     <Compile Include="Models\FormattingOptions.cs" />
+    <Compile Include="Models\VerseAndText.cs" />
     <Compile Include="Models\VerseRange.cs" />
     <Compile Include="Parser\BibleEpubParser.cs" />
     <Compile Include="Parser\EpubAsArchive.cs" />

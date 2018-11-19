@@ -29,10 +29,35 @@
                 Margin="16"
                 materialDesign:ColorZoneAssist.Mode="Light">
 
-                <TextBox 
-                    Style="{StaticResource MaterialDesignOutlinedTextFieldTextBox}"
-                    MaxLines="10" MinLines="3"></TextBox>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="120"/>
+                    </Grid.ColumnDefinitions>
 
+                    <TextBox 
+                        Padding="0,-20,0,0"
+                        Grid.Column="0"
+                        Text="{Binding ModifiedVerseText, UpdateSourceTrigger=PropertyChanged}"
+                        TextWrapping="Wrap"
+                        TextAlignment="Left"
+                        VerticalScrollBarVisibility="Auto"
+                        AcceptsReturn="False"
+                        FontSize="16"
+                        Style="{StaticResource MaterialDesignFilledTextFieldTextBox}"
+                        MaxLines="20" MinLines="1"/>
+
+                    <Button 
+                        Grid.Column="1"
+                        Margin="10,0,0,0"
+                        VerticalAlignment="Bottom"
+                        IsEnabled="{Binding IsModified}"
+                        Command="{Binding ResetCommand}"
+                        Style="{StaticResource MaterialDesignRaisedLightButton}"
+                        ToolTip="Reset the verse text"
+                        Content="RESET" />
+
+                </Grid>
             </GroupBox>
             
         </DataTemplate>
@@ -43,6 +68,7 @@
 
             <TextBlock TextWrapping="Wrap" 
                        DockPanel.Dock="Top"
+                       Foreground="{StaticResource PrimaryHueLightBrush}"
                        Margin="0,0,0,10"
                        Text="{x:Static resx:Resources.EDIT_INSTRUCTIONS}"/>
 

@@ -27,7 +27,10 @@
             _epubCreationStampUtc = fi.CreationTimeUtc;
 
             _parser = new BibleEpubParser(epubPath);
+            _parser.VerseFetchEvent += HandleVerseFetchEvent;
         }
+
+        public event EventHandler<VerseAndText> VerseFetchEvent;
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2213:DisposableFieldsShouldBeDisposed", MessageId = "_parser", Justification = "False positive")]
         public void Dispose()
@@ -37,11 +40,20 @@
 
         public string ExtractVerseText(
             int bibleBook, 
-            string chapterAndVerse,
+            string chapterAndVerses,
             FormattingOptions formattingOptions)
         {
-            Log.Logger.Information("Extracting verse for book {bibleBook}, {chapterAndVerse}", bibleBook, chapterAndVerse);
-            return _parser.ExtractVersesText(bibleBook, chapterAndVerse, formattingOptions);
+            Log.Logger.Information("Extracting verse for book {bibleBook}, {chapterAndVerse}", bibleBook, chapterAndVerses);
+            return _parser.ExtractVersesText(bibleBook, chapterAndVerses, formattingOptions);
+        }
+
+        public IReadOnlyCollection<VerseAndText> ExtractVerseTextArray(
+            int bibleBook,
+            string chapterAndVerses,
+            FormattingOptions formattingOptions)
+        {
+            Log.Logger.Information("Extracting verse array for book {bibleBook}, {chapterAndVerse}", bibleBook, chapterAndVerses);
+            return _parser.ExtractVersesTextArray(bibleBook, chapterAndVerses, formattingOptions);
         }
 
         public IReadOnlyCollection<BibleBookData> ExtractBookData()
@@ -73,6 +85,11 @@
         {
             var book = ExtractBookData().FirstOrDefault(x => x.Number == bookNumber);
             return book?.Name;
+        }
+
+        private void HandleVerseFetchEvent(object sender, VerseAndText e)
+        {
+            VerseFetchEvent?.Invoke(this, e);
         }
     }
 }

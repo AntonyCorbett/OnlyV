@@ -10,6 +10,7 @@ namespace OnlyV.ViewModel
     using GalaSoft.MvvmLight.CommandWpf;
     using Helpers;
     using MaterialDesignThemes.Wpf;
+    using OnlyV.Services.VerseEditor;
     using OnlyV.Themes.Common.Services.UI;
     using Services.CommandLine;
     using Services.Images;
@@ -25,12 +26,13 @@ namespace OnlyV.ViewModel
         private readonly SettingsViewModel _settingsViewModel;
         private readonly StartupViewModel _startupViewModel;
         private readonly EditTextViewModel _editVerseTextViewModel;
-
+        
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
         private readonly ISnackbarService _snackbarService;
         private readonly IUserInterfaceService _userInterfaceService;
         private readonly ICommandLineService _commandLineService;
+        private readonly IVerseEditorService _verseEditorService;
 
         private ViewModelBase _currentPage;
         private ViewModelBase _preSettingsPage;
@@ -47,7 +49,8 @@ namespace OnlyV.ViewModel
             IOptionsService optionsService,
             ISnackbarService snackbarService,
             IUserInterfaceService userInterfaceService,
-            ICommandLineService commandLineService)
+            ICommandLineService commandLineService,
+            IVerseEditorService verseEditorService)
         {
             _scripturesViewModel = scripturesViewModel;
             _previewViewModel = previewViewModel;
@@ -55,7 +58,8 @@ namespace OnlyV.ViewModel
             _editVerseTextViewModel = editVerseTextViewModel;
             _startupViewModel = startupViewModel;
             _commandLineService = commandLineService;
-
+            _verseEditorService = verseEditorService;
+            
             if (commandLineService.NoGpu || ForceSoftwareRendering())
             {
                 // disable hardware (GPU) rendering so that it's all done by the CPU...
@@ -151,12 +155,12 @@ namespace OnlyV.ViewModel
         public string SettingsButtonToolTip =>
             _commandLineService.NoSettings 
                 ? Properties.Resources.SETTINGS_DISABLED
-                : CurrentPage == _settingsViewModel
+                : CurrentPage == _settingsViewModel || CurrentPage == _editVerseTextViewModel
                     ? Properties.Resources.BACK
                     : Properties.Resources.SETTINGS_PAGE;
 
         public string SettingsIconKind => 
-            CurrentPage == _settingsViewModel
+            CurrentPage == _settingsViewModel || CurrentPage == _editVerseTextViewModel
                 ? @"BackBurger"
                 : @"Settings";
 
@@ -193,6 +197,12 @@ namespace OnlyV.ViewModel
             if (CurrentPage == _settingsViewModel)
             {
                 CurrentPage = _preSettingsPage;
+            }
+            else if (CurrentPage == _editVerseTextViewModel)
+            {
+                _editVerseTextViewModel.UpdateVerseEditorService();
+                PreparePreviewPage();
+                CurrentPage = _previewViewModel;
             }
             else
             {
@@ -339,7 +349,14 @@ namespace OnlyV.ViewModel
 
         private void HandleEditTextCommandEvent(object sender, System.EventArgs e)
         {
+            _editVerseTextViewModel.Init(
+                _scripturesViewModel.BookNumber, 
+                _scripturesViewModel.ChapterAndVersesString);
+
             CurrentPage = _editVerseTextViewModel;
+
+            RaisePropertyChanged(nameof(SettingsIconKind));
+            RaisePropertyChanged(nameof(SettingsButtonToolTip));
         }
     }
 }

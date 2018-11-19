@@ -178,6 +178,9 @@
     <Compile Include="Services\Images\ImagesService.cs" />
     <Compile Include="Services\Snackbar\ISnackbarService.cs" />
     <Compile Include="Services\Snackbar\SnackbarService.cs" />
+    <Compile Include="Services\VerseEditor\IVerseEditorService.cs" />
+    <Compile Include="Services\VerseEditor\VerseEditorEntry.cs" />
+    <Compile Include="Services\VerseEditor\VerseEditorService.cs" />
     <Compile Include="ViewModel\ButtonModel.cs" />
     <Compile Include="ViewModel\DisplayViewModel.cs" />
     <Compile Include="ViewModel\EditTextViewModel.cs" />

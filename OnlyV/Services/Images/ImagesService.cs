@@ -7,6 +7,7 @@
     using System.Windows.Media.Imaging;
     using Helpers;
     using ImageCreation;
+    using OnlyV.Services.VerseEditor;
     using OnlyV.Themes.Common.Extensions;
     using OnlyV.Themes.Common.Services.UI;
     using Options;
@@ -18,16 +19,20 @@
     {
         private readonly IOptionsService _optionsService;
         private readonly IUserInterfaceService _userInterfaceService;
+        private readonly IVerseEditorService _verseEditorService;
+
         private BitmapSource[] _images;
         private int _currentBookNumber;
         private string _currentChapterAndVerses;
         
         public ImagesService(
             IOptionsService optionsService,
-            IUserInterfaceService userInterfaceService)
+            IUserInterfaceService userInterfaceService,
+            IVerseEditorService verseEditorService)
         {
             _optionsService = optionsService;
             _userInterfaceService = userInterfaceService;
+            _verseEditorService = verseEditorService;
         }
 
         public int ImageCount => _images?.Length ?? 0;
@@ -47,6 +52,7 @@
                 using (_userInterfaceService.GetBusy())
                 {
                     var bibleTextImage = new BibleTextImage();
+                    bibleTextImage.VerseFetchEvent += HandleVerseFetchEvent;
 
                     ApplyFormatting(bibleTextImage, _optionsService.ThemePath);
 
@@ -186,6 +192,15 @@
         private double AdaptToScaling(double fontSize)
         {
             return (fontSize * _optionsService.TextScalingPercentage) / 100;
+        }
+
+        private void HandleVerseFetchEvent(object sender, VerseExtraction.Models.VerseAndText e)
+        {
+            var modifiedVerse = _verseEditorService.Get(_optionsService.EpubPath, e.BookNumber, e.ChapterNumber, e.VerseNumber);
+            if (!string.IsNullOrEmpty(modifiedVerse))
+            {
+                e.Text = modifiedVerse.Trim();
+            }
         }
     }
 }
