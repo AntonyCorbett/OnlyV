@@ -41,10 +41,12 @@
             <Setter Property="Margin" Value="15,0"/>
             <Setter Property="Width" Value="150"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="materialDesign:ComboBoxAssist.ClassicMode" Value="true" />
         </Style>
 
         <Style x:Key="GroupBoxStyle" TargetType="{x:Type GroupBox}" BasedOn="{StaticResource MaterialDesignGroupBox}">
             <Setter Property="Margin" Value="0,0,0,20"/>
+            <Setter Property="materialDesign:ComboBoxAssist.ClassicMode" Value="true" />
         </Style>
 
         <Style x:Key="CheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">

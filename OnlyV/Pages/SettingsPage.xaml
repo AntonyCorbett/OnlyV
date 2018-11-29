@@ -30,16 +30,6 @@
             <Setter Property="Margin" Value="0,5,0,10"/>
             <Setter Property="Width" Value="420"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
-
-            <Setter Property="ItemsPanel">
-                <Setter.Value>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel 
-                            Background="{StaticResource MaterialDesignChipBackground}" />
-                    </ItemsPanelTemplate>
-                </Setter.Value>
-            </Setter>
-
         </Style>
 
         <Style x:Key="SettingsCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
@@ -98,6 +88,7 @@
                           materialDesign:HintAssist.Hint="Bible epub file"
                           SelectedValuePath="Path" 
                           DisplayMemberPath="Name"
+                          materialDesign:ComboBoxAssist.ClassicMode="true"
                           SelectedValue="{Binding CurrentEpubFilePath, Mode=TwoWay}">
                     
                 </ComboBox>
@@ -113,6 +104,7 @@
                           materialDesign:HintAssist.Hint="Media Monitor"
                           SelectedValuePath="MonitorId" 
                           DisplayMemberPath="FriendlyName"
+                          materialDesign:ComboBoxAssist.ClassicMode="true"
                           SelectedValue="{Binding MonitorId, Mode=TwoWay}">
                 </ComboBox>
 
@@ -133,6 +125,7 @@
                           materialDesign:HintAssist.Hint="Theme"
                           SelectedValuePath="Path" 
                           DisplayMemberPath="Name"
+                          materialDesign:ComboBoxAssist.ClassicMode="true"
                           SelectedValue="{Binding CurrentThemePath, Mode=TwoWay}">
                 </ComboBox>
 
@@ -199,6 +192,7 @@
                           materialDesign:HintAssist.Hint="Logging Level"
                           SelectedValuePath="Level" 
                           DisplayMemberPath="Name"
+                          materialDesign:ComboBoxAssist.ClassicMode="true"
                           SelectedValue="{Binding LogEventLevel, Mode=TwoWay}"/>
 
             </StackPanel>
