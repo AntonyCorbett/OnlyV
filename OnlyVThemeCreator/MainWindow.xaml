@@ -27,7 +27,7 @@
         Title="{Binding MainWindowCaption}" 
         Height="600" Width="800" 
         MinHeight="450" MinWidth="700"
-        Icon="icon.ico" 
+        Icon="icon2.ico" 
         Closing="OnWindowClosing">
     <Window.Resources>
 

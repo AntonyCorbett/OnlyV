@@ -24,7 +24,7 @@
 
         Closing="OnMainWindowClosing"
 
-        Title="S o u n d B o x - O N L Y V" Height="450" Width="800" ResizeMode="CanResizeWithGrip" Icon="/OnlyV;component/icon.ico">
+        Title="S o u n d B o x - O N L Y V" Height="450" Width="800" ResizeMode="CanResizeWithGrip" Icon="/OnlyV;component/icon2.ico">
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModel:ScripturesViewModel}">
             <pages:ScripturesPage />
