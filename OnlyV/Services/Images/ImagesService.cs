@@ -143,6 +143,7 @@
             bibleTextImage.BackgroundImageSource = _optionsService.UseBackgroundImage
                 ? backgroundImage
                 : null;
+            bibleTextImage.BackgroundImageOpacity = theme.Background.ImageOpacity;
 
             // formatting...
             bibleTextImage.AllowAutoFit = _optionsService.AutoFit;

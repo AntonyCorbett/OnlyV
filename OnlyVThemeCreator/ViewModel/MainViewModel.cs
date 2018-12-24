@@ -352,6 +352,15 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
+        public double BackgroundImageOpacity
+        {
+            get => _currentTheme.Background.ImageOpacity;
+            set
+            {
+                SetOpacityProperty(nameof(BackgroundImageOpacity), _currentTheme.Background.ImageOpacity, value, v => _currentTheme.Background.ImageOpacity = v);
+            }
+        }
+
         public Color? BackgroundColour
         {
             get => ConvertFromString(_currentTheme.Background.Colour, _defaultBackgroundColor);
@@ -972,6 +981,8 @@ namespace OnlyVThemeCreator.ViewModel
             _imageService.BackgroundImageSource = IsSampleBackgroundImageUsed 
                 ? _backgroundImage 
                 : null;
+
+            _imageService.BackgroundImageOpacity = BackgroundImageOpacity;
 
             _imageService.BackgroundColor = BackgroundColour ?? _defaultBackgroundColor;
 

@@ -6,6 +6,7 @@
     using Newtonsoft.Json;
     using Serilog;
 
+    // ReSharper disable once ClassNeverInstantiated.Global
     internal class OptionsService : IOptionsService
     {
         private readonly int _optionsVersion = 1;

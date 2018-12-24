@@ -69,6 +69,8 @@
                 FontStyle = FontStyles.Normal
             };
 
+            BackgroundImageOpacity = 1.0;
+
             CultureInfo = CultureInfo.InvariantCulture;
             FlowDirection = FlowDirection.LeftToRight;
             AllowAutoFit = true;
@@ -143,6 +145,8 @@
         public string BackgroundImageFile { get; set; }
 
         public ImageSource BackgroundImageSource { get; set; }
+
+        public double BackgroundImageOpacity { get; set; }
 
         public bool AllowAutoFit { get; set; }
 
@@ -530,13 +534,16 @@
 
                 var imageSrc = GetBackgroundImageSource();
 
-                if (imageSrc != null)
-                {
-                    c.DrawImage(imageSrc, rect);
-                }
-                else
+                if (imageSrc == null || Math.Abs(BackgroundImageOpacity - 1.0) > 0.01)
                 {
                     c.DrawRectangle(BackgroundBrush, null, rect);
+                }
+
+                if (imageSrc != null)
+                {
+                    c.PushOpacity(BackgroundImageOpacity);
+                    c.DrawImage(imageSrc, rect);
+                    c.Pop();
                 }
             }
 

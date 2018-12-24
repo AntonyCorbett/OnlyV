@@ -257,6 +257,15 @@
 
                             </Grid>
 
+                            <Label Style="{StaticResource LabelStyle}">Image opacity</Label>
+                            <Slider Style="{StaticResource SliderStyle}"
+                                    Minimum="0"
+                                    Maximum="1"
+                                    LargeChange="0.2"
+                                    Value="{Binding BackgroundImageOpacity}"
+                                    TickPlacement="BottomRight"
+                                    TickFrequency="0.1" />
+
                             <Label Style="{StaticResource LabelStyle}">Background colour</Label>
                             <xctk:ColorPicker 
                                 Style="{StaticResource ColorPickerStyle}"
