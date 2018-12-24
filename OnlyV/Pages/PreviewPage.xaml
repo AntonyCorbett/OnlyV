@@ -56,8 +56,9 @@
     </UserControl.Resources>
 
     <UserControl.InputBindings>
-        <KeyBinding Key="F5"
-                    Command="{Binding DisplayImageCommand}" />
+        <KeyBinding Key="F5" Command="{Binding DisplayImageCommand}" />
+        <KeyBinding Key="Left" Command="{Binding PreviousImageCommand}" />
+        <KeyBinding Key="Right" Command="{Binding NextImageCommand}" />
     </UserControl.InputBindings>
 
     <Grid>
