@@ -1273,6 +1273,7 @@ namespace OnlyVThemeCreator.ViewModel
             return
                 ext.Equals(".png", StringComparison.OrdinalIgnoreCase) ||
                 ext.Equals(".jpg", StringComparison.OrdinalIgnoreCase) ||
+                ext.Equals(".bmp", StringComparison.OrdinalIgnoreCase) ||
                 ext.Equals(".jpeg", StringComparison.OrdinalIgnoreCase);
         }
 
