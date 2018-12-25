@@ -9,6 +9,7 @@
              DataContext="{Binding Source={StaticResource Locator}, Path=Settings}"
 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:resx="clr-namespace:OnlyV.Properties"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
@@ -60,7 +61,8 @@
                   HorizontalScrollBarVisibility="Hidden"
                   PanningMode="VerticalOnly">
     <StackPanel Orientation="Vertical" Margin="5">
-        <GroupBox Header="Bibles" Style="{StaticResource SettingsGroupBoxStyle}">
+            <GroupBox Header="{x:Static resx:Resources.HEADER_BIBLES}" 
+                      Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
 
                 <Grid
@@ -83,7 +85,7 @@
                         HorizontalAlignment="Center"
                         VerticalAlignment="Center"
                         TextWrapping="Wrap"
-                        Text="Download Bible epub files from jw.org and drag and drop here."
+                        Text="{x:Static resx:Resources.DROP_BIBLE_INSTRUCTIONS}"
                         Foreground="{StaticResource PrimaryHueDarkBrush}"/>
 
                 </Grid>
@@ -91,7 +93,7 @@
                 <ComboBox ItemsSource="{Binding BibleEpubFiles}"
                           Style="{StaticResource SettingsComboBoxStyle}" 
                           materialDesign:HintAssist.IsFloating="True"
-                          materialDesign:HintAssist.Hint="Bible epub file"
+                          materialDesign:HintAssist.Hint="{x:Static resx:Resources.BIBLE_EPUB_FILE}"
                           SelectedValuePath="Path" 
                           DisplayMemberPath="Name"
                           materialDesign:ComboBoxAssist.ClassicMode="true"
@@ -101,28 +103,34 @@
             </StackPanel>
         </GroupBox>
 
-        <GroupBox Header="Display" Style="{StaticResource SettingsGroupBoxStyle}">
-            <StackPanel Orientation="Vertical">
+            <GroupBox Header="{x:Static resx:Resources.HEADER_DISPLAY}" 
+                      Style="{StaticResource SettingsGroupBoxStyle}">
+                <StackPanel Orientation="Vertical">
 
-                <ComboBox ItemsSource="{Binding Monitors}"
-                          Style="{StaticResource SettingsComboBoxStyle}" 
-                          materialDesign:HintAssist.IsFloating="True"
-                          materialDesign:HintAssist.Hint="Media Monitor"
-                          SelectedValuePath="MonitorId" 
-                          DisplayMemberPath="FriendlyName"
-                          materialDesign:ComboBoxAssist.ClassicMode="true"
-                          SelectedValue="{Binding MonitorId, Mode=TwoWay}">
-                </ComboBox>
+                    <ComboBox ItemsSource="{Binding Monitors}"
+                              Style="{StaticResource SettingsComboBoxStyle}" 
+                              materialDesign:HintAssist.IsFloating="True"
+                              materialDesign:HintAssist.Hint="{x:Static resx:Resources.MEDIA_MONITOR}"
+                              SelectedValuePath="MonitorId" 
+                              DisplayMemberPath="FriendlyName"
+                              materialDesign:ComboBoxAssist.ClassicMode="true"
+                              SelectedValue="{Binding MonitorId, Mode=TwoWay}"/>
 
-                <CheckBox IsChecked="{Binding JwLibraryCompatibilityMode, Mode=TwoWay}"
-                          Content="JW Library compatibility mode"
-                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+                    <CheckBox IsChecked="{Binding JwLibraryCompatibilityMode, Mode=TwoWay}"
+                              Content="{x:Static resx:Resources.JW_COMPAT_MODE}"
+                              Style="{StaticResource SettingsCheckBoxStyle}"/>
 
-            </StackPanel>
-        </GroupBox>
+                    <TextBlock FontSize="12" 
+                               Width="420"
+                               Margin="0,10,0,0"
+                               HorizontalAlignment="Left"
+                               TextWrapping="Wrap"
+                               Text="{x:Static resx:Resources.JWL_TRADEMARK}" />
+                </StackPanel>
+            </GroupBox>
 
 
-        <GroupBox Header="Image Style" Style="{StaticResource SettingsGroupBoxStyle}">
+            <GroupBox Header="{x:Static resx:Resources.HEADER_IMAGE_STYLE}" Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
 
                 <ComboBox ItemsSource="{Binding ThemeFiles}"
@@ -135,7 +143,7 @@
                           SelectedValue="{Binding CurrentThemePath, Mode=TwoWay}">
                 </ComboBox>
 
-                <Label Margin="-5,0,0,0">Text scaling:</Label>
+                    <Label Margin="-5,0,0,0" Content="{x:Static resx:Resources.TEXT_SCALING}"/>
                 <Slider Width="420"
                         Margin="0,0,0,10"
                         Minimum="50"
@@ -146,37 +154,38 @@
                         HorizontalAlignment="Left" />
 
                 <CheckBox IsChecked="{Binding UseBackgroundImage, Mode=TwoWay}"
-                          Content="Use background image"
+                          Content="{x:Static resx:Resources.USE_BACKGROUND_IMAGE}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding AutoFit, Mode=TwoWay}"
-                          Content="Auto fit"
+                          Content="{x:Static resx:Resources.AUTO_FIT}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding ShowVerseBreaks, Mode=TwoWay}"
-                          Content="Use ellipses to indicate non-contiguous verses"
+                          Content="{x:Static resx:Resources.USE_ELLIPSES}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding UseTildeMarker, Mode=TwoWay}"
-                          Content="Show a tilde between paragraphs in a single verse"
+                          Content="{x:Static resx:Resources.USE_TILDE}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding TrimPunctuation, Mode=TwoWay}"
-                          Content="Trim punctuation"
+                          Content="{x:Static resx:Resources.TRIM_PUNCTUATION}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding TrimQuotes, Mode=TwoWay}"
-                          Content="Trim quotation marks"
+                          Content="{x:Static resx:Resources.TRIM_QUOTES}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
             
                 <CheckBox IsChecked="{Binding ShowVerseNos, Mode=TwoWay}"
-                          Content="Show verse numbers"
+                          Content="{x:Static resx:Resources.SHOW_VERSE_NOS}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
             </StackPanel>
         </GroupBox>
 
 
-        <GroupBox Header="Miscellaneous" Style="{StaticResource SettingsGroupBoxStyle}">
+            <GroupBox Header="{x:Static resx:Resources.HEADER_MISC}" 
+                      Style="{StaticResource SettingsGroupBoxStyle}">
             <StackPanel Orientation="Vertical">
 
                 <TextBlock Text="{Binding AppVersionStr}" 
@@ -185,11 +194,11 @@
                            Foreground="{StaticResource MaterialDesignBodyLight}" />
 
                 <CheckBox IsChecked="{Binding AlwaysOnTop, Mode=TwoWay}"
-                          Content="Main window always on top"
+                          Content="{x:Static resx:Resources.ALWAYS_ON_TOP}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding AllowVerseEditing, Mode=TwoWay}"
-                          Content="Allow verse editing"
+                          Content="{x:Static resx:Resources.ALLOW_VERSE_EDITING}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <DockPanel LastChildFill="True" Width="420" HorizontalAlignment="Left">
@@ -202,15 +211,14 @@
                         Style="{StaticResource SelectFolderStyle}"
                         DockPanel.Dock="Left" 
                         Margin="0,10,0,10"
-                        materialDesign:HintAssist.Hint="Images folder"
+                        materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGES_FOLDER}"
                         Text="{Binding DestinationFolder, Mode=TwoWay}" />
                 </DockPanel>
-
 
                 <ComboBox ItemsSource="{Binding LoggingLevels}"
                           Style="{StaticResource SettingsComboBoxStyle}" 
                           materialDesign:HintAssist.IsFloating="True"
-                          materialDesign:HintAssist.Hint="Logging Level"
+                          materialDesign:HintAssist.Hint="{x:Static resx:Resources.LOGGING_LEVEL}"
                           SelectedValuePath="Level" 
                           DisplayMemberPath="Name"
                           materialDesign:ComboBoxAssist.ClassicMode="true"

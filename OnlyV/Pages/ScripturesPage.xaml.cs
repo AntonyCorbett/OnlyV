@@ -14,7 +14,7 @@
             InitializeComponent();
         }
 
-        private void UserControl_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private void UserControlLoaded(object sender, System.Windows.RoutedEventArgs e)
         {
             if (!BringButtonIntoView(HebrewBooksControl))
             {

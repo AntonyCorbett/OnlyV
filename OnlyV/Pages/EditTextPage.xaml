@@ -67,7 +67,7 @@
                                 Margin="10,0,0,0"
                                 IsEnabled="{Binding IsFocused}"
                                 Focusable="False"
-                                ToolTip="Insert opening quotation mark"
+                                ToolTip="{x:Static resx:Resources.INSERT_OPENING_QUOTE}"
                                 HorizontalAlignment="Left" Click="OpeningQuoteButtonClick">
                             <materialDesign:PackIcon
                                 Kind="FormatQuoteOpen" 
@@ -77,7 +77,7 @@
                         <Button Style="{StaticResource QuoteButtonStyle}" 
                                 IsEnabled="{Binding IsFocused}"
                                 Focusable="False"
-                                ToolTip="Insert closing quotation mark"
+                                ToolTip="{x:Static resx:Resources.INSERT_CLOSING_QUOTE}"
                                 HorizontalAlignment="Right" Click="ClosingQuoteButtonClick">
                             <materialDesign:PackIcon
                                 Kind="FormatQuoteClose" 
@@ -92,8 +92,8 @@
                             IsEnabled="{Binding IsModified}"
                             Command="{Binding ResetCommand}"
                             Style="{StaticResource MaterialDesignRaisedLightButton}"
-                            ToolTip="Reset the verse text"
-                            Content="RESET" />
+                            ToolTip="{x:Static resx:Resources.RESET_VERSE_TEXT}"
+                            Content="{x:Static resx:Resources.RESET}" />
                     </Grid>
                 </Grid>
             </GroupBox>

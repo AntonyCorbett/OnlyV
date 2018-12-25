@@ -9,6 +9,7 @@
              DataContext="{Binding Source={StaticResource Locator}, Path=Startup}"
 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:resx="clr-namespace:OnlyV.Properties"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
@@ -36,7 +37,7 @@
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
                 TextWrapping="Wrap"
-                Text="To get started, download a Bible epub file from jw.org and then drag and drop it here."
+                Text="{x:Static resx:Resources.GET_STARTED_INSTRUCTIONS}"
                 Foreground="{StaticResource PrimaryHueDarkBrush}"/>
 
         </Grid>

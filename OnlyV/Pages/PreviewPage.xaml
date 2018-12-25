@@ -9,6 +9,7 @@
              DataContext="{Binding Source={StaticResource Locator}, Path=Preview}"
 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:resx="clr-namespace:OnlyV.Properties"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
@@ -70,7 +71,7 @@
         <DockPanel Grid.Row="0" Margin="10,5">
             <Button Style="{StaticResource PreviewButtonStyle}" 
                     Command="{Binding SaveCommand}" 
-                    ToolTip="Save to images folder">
+                    ToolTip="{x:Static resx:Resources.SAVE_TO_IMAGES}">
                 <materialDesign:PackIcon
                     Kind="ContentSave" 
                     Height="32"
@@ -79,7 +80,7 @@
 
             <Button Style="{StaticResource PreviewButtonStyle}" 
                     Command="{Binding CopyToClipboardCommand}" 
-                    ToolTip="Copy image to clipboard">
+                    ToolTip="{x:Static resx:Resources.COPY_TO_CLIPBOARD}">
                 <materialDesign:PackIcon
                     Kind="ContentCopy" 
                     Height="32"
@@ -88,7 +89,7 @@
 
             <Button Style="{StaticResource PreviewNavButtonStyle}" 
                     Command="{Binding NextImageCommand}"
-                    ToolTip="Next image">
+                    ToolTip="{x:Static resx:Resources.NEXT_IMAGE}">
                 <materialDesign:PackIcon
                     Kind="ChevronRight" 
                     Height="32"
@@ -97,13 +98,12 @@
 
             <Button Style="{StaticResource PreviewNavButtonStyle}" 
                     Command="{Binding PreviousImageCommand}" 
-                    ToolTip="Previous image">
+                    ToolTip="{x:Static resx:Resources.PREV_IMAGE}">
                 <materialDesign:PackIcon
                     Kind="ChevronLeft" 
                     Height="32"
                     Width="32"/>
             </Button>
-
 
             <ToggleButton HorizontalAlignment="Right" 
                                       DockPanel.Dock="Right"

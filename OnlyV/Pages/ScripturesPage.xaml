@@ -9,6 +9,7 @@
              DataContext="{Binding Source={StaticResource Locator}, Path=Scriptures}"
 
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:resx="clr-namespace:OnlyV.Properties"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Medium"
              TextElement.FontSize="14"
@@ -17,7 +18,7 @@
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
 
-             d:DesignHeight="650" d:DesignWidth="900" Loaded="UserControl_Loaded">
+             d:DesignHeight="650" d:DesignWidth="900" Loaded="UserControlLoaded">
     <UserControl.Resources>
         <Style x:Key="PanelCardStyle" TargetType="{x:Type materialDesign:Card}">
             <Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -132,7 +133,7 @@
 
                         <TextBlock Grid.Row="0" 
                                    Style="{StaticResource BibleSectionLabelStyle}" 
-                                   Text="BOOK"/>
+                                   Text="{x:Static resx:Resources.BOOK}"/>
 
                         <ScrollViewer Grid.Row="1" 
                                       Margin="4" 
@@ -165,7 +166,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" 
-                                   Text="CHAPTER"
+                                   Text="{x:Static resx:Resources.CHAPTER}"
                                    Style="{StaticResource BibleSectionLabelStyle}"/>
 
                         <ScrollViewer Grid.Row="1" Margin="4" VerticalScrollBarVisibility="Auto" PanningMode="VerticalOnly">
@@ -189,7 +190,7 @@
                         </Grid.RowDefinitions>
 
                         <TextBlock Grid.Row="0" 
-                                   Text="VERSES"
+                                   Text="{x:Static resx:Resources.VERSES}"
                                    Style="{StaticResource BibleSectionLabelStyle}"/>
 
                         <ScrollViewer Grid.Row="1" 

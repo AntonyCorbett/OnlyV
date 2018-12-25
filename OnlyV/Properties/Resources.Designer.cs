@@ -79,6 +79,24 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Allow verse editing.
+        /// </summary>
+        public static string ALLOW_VERSE_EDITING {
+            get {
+                return ResourceManager.GetString("ALLOW_VERSE_EDITING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Main window always on top.
+        /// </summary>
+        public static string ALWAYS_ON_TOP {
+            get {
+                return ResourceManager.GetString("ALWAYS_ON_TOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OnlyV software version: {0}.
         /// </summary>
         public static string APP_VER {
@@ -88,11 +106,29 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Auto fit.
+        /// </summary>
+        public static string AUTO_FIT {
+            get {
+                return ResourceManager.GetString("AUTO_FIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
         public static string BACK {
             get {
                 return ResourceManager.GetString("BACK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bible epub file.
+        /// </summary>
+        public static string BIBLE_EPUB_FILE {
+            get {
+                return ResourceManager.GetString("BIBLE_EPUB_FILE", resourceCulture);
             }
         }
         
@@ -107,11 +143,38 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BOOK.
+        /// </summary>
+        public static string BOOK {
+            get {
+                return ResourceManager.GetString("BOOK", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to CHAPTER.
+        /// </summary>
+        public static string CHAPTER {
+            get {
+                return ResourceManager.GetString("CHAPTER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Copied to clipboard.
         /// </summary>
         public static string COPIED {
             get {
                 return ResourceManager.GetString("COPIED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy image to clipboard.
+        /// </summary>
+        public static string COPY_TO_CLIPBOARD {
+            get {
+                return ResourceManager.GetString("COPY_TO_CLIPBOARD", resourceCulture);
             }
         }
         
@@ -197,6 +260,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download Bible epub files from jw.org and drag and drop here..
+        /// </summary>
+        public static string DROP_BIBLE_INSTRUCTIONS {
+            get {
+                return ResourceManager.GetString("DROP_BIBLE_INSTRUCTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV..
         /// </summary>
         public static string EDIT_INSTRUCTIONS {
@@ -233,11 +305,101 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To get started, download a Bible epub file from jw.org and then drag and drop it here..
+        /// </summary>
+        public static string GET_STARTED_INSTRUCTIONS {
+            get {
+                return ResourceManager.GetString("GET_STARTED_INSTRUCTIONS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BIBLES.
+        /// </summary>
+        public static string HEADER_BIBLES {
+            get {
+                return ResourceManager.GetString("HEADER_BIBLES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to DISPLAY.
+        /// </summary>
+        public static string HEADER_DISPLAY {
+            get {
+                return ResourceManager.GetString("HEADER_DISPLAY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to IMAGE STYLE.
+        /// </summary>
+        public static string HEADER_IMAGE_STYLE {
+            get {
+                return ResourceManager.GetString("HEADER_IMAGE_STYLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MISCELLANEOUS.
+        /// </summary>
+        public static string HEADER_MISC {
+            get {
+                return ResourceManager.GetString("HEADER_MISC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hide (F5).
         /// </summary>
         public static string HIDE_CMD {
             get {
                 return ResourceManager.GetString("HIDE_CMD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Images folder.
+        /// </summary>
+        public static string IMAGES_FOLDER {
+            get {
+                return ResourceManager.GetString("IMAGES_FOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert closing quotation mark.
+        /// </summary>
+        public static string INSERT_CLOSING_QUOTE {
+            get {
+                return ResourceManager.GetString("INSERT_CLOSING_QUOTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Insert opening quotation mark.
+        /// </summary>
+        public static string INSERT_OPENING_QUOTE {
+            get {
+                return ResourceManager.GetString("INSERT_OPENING_QUOTE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to JW Library compatibility mode.
+        /// </summary>
+        public static string JW_COMPAT_MODE {
+            get {
+                return ResourceManager.GetString("JW_COMPAT_MODE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &quot;JW Library&quot; is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania.
+        /// </summary>
+        public static string JWL_TRADEMARK {
+            get {
+                return ResourceManager.GetString("JWL_TRADEMARK", resourceCulture);
             }
         }
         
@@ -296,6 +458,24 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Logging level.
+        /// </summary>
+        public static string LOGGING_LEVEL {
+            get {
+                return ResourceManager.GetString("LOGGING_LEVEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Media monitor.
+        /// </summary>
+        public static string MEDIA_MONITOR {
+            get {
+                return ResourceManager.GetString("MEDIA_MONITOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
         public static string MONITOR_NONE {
@@ -310,6 +490,15 @@ namespace OnlyV.Properties {
         public static string NEW_UPDATE_AVAILABLE {
             get {
                 return ResourceManager.GetString("NEW_UPDATE_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Next image.
+        /// </summary>
+        public static string NEXT_IMAGE {
+            get {
+                return ResourceManager.GetString("NEXT_IMAGE", resourceCulture);
             }
         }
         
@@ -350,6 +539,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Previous image.
+        /// </summary>
+        public static string PREV_IMAGE {
+            get {
+                return ResourceManager.GetString("PREV_IMAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Show scriptures page.
         /// </summary>
         public static string PREV_PAGE_SCRIPS {
@@ -364,6 +562,33 @@ namespace OnlyV.Properties {
         public static string READER_NOT_INIT {
             get {
                 return ResourceManager.GetString("READER_NOT_INIT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to RESET.
+        /// </summary>
+        public static string RESET {
+            get {
+                return ResourceManager.GetString("RESET", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset the verse text.
+        /// </summary>
+        public static string RESET_VERSE_TEXT {
+            get {
+                return ResourceManager.GetString("RESET_VERSE_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Save to images folder.
+        /// </summary>
+        public static string SAVE_TO_IMAGES {
+            get {
+                return ResourceManager.GetString("SAVE_TO_IMAGES", resourceCulture);
             }
         }
         
@@ -409,6 +634,78 @@ namespace OnlyV.Properties {
         public static string SETTINGS_PAGE {
             get {
                 return ResourceManager.GetString("SETTINGS_PAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show verse numbers.
+        /// </summary>
+        public static string SHOW_VERSE_NOS {
+            get {
+                return ResourceManager.GetString("SHOW_VERSE_NOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Text scaling.
+        /// </summary>
+        public static string TEXT_SCALING {
+            get {
+                return ResourceManager.GetString("TEXT_SCALING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trim punctuation.
+        /// </summary>
+        public static string TRIM_PUNCTUATION {
+            get {
+                return ResourceManager.GetString("TRIM_PUNCTUATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Trim quotation marks.
+        /// </summary>
+        public static string TRIM_QUOTES {
+            get {
+                return ResourceManager.GetString("TRIM_QUOTES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use background image.
+        /// </summary>
+        public static string USE_BACKGROUND_IMAGE {
+            get {
+                return ResourceManager.GetString("USE_BACKGROUND_IMAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use ellipses to indicate non-contiguous verses.
+        /// </summary>
+        public static string USE_ELLIPSES {
+            get {
+                return ResourceManager.GetString("USE_ELLIPSES", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Show a tilde between paragraphs in a single verse.
+        /// </summary>
+        public static string USE_TILDE {
+            get {
+                return ResourceManager.GetString("USE_TILDE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VERSES.
+        /// </summary>
+        public static string VERSES {
+            get {
+                return ResourceManager.GetString("VERSES", resourceCulture);
             }
         }
         

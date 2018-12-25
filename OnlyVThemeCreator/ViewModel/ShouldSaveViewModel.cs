@@ -3,6 +3,7 @@
     using GalaSoft.MvvmLight.CommandWpf;
     using MaterialDesignThemes.Wpf;
 
+    // ReSharper disable once ClassNeverInstantiated.Global
     public sealed class ShouldSaveViewModel
     {
         public ShouldSaveViewModel()
