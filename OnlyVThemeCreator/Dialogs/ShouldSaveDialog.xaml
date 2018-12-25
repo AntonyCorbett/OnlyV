@@ -14,7 +14,8 @@
              
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:resx="clr-namespace:OnlyVThemeCreator.Properties"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="500">
 
@@ -49,24 +50,24 @@
                 VerticalAlignment="Center"
                 Grid.Column="1"
                 Style="{StaticResource MaterialDesignSubheadingTextBlock}"
-                Text="The theme has changed. Do you want to save?"/>
+                Text="{x:Static resx:Resources.WANT_TO_SAVE}"/>
                 </Grid>
                 <StackPanel Orientation="Horizontal">
                     <Button Style="{StaticResource YesBtnStyle}"
                         IsDefault="true" 
                         Command="{Binding YesCommand}"
-                        Content="YES">
+                        Content="{x:Static resx:Resources.ANSWER_YES}">
                     </Button>
 
                     <Button Style="{StaticResource BtnStyle}" 
                         Command="{Binding NoCommand}"
-                        Content="NO">
+                        Content="{x:Static resx:Resources.ANSWER_NO}">
                     </Button>
 
                     <Button Style="{StaticResource BtnStyle}" 
                         Command="{Binding CancelCommand}"
                         IsCancel="true" 
-                        Content="CANCEL">
+                        Content="{x:Static resx:Resources.ANSWER_CANCEL}">
                     </Button>
 
                 </StackPanel>

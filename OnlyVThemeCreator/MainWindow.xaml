@@ -10,6 +10,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:viewModel="clr-namespace:OnlyVThemeCreator.ViewModel"
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:resx="clr-namespace:OnlyVThemeCreator.Properties"
         xmlns:behaviours="clr-namespace:OnlyVThemeCreator.Behaviours"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
@@ -90,7 +91,7 @@
 
     </Window.Resources>
 
-    <materialDesign:DialogHost>
+    <materialDesign:DialogHost DialogTheme="Dark">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -98,11 +99,11 @@
         </Grid.RowDefinitions>
 
         <ToolBar Style="{DynamicResource MaterialDesignToolBar}">
-            <Button
+                <Button
                 Command="{Binding NewFileCommand}"
                 Padding="5"
-                ToolTip="New theme">
-                <materialDesign:PackIcon
+                ToolTip="{x:Static resx:Resources.NEW_THEME}">
+                    <materialDesign:PackIcon
                     Height="30"
                     Width="30"
                     Kind="FilePlus" />
@@ -110,7 +111,7 @@
             <Button
                 Command="{Binding OpenFileCommand}"
                 Padding="5"
-                ToolTip="Open theme">
+                ToolTip="{x:Static resx:Resources.OPEN_THEME}">
                 <materialDesign:PackIcon
                     Height="30"
                     Width="30"
@@ -119,7 +120,7 @@
             <Button
                 Command="{Binding SaveFileCommand}"
                 Padding="5"
-                ToolTip="Save theme">
+                ToolTip="{x:Static resx:Resources.SAVE_THEME}">
                 <materialDesign:PackIcon
                     Height="30"
                     Width="30"
@@ -128,7 +129,7 @@
             <Button
                 Command="{Binding SaveAsFileCommand}"
                 Padding="5"
-                ToolTip="Save theme as...">
+                ToolTip="{x:Static resx:Resources.SAVE_THEME_AS}">
                 <materialDesign:PackIcon
                     Margin="0,2,0,0"
                     Height="30"
@@ -139,7 +140,7 @@
             <ComboBox ItemsSource="{Binding BibleEpubFiles}"
                       Style="{StaticResource ToolbarComboStyle}" 
                       materialDesign:HintAssist.IsFloating="True"
-                      materialDesign:HintAssist.Hint="Sample epub file"
+                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.SAMPLE_EPUB_FILE}"
                       SelectedValuePath="Path" 
                       DisplayMemberPath="Name"
                       SelectedValue="{Binding CurrentEpubFilePath, Mode=TwoWay}">
@@ -149,7 +150,7 @@
             <ComboBox ItemsSource="{Binding TextSamples}"
                       Style="{StaticResource ToolbarComboStyle}" 
                       materialDesign:HintAssist.IsFloating="True"
-                      materialDesign:HintAssist.Hint="Sample text"
+                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.SAMPLE_TEXT}"
                       SelectedValuePath="Id" 
                       DisplayMemberPath="Name"
                       SelectedValue="{Binding CurrentSampleTextId, Mode=TwoWay}" />
@@ -172,55 +173,56 @@
 
                 <StackPanel Visibility="{Binding Path=IsSampleImageAvailable, Converter={StaticResource BooleanToVisibilityConverter}}"
                             Margin="0,20,0,0">
-                    <Label>Toggle background image</Label>
+                    <Label Content="{x:Static resx:Resources.TOGGLE_IMAGE}"/>
                     <ToggleButton
                         IsChecked="{Binding IsSampleBackgroundImageUsed}"
                         HorizontalAlignment="Left"
                         Style="{StaticResource MaterialDesignSwitchAccentToggleButton}"
-                        ToolTip="Toggle background" />
+                        ToolTip="{x:Static resx:Resources.TOGGLE_IMAGE_TOOLTIP}" />
                 </StackPanel>
 
             </StackPanel>
 
             <ScrollViewer Grid.Column="1" Padding="10,0,10,0">
                 <StackPanel Orientation="Vertical">
-                    <GroupBox Header="Image Dimensions (pixels)" Style="{StaticResource GroupBoxStyle}">
+                        <GroupBox Header="{x:Static resx:Resources.HEADER_IMAGE_DIMENSIONS}" 
+                                  Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
                             <TextBox
                                 Text="{Binding Width}"
-                                materialDesign:HintAssist.Hint="Width"
+                                materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGE_WIDTH}"
                                 Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
                                 Text="{Binding Height}"
-                                materialDesign:HintAssist.Hint="Height"
+                                materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGE_HEIGHT}"
                                 Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
                                 Text="{Binding LeftMargin}"
-                                materialDesign:HintAssist.Hint="Left margin"
+                                materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGE_LEFT_MARGIN}"
                                 Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
                                 Text="{Binding TopMargin}"
-                                materialDesign:HintAssist.Hint="Top margin"
+                                materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGE_TOP_MARGIN}"
                                 Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
                                 Text="{Binding RightMargin}"
-                                materialDesign:HintAssist.Hint="Right margin"
+                                materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGE_RIGHT_MARGIN}"
                                 Style="{StaticResource TextBoxStyle}" />
 
                             <TextBox
                                 Text="{Binding BottomMargin}"
-                                materialDesign:HintAssist.Hint="Bottom margin"
+                                materialDesign:HintAssist.Hint="{x:Static resx:Resources.IMAGE_BOTTOM_MARGIN}"
                                 Style="{StaticResource TextBoxStyle}" />
 
                         </StackPanel>
                     </GroupBox>
 
-                    <GroupBox Header="Background" Style="{StaticResource GroupBoxStyle}">
+                        <GroupBox Header="{x:Static resx:Resources.HEADER_BACKGROUND}" Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
                             <Grid
@@ -244,7 +246,7 @@
                                         HorizontalAlignment="Center"
                                         VerticalAlignment="Center"
                                         TextWrapping="Wrap"
-                                        Text="Optionally drop a background image here."
+                                        Text="{x:Static resx:Resources.DROP_IMAGE}"
                                         Foreground="{StaticResource PrimaryHueDarkBrush}"/>
 
                                     <Button
@@ -253,13 +255,13 @@
                                         VerticalAlignment="Bottom"
                                         Margin="10,0,10,0"
                                         Visibility="{Binding Path=IsBackgroundImageSpecified, Converter={StaticResource BooleanToVisibilityConverter}}"
-                                        Content="Clear"
-                                        ToolTip="Clear background image"/>
+                                        Content="{x:Static resx:Resources.CLEAR_BACKGROUND_IMAGE}"
+                                        ToolTip="{x:Static resx:Resources.CLEAR_BACKGROUND_IMAGE_TOOLTIP}"/>
                                 </StackPanel>
 
                             </Grid>
 
-                            <Label Style="{StaticResource LabelStyle}">Image opacity</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.IMAGE_OPACITY}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
@@ -268,7 +270,8 @@
                                     TickPlacement="BottomRight"
                                     TickFrequency="0.1" />
 
-                            <Label Style="{StaticResource LabelStyle}">Background colour</Label>
+                                <Label Style="{StaticResource LabelStyle}" 
+                                       Content="{x:Static resx:Resources.BACKGROUND_COLOR}"/>
                             <xctk:ColorPicker 
                                 Style="{StaticResource ColorPickerStyle}"
                                 SelectedColor="{Binding BackgroundColour}"/>
@@ -276,7 +279,8 @@
                         </StackPanel>
                     </GroupBox>
 
-                    <GroupBox Header="Body Text" Style="{StaticResource GroupBoxStyle}">
+                        <GroupBox Header="{x:Static resx:Resources.HEADER_BODY_TEXT}" 
+                                  Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
                             <ComboBox Style="{StaticResource ComboBoxStyle}"
@@ -302,25 +306,26 @@
                             </ComboBox>
 
                             <TextBox Style="{StaticResource TextBoxStyle}"
-                                     materialDesign:HintAssist.Hint="Font size"
+                                     materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_SIZE}"
                                      Text="{Binding BodyTextSize}" />
 
                             <ComboBox ItemsSource="{Binding FontStyles}"
                                       SelectedValue="{Binding BodyTextFontStyle}"
-                                      materialDesign:HintAssist.Hint="Font style"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_STYLE}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <ComboBox ItemsSource="{Binding FontWeights}"
                                       SelectedValue="{Binding BodyTextFontWeight}"
-                                      materialDesign:HintAssist.Hint="Font weight"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Colour</Label>
+                                <Label Style="{StaticResource LabelStyle}" 
+                                       Content="{x:Static resx:Resources.FONT_COLOR}" />
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding BodyTextColour}"
                                 Style="{StaticResource ColorPickerStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Opacity</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.FONT_OPACITY}" />
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
@@ -331,24 +336,24 @@
 
                             <ComboBox ItemsSource="{Binding HorizontalAlignments}"
                                       SelectedValue="{Binding BodyTextHorizontalAlignment}"
-                                      materialDesign:HintAssist.Hint="Horizontal alignment"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.HORZ_ALIGNMENT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <ComboBox ItemsSource="{Binding LineSpacings}"
                                       SelectedValue="{Binding LineSpacing}"
-                                      materialDesign:HintAssist.Hint="Line spacing"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.LINE_SPACING}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <CheckBox Style="{StaticResource CheckBoxStyle}" 
                                       IsChecked="{Binding BodyTextDropShadow}"
-                                      Content="Use drop-shadow"/>
+                                      Content="{x:Static resx:Resources.USE_DROP_SHADOW}"/>
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow colour</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_COLOR}"/>
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding BodyDropShadowColour}"
                                 Style="{StaticResource ColorPickerStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow opacity</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_OPACITY}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
@@ -357,7 +362,7 @@
                                     TickPlacement="BottomRight"
                                     TickFrequency="0.1" />
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow blur radius</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_BLUR_RADIUS}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="{Binding MaxBlurRadiusValue}"
@@ -366,7 +371,7 @@
                                     TickPlacement="BottomRight"
                                     TickFrequency="{Binding BlurRadiusLargeChange}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow depth</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_DEPTH}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="{Binding MaxShadowDepthValue}"
@@ -378,7 +383,8 @@
                         </StackPanel>
                     </GroupBox>
 
-                    <GroupBox Header="Title Text" Style="{StaticResource GroupBoxStyle}">
+                        <GroupBox Header="{x:Static resx:Resources.HEADER_TITLE_TEXT}" 
+                                  Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
                             <ComboBox Style="{StaticResource ComboBoxStyle}"
@@ -404,25 +410,25 @@
                             </ComboBox>
 
                             <TextBox Style="{StaticResource TextBoxStyle}"
-                                     materialDesign:HintAssist.Hint="Font size"
+                                     materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_SIZE}"
                                      Text="{Binding TitleTextSize}" />
 
                             <ComboBox ItemsSource="{Binding FontStyles}"
                                       SelectedValue="{Binding TitleTextFontStyle}"
-                                      materialDesign:HintAssist.Hint="Font style"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_STYLE}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <ComboBox ItemsSource="{Binding FontWeights}"
                                       SelectedValue="{Binding TitleTextFontWeight}"
-                                      materialDesign:HintAssist.Hint="Font weight"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Colour</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.FONT_COLOR}"/>
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding TitleTextColour}"
                                 Style="{StaticResource ColorPickerStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Opacity</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.FONT_OPACITY}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
@@ -433,24 +439,24 @@
 
                             <ComboBox ItemsSource="{Binding HorizontalAlignments}"
                                       SelectedValue="{Binding TitleTextHorizontalAlignment}"
-                                      materialDesign:HintAssist.Hint="Horizontal alignment"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.HORZ_ALIGNMENT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <ComboBox ItemsSource="{Binding TitlePositions}"
                                       SelectedValue="{Binding TitlePosition}"
-                                      materialDesign:HintAssist.Hint="Position"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.TITLE_POSITION}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <CheckBox Style="{StaticResource CheckBoxStyle}" 
                                       IsChecked="{Binding TitleTextDropShadow}"
-                                      Content="Use drop-shadow"/>
+                                      Content="{x:Static resx:Resources.USE_DROP_SHADOW}"/>
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow colour</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_COLOR}"/>
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding TitleDropShadowColour}"
                                 Style="{StaticResource ColorPickerStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow opacity</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_OPACITY}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
@@ -459,7 +465,7 @@
                                     TickPlacement="BottomRight"
                                     TickFrequency="0.1" />
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow blur radius</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_BLUR_RADIUS}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="{Binding MaxBlurRadiusValue}"
@@ -468,7 +474,7 @@
                                     TickPlacement="BottomRight"
                                     TickFrequency="{Binding BlurRadiusLargeChange}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Drop-shadow depth</Label>
+                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.DROP_SHADOW_DEPTH}"/>
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="{Binding MaxShadowDepthValue}"
@@ -481,29 +487,32 @@
                         </StackPanel>
                     </GroupBox>
 
-                    <GroupBox Header="Verse Numbers" Style="{StaticResource GroupBoxStyle}">
+                        <GroupBox Header="{x:Static resx:Resources.HEADER_VERSE_NOS}" 
+                                  Style="{StaticResource GroupBoxStyle}">
                         <StackPanel>
 
                             <CheckBox Style="{StaticResource CheckBoxStyle}" 
                                       IsChecked="{Binding ShowVerseNumbers}"
-                                      Content="Show"/>
+                                      Content="{x:Static resx:Resources.SHOW_VERSE_NOS}"/>
 
                             <ComboBox ItemsSource="{Binding FontStyles}"
                                       SelectedValue="{Binding VerseFontStyle}"
-                                      materialDesign:HintAssist.Hint="Font style"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_STYLE}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <ComboBox ItemsSource="{Binding FontWeights}"
                                       SelectedValue="{Binding VerseFontWeight}"
-                                      materialDesign:HintAssist.Hint="Font weight"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Colour</Label>
+                                <Label Style="{StaticResource LabelStyle}" 
+                                       Content="{x:Static resx:Resources.FONT_COLOR}"/>
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding VerseColour}"
                                 Style="{StaticResource ColorPickerStyle}" />
 
-                            <Label Style="{StaticResource LabelStyle}">Opacity</Label>
+                                <Label Style="{StaticResource LabelStyle}" 
+                                       Content="{x:Static resx:Resources.FONT_OPACITY}" />
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
