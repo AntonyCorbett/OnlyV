@@ -386,6 +386,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Select Destination Folder.
+        /// </summary>
+        public static string SELECT_FOLDER {
+            get {
+                return ResourceManager.GetString("SELECT_FOLDER", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Settings disabled by administrator!.
         /// </summary>
         public static string SETTINGS_DISABLED {

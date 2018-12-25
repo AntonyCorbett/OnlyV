@@ -64,6 +64,11 @@
                 EpubPath = null;
             }
 
+            if (!Directory.Exists(SaveToFolder))
+            {
+                SaveToFolder = null;
+            }
+
             if (!File.Exists(ThemePath))
             {
                 ThemePath = null;

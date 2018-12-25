@@ -226,6 +226,9 @@
   <data name="SAVED_X_IMAGES" xml:space="preserve">
     <value>Saved {0} images</value>
   </data>
+  <data name="SELECT_FOLDER" xml:space="preserve">
+    <value>Select Destination Folder</value>
+  </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
     <value>Settings disabled by administrator!</value>
   </data>

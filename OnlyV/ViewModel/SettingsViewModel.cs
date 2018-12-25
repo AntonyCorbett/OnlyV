@@ -6,8 +6,10 @@
     using System.Linq;
     using Extensions;
     using GalaSoft.MvvmLight;
+    using GalaSoft.MvvmLight.CommandWpf;
     using GalaSoft.MvvmLight.Messaging;
     using Helpers;
+    using Microsoft.WindowsAPICodePack.Dialogs;
     using OnlyV.Themes.Common.Models;
     using OnlyV.Themes.Common.Services.UI;
     using PubSubMessages;
@@ -47,12 +49,15 @@
             _bibleEpubFiles = GetBibleEpubFiles().ToArray();
             _themeFiles = GetThemeFiles().ToArray();
 
+            SelectDestinationFolderCommand = new RelayCommand(SelectDestinationFolder);
             Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
         }
 
         public event EventHandler EpubChangedEvent;
 
         public event EventHandler ThemeChangedEvent;
+
+        public RelayCommand SelectDestinationFolderCommand { get; set; }
 
         public IEnumerable<ThemeFileItem> ThemeFiles => _themeFiles;
 
@@ -75,6 +80,19 @@
         }
 
         public IEnumerable<EpubFileItem> BibleEpubFiles => _bibleEpubFiles;
+
+        public string DestinationFolder
+        {
+            get => _optionsService.SaveToFolder;
+            set
+            {
+                if (_optionsService.SaveToFolder != value)
+                {
+                    _optionsService.SaveToFolder = value;
+                    RaisePropertyChanged(nameof(DestinationFolder));
+                }
+            }
+        }
 
         public string CurrentEpubFilePath
         {
@@ -374,6 +392,18 @@
             else
             {
                 CurrentEpubFilePath = currentSelection;
+            }
+        }
+
+        private void SelectDestinationFolder()
+        {
+            using (var d = new CommonOpenFileDialog(Properties.Resources.SELECT_FOLDER) { IsFolderPicker = true })
+            {
+                var result = d.ShowDialog();
+                if (result == CommonFileDialogResult.Ok)
+                {
+                    DestinationFolder = d.FileName;
+                }
             }
         }
     }
