@@ -262,6 +262,10 @@
     <value>Save theme as...</value>
     <comment>Menu command</comment>
   </data>
+  <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
+    <value>Save Theme?</value>
+    <comment>Title displayed in dialog</comment>
+  </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
     <value>Save Theme</value>
     <comment>Title of dialog</comment>

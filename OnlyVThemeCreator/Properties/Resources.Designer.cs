@@ -403,6 +403,15 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Save Theme?.
+        /// </summary>
+        public static string SAVE_THEME_PROMPT_TITLE {
+            get {
+                return ResourceManager.GetString("SAVE_THEME_PROMPT_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Save Theme.
         /// </summary>
         public static string SAVE_THEME_TITLE {
