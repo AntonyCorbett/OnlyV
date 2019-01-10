@@ -107,6 +107,7 @@
     <Compile Include="Services\UI\BusyCursor.cs" />
     <Compile Include="Services\UI\IUserInterfaceService.cs" />
     <Compile Include="Services\UI\UserInterfaceService.cs" />
+    <Compile Include="Specs\OnlyVBodyVerticalAlignment.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

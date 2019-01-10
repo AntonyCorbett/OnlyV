@@ -167,6 +167,7 @@
             bibleTextImage.BodyDropShadowColor = ConvertFromString(theme.BodyText.DropShadow.Colour, Colors.Black);
             bibleTextImage.BodyDropShadowDepth = theme.BodyText.DropShadow.Depth;
             bibleTextImage.BodyDropShadowOpacity = theme.BodyText.DropShadow.Opacity;
+            bibleTextImage.BodyVerticalAlignment = theme.BodyText.BodyVerticalAlignment;
 
             // title text...
             bibleTextImage.TitleFont.FontFamily = new FontFamily(theme.TitleText.Font.Family);

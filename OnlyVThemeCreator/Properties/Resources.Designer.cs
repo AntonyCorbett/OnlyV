@@ -475,6 +475,15 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Vertical alignment.
+        /// </summary>
+        public static string VERT_ALIGNMENT {
+            get {
+                return ResourceManager.GetString("VERT_ALIGNMENT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The theme has changed. Do you want to save?.
         /// </summary>
         public static string WANT_TO_SAVE {

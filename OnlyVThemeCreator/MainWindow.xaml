@@ -319,13 +319,13 @@
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
-                                <Label Style="{StaticResource LabelStyle}" 
+                            <Label Style="{StaticResource LabelStyle}" 
                                        Content="{x:Static resx:Resources.FONT_COLOR}" />
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding BodyTextColour}"
                                 Style="{StaticResource ColorPickerStyle}" />
 
-                                <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.FONT_OPACITY}" />
+                            <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.FONT_OPACITY}" />
                             <Slider Style="{StaticResource SliderStyle}"
                                     Minimum="0"
                                     Maximum="1"
@@ -337,6 +337,11 @@
                             <ComboBox ItemsSource="{Binding HorizontalAlignments}"
                                       SelectedValue="{Binding BodyTextHorizontalAlignment}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.HORZ_ALIGNMENT}"
+                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+
+                            <ComboBox ItemsSource="{Binding VerticalAlignments}"
+                                      SelectedValue="{Binding BodyVerticalAlignment}"
+                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.VERT_ALIGNMENT}"
                                       Style="{StaticResource FloatingHintComboBoxStyle}" />
 
                             <ComboBox ItemsSource="{Binding LineSpacings}"

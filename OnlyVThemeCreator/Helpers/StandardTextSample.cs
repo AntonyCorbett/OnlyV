@@ -23,7 +23,8 @@
             {
                 new StandardTextSample(100, 1, "3:15,16"),
                 new StandardTextSample(101, 19, "119:1-8"),
-                new StandardTextSample(102, 66, "21:1-4")
+                new StandardTextSample(102, 66, "21:1-4"),
+                new StandardTextSample(103, 43, "11:35")
             };
         }
     }

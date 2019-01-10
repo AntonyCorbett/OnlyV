@@ -88,6 +88,7 @@
             BodyDropShadowOpacity = 0.5;
             BodyDropShadowBlurRadius = 10;
             BodyDropShadowDepth = 10;
+            BodyVerticalAlignment = OnlyVBodyVerticalAlignment.Middle;
 
             UseTildeParaSeparator = true;
             TrimPunctuation = false;
@@ -182,7 +183,9 @@
         public double BodyDropShadowBlurRadius { get; set; }
 
         public double BodyDropShadowDepth { get; set; }
-        
+
+        public OnlyVBodyVerticalAlignment BodyVerticalAlignment { get; set; }
+
         private Brush BackgroundBrush => _backgroundBrush ?? (_backgroundBrush = new SolidColorBrush(BackgroundColor));
         
         public IEnumerable<BitmapSource> Generate(string epubPath, int bookNumber, string chapterAndVerses)
@@ -479,7 +482,7 @@
 
                 int lineCount = linesForBmp.Length;
                 double adjustmentForShortLineCount = 0;
-                if (lineCount < linesPerImage)
+                if (BodyVerticalAlignment == OnlyVBodyVerticalAlignment.Middle && lineCount < linesPerImage)
                 {
                     adjustmentForShortLineCount = (lineHeight * (linesPerImage - lineCount)) / 2;
                 }

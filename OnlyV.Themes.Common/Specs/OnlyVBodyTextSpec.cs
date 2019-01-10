@@ -15,6 +15,8 @@
             LineSpacing = OnlyVLineSpacing.Normal;
 
             DropShadow = new OnlyVDropShadowSpec { Show = true };
+
+            BodyVerticalAlignment = OnlyVBodyVerticalAlignment.Middle;
         }
 
         public OnlyVFontSpec Font { get; set; }
@@ -24,5 +26,7 @@
         public OnlyVLineSpacing LineSpacing { get; set; }
 
         public OnlyVDropShadowSpec DropShadow { get; set; }
+
+        public OnlyVBodyVerticalAlignment BodyVerticalAlignment { get; set; }
     }
 }

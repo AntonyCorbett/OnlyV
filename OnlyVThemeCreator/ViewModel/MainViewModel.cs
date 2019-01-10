@@ -178,6 +178,12 @@ namespace OnlyVThemeCreator.ViewModel
             OnlyVHorizontalTextAlignment.Right
         };
 
+        public OnlyVBodyVerticalAlignment[] VerticalAlignments { get; } =
+        {
+            OnlyVBodyVerticalAlignment.Top,
+            OnlyVBodyVerticalAlignment.Middle
+        };
+
         public OnlyVLineSpacing[] LineSpacings { get; } = 
         {
             OnlyVLineSpacing.VerySmall,
@@ -501,6 +507,20 @@ namespace OnlyVThemeCreator.ViewModel
                 if (_currentTheme.BodyText.DropShadow.Show != value)
                 {
                     _currentTheme.BodyText.DropShadow.Show = value;
+                    RaisePropertyChanged();
+                    UpdateImage();
+                }
+            }
+        }
+
+        public OnlyVBodyVerticalAlignment BodyVerticalAlignment
+        {
+            get => _currentTheme.BodyText.BodyVerticalAlignment;
+            set
+            {
+                if (_currentTheme.BodyText.BodyVerticalAlignment != value)
+                {
+                    _currentTheme.BodyText.BodyVerticalAlignment = value;
                     RaisePropertyChanged();
                     UpdateImage();
                 }
@@ -1000,6 +1020,7 @@ namespace OnlyVThemeCreator.ViewModel
             _imageService.BodyDropShadowOpacity = BodyDropShadowOpacity;
             _imageService.BodyDropShadowBlurRadius = BodyDropShadowBlurRadius;
             _imageService.BodyDropShadowDepth = BodyDropShadowDepth;
+            _imageService.BodyVerticalAlignment = BodyVerticalAlignment;
 
             // title text...
             _imageService.TitleFont.FontFamily = new FontFamily(TitleTextFontFamilyName);

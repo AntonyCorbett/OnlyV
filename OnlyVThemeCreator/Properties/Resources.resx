@@ -292,6 +292,9 @@
   <data name="USE_DROP_SHADOW" xml:space="preserve">
     <value>Use drop-shadow</value>
   </data>
+  <data name="VERT_ALIGNMENT" xml:space="preserve">
+    <value>Vertical alignment</value>
+  </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
     <value>The theme has changed. Do you want to save?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
