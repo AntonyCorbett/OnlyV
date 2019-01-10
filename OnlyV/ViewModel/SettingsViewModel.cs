@@ -284,6 +284,19 @@
                 }
             }
         }
+
+        public bool ShowEllipsesForContinuation
+        {
+            get => _optionsService.UseContinuationEllipses;
+            set
+            {
+                if (_optionsService.UseContinuationEllipses != value)
+                {
+                    _optionsService.UseContinuationEllipses = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
         
         public IEnumerable<LoggingLevel> LoggingLevels => _loggingLevels;
 

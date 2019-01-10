@@ -184,6 +184,10 @@
                 <CheckBox IsChecked="{Binding SpaceBetweenTitleVerseNumbers, Mode=TwoWay}"
                           Content="{x:Static resx:Resources.TITLE_VERSE_NOS}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
+                
+                <CheckBox IsChecked="{Binding ShowEllipsesForContinuation, Mode=TwoWay}"
+                          Content="{x:Static resx:Resources.ELLIPSIS_CONTINUATION}"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
             </StackPanel>
         </GroupBox>
 

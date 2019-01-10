@@ -148,10 +148,11 @@
             // formatting...
             bibleTextImage.AllowAutoFit = _optionsService.AutoFit;
             bibleTextImage.ShowBreakInVerses = _optionsService.ShowVerseBreaks;
+            bibleTextImage.UseContinuationEllipses = _optionsService.UseContinuationEllipses;
             bibleTextImage.UseTildeParaSeparator = _optionsService.UseTildeMarker;
             bibleTextImage.TrimPunctuation = _optionsService.TrimPunctuation;
             bibleTextImage.TrimQuotes = _optionsService.TrimQuotes;
-
+            
             // body text...
             bibleTextImage.MainFont.FontFamily = new FontFamily(theme.BodyText.Font.Family);
             bibleTextImage.MainFont.FontSize = AdaptToScaling(theme.BodyText.Font.Size);

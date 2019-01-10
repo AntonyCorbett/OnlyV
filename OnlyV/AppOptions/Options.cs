@@ -14,8 +14,8 @@
             AutoFit = true;
             ShowVerseBreaks = true;
             UseTildeMarker = true;
-            ShowVerseBreaks = true;
             TextScalingPercentage = 100;
+            UseContinuationEllipses = true;
 
             Sanitize();
         }
@@ -55,6 +55,8 @@
         public int TextScalingPercentage { get; set; }
 
         public bool SpaceBetweenTitleVerseNumbers { get; set; }
+
+        public bool UseContinuationEllipses { get; set; }
 
         /// <summary>
         /// Validates the data, correcting automatically as required

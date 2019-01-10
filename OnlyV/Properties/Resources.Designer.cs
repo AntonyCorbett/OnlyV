@@ -278,6 +278,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show ellipses for continuation.
+        /// </summary>
+        public static string ELLIPSIS_CONTINUATION {
+            get {
+                return ResourceManager.GetString("ELLIPSIS_CONTINUATION", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Bible epub not found!.
         /// </summary>
         public static string EPUB_NOT_FOUND {

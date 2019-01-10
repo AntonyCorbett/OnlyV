@@ -75,7 +75,8 @@
             FlowDirection = FlowDirection.LeftToRight;
             AllowAutoFit = true;
             ShowBreakInVerses = true;
-            
+            UseContinuationEllipses = true;
+
             TitleDropShadow = true;
             TitleDropShadowColor = Colors.Black;
             TitleDropShadowOpacity = 0.5;
@@ -151,6 +152,8 @@
         public bool AllowAutoFit { get; set; }
 
         public bool ShowBreakInVerses { get; set; }
+
+        public bool UseContinuationEllipses { get; set; }
         
         public bool UseTildeParaSeparator { get; set; }
 
@@ -491,13 +494,19 @@
                 {
                     var lineStr = linesForBmp[lineNum];
 
-                    if (lineNum == 0 && lineStr.Length > 0 && !IsEndOfSentenceOrPhrase(linesForPreviousBmp?.LastOrDefault()))
+                    if (UseContinuationEllipses && 
+                        lineNum == 0 && 
+                        lineStr.Length > 0 && 
+                        !IsEndOfSentenceOrPhrase(linesForPreviousBmp?.LastOrDefault()))
                     {
                         // ellipsis at start of this line...
                         lineStr = string.Concat(Ellipsis, lineStr);
                     }
 
-                    if (lineNum == linesForBmp.Length - 1 && moreImagesAfterThis && !IsEndOfSentenceOrPhrase(lineStr))
+                    if (UseContinuationEllipses && 
+                        lineNum == linesForBmp.Length - 1 && 
+                        moreImagesAfterThis && 
+                        !IsEndOfSentenceOrPhrase(lineStr))
                     {
                         // ellipsis at the end of the last line (if appropriate)...
                         lineStr = string.Concat(lineStr, Ellipsis);

@@ -38,6 +38,8 @@
 
         bool ShowVerseBreaks { get; set; }
 
+        bool UseContinuationEllipses { get; set; }
+
         bool UseTildeMarker { get; set; }
 
         bool TrimPunctuation { get; set; }

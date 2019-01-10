@@ -213,6 +213,19 @@
                 }
             }
         }
+        
+        public bool UseContinuationEllipses
+        {
+            get => _options.UseContinuationEllipses;
+            set
+            {
+                if (_options.UseContinuationEllipses != value)
+                {
+                    _options.UseContinuationEllipses = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
 
         public bool UseTildeMarker
         {
