@@ -240,6 +240,19 @@
             }
         }
 
+        public bool SpaceBetweenTitleVerseNumbers
+        {
+            get => _options.SpaceBetweenTitleVerseNumbers;
+            set
+            {
+                if (_options.SpaceBetweenTitleVerseNumbers != value)
+                {
+                    _options.SpaceBetweenTitleVerseNumbers = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
         public bool TrimQuotes
         {
             get => _options.TrimQuotes;

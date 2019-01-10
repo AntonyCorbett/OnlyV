@@ -173,7 +173,7 @@
             }
             catch (Exception ex)
             {
-                Log.Logger.Error("Could not read theme file", ex);
+                Log.Logger.Error(ex, "Could not read theme file");
             }
 
             return null;
@@ -195,7 +195,7 @@
             }
             catch (Exception ex)
             {
-                Log.Logger.Error("Could not read background image", ex);
+                Log.Logger.Error(ex, "Could not read background image");
             }
 
             return null;

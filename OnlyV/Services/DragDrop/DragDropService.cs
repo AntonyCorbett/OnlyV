@@ -113,7 +113,7 @@
                     }
                     catch (Exception ex)
                     {
-                        Log.Logger.Error($@"Could not copy epub file {file}", ex);
+                        Log.Logger.Error(ex, $@"Could not copy epub file {file}");
                     }
                 });
 

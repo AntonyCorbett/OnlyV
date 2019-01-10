@@ -656,6 +656,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Space between title verse numbers.
+        /// </summary>
+        public static string TITLE_VERSE_NOS {
+            get {
+                return ResourceManager.GetString("TITLE_VERSE_NOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Trim punctuation.
         /// </summary>
         public static string TRIM_PUNCTUATION {

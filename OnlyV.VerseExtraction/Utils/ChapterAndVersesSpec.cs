@@ -39,8 +39,10 @@
             });
         }
 
-        public string ToTidyString()
+        public string ToTidyString(bool spaceBetweenVerseNumbers)
         {
+            var commaStr = spaceBetweenVerseNumbers ? ", " : ",";
+
             var sb = new StringBuilder();
             var currentChapter = 0;
             foreach (var spec in _contiguousVerses)
@@ -60,14 +62,14 @@
                 {
                     if (currentChapter != 0)
                     {
-                        sb.Append(",");
+                        sb.Append(commaStr);
                     }
                 }
 
                 sb.Append(spec.StartVerse);
                 if (spec.StartVerse != spec.EndVerse)
                 {
-                    sb.Append(spec.EndVerse == spec.StartVerse + 1 ? "," : "-");
+                    sb.Append(spec.EndVerse == spec.StartVerse + 1 ? commaStr : "-");
                     sb.Append(spec.EndVerse);
                 }
             }

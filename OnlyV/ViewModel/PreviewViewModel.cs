@@ -151,7 +151,7 @@
             }
             catch (Exception ex)
             {
-                Log.Logger.Error(@"Could not save", ex);
+                Log.Logger.Error(ex, @"Could not save");
                 return null;
             }
         }
@@ -217,18 +217,19 @@
                 folder, 
                 BookChapterAndVersesString);
 
-            var msg = imagesToSave.Count > 1
-                ? string.Format(Properties.Resources.SAVED_X_IMAGES, imagesToSave.Count)
-                : Properties.Resources.SAVED_IMAGE;
-
-            _snackbarService.Enqueue(msg, Properties.Resources.VIEW, LaunchFileExplorer);
             try
             {
                 s.Execute();
+
+                var msg = imagesToSave.Count > 1
+                    ? string.Format(Properties.Resources.SAVED_X_IMAGES, imagesToSave.Count)
+                    : Properties.Resources.SAVED_IMAGE;
+
+                _snackbarService.Enqueue(msg, Properties.Resources.VIEW, LaunchFileExplorer);
             }
             catch (Exception ex)
             {
-                Log.Logger.Error(@"Could not save", ex);
+                Log.Logger.Error(ex, @"Could not save");
                 _snackbarService.EnqueueWithOk(Properties.Resources.ERROR_SAVING);
             }
         }

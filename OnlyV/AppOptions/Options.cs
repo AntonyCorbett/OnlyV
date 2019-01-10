@@ -54,6 +54,8 @@
 
         public int TextScalingPercentage { get; set; }
 
+        public bool SpaceBetweenTitleVerseNumbers { get; set; }
+
         /// <summary>
         /// Validates the data, correcting automatically as required
         /// </summary>

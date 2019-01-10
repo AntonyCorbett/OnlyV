@@ -181,6 +181,7 @@
             bibleTextImage.TitleDropShadowColor = ConvertFromString(theme.TitleText.DropShadow.Colour, Colors.Black);
             bibleTextImage.TitleDropShadowDepth = theme.TitleText.DropShadow.Depth;
             bibleTextImage.TitleDropShadowOpacity = theme.TitleText.DropShadow.Opacity;
+            bibleTextImage.TitleSpaceBetweenVerseNumbers = _optionsService.SpaceBetweenTitleVerseNumbers;
 
             // verse nos...
             // font family same as body font

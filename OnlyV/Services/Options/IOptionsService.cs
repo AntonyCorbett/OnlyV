@@ -46,6 +46,8 @@
         
         bool ShowVerseNos { get; set; }
 
+        bool SpaceBetweenTitleVerseNumbers { get; set; }
+
         string SaveToFolder { get; set; }
 
         int TextScalingPercentage { get; set; }

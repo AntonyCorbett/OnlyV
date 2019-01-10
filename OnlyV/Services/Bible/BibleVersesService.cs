@@ -67,7 +67,7 @@
             }
             catch (Exception ex)
             {
-                Log.Logger.Error($@"Could not read epub {epubPath}", ex);
+                Log.Logger.Error(ex, $@"Could not read epub {epubPath}");
                 return false;
             }
         }

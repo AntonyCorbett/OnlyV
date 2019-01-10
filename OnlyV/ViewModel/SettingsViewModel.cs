@@ -272,6 +272,19 @@
             }
         }
 
+        public bool SpaceBetweenTitleVerseNumbers
+        {
+            get => _optionsService.SpaceBetweenTitleVerseNumbers;
+            set
+            {
+                if (_optionsService.SpaceBetweenTitleVerseNumbers != value)
+                {
+                    _optionsService.SpaceBetweenTitleVerseNumbers = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+        
         public IEnumerable<LoggingLevel> LoggingLevels => _loggingLevels;
 
         public LogEventLevel LogEventLevel

@@ -372,4 +372,7 @@
     <value>Show a tilde between paragraphs in a single verse</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
+  <data name="TITLE_VERSE_NOS" xml:space="preserve">
+    <value>Space between title verse numbers</value>
+  </data>
 </root>

@@ -15,6 +15,6 @@
             string chapterAndVerses,
             FormattingOptions formattingOptions);
 
-        string GenerateVerseTitle(int bookNumber, string chapterAndVerses);
+        string GenerateVerseTitle(int bookNumber, string chapterAndVerses, bool spaceBetweenVerseNumbers);
     }
 }

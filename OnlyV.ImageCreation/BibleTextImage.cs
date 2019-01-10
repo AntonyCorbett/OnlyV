@@ -168,6 +168,8 @@
 
         public double TitleDropShadowDepth { get; set; }
 
+        public bool TitleSpaceBetweenVerseNumbers { get; set; }
+
         public bool BodyDropShadow { get; set; }
 
         public Color BodyDropShadowColor { get; set; }
@@ -177,7 +179,7 @@
         public double BodyDropShadowBlurRadius { get; set; }
 
         public double BodyDropShadowDepth { get; set; }
-
+        
         private Brush BackgroundBrush => _backgroundBrush ?? (_backgroundBrush = new SolidColorBrush(BackgroundColor));
         
         public IEnumerable<BitmapSource> Generate(string epubPath, int bookNumber, string chapterAndVerses)
@@ -194,7 +196,7 @@
             using (var reader = new BibleTextReader(epubPath))
             {
                 reader.VerseFetchEvent += HandleVerseFetchEvent;
-                string title = reader.GenerateVerseTitle(bookNumber, chapterAndVerses);
+                string title = reader.GenerateVerseTitle(bookNumber, chapterAndVerses, TitleSpaceBetweenVerseNumbers);
 
                 var formattingOptions = new FormattingOptions
                 {

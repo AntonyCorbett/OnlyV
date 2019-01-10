@@ -68,11 +68,11 @@
             return result;
         }
 
-        public string GenerateVerseTitle(int bookNumber, string chapterAndVerses)
+        public string GenerateVerseTitle(int bookNumber, string chapterAndVerses, bool spaceBetweenVerseNumbers)
         {
             string bookName = GetBookName(bookNumber);
             var cv = ChapterAndVerseStringParser.Parse(chapterAndVerses);
-            return string.Concat(bookName, " ", cv.ToTidyString());
+            return string.Concat(bookName, " ", cv.ToTidyString(spaceBetweenVerseNumbers));
         }
 
         private IReadOnlyCollection<BibleBookData> ReadBookData()

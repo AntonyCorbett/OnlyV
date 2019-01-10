@@ -180,6 +180,10 @@
                 <CheckBox IsChecked="{Binding ShowVerseNos, Mode=TwoWay}"
                           Content="{x:Static resx:Resources.SHOW_VERSE_NOS}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
+            
+                <CheckBox IsChecked="{Binding SpaceBetweenTitleVerseNumbers, Mode=TwoWay}"
+                          Content="{x:Static resx:Resources.TITLE_VERSE_NOS}"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
             </StackPanel>
         </GroupBox>
 
