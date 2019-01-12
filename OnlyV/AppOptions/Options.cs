@@ -16,6 +16,7 @@
             UseTildeMarker = true;
             TextScalingPercentage = 100;
             UseContinuationEllipses = true;
+            UseAbbreviatedBookNames = true;
 
             Sanitize();
         }
@@ -57,6 +58,8 @@
         public bool SpaceBetweenTitleVerseNumbers { get; set; }
 
         public bool UseContinuationEllipses { get; set; }
+
+        public bool UseAbbreviatedBookNames { get; set; }
 
         /// <summary>
         /// Validates the data, correcting automatically as required

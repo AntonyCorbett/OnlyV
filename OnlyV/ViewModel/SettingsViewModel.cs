@@ -297,7 +297,20 @@
                 }
             }
         }
-        
+
+        public bool UseAbbreviatedBookNames
+        {
+            get => _optionsService.UseAbbreviatedBookNames;
+            set
+            {
+                if (_optionsService.UseAbbreviatedBookNames != value)
+                {
+                    _optionsService.UseAbbreviatedBookNames = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         public IEnumerable<LoggingLevel> LoggingLevels => _loggingLevels;
 
         public LogEventLevel LogEventLevel

@@ -158,6 +158,8 @@
         
         public bool UseTildeParaSeparator { get; set; }
 
+        public bool UseAbbreviatedBookNames { get; set; }
+
         public bool TrimPunctuation { get; set; }
 
         public bool TrimQuotes { get; set; }
@@ -202,7 +204,8 @@
             using (var reader = new BibleTextReader(epubPath))
             {
                 reader.VerseFetchEvent += HandleVerseFetchEvent;
-                string title = reader.GenerateVerseTitle(bookNumber, chapterAndVerses, TitleSpaceBetweenVerseNumbers);
+                string title = reader.GenerateVerseTitle(
+                    bookNumber, chapterAndVerses, TitleSpaceBetweenVerseNumbers, UseAbbreviatedBookNames);
 
                 var formattingOptions = new FormattingOptions
                 {

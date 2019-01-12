@@ -2,7 +2,9 @@
 {
     internal class BibleBook
     {
-        public string BookName { get; set; }
+        public string BookAbbreviatedName { get; set; }
+
+        public string BookFullName { get; set; }
 
         public string FullPath { get; set; }
 

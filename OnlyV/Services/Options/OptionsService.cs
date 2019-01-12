@@ -227,6 +227,19 @@
             }
         }
 
+        public bool UseAbbreviatedBookNames
+        {
+            get => _options.UseAbbreviatedBookNames;
+            set
+            {
+                if (_options.UseAbbreviatedBookNames != value)
+                {
+                    _options.UseAbbreviatedBookNames = value;
+                    StyleChangedEvent?.Invoke(this, EventArgs.Empty);
+                }
+            }
+        }
+
         public bool UseTildeMarker
         {
             get => _options.UseTildeMarker;

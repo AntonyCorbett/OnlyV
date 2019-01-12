@@ -68,9 +68,13 @@
             return result;
         }
 
-        public string GenerateVerseTitle(int bookNumber, string chapterAndVerses, bool spaceBetweenVerseNumbers)
+        public string GenerateVerseTitle(
+            int bookNumber, 
+            string chapterAndVerses, 
+            bool spaceBetweenVerseNumbers,
+            bool useAbbreviatedBookNames)
         {
-            string bookName = GetBookName(bookNumber);
+            string bookName = GetBookNameForImage(bookNumber, useAbbreviatedBookNames);
             var cv = ChapterAndVerseStringParser.Parse(chapterAndVerses);
             return string.Concat(bookName, " ", cv.ToTidyString(spaceBetweenVerseNumbers));
         }
@@ -81,10 +85,10 @@
             return _parser.ExtractBookData();
         }
 
-        private string GetBookName(int bookNumber)
+        private string GetBookNameForImage(int bookNumber, bool useAbbreviatedBookName)
         {
             var book = ExtractBookData().FirstOrDefault(x => x.Number == bookNumber);
-            return book?.Name;
+            return useAbbreviatedBookName ? book?.AbbreviatedName : book?.FullName;
         }
 
         private void HandleVerseFetchEvent(object sender, VerseAndText e)

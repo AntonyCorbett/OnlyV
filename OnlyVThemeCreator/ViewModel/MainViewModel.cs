@@ -954,7 +954,8 @@ namespace OnlyVThemeCreator.ViewModel
 
         private string GetSampleName(BibleTextReader reader, StandardTextSample sample)
         {
-            return reader.GenerateVerseTitle(sample.BookNumber, sample.ChapterAndVerses, false);
+            return reader.GenerateVerseTitle(
+                sample.BookNumber, sample.ChapterAndVerses, false, true);
         }
 
         private void UpdateImage()

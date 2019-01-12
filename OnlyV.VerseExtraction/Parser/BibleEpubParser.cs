@@ -38,7 +38,8 @@
             {
                 var rec = new BibleBookData
                 {
-                    Name = book.BookName,
+                    AbbreviatedName = book.BookAbbreviatedName,
+                    FullName = book.BookFullName,
                     Number = book.BookNumber
                 };
 

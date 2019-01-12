@@ -61,6 +61,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use abbreviated book names.
+        /// </summary>
+        public static string ABBREVIATED_BOOK_NAME {
+            get {
+                return ResourceManager.GetString("ABBREVIATED_BOOK_NAME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Added file.
         /// </summary>
         public static string ADDED_FILE {

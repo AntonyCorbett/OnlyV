@@ -40,6 +40,8 @@
 
         bool UseContinuationEllipses { get; set; }
 
+        bool UseAbbreviatedBookNames { get; set; }
+
         bool UseTildeMarker { get; set; }
 
         bool TrimPunctuation { get; set; }

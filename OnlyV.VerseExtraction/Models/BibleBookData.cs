@@ -4,7 +4,9 @@
 
     public class BibleBookData
     {
-        public string Name { get; set; }
+        public string AbbreviatedName { get; set; }
+
+        public string FullName { get; set; }
 
         public int Number { get; set; }
 

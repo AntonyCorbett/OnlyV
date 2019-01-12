@@ -70,7 +70,7 @@
 
             foreach (var book in bibleBooks)
             {
-                Log.Logger.Debug($"Book = {book.BookNumber}, {book.BookName}, {book.FullPath}");
+                Log.Logger.Debug($"Book = {book.BookNumber}, {book.BookAbbreviatedName}, {book.FullPath}");
 
                 if (book.HasSingleChapter)
                 {
@@ -87,7 +87,7 @@
                 }
                 else
                 {
-                    var x = GetXmlFile(book.FullPath);
+                    var x = GetXmlFile(book.FullPath, true);
 
                     var attr = x?.Root?.Attribute("xmlns");
                     if (attr != null)
@@ -140,10 +140,13 @@
                         string href = book.Attribute("href")?.Value;
                         if (href != null && href.EndsWith(".xhtml"))
                         {
+                            var fullPath = GetFullPathInArchive(href);
+
                             var bb = new BibleBook
                             {
-                                FullPath = GetFullPathInArchive(href),
-                                BookName = book.Value.Trim(),
+                                FullPath = fullPath,
+                                BookAbbreviatedName = book.Value.Trim(),
+                                BookFullName = GetFullNameOfBook(fullPath),
                                 BookNumber = bookNum++
                             };
 
@@ -157,7 +160,7 @@
                                 }
                             }
 
-                            Log.Logger.Debug($"Book = {bb.BookNumber}, {bb.BookName}, {bb.FullPath}");
+                            Log.Logger.Debug($"Book = {bb.BookNumber}, {bb.BookAbbreviatedName}, {bb.FullPath}");
 
                             result.Add(bb);
                         }
@@ -970,6 +973,33 @@
             {
                 johnChapter8.VerseRange.FirstVerse = 12;
             }
+        }
+
+        private string GetFullNameOfBook(string fullPath)
+        {
+            var x = GetXmlFile(fullPath, true);
+
+            var attr = x?.Root?.Attribute("xmlns");
+            if (attr != null)
+            {
+                XNamespace ns = attr.Value;
+
+                var title = x.Root.Descendants(ns + "title").SingleOrDefault();
+                var result = title?.Value;
+
+                if (result != null && _epubStyle == EpubStyle.Old && result.Trim().EndsWith(")"))
+                {
+                    var trimPos = result.LastIndexOf("(", StringComparison.OrdinalIgnoreCase);
+                    if (trimPos > -1)
+                    {
+                        result = result.Substring(0, trimPos).Trim();
+                    }
+                }
+
+                return result?.Trim();
+            }
+
+            return null;
         }
     }
 }

@@ -188,6 +188,10 @@
                 <CheckBox IsChecked="{Binding ShowEllipsesForContinuation, Mode=TwoWay}"
                           Content="{x:Static resx:Resources.ELLIPSIS_CONTINUATION}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
+            
+                <CheckBox IsChecked="{Binding UseAbbreviatedBookNames, Mode=TwoWay}"
+                          Content="{x:Static resx:Resources.ABBREVIATED_BOOK_NAME}"
+                          Style="{StaticResource SettingsCheckBoxStyle}"/>
             </StackPanel>
         </GroupBox>
 

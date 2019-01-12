@@ -197,7 +197,7 @@
 
             foreach (var book in booksData)
             {
-                var model = new ButtonModel(book.Name, count + 1, BibleBookCommand);
+                var model = new ButtonModel(book.AbbreviatedName, count + 1, BibleBookCommand);
 
                 if (count < BibleBooksMetaData.NumBibleBooksHebrew)
                 {

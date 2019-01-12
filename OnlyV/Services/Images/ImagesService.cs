@@ -184,6 +184,7 @@
             bibleTextImage.TitleDropShadowDepth = theme.TitleText.DropShadow.Depth;
             bibleTextImage.TitleDropShadowOpacity = theme.TitleText.DropShadow.Opacity;
             bibleTextImage.TitleSpaceBetweenVerseNumbers = _optionsService.SpaceBetweenTitleVerseNumbers;
+            bibleTextImage.UseAbbreviatedBookNames = _optionsService.UseAbbreviatedBookNames;
 
             // verse nos...
             // font family same as body font
