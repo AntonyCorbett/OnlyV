@@ -249,7 +249,7 @@
 
         private IReadOnlyCollection<string> TryAutoFit(IReadOnlyCollection<string> lines, string title, TextSplitter splitter)
         {
-            int linesPerImage = CalcLinesPerImage(title);
+            int linesPerImage = CalcLinesPerImage();
             int origImageCount = CalcNumberBitmaps(linesPerImage, lines);
             if (origImageCount > 1)
             {
@@ -267,7 +267,7 @@
 
                     lines = splitter.GetLines(Width - LeftMargin - RightMargin);
 
-                    linesPerImage = CalcLinesPerImage(title);
+                    linesPerImage = CalcLinesPerImage();
                     numImages = CalcNumberBitmaps(linesPerImage, lines);
 
                     ++attempts;
@@ -354,16 +354,23 @@
             return null;
         }
 
-        private double GetSpaceForTitle(string title)
+        private double GetSpaceForTitle()
         {
-            var titleFormattedText = GetFormattedTitleText(title);
-            return ShowTitle ? titleFormattedText.Height * 2 : 0;
+            if (!ShowTitle)
+            {
+                return 0;
+            }
+
+            var title = GetFormattedTitleText("My");
+            var body = GetFormattedBodyText("My");
+
+            return (title.Height + body.Height) * 0.8;
         }
 
-        private int CalcLinesPerImage(string title)
+        private int CalcLinesPerImage()
         {
             var bodyLineHeight = AdjustHeightForLineSpacing(GetFormattedBodyText("My").Height);
-            var spaceForTitle = GetSpaceForTitle(title);
+            var spaceForTitle = GetSpaceForTitle();
             var availableHeight = Height - TopMargin - BottomMargin - spaceForTitle;
             return (int)(availableHeight / bodyLineHeight);
         }
@@ -376,17 +383,20 @@
             {
                 var bodyLineHeight = AdjustHeightForLineSpacing(GetFormattedBodyText("My").Height);
                 var titleFormattedText = GetFormattedTitleText(title);
-                var spaceForTitle = GetSpaceForTitle(title);
+                var spaceForTitle = GetSpaceForTitle();
 
-                int linesPerImage = CalcLinesPerImage(title);
-                int numBitmaps = CalcNumberBitmaps(linesPerImage, lines);
+                int linesPerImage = CalcLinesPerImage();
+                int totalImageCount = CalcNumberBitmaps(linesPerImage, lines);
 
-                for (int n = 0; n < numBitmaps; ++n)
+                for (int imageNumber = 0; imageNumber < totalImageCount; ++imageNumber)
                 {
                     var bmp = new RenderTargetBitmap(Width, Height, 96, 96, PixelFormats.Default);
 
                     var backgroundVisual = DrawBackground();
-                    var bodyVisual = DrawBody(n, numBitmaps, lines, linesPerImage, bodyLineHeight, spaceForTitle);
+
+                    var bodyVisual = DrawBody(
+                        imageNumber, totalImageCount, lines, linesPerImage, bodyLineHeight, spaceForTitle);
+
                     var titleVisual = DrawTitle(titleFormattedText);
                     
                     bmp.Render(backgroundVisual);

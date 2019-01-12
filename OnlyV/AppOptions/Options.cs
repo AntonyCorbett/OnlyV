@@ -16,8 +16,7 @@
             UseTildeMarker = true;
             TextScalingPercentage = 100;
             UseContinuationEllipses = true;
-            UseAbbreviatedBookNames = true;
-
+            
             Sanitize();
         }
 
