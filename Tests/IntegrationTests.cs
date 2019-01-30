@@ -15,11 +15,16 @@
     [TestClass]
     public class IntegrationTests
     {
-        private const string EpubPath = "nwt_E.epub";
+        private const string EpubPath = @"..\..\nwt_E.epub";
 
         [TestMethod]
         public void TestBibleEpubParser()
         {
+            if (!File.Exists(EpubPath))
+            {
+                return;
+            }
+
             var parser = new BibleEpubParser(EpubPath);
             var bookData = parser.ExtractBookData();
             Assert.IsNotNull(bookData);
@@ -36,6 +41,11 @@
         [TestMethod]
         public void TestEachVerseHasContent()
         {
+            if (!File.Exists(EpubPath))
+            {
+                return;
+            }
+
             var parser = new BibleEpubParser(EpubPath);
             IReadOnlyCollection<BibleBookData> bookData = parser.ExtractBookData();
             Assert.IsNotNull(bookData);
@@ -65,6 +75,11 @@
         [TestMethod]
         public void TestImageCreation()
         {
+            if (!File.Exists(EpubPath))
+            {
+                return;
+            }
+
             BibleTextImage image = new BibleTextImage();
             var images = image.Generate(EpubPath, 1, "3:15");
         }
