@@ -1,0 +1,11 @@
+files:
+  - source: /OnlyV/Properties/Resources.resx
+    translation: /OnlyV/Properties/%file_name%.%locale%.resx
+  - source: /OnlyV.ImageCreation/Properties/Resources.resx
+    translation: /OnlyV.ImageCreation/Properties/%file_name%.%locale%.resx
+  - source: /OnlyV.Themes.Common/Properties/Resources.resx
+    translation: /OnlyV.Themes.Common/Properties/%file_name%.%locale%.resx
+  - source: /OnlyV.VerseExtraction/Properties/Resources.resx
+    translation: /OnlyV.VerseExtraction/Properties/%file_name%.%locale%.resx
+  - source: /OnlyVThemeCreator/Properties/Resources.resx
+    translation: /OnlyVThemeCreator/Properties/%file_name%.%locale%.resx
