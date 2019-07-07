@@ -15,7 +15,7 @@
         {
             if (endVerse < startVerse)
             {
-                throw new Exception("End verse before start!");
+                throw new Exception(Properties.Resources.END_BEFORE_START);
             }
 
             _contiguousVerses.Add(new ContiguousVerseSpec

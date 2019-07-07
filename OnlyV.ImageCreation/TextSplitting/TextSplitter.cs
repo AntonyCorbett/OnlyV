@@ -54,7 +54,7 @@
                     }
                     else
                     {
-                        throw new Exception("Text too large - try a smaller font size");
+                        throw new Exception(Properties.Resources.TEXT_TOO_LARGE);
                     }
                 }
                 else

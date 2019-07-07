@@ -41,7 +41,7 @@
 
             if (File.Exists(themePath) && !overwrite)
             {
-                throw new Exception("File already exists!");
+                throw new Exception(Properties.Resources.FILE_EXISTS);
             }
 
             var validBackgroundImage = false;

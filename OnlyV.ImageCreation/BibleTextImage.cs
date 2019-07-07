@@ -225,7 +225,7 @@
 
                 if (AllowAutoFit)
                 {
-                    lines = TryAutoFit(lines, title, splitter);
+                    lines = TryAutoFit(lines, splitter);
                 }
 
                 var result = InternalGenerate(lines, title);
@@ -247,7 +247,7 @@
             return new Size(text.Width, text.Height);
         }
 
-        private IReadOnlyCollection<string> TryAutoFit(IReadOnlyCollection<string> lines, string title, TextSplitter splitter)
+        private IReadOnlyCollection<string> TryAutoFit(IReadOnlyCollection<string> lines, TextSplitter splitter)
         {
             int linesPerImage = CalcLinesPerImage();
             int origImageCount = CalcNumberBitmaps(linesPerImage, lines);

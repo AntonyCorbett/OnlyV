@@ -6,7 +6,7 @@
     public class EpubCompatibilityException : Exception
     {
         public EpubCompatibilityException()
-            : base("The epub is not compatible with OnlyV")
+            : base(Properties.Resources.EPUB_INCOMPATIBLE)
         {
         }
     }
