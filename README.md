@@ -1,4 +1,4 @@
-# OnlyV
+# OnlyV <img src="https://ci.appveyor.com/api/projects/status/8g9vu8mgy28m8h3p?svg=true">
 
 A tool to generate Bible verses in image format for use at Kingdom Halls or in other settings. Please report any problems in the Project Issues section.
 
