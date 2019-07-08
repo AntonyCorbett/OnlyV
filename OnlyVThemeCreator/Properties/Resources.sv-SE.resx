@@ -130,7 +130,7 @@
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Bakgrundsfärg</value>
+    <value>Background colour</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
