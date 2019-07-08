@@ -381,4 +381,12 @@
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Använd förkortningar för böcker</value>
   </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Language</value>
+    <comment>See settings page</comment>
+  </data>
+  <data name="RESTART_LANGUAGE" xml:space="preserve">
+    <value>Please restart OnlyV after changing the language.</value>
+    <comment>See Settings page</comment>
+  </data>
 </root>
