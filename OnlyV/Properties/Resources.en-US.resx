@@ -273,7 +273,7 @@
     <value>Show scriptures page</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Bible reader not initialized!</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>RESET</value>
