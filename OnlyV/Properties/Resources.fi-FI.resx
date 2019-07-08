@@ -124,10 +124,10 @@
     <value>Added {0} files</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>OnlyV software version: {0}</value>
+    <value>Ohjelmistoversio {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Back</value>
+    <value>Takaisin</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
     <value>Bible epub file</value>
