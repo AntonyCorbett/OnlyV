@@ -190,21 +190,21 @@
     <value>Bibelns epub kunde inte hittas!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Bibelns epub är inte specificerad!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Error saving images!</value>
+    <value>Fel vid lagring av bilder!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLES</value>
+    <value>BIBLAR</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>DISPLAY</value>
+    <value>SKÄRM</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Hide (F5)</value>
+    <value>Dölj (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
     <value>Insert closing quotation mark</value>
