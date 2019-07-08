@@ -207,70 +207,70 @@
     <value>Dölj (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Insert closing quotation mark</value>
+    <value>Infoga slutnoteringsmärke</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Insert opening quotation mark</value>
+    <value>Infoga öppningsnoteringsmärke</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>”JW Library” är ett registrerat varumärke av Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library compatibility mode</value>
+    <value>JW Library-kompatibilitetsläge</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Debug</value>
+    <value>Felsökning</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Fel</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Fatal</value>
+    <value>Allvarligt</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
     <value>Information</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Verbose</value>
+    <value>Detaljerad</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Warning</value>
+    <value>Varning</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Media monitor</value>
+    <value>Mediaskärm</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>None</value>
+    <value>Ingen</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>New update available!</value>
+    <value>Uppdatering tillgänglig!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Next image</value>
+    <value>Nästa bild</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show preview page</value>
+    <value>Förhandsvisning</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>No images to save!</value>
+    <value>Inga bilder att spara!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 bild skapad</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Previous image</value>
+    <value>Föregående bild</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Visa sidan i skrifterna</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
