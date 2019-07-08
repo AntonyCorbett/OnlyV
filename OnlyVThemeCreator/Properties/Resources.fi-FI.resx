@@ -224,26 +224,26 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
-    <value>Top margin</value>
+    <value>Ylämarginaali</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_WIDTH" xml:space="preserve">
-    <value>Width</value>
+    <value>Leveys</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
     <value>Line spacing</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>New theme</value>
+    <value>Uusi teema</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Open theme</value>
+    <value>Avaa teema</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Open Theme</value>
+    <value>Avaa teema</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
@@ -275,10 +275,10 @@
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Theme file</value>
+    <value>Teematiedosto</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
-    <value>Position</value>
+    <value>Sijainti</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
@@ -296,7 +296,7 @@
     <value>Vertical alignment</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>Teemaa on muokattu. Haluatko tallentaa sen?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
