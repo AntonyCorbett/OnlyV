@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Este editor é normalmente usado para abreviar versículos (exemplo: para substituir uma frase por uma elipse). As suas modificações são lembradas até que feche o OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Ficheiro epub da Bíblia não encontrado!</value>
@@ -353,11 +353,11 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Limitar pontuação</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Limitar aspas</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
@@ -365,18 +365,18 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Use elipses para indicar versículos não contíguos</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Mostrar um til entre parágrafos num único versículo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
     <value>Espaço entre os números de versículos</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Mostrar elipses para continuação</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Usar nomes de livros abreviados</value>
