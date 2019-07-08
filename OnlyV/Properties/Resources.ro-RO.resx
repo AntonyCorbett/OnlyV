@@ -180,52 +180,52 @@
     <value>Trageți și plasați în OnlyM pentru a crea o prezentare de diapozitive</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Descărcați fișierele de tip epub a Bibliei și trageți și plasați aici.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Acest editor este de obicei folosit pentru abrevierea versetelor (de exemplu, pentru a înlocui o propoziție cu o omitere). Modificările dvs. sunt memorate până când închideți OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Bible epub not found!</value>
+    <value>Fișierul de tip epub al Bibliei nu e găsit!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Fișierul de tip epub al Bibliei nu este specificat!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Error saving images!</value>
+    <value>Eroare la salvarea imaginii!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLES</value>
+    <value>BIBLII</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>DISPLAY</value>
+    <value>AFIȘARE</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Hide (F5)</value>
+    <value>Ascundere (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Insert closing quotation mark</value>
+    <value>Introduce ghilimele de închidere</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Insert opening quotation mark</value>
+    <value>Introduce ghilimele de deschidere</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" este marcă înregistrată a Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library compatibility mode</value>
+    <value>Mod compatibil cu JW Library</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Debug</value>
+    <value>Depanare</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Eroare</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
     <value>Fatal</value>
