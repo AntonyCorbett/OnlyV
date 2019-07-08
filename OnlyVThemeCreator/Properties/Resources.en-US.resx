@@ -152,7 +152,7 @@
     <value>Drop-shadow blur radius</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Drop-shadow colour</value>
+    <value>Drop-shadow color</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
     <value>Drop-shadow depth</value>
@@ -161,7 +161,7 @@
     <value>Drop-shadow opacity</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Colour</value>
+    <value>Color</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
