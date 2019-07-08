@@ -215,14 +215,14 @@
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" on Watch Tower Bible and Tract Society of Pennsylvanian rekisteröity tavaramerkki</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library compatibility mode</value>
+    <value>JW Library -yhteensopivuustila</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Debug</value>
+    <value>Vianetsintä</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
     <value>Error</value>
