@@ -267,36 +267,36 @@
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Save Theme</value>
+    <value>Spara tema</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show</value>
+    <value>Visa</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Theme file</value>
+    <value>Temafil</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
     <value>Position</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Växla bakgrundsbild</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toogle background</value>
+    <value>Växla bakgrund</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Använd skugga</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Vertikal justering</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>Temat ändrat, vill du spara?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
