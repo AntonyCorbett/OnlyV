@@ -88,7 +88,7 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Background color.
+        ///   Looks up a localized string similar to Background colour.
         /// </summary>
         public static string BACKGROUND_COLOR {
             get {
