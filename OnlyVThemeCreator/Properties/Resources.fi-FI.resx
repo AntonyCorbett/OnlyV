@@ -271,7 +271,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show</value>
+    <value>Näytä</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
@@ -293,7 +293,7 @@
     <value>Use drop-shadow</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Pystysijoittelu</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
     <value>Teemaa on muokattu. Haluatko tallentaa sen?</value>
