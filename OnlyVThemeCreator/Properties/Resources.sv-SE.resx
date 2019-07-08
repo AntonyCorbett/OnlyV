@@ -118,62 +118,62 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>CANCEL</value>
+    <value>AVBRYT</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
-    <value>NO</value>
+    <value>NEJ</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>YES</value>
+    <value>JA</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Background color</value>
+    <value>Bakgrundsfärg</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Clear</value>
+    <value>Rensa</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Clear background image</value>
+    <value>Rensa bakgrundsbild</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Kunde inte skapa mapp {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Optionally drop a background image here.</value>
+    <value>Dra bakgrundsbilden hit.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Drop-shadow blur radius</value>
+    <value>Skuggans suddighet</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Drop-shadow colour</value>
+    <value>Skuggans färg</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Drop-shadow depth</value>
+    <value>Skuggdjup</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Drop-shadow opacity</value>
+    <value>Skuggans genomskinlighet</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Colour</value>
+    <value>Färg</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Opacity</value>
+    <value>Genomskinlighet</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
-    <value>Font size</value>
+    <value>Teckenstorlek</value>
     <comment>Font size label text</comment>
   </data>
   <data name="FONT_STYLE" xml:space="preserve">
-    <value>Font style</value>
+    <value>Typsnittsstil</value>
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
