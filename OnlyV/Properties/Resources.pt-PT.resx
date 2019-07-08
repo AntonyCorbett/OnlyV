@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Fil tillagd</value>
+    <value>Ficheiro adicionado</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>{0} filer tillagda</value>
+    <value>{0} ficheiros adicionados</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>OnlyV version: {0}</value>
+    <value>Versão de software do OnlyV: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Tillbaka</value>
+    <value>Anterior</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Bibeln epub-fil</value>
+    <value>Arquivo epub da Bíblia</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -138,247 +138,247 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>BOK</value>
+    <value>LIVRO</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>KAPITEL</value>
+    <value>CAPÍTULO</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Kopierad till urklipp</value>
+    <value>Copiado para a área de transferência</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Bild kopierad till urklipp</value>
+    <value>Copiar para a área de transferência</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Kunde inte läsa en av filerna!</value>
+    <value>Não foi possível ler um dos ficheiros!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Kunde inte läsa någon av filerna!</value>
+    <value>Não foi possível ler nenhum dos ficheiros!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Kunde inte läsa filen!</value>
+    <value>Não foi possível ler o ficheiro!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Kunde inte läsa {0} filer!</value>
+    <value>Não foi possível ler {0} ficheiros!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Kunde inte skapa mapp {0}</value>
+    <value>Não foi possível criar a pasta {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Förvald</value>
+    <value>Predefinido</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Målmapp</value>
+    <value>Pasta de destino</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Skärm (F5)</value>
+    <value>Visualizar (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag och släpp till OnlyM för att skapa bildspel</value>
+    <value>Arraste e largue no OnlyM para criar um slideshow</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Ladda ned Bibelns epub filer från jw.org, drag och släpp filen här.</value>
+    <value>Descarregue o ficheiro epub da Bíblia do site jw.org e arraste e largue aqui.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Denna redigerare används vanligen för att förkorta verser ( för att byta ut en mening med en ellips). Dina ändringar försvinner vid omstart.</value>
+    <value>Este editor é normalmente usado para abreviar versículos (exemplo: para substituir uma frase por uma elipse). As suas modificações são lembradas até que feche o OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Bibelns epub kunde inte hittas!</value>
+    <value>Ficheiro epub da Bíblia não encontrado!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bibelns epub är inte specificerad!</value>
+    <value>Ficheiro epub da Bíblia não especificado!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Fel vid lagring av bilder!</value>
+    <value>Erro ao guardar imagens!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLAR</value>
+    <value>BIBLÍAS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>SKÄRM</value>
+    <value>VISUALIZAR</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Dölj (F5)</value>
+    <value>Ocultar (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Infoga slutnoteringsmärke</value>
+    <value>Inserir aspa de fecho</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Infoga öppningsnoteringsmärke</value>
+    <value>Inserir aspa de abertura</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>”JW Library” är ett registrerat varumärke av Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" é uma marca registada da Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library-kompatibilitetsläge</value>
+    <value>Modo de compatibilidade com o JW Library</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Felsökning</value>
+    <value>Depuração</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Fel</value>
+    <value>Erro</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Allvarligt</value>
+    <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Information</value>
+    <value>Informação</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Detaljerad</value>
+    <value>Informação adicional</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Varning</value>
+    <value>Aviso</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Mediaskärm</value>
+    <value>Monitor de média</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Ingen</value>
+    <value>Nenhum</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>Uppdatering tillgänglig!</value>
+    <value>Nova versão disponível!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Nästa bild</value>
+    <value>Próxima imagem</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Förhandsvisning</value>
+    <value>Mostrar página de pré-visualização</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>Inga bilder att spara!</value>
+    <value>Nenhuma imagem para guardar!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 bild skapad</value>
+    <value>1 imagem gerada</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Föregående bild</value>
+    <value>Imagem anterior</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Visa sidan i skrifterna</value>
+    <value>Mostrar página das escrituras</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bibelläsaren är inte påbörjad!</value>
+    <value>Leitor da Bíblia não foi inicializado!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>NOLLSTÄLL</value>
+    <value>REDEFINIR</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Nollställ verstexten</value>
+    <value>Redefinir o texto do versículo</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Bilden sparad</value>
+    <value>Imagem guardada</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>{0} bilder sparade</value>
+    <value>{0} imagens guardadas</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Spara till bildmapp</value>
+    <value>Salvar na pasta de imagens</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Välj målmapp</value>
+    <value>Seleccionar a pasta de destino</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Inställningen inaktiverad av administratören!</value>
+    <value>Definições desativadas pelo administrador!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Inställningar</value>
+    <value>Página de configurações</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSER</value>
+    <value>VERSÍCULOS</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VISA</value>
+    <value>VER</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} bilder skapade.</value>
+    <value>{0} imagens geradas.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Tillåt versändring</value>
+    <value>Permitir edição de versículos</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Huvudfönster alltid överst</value>
+    <value>Sempre visível</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto-anpassa</value>
+    <value>Auto ajuste</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>För att börja, ladda ned en Bibel epub från jw.org och drag och släpp sedan filen här.</value>
+    <value>Para começar, descarregue um arquivo epub da Bíblia através do site jw.org e arraste e largue-o aqui.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>BILDSTIL</value>
+    <value>ESTILO DE IMAGEM</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>ÖVRIGT</value>
+    <value>DIVERSOS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Bildmapp</value>
+    <value>Pasta de imagens</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Loggnivå</value>
+    <value>Nível de registo</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Visa versnummer</value>
+    <value>Mostrar números de versículos</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Skala text</value>
+    <value>Escala de texto</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Putsa till skiljetecknen</value>
+    <value>Limitar pontuação</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Putsa till citatmärkena</value>
+    <value>Limitar aspas</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Använd bakgrundsbild</value>
+    <value>Usar imagem de fundo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Används ellipser för att visa ej sammanhängande verser</value>
+    <value>Use elipses para indicar versículos não contíguos</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Visa tecknet ~ mellan paragrafer i verser</value>
+    <value>Mostrar um til entre parágrafos num único versículo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Mellanslag mellan versnummer i titeln</value>
+    <value>Espaço entre os números de versículos</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Visa ellipser vid fortsättning</value>
+    <value>Mostrar elipses para continuação</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Använd förkortningar för böcker</value>
+    <value>Usar nomes de livros abreviados</value>
   </data>
 </root>
