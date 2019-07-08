@@ -165,13 +165,13 @@
     <value>Could not read {0} files!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Kansion {0} luonti epäonnistui</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
     <value>Default</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Destination Folder</value>
+    <value>Kohdekansio</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
     <value>Display (F5)</value>
@@ -244,7 +244,7 @@
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>None</value>
+    <value>Ei mitään</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
     <value>Päivitys saatavilla!</value>
@@ -254,7 +254,7 @@
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show preview page</value>
+    <value>Näytä esikatselu</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
     <value>No images to save!</value>
@@ -297,7 +297,7 @@
     <value>Select Destination Folder</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>Järjestelmänvalvoja on lukinnut asetukset!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
     <value>Settings page</value>
@@ -307,7 +307,7 @@
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>NÄYTÄ</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
     <value>{0} images generated.</value>
@@ -317,7 +317,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Pääikkuna aina päällimmäisenä</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
