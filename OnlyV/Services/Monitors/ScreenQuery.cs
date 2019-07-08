@@ -326,13 +326,13 @@
             {
                 var allFriendlyNames = GetAllMonitorsFriendlyNames().ToArray();
 
-            for (var index = 0; index < Screen.AllScreens.Length; index++)
-            {
-                if (Equals(screen, Screen.AllScreens[index]))
+                for (var index = 0; index < Screen.AllScreens.Length; index++)
                 {
+                    if (Equals(screen, Screen.AllScreens[index]))
+                    {
                         return allFriendlyNames[index];
+                    }
                 }
-            }
             }
             catch (Exception ex)
             {
