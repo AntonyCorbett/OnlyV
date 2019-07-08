@@ -22,6 +22,11 @@
 
     <UserControl.Resources>
 
+        <Style x:Key="MiscNotesStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{StaticResource PrimaryHueDarkBrush}" />
+            <Setter Property="FontSize" Value="11" />
+        </Style>
+
         <Style x:Key="SettingsGroupBoxStyle" TargetType="{x:Type GroupBox}" BasedOn="{StaticResource MaterialDesignGroupBox}">
             <Setter Property="Margin" Value="10,6" />
             <Setter Property="Padding" Value="10" />
@@ -235,6 +240,25 @@
                           DisplayMemberPath="Name"
                           materialDesign:ComboBoxAssist.ClassicMode="true"
                           SelectedValue="{Binding LogEventLevel, Mode=TwoWay}"/>
+
+                <DockPanel Width="420" HorizontalAlignment="Left">
+                    <materialDesign:PackIcon Kind="Translate" 
+                                             Width="24" 
+                                             Height="24"
+                                             Margin="0,0,6,0"
+                                             VerticalAlignment="Center"/>
+                    <ComboBox ItemsSource="{Binding Languages}" 
+                              Style="{StaticResource SettingsComboBoxStyle}"
+                              materialDesign:HintAssist.Hint="{x:Static resx:Resources.LANGUAGE}"
+                              SelectedValuePath="LanguageId" 
+                              DisplayMemberPath="LanguageName"
+                              materialDesign:ComboBoxAssist.ClassicMode="true"
+                              SelectedValue="{Binding LanguageId, Mode=TwoWay}"/>
+                </DockPanel>
+                
+                <TextBlock Style="{StaticResource MiscNotesStyle}" 
+                           TextWrapping="Wrap"
+                           Text="{x:Static resx:Resources.RESTART_LANGUAGE}"/>
 
             </StackPanel>
         </GroupBox>

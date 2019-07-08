@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
     using Extensions;
@@ -24,6 +25,7 @@
     {
         private readonly MonitorItem[] _monitors;
         private readonly LoggingLevel[] _loggingLevels;
+        private readonly LanguageItem[] _languages;
 
         private readonly IMonitorsService _monitorsService;
         private readonly IOptionsService _optionsService;
@@ -44,10 +46,11 @@
 
             dragDropService.EpubFileListChanged += HandleEpubFileListChanged;
 
-            _monitors = GetSystemMonitors().ToArray();
-            _loggingLevels = GetLoggingLevels().ToArray();
-            _bibleEpubFiles = GetBibleEpubFiles().ToArray();
-            _themeFiles = GetThemeFiles().ToArray();
+            _monitors = GetSystemMonitors();
+            _languages = GetSupportedLanguages();
+            _loggingLevels = GetLoggingLevels();
+            _bibleEpubFiles = GetBibleEpubFiles();
+            _themeFiles = GetThemeFiles();
 
             SelectDestinationFolderCommand = new RelayCommand(SelectDestinationFolder);
             Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
@@ -75,6 +78,21 @@
                     {
                         ThemeChangedEvent?.Invoke(this, EventArgs.Empty);
                     }
+                }
+            }
+        }
+
+        public IEnumerable<LanguageItem> Languages => _languages;
+
+        public string LanguageId
+        {
+            get => _optionsService.Culture;
+            set
+            {
+                if (_optionsService.Culture != value)
+                {
+                    _optionsService.Culture = value;
+                    RaisePropertyChanged();
                 }
             }
         }
@@ -326,7 +344,7 @@
             }
         }
 
-        private IEnumerable<LoggingLevel> GetLoggingLevels()
+        private LoggingLevel[] GetLoggingLevels()
         {
             var result = new List<LoggingLevel>();
 
@@ -339,10 +357,10 @@
                 });
             }
 
-            return result;
+            return result.ToArray();
         }
 
-        private IEnumerable<MonitorItem> GetSystemMonitors()
+        private MonitorItem[] GetSystemMonitors()
         {
             var result = new List<MonitorItem>
             {
@@ -357,10 +375,10 @@
             var monitors = _monitorsService.GetSystemMonitors();
             result.AddRange(monitors.Select(AutoMapper.Mapper.Map<MonitorItem>));
 
-            return result;
+            return result.ToArray();
         }
 
-        private IReadOnlyCollection<EpubFileItem> GetBibleEpubFiles()
+        private EpubFileItem[] GetBibleEpubFiles()
         {
             var result = new List<EpubFileItem>();
 
@@ -376,10 +394,10 @@
             }
 
             result.Sort((x, y) => string.Compare(x.Name, y.Name, StringComparison.Ordinal));
-            return result;
+            return result.ToArray();
         }
 
-        private IReadOnlyCollection<ThemeFileItem> GetThemeFiles()
+        private ThemeFileItem[] GetThemeFiles()
         {
             var result = new List<ThemeFileItem>();
             
@@ -406,7 +424,7 @@
 
             // insert the default theme.
             result.Insert(0, new ThemeFileItem { Name = Properties.Resources.DEFAULT_THEME });
-            return result;
+            return result.ToArray();
         }
 
         private void OnShutDown(ShutDownMessage msg)
@@ -418,7 +436,7 @@
         {
             var currentSelection = CurrentEpubFilePath;
 
-            _bibleEpubFiles = GetBibleEpubFiles().ToArray();
+            _bibleEpubFiles = GetBibleEpubFiles();
             RaisePropertyChanged(nameof(BibleEpubFiles));
 
             if (currentSelection == null)
@@ -444,6 +462,47 @@
                     DestinationFolder = d.FileName;
                 }
             }
+        }
+
+        private LanguageItem[] GetSupportedLanguages()
+        {
+            var result = new List<LanguageItem>();
+
+            var subFolders = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory);
+
+            foreach (var folder in subFolders)
+            {
+                if (!string.IsNullOrEmpty(folder))
+                {
+                    try
+                    {
+                        var c = new CultureInfo(Path.GetFileNameWithoutExtension(folder));
+                        result.Add(new LanguageItem
+                        {
+                            LanguageId = c.Name,
+                            LanguageName = c.EnglishName
+                        });
+                    }
+                    catch (CultureNotFoundException)
+                    {
+                        // expected
+                    }
+                }
+            }
+
+            // the native language
+            {
+                var c = new CultureInfo(Path.GetFileNameWithoutExtension("en-GB"));
+                result.Add(new LanguageItem
+                {
+                    LanguageId = c.Name,
+                    LanguageName = c.EnglishName
+                });
+            }
+
+            result.Sort((x, y) => string.Compare(x.LanguageName, y.LanguageName, StringComparison.Ordinal));
+
+            return result.ToArray();
         }
     }
 }

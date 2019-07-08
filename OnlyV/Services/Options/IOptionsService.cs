@@ -56,6 +56,8 @@
 
         int TextScalingPercentage { get; set; }
 
+        string Culture { get; set; }
+
         void Save();
     }
 }

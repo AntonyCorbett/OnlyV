@@ -422,6 +422,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string LANGUAGE {
+            get {
+                return ResourceManager.GetString("LANGUAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Debug.
         /// </summary>
         public static string LOG_LEVEL_DEBUG {
@@ -598,6 +607,15 @@ namespace OnlyV.Properties {
         public static string RESET_VERSE_TEXT {
             get {
                 return ResourceManager.GetString("RESET_VERSE_TEXT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please restart OnlyV after changing the language..
+        /// </summary>
+        public static string RESTART_LANGUAGE {
+            get {
+                return ResourceManager.GetString("RESTART_LANGUAGE", resourceCulture);
             }
         }
         

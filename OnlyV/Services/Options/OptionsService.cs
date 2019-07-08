@@ -1,8 +1,12 @@
 ﻿namespace OnlyV.Services.Options
 {
     using System;
+    using System.Globalization;
     using System.IO;
     using System.Linq;
+    using System.Threading;
+    using System.Windows;
+    using System.Windows.Markup;
     using CommandLine;
     using EventArgs;
     using GalaSoft.MvvmLight.Threading;
@@ -42,7 +46,7 @@
         public event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;
 
         public event EventHandler AlwaysOnTopChangedEvent;
-        
+
         public event EventHandler EpubPathChangedEvent;
 
         public event EventHandler ThemePathChangedEvent;
@@ -213,7 +217,7 @@
                 }
             }
         }
-        
+
         public bool UseContinuationEllipses
         {
             get => _options.UseContinuationEllipses;
@@ -317,6 +321,18 @@
             }
         }
 
+        public string Culture
+        {
+            get => _options.Culture;
+            set
+            {
+                if (_options.Culture == null || _options.Culture != value)
+                {
+                    _options.Culture = value;
+                }
+            }
+        }
+
         /// <summary>
         /// Saves the settings (if they have changed since they were last read)
         /// </summary>
@@ -363,7 +379,7 @@
                     {
                         _options = new AppOptions.Options();
                     }
-                    
+
                     // store the original settings so that we can determine if they have changed
                     // when we come to save them
                     _originalOptionsSignature = GetOptionsSignature(_options);
@@ -390,7 +406,33 @@
                     _options = (AppOptions.Options)serializer.Deserialize(file, typeof(AppOptions.Options));
 
                     _options.Sanitize();
+
+                    SetCulture();
                 }
+            }
+        }
+
+        private void SetCulture()
+        {
+            var culture = _options.Culture;
+
+            if (string.IsNullOrEmpty(culture))
+            {
+                culture = CultureInfo.CurrentCulture.Name;
+            }
+
+            try
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+                FrameworkElement.LanguageProperty.OverrideMetadata(
+                    typeof(FrameworkElement),
+                    new FrameworkPropertyMetadata(
+                        XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error(ex, "Could not set culture");
             }
         }
 

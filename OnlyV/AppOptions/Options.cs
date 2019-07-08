@@ -60,8 +60,10 @@
 
         public bool UseAbbreviatedBookNames { get; set; }
 
+        public string Culture { get; set; }
+
         /// <summary>
-        /// Validates the data, correcting automatically as required
+        /// Validates the data, correcting automatically as required.
         /// </summary>
         public void Sanitize()
         {

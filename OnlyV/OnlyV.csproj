@@ -185,6 +185,7 @@
     <Compile Include="ViewModel\DisplayViewModel.cs" />
     <Compile Include="ViewModel\EditTextViewModel.cs" />
     <Compile Include="ViewModel\EditVerseTextViewModel.cs" />
+    <Compile Include="ViewModel\LanguageItem.cs" />
     <Compile Include="ViewModel\LoggingLevel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\MonitorItem.cs" />
@@ -250,6 +251,7 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.en-US.resx" />
     <EmbeddedResource Include="Properties\Resources.fi-FI.resx" />
+    <EmbeddedResource Include="Properties\Resources.pt-PT.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -257,6 +259,7 @@
     <AdditionalFiles Include="..\OnlyV.ruleset">
       <Link>OnlyV.ruleset</Link>
     </AdditionalFiles>
+    <EmbeddedResource Include="Properties\Resources.ro-RO.resx" />
     <EmbeddedResource Include="Properties\Resources.sv-SE.resx" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
