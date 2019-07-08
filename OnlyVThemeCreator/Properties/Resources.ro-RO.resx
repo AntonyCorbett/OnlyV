@@ -118,23 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>PERUUTA</value>
+    <value>CANCEL</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
-    <value>EI</value>
+    <value>NO</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>KYLLÄ</value>
+    <value>YES</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Taustan väri</value>
+    <value>Background colour</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Tyhjennä</value>
+    <value>Clear</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Kansion {0} luonti epäonnistui</value>
+    <value>Could not create folder {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
     <value>Optionally drop a background image here.</value>
@@ -161,11 +161,11 @@
     <value>Drop-shadow opacity</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Väri</value>
+    <value>Colour</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Läpinäkyvyys</value>
+    <value>Opacity</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
@@ -181,7 +181,7 @@
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
-    <value>TAUSTA</value>
+    <value>BACKGROUND</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
@@ -201,49 +201,49 @@
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
-    <value>Vaakalinjaus</value>
+    <value>Horizontal alignment</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
-    <value>Alamarginaali</value>
+    <value>Bottom margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_HEIGHT" xml:space="preserve">
-    <value>Korkeus</value>
+    <value>Height</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Vasen marginaali</value>
+    <value>Left margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Kuvan läpinäkyvyys</value>
+    <value>Image opacity</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
-    <value>Oikea marginaali</value>
+    <value>Right margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
-    <value>Ylämarginaali</value>
+    <value>Top margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_WIDTH" xml:space="preserve">
-    <value>Leveys</value>
+    <value>Width</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
     <value>Line spacing</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>Uusi teema</value>
+    <value>New theme</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Avaa teema</value>
+    <value>Open theme</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Avaa teema</value>
+    <value>Open Theme</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
@@ -271,14 +271,14 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Näytä</value>
+    <value>Show</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Teematiedosto</value>
+    <value>Theme file</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
-    <value>Sijainti</value>
+    <value>Position</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
@@ -293,10 +293,10 @@
     <value>Use drop-shadow</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Pystysijoittelu</value>
+    <value>Vertical alignment</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>Teemaa on muokattu. Haluatko tallentaa sen?</value>
+    <value>The theme has changed. Do you want to save?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>

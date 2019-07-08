@@ -124,10 +124,10 @@
     <value>Added {0} files</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>Ohjelmistoversio {0}</value>
+    <value>OnlyV software version: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Takaisin</value>
+    <value>Back</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
     <value>Bible epub file</value>
@@ -165,13 +165,13 @@
     <value>Could not read {0} files!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Kansion {0} luonti epäonnistui</value>
+    <value>Could not create folder {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
     <value>Default</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Kohdekansio</value>
+    <value>Destination Folder</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
     <value>Display (F5)</value>
@@ -215,46 +215,46 @@
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" on Watch Tower Bible and Tract Society of Pennsylvanian rekisteröity tavaramerkki</value>
+    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library -yhteensopivuustila</value>
+    <value>JW Library compatibility mode</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Vianetsintä</value>
+    <value>Debug</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Virhe</value>
+    <value>Error</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Kriittinen</value>
+    <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Informatiivinen</value>
+    <value>Information</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Laajennettu</value>
+    <value>Verbose</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Varoitus</value>
+    <value>Warning</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Medianäyttö</value>
+    <value>Media monitor</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Ei mitään</value>
+    <value>None</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>Päivitys saatavilla!</value>
+    <value>New update available!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Seuraava kuva</value>
+    <value>Next image</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Näytä esikatselu</value>
+    <value>Show preview page</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
     <value>No images to save!</value>
@@ -266,7 +266,7 @@
     <value>1 image generated</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Edellinen kuva</value>
+    <value>Previous image</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
@@ -297,7 +297,7 @@
     <value>Select Destination Folder</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Järjestelmänvalvoja on lukinnut asetukset!</value>
+    <value>Settings disabled by administrator!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
     <value>Settings page</value>
@@ -307,7 +307,7 @@
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>NÄYTÄ</value>
+    <value>VIEW</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
     <value>{0} images generated.</value>
@@ -317,7 +317,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Pääikkuna aina päällimmäisenä</value>
+    <value>Main window always on top</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
@@ -333,7 +333,7 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>SEKALAISET</value>
+    <value>MISCELLANEOUS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
@@ -341,7 +341,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Lokin taso</value>
+    <value>Logging level</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">

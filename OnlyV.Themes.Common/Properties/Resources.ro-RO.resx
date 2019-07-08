@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="FILE_EXISTS" xml:space="preserve">
-    <value>Tiedosto on jo olemassa!</value>
+    <value>File already exists!</value>
     <comment>Error message when trying to create a theme file</comment>
   </data>
 </root>
