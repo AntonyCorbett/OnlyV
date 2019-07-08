@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Denna redigerare används vanligen för att förkorta verser ( för att byta ut en mening med en ellips). Dina ändringar försvinner vid omstart.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bibelns epub kunde inte hittas!</value>
@@ -365,7 +365,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Används ellipser för att visa ej sammanhängande verser</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
