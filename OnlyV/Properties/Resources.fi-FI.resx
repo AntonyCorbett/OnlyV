@@ -294,7 +294,7 @@
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Valitse kohdekansio</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
     <value>Järjestelmänvalvoja on lukinnut asetukset!</value>
@@ -310,7 +310,7 @@
     <value>NÄYTÄ</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} kuvaa luotu.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Allow verse editing</value>
@@ -337,7 +337,7 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Images folder</value>
+    <value>Kuvakansio</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
@@ -361,7 +361,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Käytä taustakuvaa</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
