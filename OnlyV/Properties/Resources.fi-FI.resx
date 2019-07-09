@@ -138,7 +138,7 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>BOOK</value>
+    <value>KIRJAT</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
@@ -146,7 +146,7 @@
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Copied to clipboard</value>
+    <value>Kopioitu leikepöydälle</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
     <value>Copy image to clipboard</value>
@@ -159,16 +159,16 @@
     <value>Could not read any of the files!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Could not read file!</value>
+    <value>Tiedostoa ei voitu lukea!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Could not read {0} files!</value>
+    <value>{0} tiedostoa ei voitu lukea!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Kansion {0} luonti epäonnistui</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Default</value>
+    <value>Oletus</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
     <value>Kohdekansio</value>
@@ -196,11 +196,11 @@
     <value>Error saving images!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLES</value>
+    <value>RAAMATTUJA</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>DISPLAY</value>
+    <value>NÄYTTÖ</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
@@ -276,7 +276,7 @@
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>ASETA UUDELLEEN</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
@@ -284,13 +284,13 @@
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Saved image</value>
+    <value>Kuva tallennettu</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Saved {0} images</value>
+    <value>{0} kuvaa tallennettu</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>Tallenna kuvakansioon</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
