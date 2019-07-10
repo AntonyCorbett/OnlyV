@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TEXT_TOO_LARGE" xml:space="preserve">
-    <value>Text too large - try a smaller font size</value>
+    <value>Metin çok büyük - daha küçük bir font büyüklüğü deneyin</value>
     <comment>Warning if the text size is too large</comment>
   </data>
 </root>
