@@ -353,11 +353,11 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Noktalama işaretlerini kırp</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Tırnak işaretlerini kırp</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
@@ -373,7 +373,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Başlık ayet numaraları arasındaki boşluk</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
     <value>Devam ettiğini göstermek için üç nokta kullan</value>
