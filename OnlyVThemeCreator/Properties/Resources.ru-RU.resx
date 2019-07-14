@@ -181,19 +181,19 @@
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
-    <value>BACKGROUND</value>
+    <value>ФОН</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>BODY TEXT</value>
+    <value>ОСНОВНОЙ ТЕКСТ</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>IMAGE DIMENSIONS (pixels)</value>
+    <value>РАЗМЕРЫ ИЗОБРАЖЕНИЯ (пиксели)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TITLE TEXT</value>
+    <value>ТЕКСТ ЗАГОЛОВКА</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
@@ -201,7 +201,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
-    <value>Horizontal alignment</value>
+    <value>Горизонтальное выравнивание</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
     <value>Bottom margin</value>
@@ -293,7 +293,7 @@
     <value>Use drop-shadow</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Выравнивание по вертикали</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
     <value>The theme has changed. Do you want to save?</value>
