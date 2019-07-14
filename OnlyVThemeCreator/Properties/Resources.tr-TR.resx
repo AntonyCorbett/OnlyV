@@ -118,185 +118,185 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>ANULEAZĂ</value>
+    <value>İPTAL</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
-    <value>NU</value>
+    <value>HAYIR</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>DA</value>
+    <value>EVET</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Culoarea fundalului</value>
+    <value>Arkaplan rengi</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Elimină</value>
+    <value>Temizle</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Elimină imaginea de fundal</value>
+    <value>Arkaplan resmini sil</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Nu s-a putut crea dosarul {0}</value>
+    <value>{0} klasörü oluşturulamadı</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Trageți în mod opțional o imagine de fundal aici.</value>
+    <value>İsteğe bağlı olarak buraya bir arkaplan resmi sürükleyin.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Rază de estompare a umbrei</value>
+    <value>Gölge bulanıklığının yarıçapı</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Culoare de umbrire</value>
+    <value>Gölge rengi</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Adâncime de umbră</value>
+    <value>Gölge derinliği</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Opacitate la umbră</value>
+    <value>Gölge saydamlığı</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Culoare</value>
+    <value>Renk</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Opacitate</value>
+    <value>Saydamlık</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
-    <value>Dimensiuni font</value>
+    <value>Yazı tipi boyutu</value>
     <comment>Font size label text</comment>
   </data>
   <data name="FONT_STYLE" xml:space="preserve">
-    <value>Stil font</value>
+    <value>Yazı tipi stili</value>
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Grosimea fontului</value>
+    <value>Yazı tipi ağırlığı</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
-    <value>FUNDAL</value>
+    <value>ARKAPLAN</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>CORPUL TEXTULUI</value>
+    <value>GÖVDE METNİ</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>DIMENSIUNILE IMAGINII (pixeli)</value>
+    <value>RESİM ÖLÇÜLERİ (piksel)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TEXT TITLU</value>
+    <value>BAŞLIK METNİ</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
-    <value>NUMERE VERSETE</value>
+    <value>AYET NUMARALARI</value>
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
-    <value>Aliniere orizontală</value>
+    <value>Yatay hizalama</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
-    <value>Marginea inferioară</value>
+    <value>Alt kenar boşluğu</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_HEIGHT" xml:space="preserve">
-    <value>Înălţime</value>
+    <value>Yükseklik</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Marginea din stânga</value>
+    <value>Sol kenar boşluğu</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Opacitate imagine</value>
+    <value>Resim saydamlığı</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
-    <value>Marginea din dreapta</value>
+    <value>Sağ kenar boşluğu</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
-    <value>Marginea superioară</value>
+    <value>Üst kenar boşluğu</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_WIDTH" xml:space="preserve">
-    <value>Lățime</value>
+    <value>Genişlik</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Spațiere între linii</value>
+    <value>Satır aralığı</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>Temă nouă</value>
+    <value>Yeni tema</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Deschidere temă</value>
+    <value>Tema aç</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Deschide Tema</value>
+    <value>Tema aç</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Fișier de probă de tip epub</value>
+    <value>Örnek epub dosyası</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Exemplu de text</value>
+    <value>Örnek metin</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Salvează tema</value>
+    <value>Temayı kaydet</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
-    <value>Salvează tema ca...</value>
+    <value>Temayı farklı kaydet...</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Salvez tema?</value>
+    <value>Tema kaydedilsin mi?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Salvez tema</value>
+    <value>Temayı Kaydet</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Afișează</value>
+    <value>Göster</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Fișier temă</value>
+    <value>Tema dosyası</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
-    <value>Poziţie</value>
+    <value>Konum</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Schimbă imaginea de fundal</value>
+    <value>Arka plan resmini değiştir</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Schimbă fundalul</value>
+    <value>Arkaplanı değiştir</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Utilizați umbra</value>
+    <value>Gölge kullan</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Aliniere verticală</value>
+    <value>Dikey hizalama</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>Tema a fost modificată. Vrei să o salvezi?</value>
+    <value>Tema değişti. Kaydetmek ister misiniz?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>

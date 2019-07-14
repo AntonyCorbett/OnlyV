@@ -124,10 +124,10 @@
     <value>Added {0} files</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>Ohjelmistoversio {0}</value>
+    <value>OnlyM Softwareversion: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Takaisin</value>
+    <value>Zurück</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
     <value>Bible epub file</value>
@@ -138,18 +138,18 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>KIRJAT</value>
+    <value>BÜCHER</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>CHAPTER</value>
+    <value>KAPITEL</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Kopioitu leikepöydälle</value>
+    <value>In die Zwischenablage kopiert</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Copy image to clipboard</value>
+    <value>Bild in Zwischenablage kopieren</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
@@ -159,19 +159,19 @@
     <value>Could not read any of the files!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Tiedostoa ei voitu lukea!</value>
+    <value>Could not read file!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>{0} tiedostoa ei voitu lukea!</value>
+    <value>Could not read {0} files!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Kansion {0} luonti epäonnistui</value>
+    <value>Could not create folder {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Oletus</value>
+    <value>Default</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Kohdekansio</value>
+    <value>Destination Folder</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
     <value>Display (F5)</value>
@@ -196,11 +196,11 @@
     <value>Error saving images!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>RAAMATTUJA</value>
+    <value>BIBLES</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>NÄYTTÖ</value>
+    <value>DISPLAY</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
@@ -215,46 +215,46 @@
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" on Watch Tower Bible and Tract Society of Pennsylvanian rekisteröity tavaramerkki</value>
+    <value>"JW Library" ist ein eingetragenes Warenzeichen der Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library -yhteensopivuustila</value>
+    <value>JW Library Kompatibilitätsmodus</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Vianetsintä</value>
+    <value>Debug</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Virhe</value>
+    <value>Fehler</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Kriittinen</value>
+    <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Informatiivinen</value>
+    <value>Information</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Laajennettu</value>
+    <value>Detailliert</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Varoitus</value>
+    <value>Warnung</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Medianäyttö</value>
+    <value>Medien Monitor</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Ei mitään</value>
+    <value>Kein Monitor ausgewählt</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>Päivitys saatavilla!</value>
+    <value>Neues Update verfügbar!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Seuraava kuva</value>
+    <value>Nächstes Bild</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Näytä esikatselu</value>
+    <value>Show preview page</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
     <value>No images to save!</value>
@@ -266,7 +266,7 @@
     <value>1 image generated</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Edellinen kuva</value>
+    <value>Vorheriges Bild</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
@@ -276,7 +276,7 @@
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>ASETA UUDELLEEN</value>
+    <value>RESET</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
@@ -284,20 +284,20 @@
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Kuva tallennettu</value>
+    <value>Saved image</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>{0} kuvaa tallennettu</value>
+    <value>Saved {0} images</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Tallenna kuvakansioon</value>
+    <value>Save to images folder</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Valitse kohdekansio</value>
+    <value>Select Destination Folder</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Järjestelmänvalvoja on lukinnut asetukset!</value>
+    <value>Settings disabled by administrator!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
     <value>Settings page</value>
@@ -307,17 +307,17 @@
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>NÄYTÄ</value>
+    <value>VIEW</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} kuvaa luotu.</value>
+    <value>{0} images generated.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Allow verse editing</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Pääikkuna aina päällimmäisenä</value>
+    <value>Main window always on top</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
@@ -333,15 +333,15 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>SEKALAISET</value>
+    <value>MISCELLANEOUS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Kuvakansio</value>
+    <value>Images folder</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Lokin taso</value>
+    <value>Logging level</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
@@ -361,7 +361,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Käytä taustakuvaa</value>
+    <value>Use background image</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
@@ -382,11 +382,11 @@
     <value>Use abbreviated book names</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Bitte OnlyV nach dem Ändern der Sprache neustarten.</value>
     <comment>See Settings page</comment>
   </data>
 </root>

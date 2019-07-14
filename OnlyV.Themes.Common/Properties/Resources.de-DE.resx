@@ -117,11 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="END_BEFORE_START" xml:space="preserve">
-    <value>Sfârșitul versului este înainte de a început!</value>
-    <comment>Error when specified verses are out of order</comment>
-  </data>
-  <data name="EPUB_INCOMPATIBLE" xml:space="preserve">
-    <value>Fișierul epub nu este compatibil cu OnlyV</value>
+  <data name="FILE_EXISTS" xml:space="preserve">
+    <value>File already exists!</value>
+    <comment>Error message when trying to create a theme file</comment>
   </data>
 </root>

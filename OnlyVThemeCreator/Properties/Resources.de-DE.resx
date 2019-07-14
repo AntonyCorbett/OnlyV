@@ -118,185 +118,185 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>ANULEAZĂ</value>
+    <value>CANCEL</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
-    <value>NU</value>
+    <value>NO</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>DA</value>
+    <value>YES</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Culoarea fundalului</value>
+    <value>Background colour</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Elimină</value>
+    <value>Clear</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Elimină imaginea de fundal</value>
+    <value>Clear background image</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Nu s-a putut crea dosarul {0}</value>
+    <value>Could not create folder {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Trageți în mod opțional o imagine de fundal aici.</value>
+    <value>Optionally drop a background image here.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Rază de estompare a umbrei</value>
+    <value>Drop-shadow blur radius</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Culoare de umbrire</value>
+    <value>Drop-shadow colour</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Adâncime de umbră</value>
+    <value>Drop-shadow depth</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Opacitate la umbră</value>
+    <value>Drop-shadow opacity</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Culoare</value>
+    <value>Colour</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Opacitate</value>
+    <value>Opacity</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
-    <value>Dimensiuni font</value>
+    <value>Font size</value>
     <comment>Font size label text</comment>
   </data>
   <data name="FONT_STYLE" xml:space="preserve">
-    <value>Stil font</value>
+    <value>Font style</value>
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Grosimea fontului</value>
+    <value>Font weight</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
-    <value>FUNDAL</value>
+    <value>BACKGROUND</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>CORPUL TEXTULUI</value>
+    <value>BODY TEXT</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>DIMENSIUNILE IMAGINII (pixeli)</value>
+    <value>IMAGE DIMENSIONS (pixels)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TEXT TITLU</value>
+    <value>TITLE TEXT</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
-    <value>NUMERE VERSETE</value>
+    <value>VERSE NUMBERS</value>
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
-    <value>Aliniere orizontală</value>
+    <value>Horizontal alignment</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
-    <value>Marginea inferioară</value>
+    <value>Bottom margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_HEIGHT" xml:space="preserve">
-    <value>Înălţime</value>
+    <value>Height</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Marginea din stânga</value>
+    <value>Left margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Opacitate imagine</value>
+    <value>Image opacity</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
-    <value>Marginea din dreapta</value>
+    <value>Right margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
-    <value>Marginea superioară</value>
+    <value>Top margin</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_WIDTH" xml:space="preserve">
-    <value>Lățime</value>
+    <value>Width</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Spațiere între linii</value>
+    <value>Line spacing</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>Temă nouă</value>
+    <value>New theme</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Deschidere temă</value>
+    <value>Open theme</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Deschide Tema</value>
+    <value>Open Theme</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Fișier de probă de tip epub</value>
+    <value>Sample epub file</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Exemplu de text</value>
+    <value>Sample text</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Salvează tema</value>
+    <value>Save theme</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
-    <value>Salvează tema ca...</value>
+    <value>Save theme as...</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Salvez tema?</value>
+    <value>Save Theme?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Salvez tema</value>
+    <value>Save Theme</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Afișează</value>
+    <value>Show</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Fișier temă</value>
+    <value>Theme file</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
-    <value>Poziţie</value>
+    <value>Position</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Schimbă imaginea de fundal</value>
+    <value>Toggle background image</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Schimbă fundalul</value>
+    <value>Toogle background</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Utilizați umbra</value>
+    <value>Use drop-shadow</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Aliniere verticală</value>
+    <value>Vertical alignment</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>Tema a fost modificată. Vrei să o salvezi?</value>
+    <value>The theme has changed. Do you want to save?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>

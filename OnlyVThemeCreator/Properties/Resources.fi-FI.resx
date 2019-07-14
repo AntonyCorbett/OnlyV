@@ -189,7 +189,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>IMAGE DIMENSIONS (pixels)</value>
+    <value>Kuvan koko (pikseleinä)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
@@ -232,7 +232,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Line spacing</value>
+    <value>Riviväli</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
     <value>Uusi teema</value>
@@ -251,11 +251,11 @@
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Sample text</value>
+    <value>Malliteksti</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Save theme</value>
+    <value>Tallenna teema</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
@@ -263,11 +263,11 @@
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Save Theme?</value>
+    <value>Tallenna teema?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Save Theme</value>
+    <value>Tallenna teema</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
@@ -290,7 +290,7 @@
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Käytä varjoa</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
     <value>Pystysijoittelu</value>

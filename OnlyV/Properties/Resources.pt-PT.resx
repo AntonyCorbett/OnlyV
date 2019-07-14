@@ -381,4 +381,12 @@
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Usar nomes de livros abreviados</value>
   </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Língua</value>
+    <comment>See settings page</comment>
+  </data>
+  <data name="RESTART_LANGUAGE" xml:space="preserve">
+    <value>Por favor, reinicie o OnlyV depois de mudar a língua.</value>
+    <comment>See Settings page</comment>
+  </data>
 </root>
