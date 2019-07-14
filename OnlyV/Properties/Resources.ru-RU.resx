@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Added file</value>
+    <value>Добавлен файл</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Added {0} files</value>
+    <value>Добавлены {0} файлы</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>OnlyV software version: {0}</value>
+    <value>OnlyV версия ПО {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Back</value>
+    <value>Назад</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
     <value>Bible epub file</value>
@@ -196,7 +196,7 @@
     <value>Error saving images!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLES</value>
+    <value>БИБЛИИ</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
@@ -225,7 +225,7 @@
     <value>Debug</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Ошибка</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
     <value>Fatal</value>
@@ -276,7 +276,7 @@
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>СБРОС</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
