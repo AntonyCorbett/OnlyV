@@ -153,19 +153,19 @@
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Could not read one of the files!</value>
+    <value>Не удалось прочитать один из файлов!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
     <value>Could not read any of the files!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Could not read file!</value>
+    <value>Не удалось прочитать файл!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Could not read {0} files!</value>
+    <value>Не удалось прочитать {0} файлов!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Не удалось создать папку {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
     <value>По умолчанию</value>
@@ -193,7 +193,7 @@
     <value>Bible epub not specified!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Error saving images!</value>
+    <value>Ошибка сохранения изображений!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
     <value>БИБЛИИ</value>
@@ -204,7 +204,7 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Hide (F5)</value>
+    <value>Скрыть (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
     <value>Insert closing quotation mark</value>
@@ -215,14 +215,14 @@
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" является зарегистрированной торговой маркой Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library compatibility mode</value>
+    <value>Режим совместимости с JW Library</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Debug</value>
+    <value>Отладка</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
     <value>Ошибка</value>
@@ -231,7 +231,7 @@
     <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Information</value>
+    <value>Информация</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
     <value>Verbose</value>
@@ -250,14 +250,14 @@
     <value>New update available!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Next image</value>
+    <value>Следующее изображение</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show preview page</value>
+    <value>Показать страницу предварительного просмотра</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>No images to save!</value>
+    <value>Нет изображений для сохранения!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
