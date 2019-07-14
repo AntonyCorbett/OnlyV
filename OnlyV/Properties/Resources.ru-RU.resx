@@ -234,7 +234,7 @@
     <value>Информация</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Verbose</value>
+    <value>Детальный</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
     <value>Warning</value>
