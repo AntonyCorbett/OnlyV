@@ -135,6 +135,7 @@
     <Compile Include="Services\IDialogService.cs" />
     <Compile Include="Services\IOptionsService.cs" />
     <Compile Include="Services\OptionsService.cs" />
+    <Compile Include="ViewModel\LanguageItem.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ShouldSaveViewModel.cs" />
     <Compile Include="ViewModel\SystemFont.cs" />

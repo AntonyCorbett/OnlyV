@@ -241,6 +241,15 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Miscellaneous.
+        /// </summary>
+        public static string HEADER_MISC {
+            get {
+                return ResourceManager.GetString("HEADER_MISC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TITLE TEXT.
         /// </summary>
         public static string HEADER_TITLE_TEXT {
@@ -331,6 +340,15 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string LANGUAGE {
+            get {
+                return ResourceManager.GetString("LANGUAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Line spacing.
         /// </summary>
         public static string LINE_SPACING {
@@ -363,6 +381,15 @@ namespace OnlyVThemeCreator.Properties {
         public static string OPEN_THEME_TITLE {
             get {
                 return ResourceManager.GetString("OPEN_THEME_TITLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please restart Theme Creator after changing the language..
+        /// </summary>
+        public static string RESTART_LANGUAGE {
+            get {
+                return ResourceManager.GetString("RESTART_LANGUAGE", resourceCulture);
             }
         }
         

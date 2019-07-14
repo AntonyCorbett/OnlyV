@@ -8,6 +8,8 @@
 
         public string EpubPath { get; set; }
 
+        public string Culture { get; set; }
+
         public void Sanitize()
         {
             if (!File.Exists(EpubPath))

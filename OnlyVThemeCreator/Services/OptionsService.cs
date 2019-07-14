@@ -1,4 +1,9 @@
-﻿namespace OnlyVThemeCreator.Services
+﻿using System.Globalization;
+using System.Threading;
+using System.Windows;
+using System.Windows.Markup;
+
+namespace OnlyVThemeCreator.Services
 {
     using System;
     using System.IO;
@@ -45,7 +50,19 @@
                 }
             }
         }
-        
+
+        public string Culture
+        {
+            get => _options.Culture;
+            set
+            {
+                if (_options.Culture == null || _options.Culture != value)
+                {
+                    _options.Culture = value;
+                }
+            }
+        }
+
         public void Save()
         {
             try
@@ -114,7 +131,33 @@
                     _options = (AppOptions.Options)serializer.Deserialize(file, typeof(AppOptions.Options));
 
                     _options.Sanitize();
+
+                    SetCulture();
                 }
+            }
+        }
+
+        private void SetCulture()
+        {
+            var culture = _options.Culture;
+
+            if (string.IsNullOrEmpty(culture))
+            {
+                culture = CultureInfo.CurrentCulture.Name;
+            }
+
+            try
+            {
+                Thread.CurrentThread.CurrentCulture = new CultureInfo(culture);
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo(culture);
+                FrameworkElement.LanguageProperty.OverrideMetadata(
+                    typeof(FrameworkElement),
+                    new FrameworkPropertyMetadata(
+                        XmlLanguage.GetLanguage(CultureInfo.CurrentCulture.IetfLanguageTag)));
+            }
+            catch (Exception ex)
+            {
+                Log.Logger.Error(ex, "Could not set culture");
             }
         }
 

@@ -56,7 +56,8 @@ namespace OnlyVThemeCreator.ViewModel
         private string _defaultFileSaveFolder;
         private string _defaultFileOpenFolder;
         private string _lastSavedThemeSignature;
-        
+        private readonly LanguageItem[] _languages;
+
         public MainViewModel(
             IUserInterfaceService userInterfaceService,
             IOptionsService optionsService,
@@ -73,6 +74,7 @@ namespace OnlyVThemeCreator.ViewModel
 
             _currentTheme = new OnlyVTheme();
             _isSampleBackgroundImageUsed = true;
+            _languages = GetSupportedLanguages();
 
             BibleEpubFiles = GetBibleEpubFiles();
 
@@ -99,7 +101,22 @@ namespace OnlyVThemeCreator.ViewModel
         public SystemFont[] SystemFonts { get; }
 
         public bool IsDirty => !CreateThemeSignature().Equals(_lastSavedThemeSignature);
-        
+
+        public IEnumerable<LanguageItem> Languages => _languages;
+
+        public string LanguageId
+        {
+            get => _optionsService.Culture;
+            set
+            {
+                if (_optionsService.Culture != value)
+                {
+                    _optionsService.Culture = value;
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         public OnlyVTheme CurrentTheme
         {
             get => _currentTheme;
@@ -1426,6 +1443,47 @@ namespace OnlyVThemeCreator.ViewModel
                 SaveSignature();
                 Messenger.Default.Send(new CloseAppMessage());
             }
+        }
+
+        private LanguageItem[] GetSupportedLanguages()
+        {
+            var result = new List<LanguageItem>();
+
+            var subFolders = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory);
+
+            foreach (var folder in subFolders)
+            {
+                if (!string.IsNullOrEmpty(folder))
+                {
+                    try
+                    {
+                        var c = new CultureInfo(Path.GetFileNameWithoutExtension(folder));
+                        result.Add(new LanguageItem
+                        {
+                            LanguageId = c.Name,
+                            LanguageName = c.EnglishName
+                        });
+                    }
+                    catch (CultureNotFoundException)
+                    {
+                        // expected
+                    }
+                }
+            }
+
+            // the native language
+            {
+                var c = new CultureInfo(Path.GetFileNameWithoutExtension("en-GB"));
+                result.Add(new LanguageItem
+                {
+                    LanguageId = c.Name,
+                    LanguageName = c.EnglishName
+                });
+            }
+
+            result.Sort((x, y) => string.Compare(x.LanguageName, y.LanguageName, StringComparison.Ordinal));
+
+            return result.ToArray();
         }
     }
 }
