@@ -228,7 +228,7 @@
     <value>Ошибка</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Fatal</value>
+    <value>Фатальная</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
     <value>Информация</value>
@@ -237,7 +237,7 @@
     <value>Детальный</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Warning</value>
+    <value>Предупреждение</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
     <value>Media monitor</value>
