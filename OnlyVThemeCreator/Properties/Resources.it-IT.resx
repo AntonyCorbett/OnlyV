@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>CANCEL</value>
+    <value>ANNULLA</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
@@ -126,177 +126,177 @@
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>YES</value>
+    <value>SI</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Background colour</value>
+    <value>Colore sfondo</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Clear</value>
+    <value>Elimina</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Clear background image</value>
+    <value>Elimina immagine sfondo</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Impossibile creare la cartella {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Optionally drop a background image here.</value>
+    <value>Puoi rilasciare un'immagine qui.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Drop-shadow blur radius</value>
+    <value>Raggio sfocatura ombra a goccia</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Drop-shadow colour</value>
+    <value>Colore ombra</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Drop-shadow depth</value>
+    <value>Spessore ombra</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Drop-shadow opacity</value>
+    <value>Trasparenza ombra</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Colour</value>
+    <value>Colore</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Opacity</value>
+    <value>Trasparenza</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
-    <value>Font size</value>
+    <value>Dimensione carattere</value>
     <comment>Font size label text</comment>
   </data>
   <data name="FONT_STYLE" xml:space="preserve">
-    <value>Font style</value>
+    <value>Stile carattere</value>
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Font weight</value>
+    <value>Tipo carattere</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
-    <value>BACKGROUND</value>
+    <value>SFONDO</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>BODY TEXT</value>
+    <value>CORPO DEL TESTO</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>IMAGE DIMENSIONS (pixels)</value>
+    <value>DIMENSIONE IMMAGINE (pixel)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TITLE TEXT</value>
+    <value>TITOLO TESTO</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
-    <value>VERSE NUMBERS</value>
+    <value>NUMERI VERSETTI</value>
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
-    <value>Horizontal alignment</value>
+    <value>Allineamento orizzontale</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
-    <value>Bottom margin</value>
+    <value>Margine inferiore</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_HEIGHT" xml:space="preserve">
-    <value>Height</value>
+    <value>Altezza</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Left margin</value>
+    <value>Margine sinistro</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Image opacity</value>
+    <value>Trasparenza immagine</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
-    <value>Right margin</value>
+    <value>Margine destro</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
-    <value>Top margin</value>
+    <value>Margine superiore</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_WIDTH" xml:space="preserve">
-    <value>Width</value>
+    <value>Larghezza</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Line spacing</value>
+    <value>Interlinea</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>New theme</value>
+    <value>Nuovo tema</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Open theme</value>
+    <value>Apri tema</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Open Theme</value>
+    <value>Apri Tema</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Sample epub file</value>
+    <value>File epub di esempio</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Sample text</value>
+    <value>Testo di esempio</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Save theme</value>
+    <value>Salva tema</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
-    <value>Save theme as...</value>
+    <value>Salva tema come...</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Save Theme?</value>
+    <value>Salvare il tema?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Save Theme</value>
+    <value>Salva tema</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show</value>
+    <value>Vedi</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Theme file</value>
+    <value>File tema</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
-    <value>Position</value>
+    <value>Posizione</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Attiva/Disattiva immagine di sfondo</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toogle background</value>
+    <value>Attiva/Disattiva sfondo</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Usa ombreggiatura</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Allineamento verticale</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>Il tema è stato modificato, vuoi salvarlo?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
