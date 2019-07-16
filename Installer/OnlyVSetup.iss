@@ -69,6 +69,33 @@ Source: "bin\Release\System.Windows.Interactivity.dll"; DestDir: "{app}"; Flags:
 Source: "..\OnlyVThemeCreator\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\ReleaseThemes\*"; DestDir: "{commonappdata}\OnlyV\ThemeFiles"; Flags: ignoreversion createallsubdirs recursesubdirs
 
+; localisation
+Source: "bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
+Source: "bin\Release\en-US\*.dll"; DestDir: "{app}\en-US"; Flags: ignoreversion
+Source: "bin\Release\fi-FI\*.dll"; DestDir: "{app}\fi-FI"; Flags: ignoreversion
+Source: "bin\Release\fr-FR\*.dll"; DestDir: "{app}\fr-FR"; Flags: ignoreversion
+Source: "bin\Release\hu-HU\*.dll"; DestDir: "{app}\hu-HU"; Flags: ignoreversion
+Source: "bin\Release\it-IT\*.dll"; DestDir: "{app}\it-IT"; Flags: ignoreversion
+Source: "bin\Release\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
+Source: "bin\Release\pt-PT\*.dll"; DestDir: "{app}\pt-PT"; Flags: ignoreversion
+Source: "bin\Release\ro-RO\*.dll"; DestDir: "{app}\ro-RO"; Flags: ignoreversion
+Source: "bin\Release\ru-RU\*.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
+Source: "bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
+Source: "bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
+
+Source: "..\OnlyVThemeCreator\bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\en-US\*.dll"; DestDir: "{app}\en-US"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\fi-FI\*.dll"; DestDir: "{app}\fi-FI"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\fr-FR\*.dll"; DestDir: "{app}\fr-FR"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\hu-HU\*.dll"; DestDir: "{app}\hu-HU"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\it-IT\*.dll"; DestDir: "{app}\it-IT"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\pt-PT\*.dll"; DestDir: "{app}\pt-PT"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\ro-RO\*.dll"; DestDir: "{app}\ro-RO"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\ru-RU\*.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
+
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"
 Name: "{group}\{#ThemeCreatorAppName}"; Filename: "{app}\{#ThemeCreatorAppExeName}"
