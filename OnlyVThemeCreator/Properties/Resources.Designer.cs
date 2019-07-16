@@ -484,7 +484,7 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Toogle background.
+        ///   Looks up a localized string similar to Toggle background.
         /// </summary>
         public static string TOGGLE_IMAGE_TOOLTIP {
             get {
