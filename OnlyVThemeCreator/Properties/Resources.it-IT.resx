@@ -192,6 +192,10 @@
     <value>DIMENSIONE IMMAGINE (pixel)</value>
     <comment>Group box header</comment>
   </data>
+  <data name="HEADER_MISC" xml:space="preserve">
+    <value>Miscellaneous</value>
+    <comment>Group box header</comment>
+  </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
     <value>TITOLO TESTO</value>
     <comment>Group box header</comment>
@@ -231,6 +235,10 @@
     <value>Larghezza</value>
     <comment>See Image Dimensions section</comment>
   </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Language</value>
+    <comment>See Miscellaneous settings</comment>
+  </data>
   <data name="LINE_SPACING" xml:space="preserve">
     <value>Interlinea</value>
   </data>
@@ -245,6 +253,10 @@
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
     <value>Apri Tema</value>
     <comment>Title of dialog</comment>
+  </data>
+  <data name="RESTART_LANGUAGE" xml:space="preserve">
+    <value>Please restart Theme Creator after changing the language.</value>
+    <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
     <value>File epub di esempio</value>
