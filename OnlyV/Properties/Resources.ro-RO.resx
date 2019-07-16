@@ -389,4 +389,8 @@
     <value>Vă rugăm să reporniţi OnlyT după schimbarea limbii.</value>
     <comment>See Settings page</comment>
   </data>
+  <data name="NO_WRITE_ACCESS" xml:space="preserve">
+    <value>OnlyV cannot write to the '{0}' folder</value>
+    <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
+  </data>
 </root>
