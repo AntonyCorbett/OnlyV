@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" id="root">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace"/>
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string"/>
+              <xsd:attribute name="type" type="xsd:string"/>
+              <xsd:attribute name="mimetype" type="xsd:string"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string"/>
+              <xsd:attribute name="name" type="xsd:string"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1"/>
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3"/>
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4"/>
+              <xsd:attribute ref="xml:space"/>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1"/>
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required"/>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ADDED_FILE" xml:space="preserve">
+    <value>Добавлен файл</value>
+  </data>
+  <data name="ADDED_X_FILES" xml:space="preserve">
+    <value>Добавлены {0} файлы</value>
+  </data>
+  <data name="APP_VER" xml:space="preserve">
+    <value>OnlyV версия ПО {0}</value>
+  </data>
+  <data name="BACK" xml:space="preserve">
+    <value>Назад</value>
+  </data>
+  <data name="BIBLE_EPUB_FILE" xml:space="preserve">
+    <value>Bible epub file</value>
+    <comment>See Settings page, Bibles section</comment>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
+  <data name="Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BOOK" xml:space="preserve">
+    <value>КНИГА</value>
+    <comment>See scriptures page. Title of Bible books column</comment>
+  </data>
+  <data name="CHAPTER" xml:space="preserve">
+    <value>ГЛАВА</value>
+    <comment>See scriptures page. Title of Chapter column</comment>
+  </data>
+  <data name="COPIED" xml:space="preserve">
+    <value>Скопировано в буфер обмена</value>
+  </data>
+  <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
+    <value>Скопировать в буфер обмена</value>
+    <comment>See preview page. Tooltip for Clipboard button.</comment>
+  </data>
+  <data name="COULD_NOT_READ_1" xml:space="preserve">
+    <value>Не удалось прочитать один из файлов!</value>
+  </data>
+  <data name="COULD_NOT_READ_ANY" xml:space="preserve">
+    <value>Could not read any of the files!</value>
+  </data>
+  <data name="COULD_NOT_READ_FILE" xml:space="preserve">
+    <value>Не удалось прочитать файл!</value>
+  </data>
+  <data name="COULD_NOT_READ_X" xml:space="preserve">
+    <value>Не удалось прочитать {0} файлов!</value>
+  </data>
+  <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
+    <value>Не удалось создать папку {0}</value>
+  </data>
+  <data name="DEFAULT_THEME" xml:space="preserve">
+    <value>По умолчанию</value>
+  </data>
+  <data name="DEST_FOLDER" xml:space="preserve">
+    <value>Папка назначения</value>
+  </data>
+  <data name="DISPLAY_CMD" xml:space="preserve">
+    <value>Display (F5)</value>
+  </data>
+  <data name="DRAG_INTO_ONLYM" xml:space="preserve">
+    <value>Drag and drop into OnlyM to create a slideshow</value>
+  </data>
+  <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
+    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <comment>See Settings page, Bibles section</comment>
+  </data>
+  <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
+    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+  </data>
+  <data name="EPUB_NOT_FOUND" xml:space="preserve">
+    <value>Bible epub not found!</value>
+  </data>
+  <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
+    <value>Bible epub not specified!</value>
+  </data>
+  <data name="ERROR_SAVING" xml:space="preserve">
+    <value>Ошибка сохранения изображений!</value>
+  </data>
+  <data name="HEADER_BIBLES" xml:space="preserve">
+    <value>БИБЛИИ</value>
+    <comment>See Settings page, groupbox header</comment>
+  </data>
+  <data name="HEADER_DISPLAY" xml:space="preserve">
+    <value>DISPLAY</value>
+    <comment>See Settings page, groupbox header</comment>
+  </data>
+  <data name="HIDE_CMD" xml:space="preserve">
+    <value>Скрыть (F5)</value>
+  </data>
+  <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
+    <value>Insert closing quotation mark</value>
+    <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
+  </data>
+  <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
+    <value>Insert opening quotation mark</value>
+    <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
+  </data>
+  <data name="JWL_TRADEMARK" xml:space="preserve">
+    <value>"JW Library" является зарегистрированной торговой маркой Watch Tower Bible and Tract Society of Pennsylvania</value>
+  </data>
+  <data name="JW_COMPAT_MODE" xml:space="preserve">
+    <value>Режим совместимости с JW Library</value>
+    <comment>See Settings page, Display section</comment>
+  </data>
+  <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
+    <value>Отладка</value>
+  </data>
+  <data name="LOG_LEVEL_ERROR" xml:space="preserve">
+    <value>Ошибка</value>
+  </data>
+  <data name="LOG_LEVEL_FATAL" xml:space="preserve">
+    <value>Фатальная</value>
+  </data>
+  <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
+    <value>Информация</value>
+  </data>
+  <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
+    <value>Детальный</value>
+  </data>
+  <data name="LOG_LEVEL_WARNING" xml:space="preserve">
+    <value>Предупреждение</value>
+  </data>
+  <data name="MEDIA_MONITOR" xml:space="preserve">
+    <value>Media monitor</value>
+    <comment>See Settings page, Display section</comment>
+  </data>
+  <data name="MONITOR_NONE" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
+    <value>New update available!</value>
+  </data>
+  <data name="NEXT_IMAGE" xml:space="preserve">
+    <value>Следующее изображение</value>
+    <comment>See preview page. Tooltip for "Next Image" button.</comment>
+  </data>
+  <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
+    <value>Показать страницу предварительного просмотра</value>
+  </data>
+  <data name="NO_IMAGES" xml:space="preserve">
+    <value>Нет изображений для сохранения!</value>
+  </data>
+  <data name="OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
+    <value>1 image generated</value>
+  </data>
+  <data name="PREV_IMAGE" xml:space="preserve">
+    <value>Предыдущее изображение</value>
+    <comment>See preview page. Tooltip for "Previous Image" button.</comment>
+  </data>
+  <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
+    <value>Show scriptures page</value>
+  </data>
+  <data name="READER_NOT_INIT" xml:space="preserve">
+    <value>Bible reader not initialised!</value>
+  </data>
+  <data name="RESET" xml:space="preserve">
+    <value>СБРОС</value>
+    <comment>See verse editing page. Caption for Reset button.</comment>
+  </data>
+  <data name="RESET_VERSE_TEXT" xml:space="preserve">
+    <value>Reset the verse text</value>
+    <comment>See verse editing page. Tooltip for Reset button.</comment>
+  </data>
+  <data name="SAVED_IMAGE" xml:space="preserve">
+    <value>Сохраненное изображение</value>
+  </data>
+  <data name="SAVED_X_IMAGES" xml:space="preserve">
+    <value>Сохранено {0} изображений</value>
+  </data>
+  <data name="SAVE_TO_IMAGES" xml:space="preserve">
+    <value>Сохранить в папку изображений</value>
+    <comment>See preview page. Tooltip for Save button.</comment>
+  </data>
+  <data name="SELECT_FOLDER" xml:space="preserve">
+    <value>Выберите папку для сохранения</value>
+  </data>
+  <data name="SETTINGS_DISABLED" xml:space="preserve">
+    <value>Настройки отключены администратором!</value>
+  </data>
+  <data name="SETTINGS_PAGE" xml:space="preserve">
+    <value>Страница настроек</value>
+  </data>
+  <data name="VERSES" xml:space="preserve">
+    <value>СТИХИ</value>
+    <comment>See scriptures page. Title of Verses column</comment>
+  </data>
+  <data name="VIEW" xml:space="preserve">
+    <value>ПРОСМОТР</value>
+  </data>
+  <data name="X_IMAGES_GENERATED" xml:space="preserve">
+    <value>Создано {0} изображений.</value>
+  </data>
+  <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
+    <value>Разрешить редактирование стихов</value>
+    <comment>See Settings page, Misc section</comment>
+  </data>
+  <data name="ALWAYS_ON_TOP" xml:space="preserve">
+    <value>Main window always on top</value>
+    <comment>See Settings page, Misc section</comment>
+  </data>
+  <data name="AUTO_FIT" xml:space="preserve">
+    <value>Автоматически</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
+    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <comment>See getting started screen (when launched after first installation)</comment>
+  </data>
+  <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
+    <value>СТИЛЬ ИЗОБРАЖЕНИЯ</value>
+    <comment>See Settings page, groupbox header</comment>
+  </data>
+  <data name="HEADER_MISC" xml:space="preserve">
+    <value>MISCELLANEOUS</value>
+    <comment>See Settings page, groupbox header</comment>
+  </data>
+  <data name="IMAGES_FOLDER" xml:space="preserve">
+    <value>Папка изображений</value>
+    <comment>See Settings page, Misc section</comment>
+  </data>
+  <data name="LOGGING_LEVEL" xml:space="preserve">
+    <value>Logging level</value>
+    <comment>See Settings page, Misc section</comment>
+  </data>
+  <data name="SHOW_VERSE_NOS" xml:space="preserve">
+    <value>Показать номера стихов</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="TEXT_SCALING" xml:space="preserve">
+    <value>Масштабирование текста</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="TRIM_PUNCTUATION" xml:space="preserve">
+    <value>Обрезать знаки препинания</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="TRIM_QUOTES" xml:space="preserve">
+    <value>Обрезать кавычки</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
+    <value>Использовать фоновое изображение</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="USE_ELLIPSES" xml:space="preserve">
+    <value>Use ellipses to indicate non-contiguous verses</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="USE_TILDE" xml:space="preserve">
+    <value>Show a tilde between paragraphs in a single verse</value>
+    <comment>See Settings page, Image Style section</comment>
+  </data>
+  <data name="TITLE_VERSE_NOS" xml:space="preserve">
+    <value>Space between title verse numbers</value>
+  </data>
+  <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
+    <value>Show ellipses for continuation</value>
+  </data>
+  <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
+    <value>Использовать сокращенные названия книг</value>
+  </data>
+  <data name="LANGUAGE" xml:space="preserve">
+    <value>Язык</value>
+    <comment>See settings page</comment>
+  </data>
+  <data name="RESTART_LANGUAGE" xml:space="preserve">
+    <value>Пожалуйста, перезапустите OnlyV после изменения языка.</value>
+    <comment>See Settings page</comment>
+  </data>
+</root>
