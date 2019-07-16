@@ -171,10 +171,10 @@
     <value>Default</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Destination Folder</value>
+    <value>Zielordner</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Display (F5)</value>
+    <value>Anzeigen (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
     <value>Drag and drop into OnlyM to create a slideshow</value>
@@ -196,15 +196,15 @@
     <value>Error saving images!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLES</value>
+    <value>BIBELN</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>DISPLAY</value>
+    <value>ANZEIGE</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Hide (F5)</value>
+    <value>Verstecken (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
     <value>Insert closing quotation mark</value>
@@ -263,7 +263,7 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 Bild erzeugt</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Vorheriges Bild</value>
@@ -276,7 +276,7 @@
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>ZURÜCKSETZEN</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
@@ -303,21 +303,21 @@
     <value>Settings page</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>VERSE</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
     <value>VIEW</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} Bilder erzeugt.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Allow verse editing</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Programmfenster immer im Vordergrund</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
@@ -333,11 +333,11 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>SONSTIGES</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Images folder</value>
+    <value>Bilderordner</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
@@ -345,11 +345,11 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Versnummern anzeigen</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Text scaling</value>
+    <value>Textskalierung</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
