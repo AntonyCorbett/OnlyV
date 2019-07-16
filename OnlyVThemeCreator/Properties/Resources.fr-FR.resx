@@ -130,7 +130,7 @@
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Couleur de fond</value>
+    <value>Couleur de l'arrière-plan</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
@@ -138,14 +138,14 @@
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Supprimer l'image de fond</value>
+    <value>Supprimer l'image d'arrière-plan</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Le dossier {0} n'a pas pu être créé</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Vous pouvez déposer une image de fond ici.</value>
+    <value>Vous pouvez déposer une image d’arrière-plan ici.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
@@ -287,28 +287,28 @@
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Theme file</value>
+    <value>Fichier de thème</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
     <value>Position</value>
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Afficher l'image d’arrière-plan</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toogle background</value>
+    <value>Afficher l'image d’arrière-plan</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Afficher l'ombre</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Alignement vertical</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>Le thème a changé. Voulez-vous l'enregistrer ?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
