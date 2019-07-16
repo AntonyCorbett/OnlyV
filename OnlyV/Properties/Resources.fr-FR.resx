@@ -373,7 +373,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Espace entre les numéros de versets dans le titre</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
     <value>Inclure des points de suspension en fin de page</value>
@@ -382,11 +382,11 @@
     <value>Utiliser les noms de livres abrégés</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Langue</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Redémarrez OnlyV après avoir changé la langue.</value>
     <comment>See Settings page</comment>
   </data>
 </root>
