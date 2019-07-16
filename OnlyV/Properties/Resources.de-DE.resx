@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Added file</value>
+    <value>Datei hinzugefügt</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Added {0} files</value>
+    <value>{0} Dateien hinzugefügt</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>OnlyM Softwareversion: {0}</value>
@@ -153,19 +153,19 @@
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Could not read one of the files!</value>
+    <value>Eine der Dateien konnte nicht gelesen werden!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Could not read any of the files!</value>
+    <value>Keine der Dateien konnte gelesen werden!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Could not read file!</value>
+    <value>Datei konnte nicht gelesen werden!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Could not read {0} files!</value>
+    <value>{0} Dateien konnten nicht gelesen werden!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Ordner {0} konnte nicht erstellt werden</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
     <value>Default</value>
