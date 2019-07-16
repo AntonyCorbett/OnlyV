@@ -1,12 +1,11 @@
-﻿using System.Globalization;
-using System.Threading;
-using System.Windows;
-using System.Windows.Markup;
-
-namespace OnlyVThemeCreator.Services
+﻿namespace OnlyVThemeCreator.Services
 {
     using System;
+    using System.Globalization;
     using System.IO;
+    using System.Threading;
+    using System.Windows;
+    using System.Windows.Markup;
     using Helpers;
     using Newtonsoft.Json;
     using Serilog;

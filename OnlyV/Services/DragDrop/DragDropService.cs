@@ -88,6 +88,14 @@
 
         private void OnDragDrop(DragDropMessage message)
         {
+            var epubFolder = FileUtils.GetEpubFolder();
+            if (!FileUtils.DirectoryIsWritable(epubFolder))
+            {
+                message.DragEventArgs.Handled = true;
+                _snackbarService.EnqueueWithOk(string.Format(Properties.Resources.NO_WRITE_ACCESS, epubFolder));
+                return;
+            }
+
             var busyCursor = _userInterfaceService.GetBusy();
 
             var origEpubPath = _bibleVersesService.EpubPath;
@@ -107,8 +115,8 @@
                     {
                         if (_bibleVersesService.IsValidBibleEpub(file))
                         {
-                            Interlocked.Increment(ref validFileCount);
                             File.Copy(file, GetDestinationFileName(file), overwrite: true);
+                            Interlocked.Increment(ref validFileCount);
                         }
                     }
                     catch (Exception ex)

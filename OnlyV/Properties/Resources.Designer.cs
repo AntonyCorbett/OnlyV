@@ -548,6 +548,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to OnlyV cannot write to the &apos;{0}&apos; folder.
+        /// </summary>
+        public static string NO_WRITE_ACCESS {
+            get {
+                return ResourceManager.GetString("NO_WRITE_ACCESS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to OK.
         /// </summary>
         public static string OK {

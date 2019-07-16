@@ -47,6 +47,7 @@ namespace OnlyVThemeCreator.ViewModel
         private readonly Color _defaultBackgroundColor = Colors.Blue;
         private readonly Color _defaultTextColor = Colors.White;
         private readonly Color _defaultDropShadowColor = Colors.Black;
+        private readonly LanguageItem[] _languages;
         private int _currentSampleTextId;
         private ImageSource _imageSource;
         private OnlyVTheme _currentTheme;
@@ -56,8 +57,7 @@ namespace OnlyVThemeCreator.ViewModel
         private string _defaultFileSaveFolder;
         private string _defaultFileOpenFolder;
         private string _lastSavedThemeSignature;
-        private readonly LanguageItem[] _languages;
-
+        
         public MainViewModel(
             IUserInterfaceService userInterfaceService,
             IOptionsService optionsService,

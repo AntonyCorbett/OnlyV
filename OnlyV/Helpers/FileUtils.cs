@@ -154,5 +154,25 @@
 
             return true;
         }
+
+        public static bool DirectoryIsWritable(string dirPath)
+        {
+            try
+            {
+                using (var fs = File.Create(
+                    Path.Combine(dirPath, Path.GetRandomFileName()),
+                    1,
+                    FileOptions.DeleteOnClose))
+                {
+                    // nothing needed here
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
