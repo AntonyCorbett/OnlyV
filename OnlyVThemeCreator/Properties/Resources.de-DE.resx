@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>CANCEL</value>
+    <value>ABBRECHEN</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
-    <value>NO</value>
+    <value>NEIN</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>YES</value>
+    <value>JA</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Background colour</value>
+    <value>Hintergrundfarbe</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
@@ -155,7 +155,7 @@
     <value>Drop-shadow colour</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Drop-shadow depth</value>
+    <value>Schlagschattentiefe</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
     <value>Drop-shadow opacity</value>
@@ -220,27 +220,27 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Image opacity</value>
+    <value>Schlagschattenfarbe</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
-    <value>Right margin</value>
+    <value>Rechter Rand</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
-    <value>Top margin</value>
+    <value>Oberer Rand</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_WIDTH" xml:space="preserve">
-    <value>Width</value>
+    <value>Breite</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Sprache</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Line spacing</value>
+    <value>Zeilenabstand</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
     <value>New theme</value>
@@ -263,7 +263,7 @@
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Sample text</value>
+    <value>Beispieltext</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
@@ -294,18 +294,18 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Hintergrundbild wechseln</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toogle background</value>
+    <value>Hintergrund wechseln</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Schlagschatten verwenden</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Vertikale Ausrichtung</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
     <value>The theme has changed. Do you want to save?</value>
