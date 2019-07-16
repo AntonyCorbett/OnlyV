@@ -134,7 +134,7 @@
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Clear</value>
+    <value>Supprimer</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Le dossier {0} n'a pas pu être créé</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
     <value>Optionally drop a background image here.</value>
