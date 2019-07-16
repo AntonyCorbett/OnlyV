@@ -1451,10 +1451,15 @@ namespace OnlyVThemeCreator.ViewModel
 
             var subFolders = Directory.GetDirectories(AppDomain.CurrentDomain.BaseDirectory);
 
+            const string resourceFileName = @"OnlyVThemeCreator.resources.dll";
+
             foreach (var folder in subFolders)
             {
-                if (!string.IsNullOrEmpty(folder))
+                if (!string.IsNullOrEmpty(folder) && File.Exists(Path.Combine(folder, resourceFileName)))
                 {
+                    // ignore language folder unless it has "OnlyVThemeCreator.resources.dll"
+                    // in it. This eliminates languages that are only supported by the Avalon Docks
+                    // assembly.
                     try
                     {
                         var c = new CultureInfo(Path.GetFileNameWithoutExtension(folder));
