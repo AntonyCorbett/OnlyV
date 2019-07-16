@@ -290,14 +290,14 @@
     <value>{0} Bilder gespeichert</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>In Bilderordner speichern</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Zielordner auswählen</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>Einstellungen durch Administrator deaktiviert!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
     <value>Einstellungsseite</value>
