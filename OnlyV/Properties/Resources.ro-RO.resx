@@ -121,7 +121,7 @@
     <value>Fişier adăugat</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Am adăugat {0} fișiere</value>
+    <value>Adăugate {0} fișiere</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>Versiune software: {0}</value>
@@ -390,7 +390,7 @@
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV nu poate scrie în dosarul '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
 </root>
