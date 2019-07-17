@@ -218,14 +218,14 @@
     <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library compatibility mode</value>
+    <value>Chế độ tương thích với JW Library</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
     <value>Debug</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Lỗi</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
     <value>Fatal</value>
