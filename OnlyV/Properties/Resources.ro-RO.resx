@@ -121,7 +121,7 @@
     <value>Fişier adăugat</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Am adăugat {0} fișiere</value>
+    <value>Adăugate {0} fișiere</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>Versiune software: {0}</value>
@@ -130,7 +130,7 @@
     <value>Înapoi</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Fișier Biblia de tip epub</value>
+    <value>Biblia fișier epub</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -153,16 +153,16 @@
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Nu am putut citi niciun fișier!</value>
+    <value>Nu s-a putut citi unul dintre fișiere!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Nu am putut citi niciun fel de fișier!</value>
+    <value>Nu s-a putut citi niciun fișier!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Nu am putut citi fișierul!</value>
+    <value>Nu s-a putut citi fișierul!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Nu am putut citi {0} fișiere!</value>
+    <value>Nu s-au putut citi {0} fișiere!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Nu s-a putut crea dosarul {0}</value>
@@ -180,17 +180,17 @@
     <value>Trageți și plasați în OnlyM pentru a crea o prezentare de diapozitive</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Descărcați fișierele de tip epub a Bibliei și trageți și plasați aici.</value>
+    <value>Descărcați Biblia în format epub de pe jw.org și trageți și plasați aici.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Acest editor este de obicei folosit pentru abrevierea versetelor (de exemplu, pentru a înlocui o propoziție cu o omitere). Modificările dvs. sunt memorate până când închideți OnlyV.</value>
+    <value>Acest editor este de obicei folosit pentru abrevierea versetelor (de exemplu, pentru a înlocui o propoziție cu ". . ."). Modificările dvs. sunt memorate până când închideți OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Fișierul de tip epub al Bibliei nu e găsit!</value>
+    <value>Biblia în format epub nu a fost găsită!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Fișierul de tip epub al Bibliei nu este specificat!</value>
+    <value>Biblia în format epub nu este specificată!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
     <value>Eroare la salvarea imaginii!</value>
@@ -231,23 +231,23 @@
     <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Informație</value>
+    <value>Informare</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
     <value>Verbose</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Atenție</value>
+    <value>Avertizare</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
     <value>Monitor Media</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Nimic</value>
+    <value>Niciunul</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>O nouă actualizare este disponibilă!</value>
+    <value>Actualizare nouă disponibilă!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
     <value>Imaginea următoare</value>
@@ -257,7 +257,7 @@
     <value>Arată previzualizare</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>Nici o imagine de salvat!</value>
+    <value>Nicio imagine de salvat!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
@@ -317,7 +317,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Fereastra meniului întotdeauna deasupra</value>
+    <value>Fereastra principală întotdeauna deasupra</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
@@ -325,7 +325,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>Pentru a începe, descărcați un fișier epub al Bibliei din jw.org și trageți-l aici.</value>
+    <value>Pentru a începe, descărcați Biblia în format epub de pe jw.org și trageți-o aici.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
@@ -365,28 +365,32 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Utilizați paranteze pentru a indica versete neconsistente</value>
+    <value>Utilizați ". . ." pentru omiterea textului din versete</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Arătați o tildă între paragrafe într-un singur verset</value>
+    <value>Afișați o tildă între paragrafe unui singur verset</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Spațiu între titlurile cu numerele versetelor</value>
+    <value>Spațiu între titlul cu numerele versetelor</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Arată paranteze pentru continuare</value>
+    <value>Arată ". . ." pentru continuare</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Folosește nume de cărți abreviate</value>
+    <value>Folosește numele abreviat al cărților</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Limba</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Vă rugăm să reporniţi OnlyT după schimbarea limbii.</value>
+    <value>Vă rugăm să reporniţi OnlyV după schimbarea limbii.</value>
     <comment>See Settings page</comment>
+  </data>
+  <data name="NO_WRITE_ACCESS" xml:space="preserve">
+    <value>OnlyV nu poate scrie în dosarul '{0}'</value>
+    <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
 </root>

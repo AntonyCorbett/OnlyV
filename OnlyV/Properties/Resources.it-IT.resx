@@ -389,4 +389,8 @@
     <value>Si prega di riavviare OnlyV dopo aver cambiato la lingua.</value>
     <comment>See Settings page</comment>
   </data>
+  <data name="NO_WRITE_ACCESS" xml:space="preserve">
+    <value>OnlyV non può scrivere nella cartella '{0}'</value>
+    <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
+  </data>
 </root>
