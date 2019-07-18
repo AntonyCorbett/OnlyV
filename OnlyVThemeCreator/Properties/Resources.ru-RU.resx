@@ -193,7 +193,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>Miscellaneous</value>
+    <value>Другие настройки</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
@@ -236,7 +236,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Язык</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
@@ -305,7 +305,7 @@
     <value>Use drop-shadow</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Выравнивание по вертикали</value>
+    <value>Вертикальное выравнивание</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
     <value>Тема изменилась. Вы хотите сохранить?</value>
