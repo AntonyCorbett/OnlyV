@@ -294,15 +294,15 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Переключение фонового изображения</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toggle background</value>
+    <value>Переключение фона</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Использовать тень</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
     <value>Вертикальное выравнивание</value>
