@@ -208,7 +208,7 @@
     <value>Горизонтальное выравнивание</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
-    <value>Нижние поле</value>
+    <value>Снизу</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_HEIGHT" xml:space="preserve">
@@ -216,7 +216,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Левое поле</value>
+    <value>Слева</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
@@ -255,7 +255,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart Theme Creator after changing the language.</value>
+    <value>Пожалуйста, перезагрузите Theme Creator после изменения языка.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
