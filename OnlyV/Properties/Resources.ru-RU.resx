@@ -270,7 +270,7 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Показывать страницу Священного Писания</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Программа чтения Библии не инициализирована!</value>
