@@ -187,10 +187,10 @@
     <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Bible epub not found!</value>
+    <value>Библия ePUB не найдена!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Библия ePUB не указана!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
     <value>Ошибка сохранения изображений!</value>
@@ -244,7 +244,7 @@
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>None</value>
+    <value>Не выбран</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
     <value>New update available!</value>
@@ -263,7 +263,7 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 изображение создано</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Предыдущее изображение</value>
@@ -333,7 +333,7 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>ДРУГИЕ НАСТРОЙКИ</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
@@ -341,7 +341,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Уровень ведения журнала ошибок</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
