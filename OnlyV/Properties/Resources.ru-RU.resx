@@ -138,11 +138,11 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>КНИГА</value>
+    <value>КНИГИ</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>ГЛАВА</value>
+    <value>ГЛАВЫ</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
@@ -300,7 +300,7 @@
     <value>Настройки отключены администратором!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Страница настроек</value>
+    <value>Настройки</value>
   </data>
   <data name="VERSES" xml:space="preserve">
     <value>СТИХИ</value>
