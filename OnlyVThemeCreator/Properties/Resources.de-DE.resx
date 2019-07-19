@@ -220,7 +220,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Schlagschattenfarbe</value>
+    <value>Deckkraft des Bildes</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">

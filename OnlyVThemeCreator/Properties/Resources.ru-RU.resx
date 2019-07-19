@@ -193,7 +193,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>Miscellaneous</value>
+    <value>Другие настройки</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
@@ -208,7 +208,7 @@
     <value>Горизонтальное выравнивание</value>
   </data>
   <data name="IMAGE_BOTTOM_MARGIN" xml:space="preserve">
-    <value>Нижние поле</value>
+    <value>Снизу</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_HEIGHT" xml:space="preserve">
@@ -216,7 +216,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Левое поле</value>
+    <value>Слева</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
@@ -236,7 +236,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Язык</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
@@ -255,7 +255,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart Theme Creator after changing the language.</value>
+    <value>Пожалуйста, перезагрузите Theme Creator после изменения языка.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
@@ -294,18 +294,18 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Переключение фонового изображения</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toggle background</value>
+    <value>Переключение фона</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Использовать тень</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Выравнивание по вертикали</value>
+    <value>Вертикальное выравнивание</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
     <value>Тема изменилась. Вы хотите сохранить?</value>

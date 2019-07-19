@@ -124,7 +124,7 @@
     <value>{0} Dateien hinzugefügt</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>OnlyM Softwareversion: {0}</value>
+    <value>OnlyV Softwareversion: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
     <value>Zurück</value>
@@ -138,7 +138,7 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>BÜCHER</value>
+    <value>BUCH</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
@@ -321,7 +321,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto fit</value>
+    <value>Automatisch anpassen</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">

@@ -130,7 +130,7 @@
     <value>Назад</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Bible epub file</value>
+    <value>Файл Библии в формате ePUB</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -138,11 +138,11 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>КНИГА</value>
+    <value>КНИГИ</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>ГЛАВА</value>
+    <value>ГЛАВЫ</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
@@ -156,7 +156,7 @@
     <value>Не удалось прочитать один из файлов!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Could not read any of the files!</value>
+    <value>Не удалось прочитать ни один из файлов!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
     <value>Не удалось прочитать файл!</value>
@@ -174,23 +174,23 @@
     <value>Папка назначения</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Display (F5)</value>
+    <value>Показать (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Перетащите в OnlyM, чтобы создать слайд-шоу</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Загрузите Библию в формате ePUB на сайте jw.org и перетащите его сюда.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Этот редактор обычно используется для сокращения стихов (например, для замены предложения многоточием). Ваши изменения запоминаются, пока вы не закроете OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Bible epub not found!</value>
+    <value>Библия ePUB не найдена!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Библия ePUB не указана!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
     <value>Ошибка сохранения изображений!</value>
@@ -200,18 +200,18 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>DISPLAY</value>
+    <value>ЭКРАН</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
     <value>Скрыть (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Insert closing quotation mark</value>
+    <value>Вставить закрывающую кавычку</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Insert opening quotation mark</value>
+    <value>Вставить открывающую кавычку</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
@@ -240,14 +240,14 @@
     <value>Предупреждение</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Media monitor</value>
+    <value>Медиа-монитор</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>None</value>
+    <value>Не выбран</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>New update available!</value>
+    <value>Доступно обновление!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
     <value>Следующее изображение</value>
@@ -263,24 +263,24 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 изображение создано</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Предыдущее изображение</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Показывать страницу Священного Писания</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Программа чтения Библии не инициализирована!</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>СБРОС</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Сброс текста стиха</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
@@ -300,7 +300,7 @@
     <value>Настройки отключены администратором!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Страница настроек</value>
+    <value>Настройки</value>
   </data>
   <data name="VERSES" xml:space="preserve">
     <value>СТИХИ</value>
@@ -317,7 +317,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Поверх всех окон</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
@@ -325,7 +325,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Чтобы начать работу, загрузите Библию в формате ePUB на сайте jw.org и перетащите его сюда.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
@@ -333,7 +333,7 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>ДРУГИЕ НАСТРОЙКИ</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
@@ -341,7 +341,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Уровень ведения журнала ошибок</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
@@ -365,18 +365,18 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Используйте многоточия для обозначения несмежных стихов</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Показать тильду между параграфами в одном стихе</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Пробел между номерами стихов</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Показать многоточие для продолжения</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Использовать сокращенные названия книг</value>
@@ -390,7 +390,7 @@
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV не может записать в папку '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
 </root>
