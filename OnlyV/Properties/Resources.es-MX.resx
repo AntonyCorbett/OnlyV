@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Dodawanie pliku</value>
+    <value>Added file</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Dodano {0} pliki(ów)</value>
+    <value>Added {0} files</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>Wersja nr {0}</value>
+    <value>OnlyV software version: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Wstecz</value>
+    <value>Back</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
     <value>Bible epub file</value>
@@ -138,116 +138,116 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>KSIĘGA</value>
+    <value>BOOK</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>ROZDZIAŁ</value>
+    <value>CHAPTER</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Skopiowano do schowka</value>
+    <value>Copied to clipboard</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Obrazek skopiowano do schowka</value>
+    <value>Copy image to clipboard</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Nie można odczytać jednego z plików!</value>
+    <value>Could not read one of the files!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Nie można odczytać żadnego pliku!</value>
+    <value>Could not read any of the files!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Nie można otworzyć pliku!</value>
+    <value>Could not read file!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Nie można otworzyć {0} plików!</value>
+    <value>Could not read {0} files!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Nie można utworzyć folderu {0}</value>
+    <value>Could not create folder {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Domyślny</value>
+    <value>Default</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Folder docelowy</value>
+    <value>Destination Folder</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Wyświetl (F5)</value>
+    <value>Display (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
     <value>Drag and drop into OnlyM to create a slideshow</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Pobierz pliki epub Biblii z jw.org następnie przeciągnij i upuść tutaj.</value>
+    <value>Download Bible epub files from jw.org and drag and drop here.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Ten edytor jest zwykle używany do skracania wersetów (np. w celu zastąpienia zdania wielokropkiem). Twoje modyfikacje zostaną zapamiętane do momentu zamknięcia OnlyV.</value>
+    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Nie znaleziono pliku epub Biblii!</value>
+    <value>Bible epub not found!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
     <value>Bible epub not specified!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Wystąpił błąd podczas zapisywania obrazu!</value>
+    <value>Error saving images!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLIE</value>
+    <value>BIBLES</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>WYŚWIETLANIE</value>
+    <value>DISPLAY</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Ukryj (F5)</value>
+    <value>Hide (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Wstaw cudzysłów zamykający</value>
+    <value>Insert closing quotation mark</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Wstaw cudzysłów otwierający</value>
+    <value>Insert opening quotation mark</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" jest zastrzeżonym znakiem towarowym Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>Tryb zgodności z JW Library</value>
+    <value>JW Library compatibility mode</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Informacje diagnostyczne</value>
+    <value>Debug</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Wstąpił błąd</value>
+    <value>Error</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Wystąpił błąd krytyczny</value>
+    <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Informacje</value>
+    <value>Information</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Szczegóły</value>
+    <value>Verbose</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Uwaga</value>
+    <value>Warning</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Monitor dla multimediów</value>
+    <value>Media monitor</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Żaden</value>
+    <value>None</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>Aktualizacja jest dostępna!</value>
+    <value>New update available!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
     <value>Next image</value>
@@ -276,7 +276,7 @@
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESETUJ</value>
+    <value>RESET</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
