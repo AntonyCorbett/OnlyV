@@ -345,31 +345,31 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Mostrar número de versículo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Text scaling</value>
+    <value>Escalado de texto</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Ajustar puntuación</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Ajustar comillas</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Usar una imagen de fondo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Usa puntos suspensivos para indicar versos no contiguos</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Mostrar un tilde entre párrafos en un solo versículo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
