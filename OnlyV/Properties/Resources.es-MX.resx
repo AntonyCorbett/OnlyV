@@ -280,117 +280,117 @@
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Restablecer el texto del versículo</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Saved image</value>
+    <value>Imagen guardada</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Saved {0} images</value>
+    <value>{0} imágenes guardadas</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>Guardar en carpeta de imágenes</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Seleccionar carpeta de destino</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>¡La configuración está deshabilitada por el administrador!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Settings page</value>
+    <value>Página de configuración</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>VERSÍCULOS</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>VER</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} imágenes generadas.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Allow verse editing</value>
+    <value>Permitir edición del versículo</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Ventana principal siempre arriba</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto fit</value>
+    <value>Auto ajuste</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Para empezar, descargue la Biblia en epub desde jw.org, luego arrastre y suelte aquí.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>IMAGE STYLE</value>
+    <value>ESTILO DE IMAGEN</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>VARIOS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Images folder</value>
+    <value>Carpeta de imágenes</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Nivel de registro</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Mostrar número de versículo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Text scaling</value>
+    <value>Escalado de texto</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Ajustar puntuación</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Ajustar comillas</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Usar una imagen de fondo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Usa puntos suspensivos para indicar versos no contiguos</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Mostrar un tilde entre párrafos en un solo versículo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Espacio entre los número de versículo del título</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Mostrar puntos suspensivos para la continuación</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Usar nombres abreviados de los libros</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Idioma</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Por favor, reinicia OnlyT después de cambiar el idioma.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV no puede escribir en la carpeta '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
 </root>
