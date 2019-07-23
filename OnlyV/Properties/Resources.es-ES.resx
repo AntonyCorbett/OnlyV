@@ -373,24 +373,24 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Espacio entre los número de versículo del título</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Mostrar puntos suspensivos para la continuación</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Usar nombres abreviados de los libros</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Idioma</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Por favor, reinicia OnlyT después de cambiar el idioma.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV no puede escribir en la carpeta '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
 </root>
