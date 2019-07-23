@@ -298,17 +298,17 @@
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toggle background</value>
+    <value>Alternar fondo</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Use drop-shadow</value>
+    <value>Usar sombra</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
-    <value>Vertical alignment</value>
+    <value>Alineamiento vertical</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>El tema ha cambiado. ¿Quieres guardarlo?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
