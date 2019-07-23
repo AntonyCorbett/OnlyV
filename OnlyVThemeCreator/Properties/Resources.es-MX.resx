@@ -255,7 +255,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Por favor, reinicia OnlyT después de cambiar el idioma.</value>
+    <value>Por favor, reinicia el Creador de Temas después de cambiar el idioma.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
@@ -275,7 +275,7 @@
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Guardar tema?</value>
+    <value>¿Guardar tema?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
