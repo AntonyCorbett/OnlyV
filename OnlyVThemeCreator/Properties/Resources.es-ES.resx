@@ -294,7 +294,7 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Toggle background image</value>
+    <value>Alternar imagen de fondo</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
