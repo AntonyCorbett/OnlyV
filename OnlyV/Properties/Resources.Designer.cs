@@ -260,6 +260,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Display help.
+        /// </summary>
+        public static string DISPLAY_HELP_TOOLTIP {
+            get {
+                return ResourceManager.GetString("DISPLAY_HELP_TOOLTIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Drag and drop into OnlyM to create a slideshow.
         /// </summary>
         public static string DRAG_INTO_ONLYM {

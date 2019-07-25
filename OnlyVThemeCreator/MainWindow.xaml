@@ -287,6 +287,11 @@
                                 <Label Style="{StaticResource LabelStyle}" 
                                        Content="{x:Static resx:Resources.BACKGROUND_COLOR}"/>
                             <xctk:ColorPicker 
+                                AdvancedButtonHeader="{x:Static resx:Resources.COLOR_PICKER_ADVANCED}"
+                                StandardButtonHeader="{x:Static resx:Resources.COLOR_PICKER_STANDARD}"
+                                AvailableColorsHeader="{x:Static resx:Resources.COLOR_PICKER_AVAILABLE_COLORS}"
+                                StandardColorsHeader="{x:Static resx:Resources.COLOR_PICKER_STANDARD_COLORS}"
+                                RecentColorsHeader="{x:Static resx:Resources.COLOR_PICKER_RECENT_COLORS}"
                                 Style="{StaticResource ColorPickerStyle}"
                                 SelectedColor="{Binding BackgroundColour}"/>
 

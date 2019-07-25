@@ -115,6 +115,51 @@ namespace OnlyVThemeCreator.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Advanced.
+        /// </summary>
+        public static string COLOR_PICKER_ADVANCED {
+            get {
+                return ResourceManager.GetString("COLOR_PICKER_ADVANCED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Available Colours.
+        /// </summary>
+        public static string COLOR_PICKER_AVAILABLE_COLORS {
+            get {
+                return ResourceManager.GetString("COLOR_PICKER_AVAILABLE_COLORS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recent Colours.
+        /// </summary>
+        public static string COLOR_PICKER_RECENT_COLORS {
+            get {
+                return ResourceManager.GetString("COLOR_PICKER_RECENT_COLORS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standard.
+        /// </summary>
+        public static string COLOR_PICKER_STANDARD {
+            get {
+                return ResourceManager.GetString("COLOR_PICKER_STANDARD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Standard Colours.
+        /// </summary>
+        public static string COLOR_PICKER_STANDARD_COLORS {
+            get {
+                return ResourceManager.GetString("COLOR_PICKER_STANDARD_COLORS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Could not create folder {0}.
         /// </summary>
         public static string CREATE_FOLDER_ERROR {

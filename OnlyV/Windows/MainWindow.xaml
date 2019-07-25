@@ -2,6 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:resx="clr-namespace:OnlyV.Properties"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OnlyV"
         mc:Ignorable="d"
@@ -82,7 +83,7 @@
                 Style="{StaticResource NavigationButtonStyle}"
                 Command="{Binding LaunchHelpPageCommand}"
                 Grid.Column="1"
-                ToolTip="Display help">
+                ToolTip="{x:Static resx:Resources.DISPLAY_HELP_TOOLTIP}">
                 <materialDesign:PackIcon
                     Kind="Help"
                     Height="30"
