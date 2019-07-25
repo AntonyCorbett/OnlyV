@@ -141,6 +141,26 @@
     <value>Clear background image</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
+  <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
+    <value>Advanced</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
+    <value>Available Colours</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
+    <value>Recent Colours</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
+    <value>Standard</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
+    <value>Standard Colours</value>
+    <comment>Header in color picker</comment>
+  </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Kansion {0} luonti epäonnistui</value>
   </data>
