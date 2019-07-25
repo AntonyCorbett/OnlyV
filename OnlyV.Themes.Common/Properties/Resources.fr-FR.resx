@@ -122,7 +122,7 @@
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Haut</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
@@ -130,7 +130,7 @@
     <comment>Error message when trying to create a theme file</comment>
   </data>
   <data name="FONT_STYLE_ITALIC" xml:space="preserve">
-    <value>Italic</value>
+    <value>Italique</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_NORMAL" xml:space="preserve">
@@ -142,15 +142,15 @@
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
-    <value>Bold</value>
+    <value>Gras</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
-    <value>Light</value>
+    <value>Fin</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normale</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
