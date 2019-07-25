@@ -189,7 +189,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>Bildstorlek (pixlar)</value>
+    <value>BILDSTORLEK (pixlar)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
