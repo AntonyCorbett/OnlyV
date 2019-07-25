@@ -46,6 +46,11 @@
         </Style>
 
         <Style x:Key="ColorPickerStyle" TargetType="{x:Type xctk:ColorPicker}">
+            <Setter Property="AdvancedButtonHeader" Value="{x:Static resx:Resources.COLOR_PICKER_ADVANCED}" />
+            <Setter Property="StandardButtonHeader" Value="{x:Static resx:Resources.COLOR_PICKER_STANDARD}"/>
+            <Setter Property="AvailableColorsHeader" Value="{x:Static resx:Resources.COLOR_PICKER_AVAILABLE_COLORS}"/>
+            <Setter Property="StandardColorsHeader" Value="{x:Static resx:Resources.COLOR_PICKER_STANDARD_COLORS}"/>
+            <Setter Property="RecentColorsHeader" Value="{x:Static resx:Resources.COLOR_PICKER_RECENT_COLORS}"/>
             <Setter Property="Width" Value="240"/>
             <Setter Property="Margin" Value="0,5,0,10"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
@@ -287,11 +292,6 @@
                                 <Label Style="{StaticResource LabelStyle}" 
                                        Content="{x:Static resx:Resources.BACKGROUND_COLOR}"/>
                             <xctk:ColorPicker 
-                                AdvancedButtonHeader="{x:Static resx:Resources.COLOR_PICKER_ADVANCED}"
-                                StandardButtonHeader="{x:Static resx:Resources.COLOR_PICKER_STANDARD}"
-                                AvailableColorsHeader="{x:Static resx:Resources.COLOR_PICKER_AVAILABLE_COLORS}"
-                                StandardColorsHeader="{x:Static resx:Resources.COLOR_PICKER_STANDARD_COLORS}"
-                                RecentColorsHeader="{x:Static resx:Resources.COLOR_PICKER_RECENT_COLORS}"
                                 Style="{StaticResource ColorPickerStyle}"
                                 SelectedColor="{Binding BackgroundColour}"/>
 
