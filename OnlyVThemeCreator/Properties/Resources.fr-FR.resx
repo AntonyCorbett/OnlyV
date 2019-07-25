@@ -240,7 +240,7 @@
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Espacement de lignes</value>
+    <value>Interligne</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
     <value>Créer un nouveau thème</value>
@@ -302,7 +302,7 @@
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Afficher l'ombre</value>
+    <value>Afficher une ombre</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
     <value>Alignement vertical</value>
