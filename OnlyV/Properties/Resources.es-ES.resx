@@ -180,11 +180,11 @@
     <value>Arrastra y suelta en OnlyM para crear una presentación</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Descargue la Biblia en epub desde jw.org, arrastre y suelte aquí.</value>
+    <value>Descarga la Biblia en epub desde jw.org, arrastra y suelta aquí.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Este editor se usa normalmente para abreviar versículo (por ejemplo, para reemplazar una oración con puntos suspensivos). Sus modificaciones son recordadas hasta que cierre OnlyV.</value>
+    <value>Este editor se usa normalmente para abreviar versículos (por ejemplo, para reemplazar una oración con puntos suspensivos). Sus modificaciones son recordadas hasta que cierre OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Biblia en epub no encontrada!</value>
