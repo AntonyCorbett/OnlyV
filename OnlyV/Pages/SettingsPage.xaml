@@ -40,7 +40,7 @@
 
         <Style x:Key="SettingsCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MaterialDesignCheckBox}">
             <Setter Property="Margin" Value="0,5,0,5"/>
-            <Setter Property="Width" Value="420" />
+            <Setter Property="Width" Value="420"/>
             <Setter Property="HorizontalAlignment" Value="Left"/>
         </Style>
 
@@ -122,8 +122,9 @@
                               SelectedValue="{Binding MonitorId, Mode=TwoWay}"/>
 
                     <CheckBox IsChecked="{Binding JwLibraryCompatibilityMode, Mode=TwoWay}"
-                              Content="{x:Static resx:Resources.JW_COMPAT_MODE}"
-                              Style="{StaticResource SettingsCheckBoxStyle}"/>
+                              Style="{StaticResource SettingsCheckBoxStyle}">
+                        <TextBlock Text="{x:Static resx:Resources.JW_COMPAT_MODE}" TextWrapping="Wrap" />
+                    </CheckBox>
 
                     <TextBlock FontSize="12" 
                                Width="420"
@@ -167,12 +168,14 @@
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
                 <CheckBox IsChecked="{Binding ShowVerseBreaks, Mode=TwoWay}"
-                          Content="{x:Static resx:Resources.USE_ELLIPSES}"
-                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+                          Style="{StaticResource SettingsCheckBoxStyle}">
+                            <TextBlock Text="{x:Static resx:Resources.USE_ELLIPSES}" TextWrapping="Wrap" />
+                </CheckBox>
 
                 <CheckBox IsChecked="{Binding UseTildeMarker, Mode=TwoWay}"
-                          Content="{x:Static resx:Resources.USE_TILDE}"
-                          Style="{StaticResource SettingsCheckBoxStyle}"/>
+                          Style="{StaticResource SettingsCheckBoxStyle}">
+                        <TextBlock Text="{x:Static resx:Resources.USE_TILDE}" TextWrapping="Wrap" />
+                </CheckBox>
 
                 <CheckBox IsChecked="{Binding TrimPunctuation, Mode=TwoWay}"
                           Content="{x:Static resx:Resources.TRIM_PUNCTUATION}"
@@ -187,9 +190,10 @@
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
             
                 <CheckBox IsChecked="{Binding SpaceBetweenTitleVerseNumbers, Mode=TwoWay}"
-                          Content="{x:Static resx:Resources.TITLE_VERSE_NOS}"
-                          Style="{StaticResource SettingsCheckBoxStyle}"/>
-                
+                          Style="{StaticResource SettingsCheckBoxStyle}">
+                        <TextBlock Text="{x:Static resx:Resources.TITLE_VERSE_NOS}" TextWrapping="Wrap" />
+                </CheckBox>
+
                 <CheckBox IsChecked="{Binding ShowEllipsesForContinuation, Mode=TwoWay}"
                           Content="{x:Static resx:Resources.ELLIPSIS_CONTINUATION}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
