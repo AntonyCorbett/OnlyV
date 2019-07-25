@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BODY_VERTICAL_ALIGNMENT_MIDDLE" xml:space="preserve">
-    <value>Middle</value>
+    <value>Milieu</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
@@ -150,27 +150,27 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
-    <value>Normale</value>
+    <value>Normal</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
-    <value>Semi-bold</value>
+    <value>Semi-gras</value>
     <comment>A font weight</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_CENTRE" xml:space="preserve">
-    <value>Centre</value>
+    <value>Centré</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_LEFT" xml:space="preserve">
-    <value>Left</value>
+    <value>Gauche</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_RIGHT" xml:space="preserve">
-    <value>Right</value>
+    <value>Droite</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="LINE_SPACING_LARGE" xml:space="preserve">
-    <value>Large</value>
+    <value>Grand</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_NORMAL" xml:space="preserve">
@@ -178,23 +178,23 @@
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_SMALL" xml:space="preserve">
-    <value>Small</value>
+    <value>Petit</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_LARGE" xml:space="preserve">
-    <value>Very large</value>
+    <value>Très grand</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_SMALL" xml:space="preserve">
-    <value>Very small</value>
+    <value>Très petit</value>
     <comment>Line spacing</comment>
   </data>
   <data name="TITLE_POS_BOTTOM" xml:space="preserve">
-    <value>Bottom</value>
+    <value>En bas</value>
     <comment>Title position</comment>
   </data>
   <data name="TITLE_POS_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>En haut</value>
     <comment>Title position</comment>
   </data>
 </root>
