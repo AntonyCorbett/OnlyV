@@ -122,6 +122,6 @@
     <comment>Error when specified verses are out of order</comment>
   </data>
   <data name="EPUB_INCOMPATIBLE" xml:space="preserve">
-    <value>The epub is not compatible with OnlyV</value>
+    <value>Ten plik epub nie jest kompatybilny z OnlyV</value>
   </data>
 </root>
