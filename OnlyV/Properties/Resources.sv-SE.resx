@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Denna redigerare används vanligen för att förkorta verser ( för att byta ut en mening med en ellips). Dina ändringar försvinner vid omstart.</value>
+    <value>Denna redigerare används vanligen för att förkorta verser ( för att byta ut en mening med tre punkter). Dina ändringar försvinner vid omstart.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bibelns epub kunde inte hittas!</value>
@@ -365,7 +365,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Används ellipser för att visa ej sammanhängande verser</value>
+    <value>Används tre punkter för att visa ej sammanhängande verser</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
@@ -376,7 +376,7 @@
     <value>Mellanslag mellan versnummer i titeln</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Visa ellipser vid fortsättning</value>
+    <value>Visa tre punkter vid fortsättning</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Använd förkortningar för böcker</value>
