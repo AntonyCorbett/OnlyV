@@ -158,7 +158,7 @@
     <comment>A font weight</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_CENTRE" xml:space="preserve">
-    <value>Centre</value>
+    <value>Center</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_LEFT" xml:space="preserve">
