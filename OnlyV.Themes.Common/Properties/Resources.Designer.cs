@@ -61,11 +61,182 @@ namespace OnlyV.Themes.Common.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Middle.
+        /// </summary>
+        internal static string BODY_VERTICAL_ALIGNMENT_MIDDLE {
+            get {
+                return ResourceManager.GetString("BODY_VERTICAL_ALIGNMENT_MIDDLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        internal static string BODY_VERTICAL_ALIGNMENT_TOP {
+            get {
+                return ResourceManager.GetString("BODY_VERTICAL_ALIGNMENT_TOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to File already exists!.
         /// </summary>
         internal static string FILE_EXISTS {
             get {
                 return ResourceManager.GetString("FILE_EXISTS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Italic.
+        /// </summary>
+        internal static string FONT_STYLE_ITALIC {
+            get {
+                return ResourceManager.GetString("FONT_STYLE_ITALIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        internal static string FONT_STYLE_NORMAL {
+            get {
+                return ResourceManager.GetString("FONT_STYLE_NORMAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Oblique.
+        /// </summary>
+        internal static string FONT_STYLE_OBLIQUE {
+            get {
+                return ResourceManager.GetString("FONT_STYLE_OBLIQUE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bold.
+        /// </summary>
+        internal static string FONT_WEIGHT_BOLD {
+            get {
+                return ResourceManager.GetString("FONT_WEIGHT_BOLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Light.
+        /// </summary>
+        internal static string FONT_WEIGHT_LIGHT {
+            get {
+                return ResourceManager.GetString("FONT_WEIGHT_LIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        internal static string FONT_WEIGHT_NORMAL {
+            get {
+                return ResourceManager.GetString("FONT_WEIGHT_NORMAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Semi-bold.
+        /// </summary>
+        internal static string FONT_WEIGHT_SEMIBOLD {
+            get {
+                return ResourceManager.GetString("FONT_WEIGHT_SEMIBOLD", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Centre.
+        /// </summary>
+        internal static string HORZ_TEXT_ALIGNMENT_CENTRE {
+            get {
+                return ResourceManager.GetString("HORZ_TEXT_ALIGNMENT_CENTRE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Left.
+        /// </summary>
+        internal static string HORZ_TEXT_ALIGNMENT_LEFT {
+            get {
+                return ResourceManager.GetString("HORZ_TEXT_ALIGNMENT_LEFT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Right.
+        /// </summary>
+        internal static string HORZ_TEXT_ALIGNMENT_RIGHT {
+            get {
+                return ResourceManager.GetString("HORZ_TEXT_ALIGNMENT_RIGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Large.
+        /// </summary>
+        internal static string LINE_SPACING_LARGE {
+            get {
+                return ResourceManager.GetString("LINE_SPACING_LARGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        internal static string LINE_SPACING_NORMAL {
+            get {
+                return ResourceManager.GetString("LINE_SPACING_NORMAL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Small.
+        /// </summary>
+        internal static string LINE_SPACING_SMALL {
+            get {
+                return ResourceManager.GetString("LINE_SPACING_SMALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very large.
+        /// </summary>
+        internal static string LINE_SPACING_VERY_LARGE {
+            get {
+                return ResourceManager.GetString("LINE_SPACING_VERY_LARGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Very small.
+        /// </summary>
+        internal static string LINE_SPACING_VERY_SMALL {
+            get {
+                return ResourceManager.GetString("LINE_SPACING_VERY_SMALL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Bottom.
+        /// </summary>
+        internal static string TITLE_POS_BOTTOM {
+            get {
+                return ResourceManager.GetString("TITLE_POS_BOTTOM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Top.
+        /// </summary>
+        internal static string TITLE_POS_TOP {
+            get {
+                return ResourceManager.GetString("TITLE_POS_TOP", resourceCulture);
             }
         }
     }

@@ -12,6 +12,7 @@
         xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
         xmlns:resx="clr-namespace:OnlyVThemeCreator.Properties"
         xmlns:behaviours="clr-namespace:OnlyVThemeCreator.Behaviours"
+        xmlns:converters="clr-namespace:OnlyV.Themes.Common.Converters;assembly=OnlyV.Themes.Common"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Medium"
         TextElement.FontSize="14"
@@ -31,6 +32,13 @@
         Icon="icon2.ico" 
         Closing="OnWindowClosing">
     <Window.Resources>
+
+        <converters:OnlyVFontStyleConverter x:Key="OnlyVFontStyleConverter" />
+        <converters:OnlyVFontWeightConverter x:Key="OnlyVFontWeightConverter" />
+        <converters:OnlyVBodyVerticalAlignmentConverter x:Key="OnlyVBodyVerticalAlignmentConverter" />
+        <converters:OnlyVHorizontalTextAlignmentConverter x:Key="OnlyVHorizontalTextAlignmentConverter" />
+        <converters:OnlyVLineSpacingConverter x:Key="OnlyVLineSpacingConverter" />
+        <converters:OnlyVTitlePositionConverter x:Key="OnlyVTitlePositionConverter" />
 
         <Style x:Key="MiscNotesStyle" TargetType="{x:Type TextBlock}">
             <Setter Property="Foreground" Value="{StaticResource PrimaryHueDarkBrush}" />
@@ -318,12 +326,24 @@
                             <ComboBox ItemsSource="{Binding FontStyles}"
                                       SelectedValue="{Binding BodyTextFontStyle}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_STYLE}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVFontStyleConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                             <ComboBox ItemsSource="{Binding FontWeights}"
                                       SelectedValue="{Binding BodyTextFontWeight}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVFontWeightConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                             <Label Style="{StaticResource LabelStyle}" 
                                        Content="{x:Static resx:Resources.FONT_COLOR}" />
@@ -343,17 +363,40 @@
                             <ComboBox ItemsSource="{Binding HorizontalAlignments}"
                                       SelectedValue="{Binding BodyTextHorizontalAlignment}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.HORZ_ALIGNMENT}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}">
+
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource OnlyVHorizontalTextAlignmentConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+
+                            </ComboBox>
 
                             <ComboBox ItemsSource="{Binding VerticalAlignments}"
-                                      SelectedValue="{Binding BodyVerticalAlignment}"
-                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.VERT_ALIGNMENT}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                  SelectedValue="{Binding BodyVerticalAlignment}"
+                                  materialDesign:HintAssist.Hint="{x:Static resx:Resources.VERT_ALIGNMENT}"
+                                  Style="{StaticResource FloatingHintComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVBodyVerticalAlignmentConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+
+                            </ComboBox>
 
                             <ComboBox ItemsSource="{Binding LineSpacings}"
-                                      SelectedValue="{Binding LineSpacing}"
-                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.LINE_SPACING}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                  SelectedValue="{Binding LineSpacing}"
+                                  materialDesign:HintAssist.Hint="{x:Static resx:Resources.LINE_SPACING}"
+                                  Style="{StaticResource FloatingHintComboBoxStyle}">
+
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVLineSpacingConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+
+                            </ComboBox>
 
                             <CheckBox Style="{StaticResource CheckBoxStyle}" 
                                       IsChecked="{Binding BodyTextDropShadow}"
@@ -427,12 +470,24 @@
                             <ComboBox ItemsSource="{Binding FontStyles}"
                                       SelectedValue="{Binding TitleTextFontStyle}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_STYLE}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}" >
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVFontStyleConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                             <ComboBox ItemsSource="{Binding FontWeights}"
                                       SelectedValue="{Binding TitleTextFontWeight}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVFontWeightConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                                 <Label Style="{StaticResource LabelStyle}" Content="{x:Static resx:Resources.FONT_COLOR}"/>
                             <xctk:ColorPicker 
@@ -448,17 +503,33 @@
                                     TickPlacement="BottomRight"
                                     TickFrequency="0.1" />
 
-                            <ComboBox ItemsSource="{Binding HorizontalAlignments}"
+                                <ComboBox ItemsSource="{Binding HorizontalAlignments}"
                                       SelectedValue="{Binding TitleTextHorizontalAlignment}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.HORZ_ALIGNMENT}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}">
 
-                            <ComboBox ItemsSource="{Binding TitlePositions}"
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource OnlyVHorizontalTextAlignmentConverter}}" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+
+                                </ComboBox>
+
+                                <ComboBox ItemsSource="{Binding TitlePositions}"
                                       SelectedValue="{Binding TitlePosition}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.TITLE_POSITION}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}" >
 
-                            <CheckBox Style="{StaticResource CheckBoxStyle}" 
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource OnlyVTitlePositionConverter}}" />
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+
+                                </ComboBox>
+
+                                <CheckBox Style="{StaticResource CheckBoxStyle}" 
                                       IsChecked="{Binding TitleTextDropShadow}"
                                       Content="{x:Static resx:Resources.USE_DROP_SHADOW}"/>
 
@@ -509,15 +580,27 @@
                             <ComboBox ItemsSource="{Binding FontStyles}"
                                       SelectedValue="{Binding VerseFontStyle}"
                                       materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_STYLE}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                      Style="{StaticResource FloatingHintComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVFontStyleConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
                             <ComboBox ItemsSource="{Binding FontWeights}"
-                                      SelectedValue="{Binding VerseFontWeight}"
-                                      materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
-                                      Style="{StaticResource FloatingHintComboBoxStyle}" />
+                                  SelectedValue="{Binding VerseFontWeight}"
+                                  materialDesign:HintAssist.Hint="{x:Static resx:Resources.FONT_WEIGHT}"
+                                  Style="{StaticResource FloatingHintComboBoxStyle}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Converter={StaticResource OnlyVFontWeightConverter}}" />
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
 
-                                <Label Style="{StaticResource LabelStyle}" 
-                                       Content="{x:Static resx:Resources.FONT_COLOR}"/>
+                            <Label Style="{StaticResource LabelStyle}" 
+                                   Content="{x:Static resx:Resources.FONT_COLOR}"/>
                             <xctk:ColorPicker 
                                 SelectedColor="{Binding VerseColour}"
                                 Style="{StaticResource ColorPickerStyle}" />

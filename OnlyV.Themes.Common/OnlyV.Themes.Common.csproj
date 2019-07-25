@@ -81,6 +81,12 @@
     </Compile>
     <Compile Include="Cache\ThemeCache.cs" />
     <Compile Include="Cache\ThemeCacheEntry.cs" />
+    <Compile Include="Converters\OnlyVBodyVerticalAlignmentConverter.cs" />
+    <Compile Include="Converters\OnlyVFontStyleConverter.cs" />
+    <Compile Include="Converters\OnlyVFontWeightConverter.cs" />
+    <Compile Include="Converters\OnlyVHorizontalTextAlignmentConverter.cs" />
+    <Compile Include="Converters\OnlyVLineSpacingConverter.cs" />
+    <Compile Include="Converters\OnlyVTitlePositionConverter.cs" />
     <Compile Include="Extensions\EnumExtensions.cs" />
     <Compile Include="FileHandling\ThemeFile.cs" />
     <Compile Include="FileHandling\ThemeFileItem.cs" />
