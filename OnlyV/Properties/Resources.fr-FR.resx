@@ -146,7 +146,7 @@
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Copié dans le presse-papiers</value>
+    <value>Copiée dans le presse-papiers</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
     <value>Copier l'image dans le presse-papiers</value>
@@ -394,7 +394,7 @@
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Afficher l'aide</value>
     <comment>Tooltip on Help button</comment>
   </data>
 </root>
