@@ -141,7 +141,7 @@
                 <Border.Effect>
                     <DropShadowEffect Opacity="0.4" BlurRadius="10"/>
                 </Border.Effect>
-                <Grid>
+                <Grid Background="Black">
                     <Image x:Name="PreviewImage" 
                        MouseMove="ImageMouseMove"
                        RenderOptions.BitmapScalingMode="HighQuality"
