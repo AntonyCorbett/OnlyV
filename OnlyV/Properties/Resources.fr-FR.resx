@@ -263,7 +263,7 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image générée</value>
+    <value>1 image créée</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Image précédente</value>
@@ -310,7 +310,7 @@
     <value>VOIR</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images générées.</value>
+    <value>{0} images créées.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Autoriser la modification des versets</value>
