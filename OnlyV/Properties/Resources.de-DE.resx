@@ -307,7 +307,7 @@
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>ANZEIGEN</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
     <value>{0} Bilder erzeugt.</value>
@@ -341,7 +341,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Logging-Level</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
