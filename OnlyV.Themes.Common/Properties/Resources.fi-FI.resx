@@ -122,7 +122,7 @@
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Ylhäällä</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
@@ -130,11 +130,11 @@
     <comment>Error message when trying to create a theme file</comment>
   </data>
   <data name="FONT_STYLE_ITALIC" xml:space="preserve">
-    <value>Italic</value>
+    <value>Kursivoitu</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normaali</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
@@ -142,7 +142,7 @@
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
-    <value>Bold</value>
+    <value>Lihavoitu</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normaali</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
@@ -178,23 +178,23 @@
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_SMALL" xml:space="preserve">
-    <value>Small</value>
+    <value>Pieni</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_LARGE" xml:space="preserve">
-    <value>Very large</value>
+    <value>Erittäin suuri</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_SMALL" xml:space="preserve">
-    <value>Very small</value>
+    <value>Erittäin pieni</value>
     <comment>Line spacing</comment>
   </data>
   <data name="TITLE_POS_BOTTOM" xml:space="preserve">
-    <value>Bottom</value>
+    <value>Alhaalla</value>
     <comment>Title position</comment>
   </data>
   <data name="TITLE_POS_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Ylhäällä</value>
     <comment>Title position</comment>
   </data>
 </root>
