@@ -141,6 +141,26 @@
     <value>Quitar el fondo de pantalla</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
+  <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
+    <value>Advanced</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
+    <value>Available Colours</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
+    <value>Recent Colours</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
+    <value>Standard</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
+    <value>Standard Colours</value>
+    <comment>Header in color picker</comment>
+  </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>No se pudo crear la carpeta {0}</value>
   </data>
@@ -177,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Grueso de la fuente</value>
+    <value>Grosor de la fuente</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">

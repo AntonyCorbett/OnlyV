@@ -138,7 +138,7 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>BUCH</value>
+    <value>BÜCHER</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
@@ -307,7 +307,7 @@
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>ANZEIGEN</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
     <value>{0} Bilder erzeugt.</value>
@@ -341,7 +341,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Logging-Level</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
@@ -392,5 +392,9 @@
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
     <value>OnlyV cannot write to the '{0}' folder</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
+  </data>
+  <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
+    <value>Display help</value>
+    <comment>Tooltip on Help button</comment>
   </data>
 </root>

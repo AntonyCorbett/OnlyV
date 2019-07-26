@@ -146,7 +146,7 @@
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Copié dans le presse-papiers</value>
+    <value>Copiée dans le presse-papiers</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
     <value>Copier l'image dans le presse-papiers</value>
@@ -263,7 +263,7 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image générée</value>
+    <value>1 image créée</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Image précédente</value>
@@ -310,7 +310,7 @@
     <value>VOIR</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images générées.</value>
+    <value>{0} images créées.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Autoriser la modification des versets</value>
@@ -361,7 +361,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Utiliser une image de fond</value>
+    <value>Utiliser une image d'arrière-plan</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
@@ -392,5 +392,9 @@
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
     <value>OnlyV ne peut pas écrire dans le dossier '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
+  </data>
+  <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
+    <value>Afficher l'aide</value>
+    <comment>Tooltip on Help button</comment>
   </data>
 </root>
