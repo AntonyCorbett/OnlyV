@@ -138,11 +138,11 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>Carte</value>
+    <value>CARTE</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>Capitol</value>
+    <value>CAPITOL</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
@@ -369,7 +369,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Afișați o tildă între paragrafe unui singur verset</value>
+    <value>Afișați o tildă între paragrafele unui singur verset</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
@@ -392,5 +392,9 @@
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
     <value>OnlyV nu poate scrie în dosarul '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
+  </data>
+  <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
+    <value>Afişare ajutor</value>
+    <comment>Tooltip on Help button</comment>
   </data>
 </root>

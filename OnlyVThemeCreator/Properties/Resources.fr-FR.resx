@@ -141,6 +141,26 @@
     <value>Supprimer l'image d'arrière-plan</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
+  <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
+    <value>Avancé</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
+    <value>Couleurs disponibles</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
+    <value>Couleurs récentes</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
+    <value>Standard</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
+    <value>Couleurs standard</value>
+    <comment>Header in color picker</comment>
+  </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Le dossier {0} n'a pas pu être créé</value>
   </data>
@@ -240,7 +260,7 @@
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Espacement de lignes</value>
+    <value>Interligne</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
     <value>Créer un nouveau thème</value>
@@ -302,7 +322,7 @@
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
-    <value>Afficher l'ombre</value>
+    <value>Afficher une ombre</value>
   </data>
   <data name="VERT_ALIGNMENT" xml:space="preserve">
     <value>Alignement vertical</value>

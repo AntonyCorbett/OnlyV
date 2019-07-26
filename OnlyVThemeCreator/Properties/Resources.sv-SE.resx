@@ -141,6 +141,26 @@
     <value>Rensa bakgrundsbild</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
+  <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
+    <value>Avancerat</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
+    <value>Tillgängliga färger</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
+    <value>Nyligen använda</value>
+    <comment>Header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
+    <value>Standard</value>
+    <comment>Tab header in color picker</comment>
+  </data>
+  <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
+    <value>Standardfärger</value>
+    <comment>Header in color picker</comment>
+  </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Kunde inte skapa mapp {0}</value>
   </data>
