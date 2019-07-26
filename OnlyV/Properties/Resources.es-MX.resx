@@ -394,7 +394,11 @@
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Mostrar ayuda</value>
     <comment>Tooltip on Help button</comment>
+  </data>
+  <data name="THEME" xml:space="preserve">
+    <value>Theme</value>
+    <comment>See Settings, Image Style section</comment>
   </data>
 </root>

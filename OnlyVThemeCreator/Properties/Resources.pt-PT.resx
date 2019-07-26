@@ -142,23 +142,23 @@
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Avançado</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
-    <value>Available Colours</value>
+    <value>Cores disponíveis</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
-    <value>Recent Colours</value>
+    <value>Cores Recentes</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
-    <value>Standard</value>
+    <value>Padrão</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
-    <value>Standard Colours</value>
+    <value>Cores Padrão</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">

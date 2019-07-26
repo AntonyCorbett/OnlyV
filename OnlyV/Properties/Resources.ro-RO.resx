@@ -397,4 +397,8 @@
     <value>Afişare ajutor</value>
     <comment>Tooltip on Help button</comment>
   </data>
+  <data name="THEME" xml:space="preserve">
+    <value>Theme</value>
+    <comment>See Settings, Image Style section</comment>
+  </data>
 </root>
