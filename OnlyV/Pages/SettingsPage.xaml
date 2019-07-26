@@ -142,7 +142,7 @@
                 <ComboBox ItemsSource="{Binding ThemeFiles}"
                           Style="{StaticResource SettingsComboBoxStyle}" 
                           materialDesign:HintAssist.IsFloating="True"
-                          materialDesign:HintAssist.Hint="Theme"
+                          materialDesign:HintAssist.Hint="{x:Static resx:Resources.THEME}"
                           SelectedValuePath="Path" 
                           DisplayMemberPath="Name"
                           materialDesign:ComboBoxAssist.ClassicMode="true"

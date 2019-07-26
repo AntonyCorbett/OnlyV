@@ -710,6 +710,15 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Theme.
+        /// </summary>
+        public static string THEME {
+            get {
+                return ResourceManager.GetString("THEME", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Space between title verse numbers.
         /// </summary>
         public static string TITLE_VERSE_NOS {
