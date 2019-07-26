@@ -72,11 +72,19 @@
             int bookNumber, 
             string chapterAndVerses, 
             bool spaceBetweenVerseNumbers,
-            bool useAbbreviatedBookNames)
+            bool useAbbreviatedBookName)
         {
-            string bookName = GetBookNameForImage(bookNumber, useAbbreviatedBookNames);
+            var book = ExtractBookData().FirstOrDefault(x => x.Number == bookNumber);
+            if (book == null)
+            {
+                return null;
+            }
+
+            var bookName = useAbbreviatedBookName ? book.AbbreviatedName : book.FullName;
+            var hasSingleChapter = book.ChapterCount == 1;
+
             var cv = ChapterAndVerseStringParser.Parse(chapterAndVerses);
-            return string.Concat(bookName, " ", cv.ToTidyString(spaceBetweenVerseNumbers));
+            return string.Concat(bookName, " ", cv.ToTidyString(hasSingleChapter, spaceBetweenVerseNumbers));
         }
 
         private IReadOnlyCollection<BibleBookData> ReadBookData()

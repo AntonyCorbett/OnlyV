@@ -39,7 +39,7 @@
             });
         }
 
-        public string ToTidyString(bool spaceBetweenVerseNumbers)
+        public string ToTidyString(bool bookHasSingleChapter, bool spaceBetweenVerseNumbers)
         {
             var commaStr = spaceBetweenVerseNumbers ? ", " : ",";
 
@@ -51,11 +51,20 @@
                 {
                     if (currentChapter != 0)
                     {
+                        if (bookHasSingleChapter)
+                        {
+                            throw new ArgumentException(nameof(bookHasSingleChapter));
+                        }
+
                         sb.Append("; ");
                     }
 
-                    sb.Append(spec.Chapter);
-                    sb.Append(":");
+                    if (!bookHasSingleChapter)
+                    {
+                        sb.Append(spec.Chapter);
+                        sb.Append(":");
+                    }
+
                     currentChapter = spec.Chapter;
                 }
                 else

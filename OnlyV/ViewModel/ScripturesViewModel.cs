@@ -55,6 +55,13 @@
                     ChapterNumber = 0;
                     RaisePropertyChanged(nameof(ScriptureText));
                     UpdateChapters();
+
+                    if (_bibleService.GetChapterCount(_bookNumber) == 1)
+                    {
+                        // single-chapter book, so automatically select the chapter...
+                        ChapterNumber = 1;
+                        ChapterButtons[0].Selected = true;
+                    }
                 }
             }
         }
