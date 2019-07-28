@@ -168,7 +168,7 @@
     <value>Ordner {0} konnte nicht erstellt werden</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Default</value>
+    <value>Standard</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
     <value>Zielordner</value>
