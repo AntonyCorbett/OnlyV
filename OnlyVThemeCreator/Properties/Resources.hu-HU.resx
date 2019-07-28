@@ -118,31 +118,31 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ANSWER_CANCEL" xml:space="preserve">
-    <value>CANCEL</value>
+    <value>MÉGSE</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_NO" xml:space="preserve">
-    <value>NO</value>
+    <value>NEM</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="ANSWER_YES" xml:space="preserve">
-    <value>YES</value>
+    <value>IGEN</value>
     <comment>Dialog Button text</comment>
   </data>
   <data name="BACKGROUND_COLOR" xml:space="preserve">
-    <value>Background colour</value>
+    <value>Háttérszín</value>
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Clear</value>
+    <value>Törlés</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Clear background image</value>
+    <value>Háttérkép törlése</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Haladó</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
