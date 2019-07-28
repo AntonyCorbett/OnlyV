@@ -280,76 +280,76 @@
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Vers szövegének visszaállítása</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Saved image</value>
+    <value>Mentett kép</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Saved {0} images</value>
+    <value>{0} kép mentve</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>Mentés a képek mappájába</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Célmappa kiválasztása</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>Beállításokat a rendszergazda letiltotta!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Settings page</value>
+    <value>Beállítások</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>VERSEK</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>NÉZET</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} kép készítve.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Allow verse editing</value>
+    <value>Versek szerkesztésének engedélyezése</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Fő ablak maradjon mindig felül</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto fit</value>
+    <value>Automata méretezés</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Kezdéshez tölts le egy Bibliát epub formátumba a jw.org-ról és húzd ide a fájlt.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>IMAGE STYLE</value>
+    <value>KÉP STÍLUSA</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>EGYÉB</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Images folder</value>
+    <value>Képek könyvtára</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Naplózási szint</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Mutassa a versek számát</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Text scaling</value>
+    <value>Szöveg méretezése</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
