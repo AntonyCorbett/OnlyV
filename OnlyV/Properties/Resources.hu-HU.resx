@@ -382,23 +382,23 @@
     <value>Rövidített könyv nevek használata</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Nyelv</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>A nyelv módosítása után indítsd újra a OnlyV-t.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>Az OnlyV nem tudja írni a '{0}' mappát</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Súgó megjelenítése</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
-    <value>Theme</value>
+    <value>Téma</value>
     <comment>See Settings, Image Style section</comment>
   </data>
 </root>
