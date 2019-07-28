@@ -353,33 +353,33 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Zárójelek kivágása</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Idézőjelek kivágása</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Háttérkép használata</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Három pont használata a nem egymást követő versek között</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Használjon ~ jelet a versen belüli bekezdések jelöléséhez</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Legyen szóköz a versszámok között (címben)</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Legyen három pont az oldalak váltásánál</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Rövidített könyv nevek használata</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Language</value>
