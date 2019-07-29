@@ -142,11 +142,11 @@
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Zaawansowane</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
-    <value>Available Colours</value>
+    <value>Dostępne kolory</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
@@ -154,11 +154,11 @@
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
-    <value>Standard</value>
+    <value>Standardowe</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
-    <value>Standard Colours</value>
+    <value>Kolory standardowe</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
@@ -181,19 +181,19 @@
     <value>Drop-shadow opacity</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Colour</value>
+    <value>Kolor</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Opacity</value>
+    <value>Przezroczystość</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
-    <value>Font size</value>
+    <value>Wielkość czcionki</value>
     <comment>Font size label text</comment>
   </data>
   <data name="FONT_STYLE" xml:space="preserve">
-    <value>Font style</value>
+    <value>Styl czcionki</value>
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
@@ -201,7 +201,7 @@
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
-    <value>BACKGROUND</value>
+    <value>TŁO</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
@@ -236,7 +236,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_LEFT_MARGIN" xml:space="preserve">
-    <value>Left margin</value>
+    <value>Lewy margines</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
@@ -244,7 +244,7 @@
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
-    <value>Right margin</value>
+    <value>Prawy margines</value>
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_TOP_MARGIN" xml:space="preserve">
@@ -256,11 +256,11 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Język</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="LINE_SPACING" xml:space="preserve">
-    <value>Line spacing</value>
+    <value>Odstępy między wierszami</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
     <value>New theme</value>
@@ -275,19 +275,19 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart Theme Creator after changing the language.</value>
+    <value>Uruchom ponownie OnlyV po zmianie języka.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Sample epub file</value>
+    <value>Przykładowy plik epub</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Sample text</value>
+    <value>Przykładowy tekst</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Save theme</value>
+    <value>Zapisz motyw</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
@@ -295,15 +295,15 @@
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Save Theme?</value>
+    <value>Zapisać motyw?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Save Theme</value>
+    <value>Zapisz motyw</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show</value>
+    <value>Pokaż</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
