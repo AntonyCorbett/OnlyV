@@ -130,7 +130,7 @@
     <value>Wstecz</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Bible epub file</value>
+    <value>Plik epub</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -190,7 +190,7 @@
     <value>Nie znaleziono pliku epub Biblii!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Plik epub nie został wybrany!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
     <value>Wystąpił błąd podczas zapisywania obrazu!</value>
@@ -250,11 +250,11 @@
     <value>Aktualizacja jest dostępna!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Next image</value>
+    <value>Następny obrazek</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show preview page</value>
+    <value>Pokaż podgląd</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
     <value>No images to save!</value>
@@ -303,7 +303,7 @@
     <value>Settings page</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>WERSET</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
