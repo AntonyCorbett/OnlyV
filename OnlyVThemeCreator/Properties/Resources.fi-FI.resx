@@ -138,7 +138,7 @@
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Clear background image</value>
+    <value>Tyhjennä taustakuva</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
@@ -169,16 +169,16 @@
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Pudotusvarjon sumennuksen säde</value>
+    <value>Varjon sumennuksen säde</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Pudotusvarjon väri</value>
+    <value>Varjon väri</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Pudotusvarjon syvyys</value>
+    <value>Varjon syvyys</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Pudotusvarjon läpinäkyvyys</value>
+    <value>Varjon läpinäkyvyys</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
     <value>Väri</value>
