@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Added file</value>
+    <value>Tiedosto lisätty</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Added {0} files</value>
+    <value>Lisätty {0} tiedostoa</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>Ohjelmistoversio {0}</value>
@@ -130,7 +130,7 @@
     <value>Takaisin</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Bible epub file</value>
+    <value>EPUB -Raamattutiedosto</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -142,21 +142,21 @@
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>CHAPTER</value>
+    <value>LUVUT</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
     <value>Kopioitu leikepöydälle</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Copy image to clipboard</value>
+    <value>Kopioi kuva leikepöydälle</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Could not read one of the files!</value>
+    <value>Yhden tiedoston luku epäonnistui!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Could not read any of the files!</value>
+    <value>Kaikkien tiedostojen luku epäonnistui!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
     <value>Tiedostoa ei voitu lukea!</value>
@@ -174,26 +174,26 @@
     <value>Kohdekansio</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Display (F5)</value>
+    <value>Näytä (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Raahaa ja pudota OnlyM:ään luodaksesi diaesityksen</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Lataa Raamattu epub -muodossa jw.orgista ja pudota se tänne</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Tätä editoria käytetään yleensä jakeiden lyhentämiseen (esim. lauseen korvaamiseen ellipsillä). Muokkauksesi tallennetaan, kunnes suljet OnlyV:n.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Bible epub not found!</value>
+    <value>EPUB -Raamattutiedostoa ei löytynyt!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>EPUB -Raamattutiedostoa ei ole määritelty!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Error saving images!</value>
+    <value>Virhe kuvia tallennettaessa!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
     <value>RAAMATTUJA</value>
@@ -204,14 +204,14 @@
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Hide (F5)</value>
+    <value>Piilota (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Insert closing quotation mark</value>
+    <value>Sisällytä lainausmerkki loppuun</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Insert opening quotation mark</value>
+    <value>Sisällytä lainausmerkki alkuun</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
@@ -257,13 +257,13 @@
     <value>Näytä esikatselu</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>No images to save!</value>
+    <value>Ei kuvia tallennettavaksi!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 kuva luotu</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Edellinen kuva</value>
@@ -398,7 +398,7 @@
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
-    <value>Theme</value>
+    <value>Teema</value>
     <comment>See Settings, Image Style section</comment>
   </data>
 </root>
