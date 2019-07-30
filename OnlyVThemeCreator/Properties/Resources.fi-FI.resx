@@ -142,30 +142,30 @@
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
-    <value>Advanced</value>
+    <value>Lisää värejä</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
-    <value>Available Colours</value>
+    <value>Saatavilla olevat värit</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
-    <value>Recent Colours</value>
+    <value>Viimeksi käytetyt</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
-    <value>Standard</value>
+    <value>Yleiset</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
-    <value>Standard Colours</value>
+    <value>Yleiset värit</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
     <value>Kansion {0} luonti epäonnistui</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Optionally drop a background image here.</value>
+    <value>Vaihtoehtoisesti voit pudottaa taustakuvan tähän.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
