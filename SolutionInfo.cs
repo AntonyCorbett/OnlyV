@@ -7,4 +7,4 @@
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("1.2.0.22")]
+[assembly: AssemblyVersion("1.2.0.23")]
