@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Added file</value>
+    <value>Tiedosto lisätty</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Added {0} files</value>
+    <value>Lisätty {0} tiedostoa</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>Ohjelmistoversio {0}</value>
@@ -142,21 +142,21 @@
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>CHAPTER</value>
+    <value>LUVUT</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
     <value>Kopioitu leikepöydälle</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Copy image to clipboard</value>
+    <value>Kopioi kuva leikepöydälle</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Could not read one of the files!</value>
+    <value>Yhden tiedoston luku epäonnistui!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Could not read any of the files!</value>
+    <value>Kaikkien tiedostojen luku epäonnistui!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
     <value>Tiedostoa ei voitu lukea!</value>
@@ -174,17 +174,17 @@
     <value>Kohdekansio</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Display (F5)</value>
+    <value>Näytä (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Raahaa ja pudota OnlyM:ään luodaksesi diaesityksen</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Lataa Raamattu epub -muodossa jw.orgista ja pudota se tänne</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Tätä editoria käytetään yleensä jakeiden lyhentämiseen (esim. lauseen korvaamiseen ellipsillä). Muokkauksesi tallennetaan, kunnes suljet OnlyV:n.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bible epub not found!</value>
