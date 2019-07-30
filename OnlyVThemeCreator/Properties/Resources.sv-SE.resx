@@ -275,7 +275,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Vänligen starta om OnlyV efter byte av språk.</value>
+    <value>Vänligen starta om OnlyV Theme Creator efter byte av språk.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
