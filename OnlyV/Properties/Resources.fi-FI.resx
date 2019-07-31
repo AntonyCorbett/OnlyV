@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Tätä editoria käytetään yleensä jakeiden lyhentämiseen (esim. lauseen korvaamiseen ellipsillä). Muokkauksesi tallennetaan, kunnes suljet OnlyV:n.</value>
+    <value>Tätä editoria käytetään yleensä jakeiden lyhentämiseen (esim. lauseen korvaamiseen kolmella pisteellä). Muokkauksesi tallennetaan, kunnes suljet OnlyV:n.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>EPUB -Raamattutiedostoa ei löytynyt!</value>
@@ -270,13 +270,13 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Palaa jakeiden valintaan</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>ASETA UUDELLEEN</value>
+    <value>TYHJENNÄ</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
@@ -365,7 +365,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Käytä ellipsiä välistä jäävien jakeiden osoittamiseksi</value>
+    <value>Lisää kolme pistettä välistä jäävien jakeiden osoittamiseksi</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
@@ -376,7 +376,7 @@
     <value>Lisää välilyönnit jaenumeroiden väliin otsikossa</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Näytä ellipsi, jos teksti jatkuu seuraavalle sivulle</value>
+    <value>Näytä kolme pistettä loppuun, jos teksti jatkuu seuraavalle sivulle</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Käytä lyhennettyjä kirjojen nimiä</value>
@@ -390,7 +390,7 @@
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV:llä ei ole kirjoitusoikeuksia kansioon {0}.</value>
+    <value>OnlyV:llä ei ole kirjoitusoikeuksia kansioon '{0}'.</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
