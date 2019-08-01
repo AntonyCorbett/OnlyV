@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Tätä editoria käytetään yleensä jakeiden lyhentämiseen (esim. lauseen korvaamiseen ellipsillä). Muokkauksesi tallennetaan, kunnes suljet OnlyV:n.</value>
+    <value>Tätä editoria käytetään yleensä jakeiden lyhentämiseen (esim. lauseen korvaamiseen kolmella pisteellä). Muokkauksesi tallennetaan, kunnes suljet OnlyV:n.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>EPUB -Raamattutiedostoa ei löytynyt!</value>
@@ -196,7 +196,7 @@
     <value>Virhe kuvia tallennettaessa!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>RAAMATTUJA</value>
+    <value>RAAMATUT</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
@@ -270,17 +270,17 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Palaa jakeiden valintaan</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>ASETA UUDELLEEN</value>
+    <value>TYHJENNÄ</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Nollaa jakeen teksti</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
@@ -300,10 +300,10 @@
     <value>Järjestelmänvalvoja on lukinnut asetukset!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Settings page</value>
+    <value>Asetukset</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>JAKEET</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
@@ -313,7 +313,7 @@
     <value>{0} kuvaa luotu.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Allow verse editing</value>
+    <value>Salli jakeiden muokkaaminen</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
@@ -321,15 +321,15 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto fit</value>
+    <value>Automaattinen sovitus</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Aloita lataamalla Raamattu EPUB -muodossa jw.orgista ja pudottamalla se tähän.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>IMAGE STYLE</value>
+    <value>KUVAN ULKOASU</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
@@ -345,11 +345,11 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Näytä jakeiden numerot</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Text scaling</value>
+    <value>Tekstin skaalaus</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
@@ -357,7 +357,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Poista lainausmerkit</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
@@ -365,32 +365,32 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Lisää kolme pistettä välistä jäävien jakeiden osoittamiseksi</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Näytä aaltoviiva, jos kappale vaihtuu kesken jakeen</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Lisää välilyönnit jaenumeroiden väliin otsikossa</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Näytä kolme pistettä loppuun, jos teksti jatkuu seuraavalle sivulle</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Käytä lyhennettyjä kirjojen nimiä</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Kieli</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Uudelleenkäynnistä OnlyV kielen vaihtamisen jälkeen.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV:llä ei ole kirjoitusoikeuksia kansioon '{0}'.</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
