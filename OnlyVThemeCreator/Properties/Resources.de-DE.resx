@@ -263,15 +263,15 @@
     <value>Zeilenabstand</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>New theme</value>
+    <value>Neu</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Open theme</value>
+    <value>Öffnen</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Open Theme</value>
+    <value>Öffnen</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
@@ -287,11 +287,11 @@
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Save theme</value>
+    <value>Speichern</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
-    <value>Save theme as...</value>
+    <value>Speichern unter...</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
