@@ -177,10 +177,10 @@
     <value>Anzeigen (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Diashow durch ziehen und in OnlyM ablegen erstellen</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Bibel-epub Dateien von jw.org herunterladen und hier ablegen.</value>
+    <value>Bibel-EPUB Dateien von jw.org herunterladen und hier ablegen.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
@@ -190,7 +190,7 @@
     <value>Bibel-EPUB nicht gefunden!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Bibel-EPUB nicht ausgewählt!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
     <value>Fehler beim Speichern der Bilder!</value>
@@ -325,7 +325,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>Um zu starten, Bibel-epub Datei von jw.org herunterladen und hier ablegen.</value>
+    <value>Um zu starten, Bibel-EPUB Datei von jw.org herunterladen und hier ablegen.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
