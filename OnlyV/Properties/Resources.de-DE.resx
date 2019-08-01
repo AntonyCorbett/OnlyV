@@ -376,10 +376,10 @@
     <value>Leerzeichen zwischen Versnummern einfügen</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Fortsetzung durch Auslassungszeichen signalisieren</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Bibelbücher abkürzen</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Sprache</value>
