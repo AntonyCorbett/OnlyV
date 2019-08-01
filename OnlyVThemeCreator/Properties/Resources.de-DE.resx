@@ -169,7 +169,7 @@
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Drop-shadow blur radius</value>
+    <value>Schlagschattenweichzeichnung</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
     <value>Schlagschattenfarbe</value>
@@ -209,7 +209,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>IMAGE DIMENSIONS (pixels)</value>
+    <value>Foliengröße (Pixel)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
@@ -275,11 +275,11 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart Theme Creator after changing the language.</value>
+    <value>Bitte Theme Creator nach dem Ändern der Sprache neustarten.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Sample epub file</value>
+    <value>Beispiel-EPUB-Datei</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
