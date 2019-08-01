@@ -180,11 +180,11 @@
     <value>Drag and drop into OnlyM to create a slideshow</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Bibel-epub Dateien von jw.org herunterladen und hier ablegen.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Dieser Editor kann verwendet werden, um Verse zu kürzen (z.B. einen Satz auslassen). Die Änderungen bleiben bis zum Schließen von OnlyV gespeichert.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bibel-EPUB nicht gefunden!</value>
@@ -254,7 +254,7 @@
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Vorschauseite anzeigen</value>
+    <value>Vorschau anzeigen</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
     <value>Keine Bilder zum Speichern!</value>
@@ -270,7 +270,7 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Textauswahl anzeigen</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Bible reader not initialised!</value>
@@ -325,7 +325,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Um zu starten, Bibel-epub Datei von jw.org herunterladen und hier ablegen.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
