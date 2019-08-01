@@ -273,14 +273,14 @@
     <value>Textauswahl anzeigen</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Bibelleser nicht initialisiert!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>ZURÜCKSETZEN</value>
+    <value>LÖSCHEN</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Bearbeitung des Verses löschen</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
@@ -353,15 +353,15 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Satzzeichen abschneiden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Anführungszeichen abschneiden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Hintergrundbild verwenden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
@@ -394,7 +394,7 @@
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Hilfe anzeigen</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
