@@ -197,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Font weight</value>
+    <value>Schriftdicke</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
@@ -205,7 +205,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>BODY TEXT</value>
+    <value>VERSTEXT</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
