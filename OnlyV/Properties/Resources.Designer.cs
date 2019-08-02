@@ -620,6 +620,24 @@ namespace OnlyV.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to RESET.
+        /// </summary>
+        public static string RESET_SCALING {
+            get {
+                return ResourceManager.GetString("RESET_SCALING", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset the text scaling to the theme&apos;s default.
+        /// </summary>
+        public static string RESET_SCALING_TOOLTIP {
+            get {
+                return ResourceManager.GetString("RESET_SCALING_TOOLTIP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Reset the verse text.
         /// </summary>
         public static string RESET_VERSE_TEXT {

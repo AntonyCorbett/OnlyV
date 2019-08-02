@@ -53,6 +53,8 @@
             _themeFiles = GetThemeFiles();
 
             SelectDestinationFolderCommand = new RelayCommand(SelectDestinationFolder);
+            ResetTextScalingCommand = new RelayCommand(ResetTextScaling, CanResetScaling);
+
             Messenger.Default.Register<ShutDownMessage>(this, OnShutDown);
         }
 
@@ -61,6 +63,8 @@
         public event EventHandler ThemeChangedEvent;
 
         public RelayCommand SelectDestinationFolderCommand { get; set; }
+
+        public RelayCommand ResetTextScalingCommand { get; set; }
 
         public IEnumerable<ThemeFileItem> ThemeFiles => _themeFiles;
 
@@ -503,6 +507,16 @@
             result.Sort((x, y) => string.Compare(x.LanguageName, y.LanguageName, StringComparison.Ordinal));
 
             return result.ToArray();
+        }
+
+        private void ResetTextScaling()
+        {
+            TextScalingPercentage = 100;
+        }
+
+        private bool CanResetScaling()
+        {
+            return TextScalingPercentage != 100.0;
         }
     }
 }

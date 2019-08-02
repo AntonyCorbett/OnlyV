@@ -148,18 +148,24 @@
                           materialDesign:ComboBoxAssist.ClassicMode="true"
                           SelectedValue="{Binding CurrentThemePath, Mode=TwoWay}">
                 </ComboBox>
+                
+                <Label Margin="-5,0,0,0" Content="{x:Static resx:Resources.TEXT_SCALING}"/>
+                <DockPanel Width="420" HorizontalAlignment="Left" LastChildFill="True">
+                    <Button DockPanel.Dock="Right" Content="{x:Static resx:Resources.RESET_SCALING}" 
+                            Command="{Binding ResetTextScalingCommand}"
+                            ToolTip="{x:Static resx:Resources.RESET_SCALING_TOOLTIP}"/>
 
-                    <Label Margin="-5,0,0,0" Content="{x:Static resx:Resources.TEXT_SCALING}"/>
-                <Slider Width="420"
-                        Margin="0,0,0,10"
+                    <Slider 
+                        DockPanel.Dock="Left"
+                        Margin="0,0,10,10"
                         Minimum="50"
                         Maximum="150"
                         Value="{Binding TextScalingPercentage}"
                         TickPlacement="BottomRight"
-                        TickFrequency="10"
-                        HorizontalAlignment="Left" />
+                        TickFrequency="10" />
+                </DockPanel>
 
-                <CheckBox IsChecked="{Binding UseBackgroundImage, Mode=TwoWay}"
+                    <CheckBox IsChecked="{Binding UseBackgroundImage, Mode=TwoWay}"
                           Content="{x:Static resx:Resources.USE_BACKGROUND_IMAGE}"
                           Style="{StaticResource SettingsCheckBoxStyle}"/>
 
