@@ -276,7 +276,7 @@
     <value>Lecteur biblique non initialisé !</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>Réinitialiser</value>
+    <value>RÉINITIALISER</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">

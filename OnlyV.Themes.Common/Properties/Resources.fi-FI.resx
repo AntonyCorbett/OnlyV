@@ -138,7 +138,7 @@
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
-    <value>Oblique</value>
+    <value>Vino</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
@@ -146,7 +146,7 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
-    <value>Light</value>
+    <value>Ohut</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
@@ -154,27 +154,27 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
-    <value>Semi-bold</value>
+    <value>Puolilihavoitu</value>
     <comment>A font weight</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_CENTRE" xml:space="preserve">
-    <value>Centre</value>
+    <value>Keskellä</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_LEFT" xml:space="preserve">
-    <value>Left</value>
+    <value>Vasemmalla</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_RIGHT" xml:space="preserve">
-    <value>Right</value>
+    <value>Oikealla</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="LINE_SPACING_LARGE" xml:space="preserve">
-    <value>Large</value>
+    <value>Suuri</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normaali</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_SMALL" xml:space="preserve">

@@ -177,20 +177,20 @@
     <value>Anzeigen (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Diashow durch ziehen und in OnlyM ablegen erstellen</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Bibel-EPUB Dateien von jw.org herunterladen und hier ablegen.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Dieser Editor kann verwendet werden, um Verse zu kürzen (z.B. einen Satz auslassen). Die Änderungen bleiben bis zum Schließen von OnlyV gespeichert.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Bibel-EPUB nicht gefunden!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Bibel-EPUB nicht ausgewählt!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
     <value>Fehler beim Speichern der Bilder!</value>
@@ -254,7 +254,7 @@
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Vorschauseite anzeigen</value>
+    <value>Vorschau anzeigen</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
     <value>Keine Bilder zum Speichern!</value>
@@ -270,17 +270,17 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Textauswahl anzeigen</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Bibelleser nicht initialisiert!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>ZURÜCKSETZEN</value>
+    <value>LÖSCHEN</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Bearbeitung des Verses löschen</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
@@ -313,7 +313,7 @@
     <value>{0} Bilder erzeugt.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Allow verse editing</value>
+    <value>Bearbeiten der Verse zulassen</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
@@ -325,11 +325,11 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Um zu starten, Bibel-EPUB Datei von jw.org herunterladen und hier ablegen.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>IMAGE STYLE</value>
+    <value>Foliengestaltung</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
@@ -353,33 +353,33 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Satzzeichen abschneiden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Anführungszeichen abschneiden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Hintergrundbild verwenden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Auslassungszeichen bei nicht zusammenhängenden Versen verwenden</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Absätze im Vers durch Tilde signalisieren</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Leerzeichen zwischen Versnummern einfügen</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Fortsetzung durch Auslassungszeichen signalisieren</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Bibelbücher abkürzen</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
     <value>Sprache</value>
@@ -390,15 +390,15 @@
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV kann nicht in den Ordner '{0}' schreiben</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Hilfe anzeigen</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
-    <value>Theme</value>
+    <value>Vorlage</value>
     <comment>See Settings, Image Style section</comment>
   </data>
 </root>

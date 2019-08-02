@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="END_BEFORE_START" xml:space="preserve">
-    <value>End verse is before start!</value>
+    <value>Verse nicht in korrekter Reihenfolge!</value>
     <comment>Error when specified verses are out of order</comment>
   </data>
   <data name="EPUB_INCOMPATIBLE" xml:space="preserve">
