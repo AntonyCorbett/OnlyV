@@ -353,7 +353,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Poista loppuun jäävät väli- ja lopetusmerkit</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
