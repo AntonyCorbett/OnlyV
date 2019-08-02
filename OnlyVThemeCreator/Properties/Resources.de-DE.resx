@@ -146,11 +146,11 @@
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_AVAILABLE_COLORS" xml:space="preserve">
-    <value>Available Colours</value>
+    <value>Verfügbare Farben</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
-    <value>Recent Colours</value>
+    <value>Kürzlich verwendete Farben</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
@@ -158,18 +158,18 @@
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
-    <value>Standard Colours</value>
+    <value>Standard Farben</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Ordner {0} konnte nicht erstellt werden</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Optionally drop a background image here.</value>
+    <value>Optional ein Hintergrundbild hier ablegen.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Drop-shadow blur radius</value>
+    <value>Schlagschattenweichzeichnung</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
     <value>Schlagschattenfarbe</value>
@@ -197,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Font weight</value>
+    <value>Schriftdicke</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
@@ -205,11 +205,11 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>BODY TEXT</value>
+    <value>VERSTEXT</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>IMAGE DIMENSIONS (pixels)</value>
+    <value>FOLIENGRÖẞE (Pixel)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
@@ -263,23 +263,23 @@
     <value>Zeilenabstand</value>
   </data>
   <data name="NEW_THEME" xml:space="preserve">
-    <value>New theme</value>
+    <value>Neu</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME" xml:space="preserve">
-    <value>Open theme</value>
+    <value>Öffnen</value>
     <comment>Menu command</comment>
   </data>
   <data name="OPEN_THEME_TITLE" xml:space="preserve">
-    <value>Open Theme</value>
+    <value>Öffnen</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart Theme Creator after changing the language.</value>
+    <value>Bitte Theme Creator nach dem Ändern der Sprache neustarten.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Sample epub file</value>
+    <value>Beispiel-EPUB-Datei</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
@@ -287,19 +287,19 @@
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
-    <value>Save theme</value>
+    <value>Speichern</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_AS" xml:space="preserve">
-    <value>Save theme as...</value>
+    <value>Speichern unter...</value>
     <comment>Menu command</comment>
   </data>
   <data name="SAVE_THEME_PROMPT_TITLE" xml:space="preserve">
-    <value>Save Theme?</value>
+    <value>Speichern?</value>
     <comment>Title displayed in dialog</comment>
   </data>
   <data name="SAVE_THEME_TITLE" xml:space="preserve">
-    <value>Save Theme</value>
+    <value>Speichern</value>
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
@@ -307,7 +307,7 @@
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
-    <value>Theme file</value>
+    <value>Vorlage-Datei</value>
   </data>
   <data name="TITLE_POSITION" xml:space="preserve">
     <value>Position</value>
@@ -318,7 +318,7 @@
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Toggle background</value>
+    <value>Hintergrundbild verwenden</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
@@ -328,7 +328,7 @@
     <value>Vertikale Ausrichtung</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>Die Vorlage wurde bearbeitet. Änderung speichern?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
