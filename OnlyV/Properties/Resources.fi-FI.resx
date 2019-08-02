@@ -273,7 +273,7 @@
     <value>Palaa jakeiden valintaan</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Raamatun käyttäminen epäonnistui!</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>TYHJENNÄ</value>
