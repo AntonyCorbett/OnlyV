@@ -1,12 +1,16 @@
-﻿namespace OnlyV.ViewModel
+﻿
+namespace OnlyV.ViewModel
 {
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
+    using System.Windows.Input;
     using GalaSoft.MvvmLight;
     using GalaSoft.MvvmLight.CommandWpf;
+    using OnlyV.Helpers;
     using Services.Bible;
     using VerseExtraction.Models;
 
@@ -15,6 +19,7 @@
     {
         private readonly IBibleVersesService _bibleService;
         private readonly List<int> _selectedVerses = new List<int>();
+        private MultipleVerseSelection _multipleVerseSelection;
         private int _bookNumber;
         private int _chapterNumber;
 
@@ -263,9 +268,37 @@
             return true;
         }
 
+        private bool IsKeyboardShiftDown()
+        {
+            return Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift);
+        }
+
         private void OnSelectVerse(object commandParameter)
         {
+            var verse = (int)commandParameter;
+
+            if (IsKeyboardShiftDown() && _multipleVerseSelection != null)
+            {
+                HandleMultipleVerseSelection(verse);
+            }
+            else
+            {
+                _multipleVerseSelection = null;
+
+                var alreadySelected = _selectedVerses.Contains(verse);
+                if (!alreadySelected)
+                {
+                    _multipleVerseSelection = new MultipleVerseSelection(verse);
+                }
+            }
+
             UpdateSelectedVerses();
+        }
+
+        private void HandleMultipleVerseSelection(int verse)
+        {
+            Debug.Assert(_multipleVerseSelection != null, "_multipleVerseSelection != null");
+            _multipleVerseSelection.ChangeSelection(verse, VerseButtons);
         }
 
         private void UpdateSelectedVerses()

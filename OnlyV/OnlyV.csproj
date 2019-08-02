@@ -132,6 +132,7 @@
     <Compile Include="Helpers\JwLib\JwLibHelper.cs" />
     <Compile Include="Helpers\JwLib\JwLibHelperNativeMethods.cs" />
     <Compile Include="Helpers\LoremIpsum.cs" />
+    <Compile Include="Helpers\MultipleVerseSelection.cs" />
     <Compile Include="Helpers\VersionDetection.cs" />
     <Compile Include="Mappings\MappingProfile.cs" />
     <Compile Include="Pages\EditTextPage.xaml.cs">
