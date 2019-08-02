@@ -402,7 +402,7 @@
     <comment>See Settings, Image Style section</comment>
   </data>
   <data name="RESET_SCALING" xml:space="preserve">
-    <value>RESET</value>
+    <value>TYHJENNÄ</value>
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
