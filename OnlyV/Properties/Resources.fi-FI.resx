@@ -401,4 +401,12 @@
     <value>Teema</value>
     <comment>See Settings, Image Style section</comment>
   </data>
+  <data name="RESET_SCALING" xml:space="preserve">
+    <value>RESET</value>
+    <comment>See Settings page, Text Scaling button caption</comment>
+  </data>
+  <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
+    <value>Reset the text scaling to the theme's default</value>
+    <comment>Tooltip for Settings page, Text Scaling button</comment>
+  </data>
 </root>
