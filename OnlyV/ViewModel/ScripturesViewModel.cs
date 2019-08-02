@@ -397,6 +397,8 @@ namespace OnlyV.ViewModel
 
         private void UpdateVerses()
         {
+            _multipleVerseSelection = null;
+
             VerseButtons.Clear();
 
             var verseRange = _bibleService.GetVerseRange(BookNumber, ChapterNumber);
