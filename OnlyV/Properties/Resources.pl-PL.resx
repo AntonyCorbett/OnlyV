@@ -149,7 +149,7 @@
     <value>Skopiowano do schowka</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Obrazek skopiowano do schowka</value>
+    <value>Kopiuj obrazek do schowka</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
@@ -300,7 +300,7 @@
     <value>Settings disabled by administrator!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Ustawienia strony</value>
+    <value>Ustawienia</value>
   </data>
   <data name="VERSES" xml:space="preserve">
     <value>WERSET</value>
