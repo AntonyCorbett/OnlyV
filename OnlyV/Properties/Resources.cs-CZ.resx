@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Arquivo adicionado</value>
+    <value>Added file</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>{0} arquivos adicionados</value>
+    <value>Added {0} files</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>Versão do software {0}</value>
+    <value>OnlyV software version: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Voltar</value>
+    <value>Back</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Arquivo epub da Bíblia</value>
+    <value>Bible epub file</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -138,275 +138,275 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>LIVRO</value>
+    <value>BOOK</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>CAPÍTULO</value>
+    <value>CHAPTER</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Copiado para a área de transferência</value>
+    <value>Copied to clipboard</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Copiar imagem para a área de transferência</value>
+    <value>Copy image to clipboard</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Não foi possível ler um dos arquivos!</value>
+    <value>Could not read one of the files!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Não foi possível ler nenhum dos arquivos!</value>
+    <value>Could not read any of the files!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Não foi possível ler o arquivo!</value>
+    <value>Could not read file!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Não foi possível ler {0} arquivos!</value>
+    <value>Could not read {0} files!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Não foi possível criar a pasta {0}</value>
+    <value>Could not create folder {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Padrão</value>
+    <value>Default</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Pasta de destino</value>
+    <value>Destination Folder</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Visualizar (F5)</value>
+    <value>Display (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Arraste e solte no OnlyM para criar um slideshow</value>
+    <value>Drag and drop into OnlyM to create a slideshow</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Baixe o arquivos de .epub da Bíblia do jw.org e arraste e solte aqui.</value>
+    <value>Download Bible epub files from jw.org and drag and drop here.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Este editor é normalmente usado para abreviar versos (por exemplo, para substituir uma frase por um elipsis). Suas modificações são armazenadas até que você feche o OnlyV.</value>
+    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Arquivo .epub da Bíblia não encontrado!</value>
+    <value>Bible epub not found!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Arquivo .epub da Bíblia não especificado!</value>
+    <value>Bible epub not specified!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Erro ao salvar imagens!</value>
+    <value>Error saving images!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLÍAS</value>
+    <value>BIBLES</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>VISUALIZAR</value>
+    <value>DISPLAY</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Ocultar (F5)</value>
+    <value>Hide (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Inserir aspa de fecho</value>
+    <value>Insert closing quotation mark</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Inserir aspa de abertura</value>
+    <value>Insert opening quotation mark</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" é uma marca registada da Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>Modo de compatibilidade com o JW Library</value>
+    <value>JW Library compatibility mode</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Depuração</value>
+    <value>Debug</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Erro</value>
+    <value>Error</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
     <value>Fatal</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Informação</value>
+    <value>Information</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Detalhado</value>
+    <value>Verbose</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Atenção</value>
+    <value>Warning</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Monitor de mídia</value>
+    <value>Media monitor</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Nenhum</value>
+    <value>None</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>Nova versão disponível!</value>
+    <value>New update available!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Próxima imagem</value>
+    <value>Next image</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Mostrar página de pré-visualização</value>
+    <value>Show preview page</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>Nenhuma imagem para salvar!</value>
+    <value>No images to save!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 imagem gerada</value>
+    <value>1 image generated</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Imagem anterior</value>
+    <value>Previous image</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Mostrar página de scripts</value>
+    <value>Show scriptures page</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Leitor da Bíblia não inicializado!</value>
+    <value>Bible reader not initialised!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>REDEFINIR</value>
+    <value>RESET</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Redefinir o texto do versículo</value>
+    <value>Reset the verse text</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Imagem salva</value>
+    <value>Saved image</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Salvo {0} imagens</value>
+    <value>Saved {0} images</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Salvar na pasta de imagens</value>
+    <value>Save to images folder</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Selecione a pasta de destino</value>
+    <value>Select Destination Folder</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Configurações desabilitada pelo administrador!</value>
+    <value>Settings disabled by administrator!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Página de configurações</value>
+    <value>Settings page</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSÍCULOS</value>
+    <value>VERSES</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VER</value>
+    <value>VIEW</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} imagens geradas.</value>
+    <value>{0} images generated.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Permitir edição de versículos</value>
+    <value>Allow verse editing</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Janela principal sempre visível</value>
+    <value>Main window always on top</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto-ajuste</value>
+    <value>Auto fit</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>Para começar, baixe o arquivo .epub  da Bíblia no jw.org e arraste e solte-o aqui.</value>
+    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>ESTILO DE IMAGEM</value>
+    <value>IMAGE STYLE</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>DIVERSOS</value>
+    <value>MISCELLANEOUS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Pasta de imagens</value>
+    <value>Images folder</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Nível de Relatório</value>
+    <value>Logging level</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Mostrar números de versículos</value>
+    <value>Show verse numbers</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Escala de texto</value>
+    <value>Text scaling</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Recortar pontuação</value>
+    <value>Trim punctuation</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Recortar marca com aspas</value>
+    <value>Trim quotation marks</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Usar imagem de fundo</value>
+    <value>Use background image</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use elipses para indicar versículos que não estão próximos</value>
+    <value>Use ellipses to indicate non-contiguous verses</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Mostrar um bloco entre parágrafos em um único verso</value>
+    <value>Show a tilde between paragraphs in a single verse</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Espaço entre o título e os números</value>
+    <value>Space between title verse numbers</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Mostrar elipses para continuação</value>
+    <value>Show ellipses for continuation</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Usar nomes de livros abreviados</value>
+    <value>Use abbreviated book names</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Idioma</value>
+    <value>Language</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Por favor reinicie o OnlyV após alterar o idioma.</value>
+    <value>Please restart OnlyV after changing the language.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>O OnlyV não tem permissão na pasta '{0}'</value>
+    <value>OnlyV cannot write to the '{0}' folder</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Exibir ajuda</value>
+    <value>Display help</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
-    <value>Tema</value>
+    <value>Theme</value>
     <comment>See Settings, Image Style section</comment>
   </data>
   <data name="RESET_SCALING" xml:space="preserve">
-    <value>REDEFINIR</value>
+    <value>RESET</value>
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Redefinir a escala do texto para o padrão do tema</value>
+    <value>Reset the text scaling to the theme's default</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
 </root>

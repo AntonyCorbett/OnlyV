@@ -126,7 +126,7 @@
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
-    <value>Plik już istnieje!</value>
+    <value>File already exists!</value>
     <comment>Error message when trying to create a theme file</comment>
   </data>
   <data name="FONT_STYLE_ITALIC" xml:space="preserve">
@@ -174,7 +174,7 @@
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_NORMAL" xml:space="preserve">
-    <value>Normalne</value>
+    <value>Normal</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_SMALL" xml:space="preserve">

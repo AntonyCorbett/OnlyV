@@ -149,7 +149,7 @@
     <value>Skopiowano do schowka</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Obrazek skopiowano do schowka</value>
+    <value>Kopiuj obrazek do schowka</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
@@ -284,23 +284,23 @@
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Saved image</value>
+    <value>Zapisz obraz</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Saved {0} images</value>
+    <value>Zapisano {0} obraz(ki)</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>Zapisz do folderu</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Wybierz folder docelowy</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>Ustawienia wyłączone przez administratora!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Ustawienia strony</value>
+    <value>Ustawienia</value>
   </data>
   <data name="VERSES" xml:space="preserve">
     <value>WERSET</value>
