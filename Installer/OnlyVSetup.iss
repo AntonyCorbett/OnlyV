@@ -70,6 +70,7 @@ Source: "..\OnlyVThemeCreator\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app
 Source: "..\ReleaseThemes\*"; DestDir: "{commonappdata}\OnlyV\ThemeFiles"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 ; localisation
+Source: "bin\Release\cs-CZ\*.dll"; DestDir: "{app}\cs-CZ"; Flags: ignoreversion
 Source: "bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
 Source: "bin\Release\en-US\*.dll"; DestDir: "{app}\en-US"; Flags: ignoreversion
 Source: "bin\Release\es-ES\*.dll"; DestDir: "{app}\es-ES"; Flags: ignoreversion
@@ -89,6 +90,7 @@ Source: "bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
 Source: "bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
 Source: "bin\Release\vi-VN\*.dll"; DestDir: "{app}\vi-VN"; Flags: ignoreversion
 
+Source: "..\OnlyVThemeCreator\bin\Release\cs-CZ\*.dll"; DestDir: "{app}\cs-CZ"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\en-US\*.dll"; DestDir: "{app}\en-US"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\es-ES\*.dll"; DestDir: "{app}\es-ES"; Flags: ignoreversion
