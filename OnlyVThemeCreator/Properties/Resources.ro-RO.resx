@@ -279,7 +279,7 @@
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
-    <value>Fișier de probă de tip epub</value>
+    <value>Fișier epub de probă</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
