@@ -257,7 +257,7 @@
     <value>Pokaż podgląd</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>No images to save!</value>
+    <value>Nie ma obrazków do zapisania!</value>
   </data>
   <data name="OK" xml:space="preserve">
     <value>OK</value>
@@ -266,14 +266,14 @@
     <value>1 image generated</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Previous image</value>
+    <value>Poprzedni obrazek</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
     <value>Show scriptures page</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Czytnik Biblii nie został zainicjowany!</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>RESETUJ</value>
@@ -365,7 +365,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Użyj elips, aby wskazać nieciągłe wersety</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
