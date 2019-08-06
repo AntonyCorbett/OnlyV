@@ -172,13 +172,13 @@
     <value>Rază de estompare a umbrei</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Culoare de umbrire</value>
+    <value>Culoarea umbrei</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Adâncime de umbră</value>
+    <value>Adâncimea umbrei</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Opacitate la umbră</value>
+    <value>Opacitatea umbrei</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
     <value>Culoare</value>
@@ -189,7 +189,7 @@
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
-    <value>Dimensiuni font</value>
+    <value>Dimensiune font</value>
     <comment>Font size label text</comment>
   </data>
   <data name="FONT_STYLE" xml:space="preserve">
@@ -197,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Grosimea fontului</value>
+    <value>Grosime font</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
@@ -275,7 +275,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Vă rugăm să reporniţi după schimbarea limbii.</value>
+    <value>Vă rugăm să reporniţi Theme Creator după schimbarea limbii.</value>
     <comment>See Miscellaneous settings</comment>
   </data>
   <data name="SAMPLE_EPUB_FILE" xml:space="preserve">
