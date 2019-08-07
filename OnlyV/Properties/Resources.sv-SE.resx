@@ -273,7 +273,7 @@
     <value>Visa sidan i skrifterna</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bibelläsaren är inte påbörjad!</value>
+    <value>Bibeln kan inte läsas!</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>NOLLSTÄLL</value>
