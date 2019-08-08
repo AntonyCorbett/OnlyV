@@ -373,32 +373,32 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Mezera za číslem verše</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Zobrazit ... místo pokračování</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Používat zkrácené názvy knih</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Jazyk</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Po změně jazyka prosím restartujte OnlyV.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV nemůže zapisovat do složky '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Zobrazit nápovědu</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
-    <value>Theme</value>
+    <value>Téma</value>
     <comment>See Settings, Image Style section</comment>
   </data>
   <data name="RESET_SCALING" xml:space="preserve">
@@ -406,7 +406,7 @@
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Reset the text scaling to the theme's default</value>
+    <value>Resetovat měřítko textu na výchozí nastavení tématu</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
 </root>
