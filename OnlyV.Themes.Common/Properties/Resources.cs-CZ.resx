@@ -138,7 +138,7 @@
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
-    <value>Šikmý</value>
+    <value>Šikmé</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
