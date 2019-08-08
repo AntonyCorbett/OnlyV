@@ -165,7 +165,7 @@
     <value>Nepodařilo se vytvořit složku {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Obrázek použitý na pozadí přetáhněte sem.</value>
+    <value>Obrázek pozadí přetáhněte sem.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
@@ -328,7 +328,7 @@
     <value>Svislé zarovnání</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>The theme has changed. Do you want to save?</value>
+    <value>Téma bylo změněno. Uložit změny?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
