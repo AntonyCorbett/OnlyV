@@ -118,83 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BODY_VERTICAL_ALIGNMENT_MIDDLE" xml:space="preserve">
-    <value>Middle</value>
+    <value>Na střed</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Nahoru</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
-    <value>File already exists!</value>
+    <value>Soubor již existuje!</value>
     <comment>Error message when trying to create a theme file</comment>
   </data>
   <data name="FONT_STYLE_ITALIC" xml:space="preserve">
-    <value>Italic</value>
+    <value>Kurzíva</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normální</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
-    <value>Oblique</value>
+    <value>Šikmé</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
-    <value>Bold</value>
+    <value>Tučné</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
-    <value>Light</value>
+    <value>Tenké</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normální</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
-    <value>Semi-bold</value>
+    <value>Silnější</value>
     <comment>A font weight</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_CENTRE" xml:space="preserve">
-    <value>Centre</value>
+    <value>Uprostřed</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_LEFT" xml:space="preserve">
-    <value>Left</value>
+    <value>Vlevo</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_RIGHT" xml:space="preserve">
-    <value>Right</value>
+    <value>Vpravo</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="LINE_SPACING_LARGE" xml:space="preserve">
-    <value>Large</value>
+    <value>Velké</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Normální</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_SMALL" xml:space="preserve">
-    <value>Small</value>
+    <value>Malé</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_LARGE" xml:space="preserve">
-    <value>Very large</value>
+    <value>Velmi velké</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_SMALL" xml:space="preserve">
-    <value>Very small</value>
+    <value>Velmi malé</value>
     <comment>Line spacing</comment>
   </data>
   <data name="TITLE_POS_BOTTOM" xml:space="preserve">
-    <value>Bottom</value>
+    <value>Dole</value>
     <comment>Title position</comment>
   </data>
   <data name="TITLE_POS_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Nahoře</value>
     <comment>Title position</comment>
   </data>
 </root>
