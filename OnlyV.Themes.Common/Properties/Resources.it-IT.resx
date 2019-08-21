@@ -182,19 +182,19 @@
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_LARGE" xml:space="preserve">
-    <value>Very large</value>
+    <value>Molto grande</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_SMALL" xml:space="preserve">
-    <value>Very small</value>
+    <value>Molto piccola</value>
     <comment>Line spacing</comment>
   </data>
   <data name="TITLE_POS_BOTTOM" xml:space="preserve">
-    <value>Bottom</value>
+    <value>Basso</value>
     <comment>Title position</comment>
   </data>
   <data name="TITLE_POS_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Alto</value>
     <comment>Title position</comment>
   </data>
 </root>
