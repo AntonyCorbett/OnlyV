@@ -273,7 +273,7 @@
     <value>Visa sidan i skrifterna</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bibelläsaren är inte påbörjad!</value>
+    <value>Bibeln kan inte läsas!</value>
   </data>
   <data name="RESET" xml:space="preserve">
     <value>NOLLSTÄLL</value>
@@ -353,7 +353,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Putsa till skiljetecknen</value>
+    <value>Avlägsna skiljetecknen i slutet</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
