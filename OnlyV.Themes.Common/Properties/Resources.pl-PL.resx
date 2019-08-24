@@ -146,7 +146,7 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
-    <value>Light</value>
+    <value>Cienka</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
