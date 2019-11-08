@@ -169,16 +169,16 @@
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Raggio sfocatura ombra a goccia</value>
+    <value>Raggio sfocatura ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Colore ombra</value>
+    <value>Colore ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Spessore ombra</value>
+    <value>Profondità ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Trasparenza ombra</value>
+    <value>Opacità ombra</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
     <value>Colore</value>
