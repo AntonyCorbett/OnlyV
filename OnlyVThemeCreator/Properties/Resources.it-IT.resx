@@ -314,11 +314,11 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Attiva/Disattiva immagine di sfondo</value>
+    <value>Mostra/Nascondi immagine di sfondo</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Attiva/Disattiva sfondo</value>
+    <value>Mostra/Nascondi sfondo</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
@@ -328,7 +328,7 @@
     <value>Allineamento verticale</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>Il tema è stato modificato, vuoi salvarlo?</value>
+    <value>Il tema è stato modificato. Vuoi salvarlo?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>
