@@ -217,11 +217,11 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TITOLO TESTO</value>
+    <value>TITOLO</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
-    <value>NUMERI VERSETTI</value>
+    <value>NUMERI DEI VERSETTI</value>
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
@@ -240,7 +240,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Trasparenza immagine</value>
+    <value>Opacità immagine</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
@@ -283,7 +283,7 @@
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Testo di esempio</value>
+    <value>Scrittura di esempio</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
@@ -303,7 +303,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Vedi</value>
+    <value>Mostra</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
