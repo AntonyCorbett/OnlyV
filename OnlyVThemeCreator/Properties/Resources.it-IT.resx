@@ -178,14 +178,14 @@
     <value>Profondità ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Opacità ombra</value>
+    <value>Opacità ombreggiatura</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
     <value>Colore</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Trasparenza</value>
+    <value>Opacità</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
@@ -197,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Tipo carattere</value>
+    <value>Spessore carattere</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
@@ -209,7 +209,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>DIMENSIONE IMMAGINE (pixel)</value>
+    <value>DIMENSIONI IMMAGINE (pixel)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
