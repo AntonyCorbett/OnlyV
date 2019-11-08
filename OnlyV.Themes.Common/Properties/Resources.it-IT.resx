@@ -122,7 +122,7 @@
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
-    <value>Alto</value>
+    <value>In alto</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
@@ -146,7 +146,7 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
-    <value>Light</value>
+    <value>Leggero</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
@@ -170,7 +170,7 @@
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="LINE_SPACING_LARGE" xml:space="preserve">
-    <value>Largo</value>
+    <value>Larga</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_NORMAL" xml:space="preserve">
@@ -190,11 +190,11 @@
     <comment>Line spacing</comment>
   </data>
   <data name="TITLE_POS_BOTTOM" xml:space="preserve">
-    <value>Basso</value>
+    <value>In basso</value>
     <comment>Title position</comment>
   </data>
   <data name="TITLE_POS_TOP" xml:space="preserve">
-    <value>Alto</value>
+    <value>In alto</value>
     <comment>Title position</comment>
   </data>
 </root>
