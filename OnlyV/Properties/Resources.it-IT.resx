@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Questo editor è solitamente utilizzato per abbreviare versetti (ad esempio per sostituire una frase con un ellissi). Le modifiche vengono memorizzate fino a quando non si chiude OnlyV.</value>
+    <value>Questo editor è utilizzato di solito per abbreviare i versetti (ad es. per sostituire una frase con i punti di sospensione). Le tue modifiche vengono ricordate finché non chiudi OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Epub della Bibbia non trovato!</value>
