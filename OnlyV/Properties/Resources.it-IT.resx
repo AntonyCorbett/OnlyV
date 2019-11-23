@@ -349,15 +349,15 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Scalatura testo</value>
+    <value>Ridimensionamento testo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Puntini di sospensione</value>
+    <value>Tronca punteggiatura</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Virgolette di sospensione</value>
+    <value>Tronca virgolette</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
@@ -365,11 +365,11 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Usa ellisse per indicare versetti non contigui</value>
+    <value>Usa punti di sospensione per indicare versetti non contigui</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Mostra un ~ tra i paragrafi in un singolo versetto</value>
+    <value>Mostra una tilde tra i paragrafi in un singolo versetto</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
