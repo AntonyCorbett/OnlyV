@@ -207,11 +207,11 @@
     <value>Nascondi (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Inserisci virgolette di chiusura</value>
+    <value>Inserisci virgolette chiuse</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Inserisci virgolette di apertura</value>
+    <value>Inserisci virgolette aperte</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
@@ -270,7 +270,7 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Mostra pagina scritture</value>
+    <value>Mostra pagina delle scritture</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Lettore Bibbia non inizializzato!</value>
