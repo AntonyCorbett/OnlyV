@@ -121,7 +121,7 @@
     <value>File aggiunto</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Aggiunti {0} file</value>
+    <value>{0} file aggiunti</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>Versione software OnlyV: {0}</value>
