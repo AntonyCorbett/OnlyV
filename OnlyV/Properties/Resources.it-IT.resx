@@ -276,18 +276,18 @@
     <value>Lettore Bibbia non inizializzato!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>RIPRISTINA</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reimposta il testo del versetto</value>
+    <value>Ripristina il testo del versetto</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
     <value>Immagine salvata</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Immagini salvate {0}</value>
+    <value>{0} immagini salvate</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
     <value>Salva nella cartella immagini</value>
