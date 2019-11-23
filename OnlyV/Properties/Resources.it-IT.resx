@@ -180,7 +180,7 @@
     <value>Trascina e rilascia in OnlyM per creare una slideshow</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Scarica il file epub della Bibbia da jw.org e trascinalo qui.</value>
+    <value>Scarica i file epub della Bibbia da jw.org e trascinali qui.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
