@@ -134,11 +134,11 @@
     <comment>See Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Elimina</value>
+    <value>Rimuovi</value>
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Elimina immagine sfondo</value>
+    <value>Rimuovi immagine di sfondo</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
@@ -169,23 +169,23 @@
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Raggio sfocatura ombra a goccia</value>
+    <value>Raggio sfocatura ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Colore ombra</value>
+    <value>Colore ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Spessore ombra</value>
+    <value>Profondità ombreggiatura</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Trasparenza ombra</value>
+    <value>Opacità ombreggiatura</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
     <value>Colore</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
-    <value>Trasparenza</value>
+    <value>Opacità</value>
     <comment>Font opacity label</comment>
   </data>
   <data name="FONT_SIZE" xml:space="preserve">
@@ -197,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Tipo carattere</value>
+    <value>Spessore carattere</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
@@ -209,7 +209,7 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>DIMENSIONE IMMAGINE (pixel)</value>
+    <value>DIMENSIONI IMMAGINE (pixel)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
@@ -217,11 +217,11 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TITOLO TESTO</value>
+    <value>TITOLO</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
-    <value>NUMERI VERSETTI</value>
+    <value>NUMERI DEI VERSETTI</value>
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
@@ -240,7 +240,7 @@
     <comment>See Image Dimensions section</comment>
   </data>
   <data name="IMAGE_OPACITY" xml:space="preserve">
-    <value>Trasparenza immagine</value>
+    <value>Opacità immagine</value>
     <comment>See Background section</comment>
   </data>
   <data name="IMAGE_RIGHT_MARGIN" xml:space="preserve">
@@ -283,7 +283,7 @@
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAMPLE_TEXT" xml:space="preserve">
-    <value>Testo di esempio</value>
+    <value>Scrittura di esempio</value>
     <comment>Caption of combo on toolbar</comment>
   </data>
   <data name="SAVE_THEME" xml:space="preserve">
@@ -303,7 +303,7 @@
     <comment>Title of dialog</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Vedi</value>
+    <value>Mostra</value>
     <comment>See Verse Numbers section</comment>
   </data>
   <data name="THEME_FILE" xml:space="preserve">
@@ -314,11 +314,11 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Attiva/Disattiva immagine di sfondo</value>
+    <value>Mostra/Nascondi immagine di sfondo</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Attiva/Disattiva sfondo</value>
+    <value>Mostra/Nascondi sfondo</value>
     <comment>Tooltip for background toggle checkbox</comment>
   </data>
   <data name="USE_DROP_SHADOW" xml:space="preserve">
@@ -328,7 +328,7 @@
     <value>Allineamento verticale</value>
   </data>
   <data name="WANT_TO_SAVE" xml:space="preserve">
-    <value>Il tema è stato modificato, vuoi salvarlo?</value>
+    <value>Il tema è stato modificato. Vuoi salvarlo?</value>
     <comment>Question displayed in the dialog box that prompts you to save a theme</comment>
   </data>
 </root>

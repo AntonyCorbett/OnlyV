@@ -121,7 +121,7 @@
     <value>File aggiunto</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Aggiunti {0} file</value>
+    <value>{0} file aggiunti</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
     <value>Versione software OnlyV: {0}</value>
@@ -130,7 +130,7 @@
     <value>Indietro</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>File epub Bibbia</value>
+    <value>File epub della Bibbia</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -180,11 +180,11 @@
     <value>Trascina e rilascia in OnlyM per creare una slideshow</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Scarica il file epub della Bibbia da jw.org e trascinalo qui.</value>
+    <value>Scarica i file epub della Bibbia da jw.org e trascinali qui.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Questo editor è solitamente utilizzato per abbreviare versetti (ad esempio per sostituire una frase con un ellissi). Le modifiche vengono memorizzate fino a quando non si chiude OnlyV.</value>
+    <value>Questo editor è utilizzato di solito per abbreviare i versetti (ad es. per sostituire una frase con i punti di sospensione). Le tue modifiche vengono ricordate finché non chiudi OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>Epub della Bibbia non trovato!</value>
@@ -207,11 +207,11 @@
     <value>Nascondi (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Inserisci virgolette di chiusura</value>
+    <value>Inserisci virgolette chiuse</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Inserisci virgolette di apertura</value>
+    <value>Inserisci virgolette aperte</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
@@ -270,24 +270,24 @@
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Mostra pagina scritture</value>
+    <value>Mostra pagina delle scritture</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Lettore Bibbia non inizializzato!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>RIPRISTINA</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reimposta il testo del versetto</value>
+    <value>Ripristina il testo del versetto</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
     <value>Immagine salvata</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Immagini salvate {0}</value>
+    <value>{0} immagini salvate</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
     <value>Salva nella cartella immagini</value>
@@ -321,7 +321,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto adattamento</value>
+    <value>Adattamento automatico</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
@@ -345,19 +345,19 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Mostra numero versetto</value>
+    <value>Mostra numeri dei versetti</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Scalatura testo</value>
+    <value>Ridimensionamento testo</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Puntini di sospensione</value>
+    <value>Tronca punteggiatura</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Virgolette di sospensione</value>
+    <value>Tronca virgolette</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
@@ -365,18 +365,18 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Usa ellisse per indicare versetti non contigui</value>
+    <value>Usa punti di sospensione per indicare versetti non contigui</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Mostra un ~ tra i paragrafi in un singolo versetto</value>
+    <value>Mostra una tilde tra i paragrafi in un singolo versetto</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Spazio tra i numeri dei versetti e il titolo</value>
+    <value>Spazio tra i numeri dei versetti nel titolo</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Mostra ellisse per la continuazione</value>
+    <value>Mostra punti di sospensione nella continuazione</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Usa nomi dei libri abbreviati</value>
@@ -406,7 +406,7 @@
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Reimposta la scalatura del testo come predefinita del tema</value>
+    <value>Reimposta il ridimensionamento del testo al predefinito del tema</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
 </root>
