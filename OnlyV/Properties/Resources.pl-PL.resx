@@ -263,14 +263,14 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 obraz wygenerowany</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Poprzedni obrazek</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Pokaż stronę skryptów</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Czytnik Biblii nie został zainicjowany!</value>
@@ -310,7 +310,7 @@
     <value>ZOBACZ</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} zdjęć wygenerowanych.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Pozwól na edycję wersetów</value>
