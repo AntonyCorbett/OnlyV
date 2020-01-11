@@ -138,7 +138,7 @@
     <comment>Caption of button in Background section</comment>
   </data>
   <data name="CLEAR_BACKGROUND_IMAGE_TOOLTIP" xml:space="preserve">
-    <value>Clear background image</value>
+    <value>Wyczyść obraz tła</value>
     <comment>Tooltip for button in Background section</comment>
   </data>
   <data name="COLOR_PICKER_ADVANCED" xml:space="preserve">
@@ -150,7 +150,7 @@
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
-    <value>Recent Colours</value>
+    <value>Ostatnie kolory</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
@@ -165,20 +165,20 @@
     <value>Nie można utworzyć folderu {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Optionally drop a background image here.</value>
+    <value>Opcjonalnie upuść tło tutaj.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Drop-shadow blur radius</value>
+    <value>Promień rozmycia cienia</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Drop-shadow colour</value>
+    <value>Kolor cienia</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Drop-shadow depth</value>
+    <value>Głębokość cienia</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Drop-shadow opacity</value>
+    <value>Przezroczystość cienia</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
     <value>Kolor</value>
@@ -197,7 +197,7 @@
     <comment>Font style label text ("style" is "normal", "italic", etc)</comment>
   </data>
   <data name="FONT_WEIGHT" xml:space="preserve">
-    <value>Font weight</value>
+    <value>Waga czcionki</value>
     <comment>Font weight label text ("weight" is "light", "normal", "bold" etc)</comment>
   </data>
   <data name="HEADER_BACKGROUND" xml:space="preserve">
@@ -205,11 +205,11 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_BODY_TEXT" xml:space="preserve">
-    <value>BODY TEXT</value>
+    <value>TREŚĆ</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_IMAGE_DIMENSIONS" xml:space="preserve">
-    <value>IMAGE DIMENSIONS (pixels)</value>
+    <value>WYMIARY OBRAZU (w pikselach)</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
@@ -217,11 +217,11 @@
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_TITLE_TEXT" xml:space="preserve">
-    <value>TITLE TEXT</value>
+    <value>TEKST TYTUŁU</value>
     <comment>Group box header</comment>
   </data>
   <data name="HEADER_VERSE_NOS" xml:space="preserve">
-    <value>VERSE NUMBERS</value>
+    <value>NUMER WERSETU</value>
     <comment>Group box header</comment>
   </data>
   <data name="HORZ_ALIGNMENT" xml:space="preserve">
