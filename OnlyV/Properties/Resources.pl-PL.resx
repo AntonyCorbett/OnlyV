@@ -369,14 +369,14 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Pokaż tyldę między akapitami w jednym wersecie</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Odstęp między wierszami</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Pokaż elipsy dla kontynuacji</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Użyj skróconych nazw ksiąg biblijnych</value>
@@ -406,7 +406,7 @@
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Reset the text scaling to the theme's default</value>
+    <value>Zresetuj skalowanie tekstu dla domyślnego motywu</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
 </root>
