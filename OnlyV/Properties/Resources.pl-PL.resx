@@ -177,7 +177,7 @@
     <value>Wyświetl (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Przeciągnij i upuść do tylko dla pokazu slajdów</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
     <value>Pobierz pliki epub Biblii z jw.org następnie przeciągnij i upuść tutaj.</value>
@@ -263,14 +263,14 @@
     <value>OK</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 obraz wygenerowany</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
     <value>Poprzedni obrazek</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Pokaż stronę skryptów</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
     <value>Czytnik Biblii nie został zainicjowany!</value>
@@ -280,7 +280,7 @@
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Resetuj tekst wersetu</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
@@ -310,7 +310,7 @@
     <value>ZOBACZ</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} zdjęć wygenerowanych.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
     <value>Pozwól na edycję wersetów</value>
@@ -353,11 +353,11 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Przytnij interpunkcję</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Przytnij cytaty</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
@@ -369,14 +369,14 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Pokaż tyldę między akapitami w jednym wersecie</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Odstęp między wierszami</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Pokaż elipsy dla kontynuacji</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
     <value>Użyj skróconych nazw ksiąg biblijnych</value>
@@ -406,7 +406,7 @@
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Reset the text scaling to the theme's default</value>
+    <value>Zresetuj skalowanie tekstu dla domyślnego motywu</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
 </root>

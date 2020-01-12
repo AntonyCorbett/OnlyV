@@ -138,7 +138,7 @@
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
-    <value>Oblique</value>
+    <value>Ukośna</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
@@ -154,7 +154,7 @@
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
-    <value>Semi-bold</value>
+    <value>Pół-gruba</value>
     <comment>A font weight</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_CENTRE" xml:space="preserve">
