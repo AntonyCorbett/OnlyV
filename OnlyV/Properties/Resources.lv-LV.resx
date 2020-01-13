@@ -254,98 +254,98 @@
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show preview page</value>
+    <value>Parādīt priekšskata lapu</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>No images to save!</value>
+    <value>Nav attēla, ko saglabāt!</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>LABI</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 attēls izveidots</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Previous image</value>
+    <value>Iepriekšējais attēls</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Parādīt rakstuvietu lapu</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Bībeles lasītājs nav iniciālizēts!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>ATIESTATĪT</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Atcelt teksta izmaiņas</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Saved image</value>
+    <value>Attēls saglabāts</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Saved {0} images</value>
+    <value>{0} attēli saglabāti</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>Saglabāt attēlus mapē</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Izvēlēties mērķa mapi</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>Administrators ir bloķējis iestatījumus!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Settings page</value>
+    <value>Iestatījumu lapa</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>PANTI</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>PARĀDĪT</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} attēli izveidoti.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Allow verse editing</value>
+    <value>Atļaut pantu rediģēšanu</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Galvenais logs vienmēr priekšā</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto fit</value>
+    <value>Pielāgot automātiski</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Iesākumā lejupielādē Bībeles epub failu no jw.org un velk un nomet to šeit.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>IMAGE STYLE</value>
+    <value>ATTĒLA STILS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>DAŽĀDI</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Images folder</value>
+    <value>Attēlu mape</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Reģistrēšanas līmenis</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Parādīt pantu numurus</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
