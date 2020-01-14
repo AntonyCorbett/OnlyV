@@ -150,38 +150,38 @@
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_RECENT_COLORS" xml:space="preserve">
-    <value>Recent Colours</value>
+    <value>Nesen lietotas krāsas</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD" xml:space="preserve">
-    <value>Standard</value>
+    <value>Standarta</value>
     <comment>Tab header in color picker</comment>
   </data>
   <data name="COLOR_PICKER_STANDARD_COLORS" xml:space="preserve">
-    <value>Standard Colours</value>
+    <value>Standarta krāsas</value>
     <comment>Header in color picker</comment>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Nevarēja veidot mapi {0}</value>
   </data>
   <data name="DROP_IMAGE" xml:space="preserve">
-    <value>Optionally drop a background image here.</value>
+    <value>Pēc izvēles velc un nomet fona attēlu šeit.</value>
     <comment>See Background section</comment>
   </data>
   <data name="DROP_SHADOW_BLUR_RADIUS" xml:space="preserve">
-    <value>Drop-shadow blur radius</value>
+    <value>Krītošās ēnas izplūšanas rādiuss</value>
   </data>
   <data name="DROP_SHADOW_COLOR" xml:space="preserve">
-    <value>Drop-shadow colour</value>
+    <value>Krītošās ēnas krāsa</value>
   </data>
   <data name="DROP_SHADOW_DEPTH" xml:space="preserve">
-    <value>Drop-shadow depth</value>
+    <value>Krītošās ēnas dziļums</value>
   </data>
   <data name="DROP_SHADOW_OPACITY" xml:space="preserve">
-    <value>Drop-shadow opacity</value>
+    <value>Krītošās ēnas necaurspīdīgums</value>
   </data>
   <data name="FONT_COLOR" xml:space="preserve">
-    <value>Colour</value>
+    <value>Krāsa</value>
     <comment>Font colour label text</comment>
   </data>
   <data name="FONT_OPACITY" xml:space="preserve">
