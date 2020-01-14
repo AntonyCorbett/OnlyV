@@ -118,23 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BODY_VERTICAL_ALIGNMENT_MIDDLE" xml:space="preserve">
-    <value>Middle</value>
+    <value>Vidū</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Augšā</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
-    <value>File already exists!</value>
+    <value>Fails jau ir izveidots!</value>
     <comment>Error message when trying to create a theme file</comment>
   </data>
   <data name="FONT_STYLE_ITALIC" xml:space="preserve">
-    <value>Italic</value>
+    <value>Slīpraksts</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Parastais</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
