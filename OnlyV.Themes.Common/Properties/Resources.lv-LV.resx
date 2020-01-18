@@ -118,83 +118,83 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BODY_VERTICAL_ALIGNMENT_MIDDLE" xml:space="preserve">
-    <value>Middle</value>
+    <value>Vidū</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="BODY_VERTICAL_ALIGNMENT_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Augšā</value>
     <comment>Body vertical alignment</comment>
   </data>
   <data name="FILE_EXISTS" xml:space="preserve">
-    <value>File already exists!</value>
+    <value>Fails jau ir izveidots!</value>
     <comment>Error message when trying to create a theme file</comment>
   </data>
   <data name="FONT_STYLE_ITALIC" xml:space="preserve">
-    <value>Italic</value>
+    <value>Kursīvs</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Parastais</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_STYLE_OBLIQUE" xml:space="preserve">
-    <value>Oblique</value>
+    <value>Slīpie burti</value>
     <comment>A font style</comment>
   </data>
   <data name="FONT_WEIGHT_BOLD" xml:space="preserve">
-    <value>Bold</value>
+    <value>Treknraksts</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_LIGHT" xml:space="preserve">
-    <value>Light</value>
+    <value>Gaišie burti</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Parastais</value>
     <comment>A font weight</comment>
   </data>
   <data name="FONT_WEIGHT_SEMIBOLD" xml:space="preserve">
-    <value>Semi-bold</value>
+    <value>Pustreknie burti</value>
     <comment>A font weight</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_CENTRE" xml:space="preserve">
-    <value>Centre</value>
+    <value>Pa vidu</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_LEFT" xml:space="preserve">
-    <value>Left</value>
+    <value>Pa kreisi</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="HORZ_TEXT_ALIGNMENT_RIGHT" xml:space="preserve">
-    <value>Right</value>
+    <value>Pa labi</value>
     <comment>Horizontal text alignment</comment>
   </data>
   <data name="LINE_SPACING_LARGE" xml:space="preserve">
-    <value>Large</value>
+    <value>Liela</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_NORMAL" xml:space="preserve">
-    <value>Normal</value>
+    <value>Vidēja</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_SMALL" xml:space="preserve">
-    <value>Small</value>
+    <value>Maza</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_LARGE" xml:space="preserve">
-    <value>Very large</value>
+    <value>Ļoti liela</value>
     <comment>Line spacing</comment>
   </data>
   <data name="LINE_SPACING_VERY_SMALL" xml:space="preserve">
-    <value>Very small</value>
+    <value>Ļoti maza</value>
     <comment>Line spacing</comment>
   </data>
   <data name="TITLE_POS_BOTTOM" xml:space="preserve">
-    <value>Bottom</value>
+    <value>Apakšā</value>
     <comment>Title position</comment>
   </data>
   <data name="TITLE_POS_TOP" xml:space="preserve">
-    <value>Top</value>
+    <value>Augšā</value>
     <comment>Title position</comment>
   </data>
 </root>

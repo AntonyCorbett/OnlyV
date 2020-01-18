@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Added file</value>
+    <value>Fails pievienots</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>Added {0} files</value>
+    <value>Pievienoti {0} faili</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>OnlyV software version: {0}</value>
+    <value>OnlyV programmas versija: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Back</value>
+    <value>Atpakaļ</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Bible epub file</value>
+    <value>Bībeles epub fails</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -138,275 +138,275 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>BOOK</value>
+    <value>GRĀMATA</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>CHAPTER</value>
+    <value>NODAĻA</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Copied to clipboard</value>
+    <value>Iekopēts starpliktuvē</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Copy image to clipboard</value>
+    <value>Iekopēt attēlu starpliktuvē</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Could not read one of the files!</value>
+    <value>Nevarēja lasīt kādu no failiem!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Could not read any of the files!</value>
+    <value>Nevarēja lasīt nevienu failu!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Could not read file!</value>
+    <value>Nevarēja lasīt failu!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>Could not read {0} files!</value>
+    <value>Nevarēja lasīt {0} failus!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>Could not create folder {0}</value>
+    <value>Nevarēja veidot mapi {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Default</value>
+    <value>Noklusējuma</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Destination Folder</value>
+    <value>Mērķa mape</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Display (F5)</value>
+    <value>Parādīt (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Drag and drop into OnlyM to create a slideshow</value>
+    <value>Vilkt un nomest uz OnlyM, lai veidotu slaidrādi</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Download Bible epub files from jw.org and drag and drop here.</value>
+    <value>Lejupielādēt Bībeles epub failus no jw.org un vilkt un nomest šeit.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>This editor is typically used to abbreviate verses (e.g. to replace a sentence with an ellipsis). Your modifications are remembered until you close OnlyV.</value>
+    <value>Šo redaktoru parasti izmanto lai saīsinātu pantus (piemēram lai aizvietotu teikumu ar daudzpunkti). Izmaiņas tiek saglabātas tikai kamēr netiek aizvērta OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Bible epub not found!</value>
+    <value>Bībeles epub netika atrasts!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Bible epub not specified!</value>
+    <value>Nav norādīts Bībeles epub!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Error saving images!</value>
+    <value>Kļūda saglabājot attēlus!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>BIBLES</value>
+    <value>BĪBELES</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>DISPLAY</value>
+    <value>EKRĀNS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Hide (F5)</value>
+    <value>Slēpt (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Insert closing quotation mark</value>
+    <value>Pievienot aizvērējpēdiņas</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Insert opening quotation mark</value>
+    <value>Pievienot atvērējpēdiņas</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" is a registered trademark of Watch Tower Bible and Tract Society of Pennsylvania</value>
+    <value>"JW Library" ir Watch Tower Bible and Tract Society of Pennsylvania reģistrēta prečzīme</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library compatibility mode</value>
+    <value>JW Library atbalsta režīms</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Debug</value>
+    <value>Atkļūdošana</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Error</value>
+    <value>Kļūdas</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Fatal</value>
+    <value>Fatālas kļūdas</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Information</value>
+    <value>Informatīvi</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Verbose</value>
+    <value>Izvērsti</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Warning</value>
+    <value>Brīdinājumi</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Media monitor</value>
+    <value>Media monitors</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>None</value>
+    <value>Nav izvēlēts</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>New update available!</value>
+    <value>Pieejami atjauninājumi!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Next image</value>
+    <value>Nākamais attēls</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Show preview page</value>
+    <value>Parādīt priekšskata lapu</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>No images to save!</value>
+    <value>Nav attēla, ko saglabāt!</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>OK</value>
+    <value>LABI</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 image generated</value>
+    <value>1 attēls izveidots</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Previous image</value>
+    <value>Iepriekšējais attēls</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Show scriptures page</value>
+    <value>Parādīt rakstuvietu lapu</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Bible reader not initialised!</value>
+    <value>Bībeles lasītājs nav iniciālizēts!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>RESET</value>
+    <value>ATIESTATĪT</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Reset the verse text</value>
+    <value>Atcelt teksta izmaiņas</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Saved image</value>
+    <value>Attēls saglabāts</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>Saved {0} images</value>
+    <value>{0} attēli saglabāti</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Save to images folder</value>
+    <value>Saglabāt attēlus mapē</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Select Destination Folder</value>
+    <value>Izvēlēties mērķa mapi</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Settings disabled by administrator!</value>
+    <value>Administrators ir bloķējis iestatījumus!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Settings page</value>
+    <value>Iestatījumu lapa</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>VERSES</value>
+    <value>PANTI</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>VIEW</value>
+    <value>PARĀDĪT</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} images generated.</value>
+    <value>{0} attēli izveidoti.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Allow verse editing</value>
+    <value>Atļaut pantu rediģēšanu</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Main window always on top</value>
+    <value>Galvenais logs vienmēr priekšā</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Auto fit</value>
+    <value>Pielāgot automātiski</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>To get started, download a Bible epub file from jw.org and then drag and drop it here.</value>
+    <value>Iesākumā lejupielādē Bībeles epub failu no jw.org un velk un nomet to šeit.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>IMAGE STYLE</value>
+    <value>ATTĒLA STILS</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>MISCELLANEOUS</value>
+    <value>DAŽĀDI</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Images folder</value>
+    <value>Attēlu mape</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Logging level</value>
+    <value>Reģistrēšanas līmenis</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Show verse numbers</value>
+    <value>Parādīt pantu numurus</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Text scaling</value>
+    <value>Teksta izmērs</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Trim punctuation</value>
+    <value>Izgriezt pieturzīmes</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Trim quotation marks</value>
+    <value>Izgriezt pēdiņas</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Use background image</value>
+    <value>Izmantot fona attēlu</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Use ellipses to indicate non-contiguous verses</value>
+    <value>Izmantot daudzpunkti starp nesecīgiem pantiem</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Show a tilde between paragraphs in a single verse</value>
+    <value>Parādīt tildi (~) lai norādītu rindkopu sadalījumu pantā</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Space between title verse numbers</value>
+    <value>Atstarpe starp panta numuriem rakstuvietas norādē</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Show ellipses for continuation</value>
+    <value>Parādīt turpinājumu ar daudzpunkti</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Use abbreviated book names</value>
+    <value>Izmantot saīsinājumus grāmatu nosaukumiem</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Language</value>
+    <value>Valoda</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Please restart OnlyV after changing the language.</value>
+    <value>Lūdzu restartē OnlyV pēc valodas izmaiņas.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV cannot write to the '{0}' folder</value>
+    <value>OnlyV nevar rakstīt uz mapi '{0}'</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Display help</value>
+    <value>Parādīt palīdzību</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
-    <value>Theme</value>
+    <value>Tēma</value>
     <comment>See Settings, Image Style section</comment>
   </data>
   <data name="RESET_SCALING" xml:space="preserve">
-    <value>RESET</value>
+    <value>ATIESTATĪT</value>
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Reset the text scaling to the theme's default</value>
+    <value>Atcelt tēmas teksta izmēra izmaiņas</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
 </root>
