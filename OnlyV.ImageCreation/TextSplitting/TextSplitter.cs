@@ -5,6 +5,7 @@
     using System.Linq;
     using System.Text;
     using System.Windows;
+    using OnlyV.ImageCreation.Exceptions;
 
     internal class TextSplitter
     {
@@ -54,7 +55,7 @@
                     }
                     else
                     {
-                        throw new Exception(Properties.Resources.TEXT_TOO_LARGE);
+                        throw new TextTooLargeException(Properties.Resources.TEXT_TOO_LARGE);
                     }
                 }
                 else

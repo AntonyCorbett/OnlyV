@@ -1,5 +1,6 @@
 namespace OnlyV.ViewModel
 {
+    using System;
     using System.Diagnostics;
     using System.IO;
     using System.Linq;
@@ -10,6 +11,7 @@ namespace OnlyV.ViewModel
     using GalaSoft.MvvmLight.CommandWpf;
     using Helpers;
     using MaterialDesignThemes.Wpf;
+    using OnlyV.ImageCreation.Exceptions;
     using OnlyV.Services.VerseEditor;
     using OnlyV.Themes.Common.Services.UI;
     using Services.CommandLine;
@@ -26,7 +28,7 @@ namespace OnlyV.ViewModel
         private readonly SettingsViewModel _settingsViewModel;
         private readonly StartupViewModel _startupViewModel;
         private readonly EditTextViewModel _editVerseTextViewModel;
-        
+
         private readonly IImagesService _imagesService;
         private readonly IOptionsService _optionsService;
         private readonly ISnackbarService _snackbarService;
@@ -59,7 +61,7 @@ namespace OnlyV.ViewModel
             _startupViewModel = startupViewModel;
             _commandLineService = commandLineService;
             _verseEditorService = verseEditorService;
-            
+
             if (commandLineService.NoGpu || ForceSoftwareRendering())
             {
                 // disable hardware (GPU) rendering so that it's all done by the CPU...
@@ -109,7 +111,7 @@ namespace OnlyV.ViewModel
                     _currentPage = value;
                     RaisePropertyChanged();
 
-                    PreviousPageToolTip = 
+                    PreviousPageToolTip =
                         _currentPage == _previewViewModel || _currentPage == _settingsViewModel
                             ? Properties.Resources.PREV_PAGE_SCRIPS
                             : null;
@@ -153,13 +155,13 @@ namespace OnlyV.ViewModel
         public bool ShowNewVersionButton { get; private set; }
 
         public string SettingsButtonToolTip =>
-            _commandLineService.NoSettings 
+            _commandLineService.NoSettings
                 ? Properties.Resources.SETTINGS_DISABLED
                 : CurrentPage == _settingsViewModel || CurrentPage == _editVerseTextViewModel
                     ? Properties.Resources.BACK
                     : Properties.Resources.SETTINGS_PAGE;
 
-        public string SettingsIconKind => 
+        public string SettingsIconKind =>
             CurrentPage == _settingsViewModel || CurrentPage == _editVerseTextViewModel
                 ? @"BackBurger"
                 : @"Settings";
@@ -192,26 +194,45 @@ namespace OnlyV.ViewModel
             return CurrentPage != _startupViewModel;
         }
 
+        private void ActionIncludesPreviewPage(Action action)
+        {
+            try
+            {
+                action.Invoke();
+            }
+            catch (TextTooLargeException ex)
+            {
+                _snackbarService.EnqueueWithOk(ex.Message);
+            }
+            catch (Exception)
+            {
+                _snackbarService.EnqueueWithOk(Properties.Resources.UNKNOWN_ERROR);
+            }
+        }
+
         private void OnToggleSettings()
         {
-            if (CurrentPage == _settingsViewModel)
+            ActionIncludesPreviewPage(() =>
             {
-                CurrentPage = _preSettingsPage;
-            }
-            else if (CurrentPage == _editVerseTextViewModel)
-            {
-                _editVerseTextViewModel.UpdateVerseEditorService();
-                PreparePreviewPage();
-                CurrentPage = _previewViewModel;
-            }
-            else
-            {
-                _preSettingsPage = CurrentPage;
-                CurrentPage = _settingsViewModel;
-            }
+                if (CurrentPage == _settingsViewModel)
+                {
+                    CurrentPage = _preSettingsPage;
+                }
+                else if (CurrentPage == _editVerseTextViewModel)
+                {
+                    _editVerseTextViewModel.UpdateVerseEditorService();
+                    PreparePreviewPage();
+                    CurrentPage = _previewViewModel;
+                }
+                else
+                {
+                    _preSettingsPage = CurrentPage;
+                    CurrentPage = _settingsViewModel;
+                }
 
-            RaisePropertyChanged(nameof(SettingsIconKind));
-            RaisePropertyChanged(nameof(SettingsButtonToolTip));
+                RaisePropertyChanged(nameof(SettingsIconKind));
+                RaisePropertyChanged(nameof(SettingsButtonToolTip));
+            });
         }
 
         private bool CanDoBack()
@@ -241,15 +262,18 @@ namespace OnlyV.ViewModel
         {
             if (CurrentPage == _scripturesViewModel)
             {
-                PreparePreviewPage();
-                CurrentPage = _previewViewModel;
+                ActionIncludesPreviewPage(() =>
+                {
+                    PreparePreviewPage();
+                    CurrentPage = _previewViewModel;
+                });
             }
         }
 
         private void InitImagesService()
         {
             _imagesService.Init(
-                _scripturesViewModel.BookNumber, 
+                _scripturesViewModel.BookNumber,
                 _scripturesViewModel.ChapterAndVersesString);
         }
 
@@ -259,7 +283,7 @@ namespace OnlyV.ViewModel
 
             if (_previewViewModel.ImageIndex != null)
             {
-                PreparePreviewPage();
+                ActionIncludesPreviewPage(PreparePreviewPage);
             }
         }
 
@@ -350,7 +374,7 @@ namespace OnlyV.ViewModel
         private void HandleEditTextCommandEvent(object sender, System.EventArgs e)
         {
             _editVerseTextViewModel.Init(
-                _scripturesViewModel.BookNumber, 
+                _scripturesViewModel.BookNumber,
                 _scripturesViewModel.ChapterAndVersesString);
 
             CurrentPage = _editVerseTextViewModel;

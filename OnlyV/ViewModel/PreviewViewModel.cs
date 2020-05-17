@@ -1,4 +1,6 @@
-﻿namespace OnlyV.ViewModel
+﻿using OnlyV.ImageCreation.Exceptions;
+
+namespace OnlyV.ViewModel
 {
     using System;
     using System.Diagnostics;
@@ -320,12 +322,23 @@
 
         private void RefreshImages()
         {
-            // when the style or theme is changed in the settings page we must
-            // ensure we display the first image (the style settings may change
-            // the number of images available).
-            ImageIndex = null;
-            _imagesService.Refresh();
-            ImageIndex = 0;
+            try
+            {
+                // when the style or theme is changed in the settings page we must
+                // ensure we display the first image (the style settings may change
+                // the number of images available).
+                ImageIndex = null;
+                _imagesService.Refresh();
+                ImageIndex = 0;
+            }
+            catch (TextTooLargeException ex)
+            {
+                _snackbarService.EnqueueWithOk(ex.Message);
+            }
+            catch (Exception)
+            {
+                _snackbarService.EnqueueWithOk(Properties.Resources.UNKNOWN_ERROR);
+            }
         }
 
         private bool VerseTextIsModified()
