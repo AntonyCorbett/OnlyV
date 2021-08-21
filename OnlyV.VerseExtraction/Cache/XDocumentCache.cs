@@ -1,10 +1,10 @@
-﻿namespace OnlyV.VerseExtraction.Cache
-{
-    using System;
-    using System.IO;
-    using System.Xml.Linq;
-    using Utils;
+﻿using System;
+using System.IO;
+using System.Xml.Linq;
+using OnlyV.VerseExtraction.Utils;
 
+namespace OnlyV.VerseExtraction.Cache
+{
     internal class XDocumentCache
     {
         private const int MaxEntries = 16;
@@ -24,7 +24,7 @@
             }
         }
 
-        private string GenerateKey(string epubPath, DateTime creationStamp, string docKey)
+        private static string GenerateKey(string epubPath, DateTime creationStamp, string docKey)
         {
             return $"{docKey}-{creationStamp.Ticks}-{Path.GetFileName(epubPath)}";
         }

@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Services.Monitors
-{
-    using System.Collections.Generic;
-    using System.Runtime.InteropServices;
-    using Serilog;
+﻿using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using Serilog;
 
+namespace OnlyV.Services.Monitors
+{
     /// <summary>
     /// Queries the system for information regarding display devices
     /// </summary>

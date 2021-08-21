@@ -1,7 +1,7 @@
-﻿namespace OnlyV.Services.Monitors
-{
-    using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
+namespace OnlyV.Services.Monitors
+{
     public class SystemMonitor
     {
         public Screen Monitor { get; set; }

@@ -1,7 +1,7 @@
-﻿namespace OnlyV.ViewModel
-{
-    using GalaSoft.MvvmLight;
+﻿using GalaSoft.MvvmLight;
 
+namespace OnlyV.ViewModel
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class DisplayViewModel : ViewModelBase
     {

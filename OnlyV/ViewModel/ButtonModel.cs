@@ -1,7 +1,7 @@
-﻿namespace OnlyV.ViewModel
-{
-    using GalaSoft.MvvmLight.CommandWpf;
+﻿using GalaSoft.MvvmLight.CommandWpf;
 
+namespace OnlyV.ViewModel
+{
     internal class ButtonModel
     {
         public ButtonModel(string content, object cmdParam, RelayCommand<object> command)

@@ -1,4 +1,15 @@
-﻿namespace OnlyV.Themes.Common.Services.WindowPositioning
+﻿using System;
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Windows;
+using System.Windows.Interop;
+using System.Xml;
+using System.Xml.Serialization;
+using Serilog;
+
+namespace OnlyV.Themes.Common.Services.WindowPositioning
 {
     // ReSharper disable CommentTypo
     // ReSharper disable IdentifierTypo
@@ -9,17 +20,10 @@
     // ReSharper disable StyleCop.SA1203
     // ReSharper disable StyleCop.SA1310
     // ReSharper disable UnusedMember.Global
+
+#pragma warning disable U2U1004 // Public value types should implement equality
+
     // adapted from david Rickard's Tech Blog
-    using System;
-    using System.IO;
-    using System.Reflection;
-    using System.Runtime.InteropServices;
-    using System.Text;
-    using System.Windows;
-    using System.Windows.Interop;
-    using System.Xml;
-    using System.Xml.Serialization;
-    using Serilog;
 
     public static class WindowPlacement
     {
@@ -61,7 +65,6 @@
             return GetPlacement(new WindowInteropHelper(window).Handle);
         }
 
-#pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
         public static (int x, int y) GetDpiSettings()
         {
             var dpiXProperty = typeof(SystemParameters).GetProperty("DpiX", BindingFlags.NonPublic | BindingFlags.Static);
@@ -74,7 +77,6 @@
 
             return ((int)dpiXProperty.GetValue(null, null), (int)dpiYProperty.GetValue(null, null));
         }
-#pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
 
         private static string GetPlacement(IntPtr windowHandle)
         {
@@ -93,7 +95,6 @@
     // RECT structure required by WINDOWPLACEMENT structure
     [Serializable]
     [StructLayout(LayoutKind.Sequential)]
-#pragma warning disable SA1201 // Elements must appear in the correct order
     public struct RECT
     {
         public int Left;
@@ -109,7 +110,6 @@
             Bottom = bottom;
         }
     }
-#pragma warning restore SA1201 // Elements must appear in the correct order
 
     // POINT structure required by WINDOWPLACEMENT structure
     [Serializable]
@@ -140,4 +140,6 @@
         public RECT normalPosition;
 #pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
     }
+
+#pragma warning restore U2U1004 // Public value types should implement equality
 }

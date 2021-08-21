@@ -1,11 +1,16 @@
-﻿namespace OnlyV.ImageCreation.Exceptions
-{
-    using System;
-    using System.Runtime.Serialization;
+﻿using System;
+using System.Runtime.Serialization;
 
+namespace OnlyV.ImageCreation.Exceptions
+{
     [Serializable]
     public class TextTooLargeException : ImageCreationException
     {
+        public TextTooLargeException()
+            : base()
+        {
+        }
+
         public TextTooLargeException(string message)
             : base(message)
         {

@@ -1,6 +1,8 @@
-﻿namespace OnlyV.EventArgs
+﻿using System;
+
+namespace OnlyV.EventArguments
 {
-    internal class MonitorChangedEventArgs : System.EventArgs
+    internal class MonitorChangedEventArgs : EventArgs
     {
         public string OriginalMonitorId { get; set; }
 

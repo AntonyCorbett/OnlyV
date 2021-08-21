@@ -1,10 +1,10 @@
-﻿namespace OnlyV.Behaviours
-{
-    using System;
-    using System.Windows;
-    using System.Windows.Interactivity;
-    using System.Windows.Media.Animation;
+﻿using System;
+using System.Windows;
+using System.Windows.Interactivity;
+using System.Windows.Media.Animation;
 
+namespace OnlyV.Behaviours
+{
     public class FadeCloseBehaviour : Behavior<Window>
     {
         public static TimeSpan FadeTime { get; } = TimeSpan.FromMilliseconds(750);

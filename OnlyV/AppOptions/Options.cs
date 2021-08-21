@@ -1,8 +1,8 @@
-﻿namespace OnlyV.AppOptions
-{
-    using System.IO;
-    using Serilog.Events;
+﻿using System.IO;
+using Serilog.Events;
 
+namespace OnlyV.AppOptions
+{
     internal class Options
     {
         public Options()

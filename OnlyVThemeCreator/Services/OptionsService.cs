@@ -1,15 +1,15 @@
-﻿namespace OnlyVThemeCreator.Services
-{
-    using System;
-    using System.Globalization;
-    using System.IO;
-    using System.Threading;
-    using System.Windows;
-    using System.Windows.Markup;
-    using Helpers;
-    using Newtonsoft.Json;
-    using Serilog;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Threading;
+using System.Windows;
+using System.Windows.Markup;
+using Newtonsoft.Json;
+using OnlyVThemeCreator.Helpers;
+using Serilog;
 
+namespace OnlyVThemeCreator.Services
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class OptionsService : IOptionsService
     {
@@ -80,7 +80,7 @@
             }
         }
 
-        private string GetOptionsSignature(AppOptions.Options options)
+        private static string GetOptionsSignature(AppOptions.Options options)
         {
             return JsonConvert.SerializeObject(options);
         }

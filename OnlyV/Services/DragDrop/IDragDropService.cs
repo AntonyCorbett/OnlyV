@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Services.DragDrop
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Windows;
+﻿using System;
+using System.Collections.Generic;
+using System.Windows;
 
+namespace OnlyV.Services.DragDrop
+{
     internal interface IDragDropService
     {
         event EventHandler EpubFileListChanged;

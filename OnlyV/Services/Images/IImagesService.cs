@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Services.Images
-{
-    using System.Collections.Generic;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
+﻿using System.Collections.Generic;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
+namespace OnlyV.Services.Images
+{
     internal interface IImagesService
     {
         int ImageCount { get; }

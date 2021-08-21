@@ -1,4 +1,9 @@
-﻿namespace OnlyV.Themes.Common.Services.WindowPositioning
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Windows;
+using System.Windows.Media.Imaging;
+
+namespace OnlyV.Themes.Common.Services.WindowPositioning
 {
     // ReSharper disable IdentifierTypo
     // ReSharper disable UnusedMember.Global
@@ -7,10 +12,6 @@
     // ReSharper disable StyleCop.SA1121
     // ReSharper disable MemberCanBePrivate.Global
     // ReSharper disable FieldCanBeMadeReadOnly.Global
-    using System;
-    using System.Runtime.InteropServices;
-    using System.Windows;
-    using System.Windows.Media.Imaging;
 
     internal static class WindowsPlacementNativeMethods
     {

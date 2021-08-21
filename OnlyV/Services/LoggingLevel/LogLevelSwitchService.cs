@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.LoggingLevel
-{
-    using Serilog.Core;
-    using Serilog.Events;
+﻿using Serilog.Core;
+using Serilog.Events;
 
+namespace OnlyV.Services.LoggingLevel
+{
     internal class LogLevelSwitchService : ILogLevelSwitchService
     {
         public static readonly LoggingLevelSwitch LevelSwitch = new LoggingLevelSwitch

@@ -1,10 +1,10 @@
-﻿namespace OnlyV.Helpers.JwLib
-{
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
 
+namespace OnlyV.Helpers.JwLib
+{
     internal static class JwLibHelper
     {
         private const string JwLibProcessName = "JWLibrary";

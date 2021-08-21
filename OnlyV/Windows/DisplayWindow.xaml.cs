@@ -1,7 +1,7 @@
-﻿namespace OnlyV.Windows
-{
-    using System.Windows;
+﻿using System.Windows;
 
+namespace OnlyV.Windows
+{
     public partial class DisplayWindow : Window
     {
         public DisplayWindow()

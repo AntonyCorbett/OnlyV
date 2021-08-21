@@ -1,12 +1,12 @@
-﻿namespace OnlyV.ImageCreation.TextSplitting
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Windows;
-    using OnlyV.ImageCreation.Exceptions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using OnlyV.ImageCreation.Exceptions;
 
+namespace OnlyV.ImageCreation.TextSplitting
+{
     internal class TextSplitter
     {
         private readonly string _originalText;
@@ -37,7 +37,7 @@
                 var word = q.Peek();
                 if (sb.Length > 0)
                 {
-                    sb.Append(" ");
+                    sb.Append(' ');
                 }
 
                 sb.Append(word);

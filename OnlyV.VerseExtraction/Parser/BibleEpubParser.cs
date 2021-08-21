@@ -1,12 +1,12 @@
-﻿namespace OnlyV.VerseExtraction.Parser
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using Models;
-    using Serilog;
-    using Utils;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using OnlyV.VerseExtraction.Models;
+using OnlyV.VerseExtraction.Utils;
+using Serilog;
 
+namespace OnlyV.VerseExtraction.Parser
+{
     internal sealed class BibleEpubParser : IDisposable
     {
         private readonly EpubAsArchive _epub;

@@ -1,10 +1,10 @@
-﻿namespace OnlyVThemeCreator.Services
-{
-    using System.Threading.Tasks;
-    using Dialogs;
-    using MaterialDesignThemes.Wpf;
-    using ViewModel;
+﻿using System.Threading.Tasks;
+using MaterialDesignThemes.Wpf;
+using OnlyVThemeCreator.Dialogs;
+using OnlyVThemeCreator.ViewModel;
 
+namespace OnlyVThemeCreator.Services
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class DialogService : IDialogService
     {

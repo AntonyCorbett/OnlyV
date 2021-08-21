@@ -1,19 +1,19 @@
-﻿namespace OnlyV.Services.Images
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using Helpers;
-    using ImageCreation;
-    using OnlyV.Services.VerseEditor;
-    using OnlyV.Themes.Common.Extensions;
-    using OnlyV.Themes.Common.Services.UI;
-    using Options;
-    using Themes.Common;
-    using Themes.Common.FileHandling;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using OnlyV.Helpers;
+using OnlyV.ImageCreation;
+using OnlyV.Services.Options;
+using OnlyV.Services.VerseEditor;
+using OnlyV.Themes.Common;
+using OnlyV.Themes.Common.Extensions;
+using OnlyV.Themes.Common.FileHandling;
+using OnlyV.Themes.Common.Services.UI;
 
+namespace OnlyV.Services.Images
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class ImagesService : IImagesService
     {
@@ -87,8 +87,7 @@
 
         private void ApplyFormatting(BibleTextImage bibleTextImage, string themePath)
         {
-            var file = new ThemeFile();
-            var cacheEntry = file.Read(themePath);
+            var cacheEntry = ThemeFile.Read(themePath);
 
             OnlyVTheme theme;
             ImageSource backgroundImage;
@@ -107,7 +106,7 @@
             ApplyFormatting(bibleTextImage, theme, backgroundImage);
         }
 
-        private Color ConvertFromString(string htmlColor, Color defaultColor)
+        private static Color ConvertFromString(string htmlColor, Color defaultColor)
         {
             if (string.IsNullOrEmpty(htmlColor))
             {

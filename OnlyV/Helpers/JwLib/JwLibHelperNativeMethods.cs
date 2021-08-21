@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Helpers.JwLib
-{
-    using System;
-    using System.Runtime.InteropServices;
-    using System.Text;
+﻿using System;
+using System.Runtime.InteropServices;
+using System.Text;
 
+namespace OnlyV.Helpers.JwLib
+{
     internal static class JwLibHelperNativeMethods
     {
         [DllImport("user32.dll", SetLastError = false)]

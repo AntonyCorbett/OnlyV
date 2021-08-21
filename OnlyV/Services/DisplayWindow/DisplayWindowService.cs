@@ -1,28 +1,26 @@
-﻿namespace OnlyV.Services.DisplayWindow
-{
-    using System.Threading;
-    using System.Threading.Tasks;
-    using System.Windows;
-    using System.Windows.Forms;
-    using System.Windows.Media;
-    using Behaviours;
-    using GalaSoft.MvvmLight.Messaging;
-    using Helpers.JwLib;
-    using Monitors;
-    using OnlyV.Themes.Common.Services.WindowPositioning;
-    using Options;
-    using PubSubMessages;
-    using Serilog;
+﻿using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Media;
+using GalaSoft.MvvmLight.Messaging;
+using OnlyV.Behaviours;
+using OnlyV.Helpers.JwLib;
+using OnlyV.PubSubMessages;
+using OnlyV.Services.Monitors;
+using OnlyV.Services.Options;
+using OnlyV.Themes.Common.Services.WindowPositioning;
+using Serilog;
 
+namespace OnlyV.Services.DisplayWindow
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class DisplayWindowService : IDisplayWindowService
     {
         private readonly IMonitorsService _monitorsService;
         private readonly IOptionsService _optionsService;
 
-#pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
         private readonly (int dpiX, int dpiY) _systemDpi;
-#pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
 
         private Windows.DisplayWindow _displayWindow;
 

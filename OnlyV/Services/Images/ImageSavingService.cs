@@ -1,14 +1,14 @@
-﻿namespace OnlyV.Services.Images
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Windows.Media.Imaging;
-    using Helpers;
-    using Microsoft.WindowsAPICodePack.Dialogs;
-    using OnlyV.Themes.Common.Services;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows.Media.Imaging;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using OnlyV.Helpers;
+using OnlyV.Themes.Common.Services;
 
+namespace OnlyV.Services.Images
+{
     internal class ImageSavingService : IImageSavingService
     {
         private readonly IReadOnlyCollection<BitmapSource> _images;
@@ -111,7 +111,7 @@
             return result;
         }
 
-        private void ClearFiles(string folder)
+        private static void ClearFiles(string folder)
         {
             var files = Directory.EnumerateFiles(folder, "*.png");
             foreach (var file in files)

@@ -1,20 +1,20 @@
-﻿namespace OnlyV.ImageCreation
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Windows;
-    using System.Windows.Media;
-    using System.Windows.Media.Effects;
-    using System.Windows.Media.Imaging;
-    using TextSplitting;
-    using Themes.Common.Specs;
-    using Utils;
-    using VerseExtraction;
-    using VerseExtraction.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Effects;
+using System.Windows.Media.Imaging;
+using OnlyV.ImageCreation.TextSplitting;
+using OnlyV.ImageCreation.Utils;
+using OnlyV.Themes.Common.Specs;
+using OnlyV.VerseExtraction;
+using OnlyV.VerseExtraction.Models;
 
+namespace OnlyV.ImageCreation
+{
     public class BibleTextImage
     {
         private const char Ellipsis = '…';
@@ -344,7 +344,7 @@
             return result;
         }
         
-        private IReadOnlyCollection<string> GetBatchOfLines(IReadOnlyCollection<string> lines, int batch, int batchSize)
+        private static IReadOnlyCollection<string> GetBatchOfLines(IReadOnlyCollection<string> lines, int batch, int batchSize)
         {
             if (batch >= 0 && (batch * batchSize) < lines.Count)
             {
@@ -536,7 +536,7 @@
             return visual;
         }
 
-        private bool IsEndOfSentenceOrPhrase(string lastOrDefault)
+        private static bool IsEndOfSentenceOrPhrase(string lastOrDefault)
         {
             if (lastOrDefault != null)
             {
@@ -708,7 +708,7 @@
             return height;
         }
 
-        private int CalcNumberBitmaps(int linesPerImage, IEnumerable<string> lines)
+        private static int CalcNumberBitmaps(int linesPerImage, IEnumerable<string> lines)
         {
             int numLines = lines.Count();
 
@@ -746,7 +746,7 @@
             }
         }
 
-        private Color FromHtmlString(string htmlColor)
+        private static Color FromHtmlString(string htmlColor)
         {
             // ReSharper disable once PossibleNullReferenceException
             return (Color)ColorConverter.ConvertFromString(htmlColor);

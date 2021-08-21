@@ -1,12 +1,13 @@
-﻿namespace OnlyV.Services.Monitors
+﻿using System;
+using System.Runtime.InteropServices;
+
+namespace OnlyV.Services.Monitors
 {
     // ReSharper disable StyleCop.SA1602
     // ReSharper disable UnusedMember.Global
     // ReSharper disable InconsistentNaming
     // ReSharper disable MemberCanBePrivate.Global
     // ReSharper disable FieldCanBeMadeReadOnly.Global
-    using System;
-    using System.Runtime.InteropServices;
 
     /// <summary>
     /// Native methods associated with retrieval of display device data

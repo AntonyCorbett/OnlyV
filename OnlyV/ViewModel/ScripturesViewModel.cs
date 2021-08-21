@@ -1,19 +1,18 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Windows.Input;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using OnlyV.Helpers;
+using OnlyV.Services.Bible;
+using OnlyV.VerseExtraction.Models;
+
 namespace OnlyV.ViewModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Windows.Input;
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.CommandWpf;
-    using OnlyV.Helpers;
-    using Services.Bible;
-    using VerseExtraction.Models;
-
     // ReSharper disable once ClassNeverInstantiated.Global
     internal sealed class ScripturesViewModel : ViewModelBase
     {
@@ -138,12 +137,12 @@ namespace OnlyV.ViewModel
             {
                 var sb = new StringBuilder(ChapterNumber);
 
-                sb.Append(" ");
+                sb.Append(' ');
                 sb.Append(ChapterNumber);
 
                 if (_selectedVerses != null)
                 {
-                    sb.Append(":");
+                    sb.Append(':');
                     sb.Append(VersesAsString());
                 }
                 
@@ -268,7 +267,7 @@ namespace OnlyV.ViewModel
             return true;
         }
 
-        private bool IsKeyboardShiftDown()
+        private static bool IsKeyboardShiftDown()
         {
             return Keyboard.IsKeyDown(Key.LeftShift) || Keyboard.IsKeyDown(Key.RightShift);
         }
@@ -381,7 +380,7 @@ namespace OnlyV.ViewModel
             {
                 if (sb.Length > 0)
                 {
-                    sb.Append(",");
+                    sb.Append(',');
                 }
 
                 sb.Append(range.FirstVerse);

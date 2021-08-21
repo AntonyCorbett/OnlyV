@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Themes.Common.Services
-{
-    using System.IO;
-    using System.Windows.Media.Imaging;
+﻿using System.IO;
+using System.Windows.Media.Imaging;
 
+namespace OnlyV.Themes.Common.Services
+{
     public static class BitmapWriter
     {
         public static void WriteJpeg(string fileName, int quality, BitmapSource bmp)

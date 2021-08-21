@@ -1,7 +1,7 @@
-﻿namespace OnlyVThemeCreator.AppOptions
-{
-    using System.IO;
+﻿using System.IO;
 
+namespace OnlyVThemeCreator.AppOptions
+{
     internal class Options
     {
         public string AppWindowPlacement { get; set; }

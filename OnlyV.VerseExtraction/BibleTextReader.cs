@@ -1,16 +1,16 @@
-﻿namespace OnlyV.VerseExtraction
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using Cache;
-    using Interfaces;
-    using Models;
-    using Parser;
-    using Serilog;
-    using Utils;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using OnlyV.VerseExtraction.Cache;
+using OnlyV.VerseExtraction.Interfaces;
+using OnlyV.VerseExtraction.Models;
+using OnlyV.VerseExtraction.Parser;
+using OnlyV.VerseExtraction.Utils;
+using Serilog;
 
+namespace OnlyV.VerseExtraction
+{
     public sealed class BibleTextReader : IVerseReader, IBookLister, IDisposable
     {
         private static readonly BibleBookDataCache Cache = new BibleBookDataCache();

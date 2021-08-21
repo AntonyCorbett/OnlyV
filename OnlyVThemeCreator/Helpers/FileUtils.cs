@@ -1,8 +1,8 @@
-﻿namespace OnlyVThemeCreator.Helpers
-{
-    using System;
-    using System.IO;
+﻿using System;
+using System.IO;
 
+namespace OnlyVThemeCreator.Helpers
+{
     internal static class FileUtils
     {
         private static readonly string OnlyVAppNamePathSegment = "OnlyV";

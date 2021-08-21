@@ -1,7 +1,7 @@
-﻿namespace OnlyVThemeCreator.Services
-{
-    using System;
+﻿using System;
 
+namespace OnlyVThemeCreator.Services
+{
     public interface IOptionsService
     {
         event EventHandler EpubPathChangedEvent;

@@ -1,8 +1,8 @@
-﻿namespace OnlyV.ViewModel
-{
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.Command;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.Command;
 
+namespace OnlyV.ViewModel
+{
     internal class EditVerseTextViewModel : ViewModelBase
     {
         private string _modifiedVerseText;

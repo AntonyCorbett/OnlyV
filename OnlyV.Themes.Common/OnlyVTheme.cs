@@ -1,7 +1,8 @@
-﻿namespace OnlyV.Themes.Common
+﻿using OnlyV.Themes.Common.Specs;
+
+namespace OnlyV.Themes.Common
 {
     // ReSharper disable MemberCanBePrivate.Global
-    using Specs;
 
     public class OnlyVTheme
     {

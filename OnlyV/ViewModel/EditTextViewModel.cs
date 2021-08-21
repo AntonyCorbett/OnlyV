@@ -1,13 +1,13 @@
-﻿namespace OnlyV.ViewModel
-{
-    using System.Collections.ObjectModel;
-    using GalaSoft.MvvmLight;
-    using OnlyV.Helpers;
-    using OnlyV.Services.Options;
-    using OnlyV.Services.VerseEditor;
-    using OnlyV.VerseExtraction;
-    using OnlyV.VerseExtraction.Models;
+﻿using System.Collections.ObjectModel;
+using GalaSoft.MvvmLight;
+using OnlyV.Helpers;
+using OnlyV.Services.Options;
+using OnlyV.Services.VerseEditor;
+using OnlyV.VerseExtraction;
+using OnlyV.VerseExtraction.Models;
 
+namespace OnlyV.ViewModel
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class EditTextViewModel : ViewModelBase
     {
@@ -86,7 +86,7 @@
             {
                 var mockVerseText = LoremIpsum.GetSomeMockVerses();
 
-                for (int n = 0; n < mockVerseText.Length; ++n)
+                for (var n = 0; n < mockVerseText.Length; ++n)
                 {
                     var item = new EditVerseTextViewModel
                     {

@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Themes.Common.Services.UI
-{
-    using System;
-    using System.Windows.Input;
-    using GalaSoft.MvvmLight.Threading;
+﻿using System;
+using System.Windows.Input;
+using GalaSoft.MvvmLight.Threading;
 
+namespace OnlyV.Themes.Common.Services.UI
+{
     public sealed class BusyCursor : IDisposable
     {
         private Cursor _originalCursor;

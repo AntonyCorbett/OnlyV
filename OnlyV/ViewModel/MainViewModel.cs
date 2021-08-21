@@ -1,24 +1,24 @@
+﻿using System;
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Windows.Interop;
+using System.Windows.Media;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using MaterialDesignThemes.Wpf;
+using OnlyV.Helpers;
+using OnlyV.ImageCreation.Exceptions;
+using OnlyV.Services.CommandLine;
+using OnlyV.Services.Images;
+using OnlyV.Services.Options;
+using OnlyV.Services.Snackbar;
+using OnlyV.Services.VerseEditor;
+using OnlyV.Themes.Common.Services.UI;
+
 namespace OnlyV.ViewModel
 {
-    using System;
-    using System.Diagnostics;
-    using System.IO;
-    using System.Linq;
-    using System.Threading.Tasks;
-    using System.Windows.Interop;
-    using System.Windows.Media;
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.CommandWpf;
-    using Helpers;
-    using MaterialDesignThemes.Wpf;
-    using OnlyV.ImageCreation.Exceptions;
-    using OnlyV.Services.VerseEditor;
-    using OnlyV.Themes.Common.Services.UI;
-    using Services.CommandLine;
-    using Services.Images;
-    using Services.Options;
-    using Services.Snackbar;
-
     // ReSharper disable once UnusedMember.Global
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class MainViewModel : ViewModelBase
@@ -309,7 +309,7 @@ namespace OnlyV.ViewModel
                    !File.Exists(_optionsService.EpubPath);
         }
 
-        private bool IsNewInstallation()
+        private static bool IsNewInstallation()
         {
             return !Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub").Any();
         }
@@ -354,7 +354,7 @@ namespace OnlyV.ViewModel
             Process.Start(@"https://github.com/AntonyCorbett/OnlyV/wiki");
         }
 
-        private bool ForceSoftwareRendering()
+        private static bool ForceSoftwareRendering()
         {
             // https://blogs.msdn.microsoft.com/jgoldb/2010/06/22/software-rendering-usage-in-wpf/
             // renderingTier values:

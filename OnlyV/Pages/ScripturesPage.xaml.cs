@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Pages
-{
-    using System.Windows;
-    using System.Windows.Controls;
-    using ViewModel;
+﻿using System.Windows;
+using System.Windows.Controls;
+using OnlyV.ViewModel;
 
+namespace OnlyV.Pages
+{
     /// <summary>
     /// Interaction logic for ScripturesPage.xaml
     /// </summary>
@@ -25,7 +25,7 @@
             BringVerseButtonIntoView(VersesControl);
         }
 
-        private bool BringButtonIntoView(ItemsControl itemsControl)
+        private static bool BringButtonIntoView(ItemsControl itemsControl)
         {
             foreach (var item in itemsControl.Items)
             {
@@ -43,7 +43,7 @@
             return false;
         }
 
-        private bool BringVerseButtonIntoView(ItemsControl itemsControl)
+        private static bool BringVerseButtonIntoView(ItemsControl itemsControl)
         {
             foreach (var item in itemsControl.Items)
             {

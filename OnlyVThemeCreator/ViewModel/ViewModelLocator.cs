@@ -1,10 +1,10 @@
+﻿using CommonServiceLocator;
+using GalaSoft.MvvmLight.Ioc;
+using OnlyV.Themes.Common.Services.UI;
+using OnlyVThemeCreator.Services;
+
 namespace OnlyVThemeCreator.ViewModel
 {
-    using CommonServiceLocator;
-    using GalaSoft.MvvmLight.Ioc;
-    using OnlyV.Themes.Common.Services.UI;
-    using Services;
-
     public class ViewModelLocator
     {
         public ViewModelLocator()

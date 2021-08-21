@@ -1,8 +1,8 @@
-﻿namespace OnlyV.VerseExtraction.Interfaces
-{
-    using System.Collections.Generic;
-    using Models;
+﻿using System.Collections.Generic;
+using OnlyV.VerseExtraction.Models;
 
+namespace OnlyV.VerseExtraction.Interfaces
+{
     public interface IVerseReader
     {
         string ExtractVerseText(

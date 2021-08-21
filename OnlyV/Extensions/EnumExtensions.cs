@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Extensions
-{
-    using Properties;
-    using Serilog.Events;
+﻿using OnlyV.Properties;
+using Serilog.Events;
 
+namespace OnlyV.Extensions
+{
     internal static class EnumExtensions
     {
         public static string GetDescriptiveName(this LogEventLevel level)

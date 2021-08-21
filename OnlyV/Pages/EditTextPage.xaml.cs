@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Pages
-{
-    using System.Windows.Controls;
-    using System.Windows.Input;
-    using OnlyV.ViewModel;
+﻿using System.Windows.Controls;
+using System.Windows.Input;
+using OnlyV.ViewModel;
 
+namespace OnlyV.Pages
+{
     /// <summary>
     /// Interaction logic for EditTextPage.xaml
     /// </summary>
@@ -46,7 +46,7 @@
             InsertString("”");
         }
 
-        private void InsertString(string text)
+        private static void InsertString(string text)
         {
             var target = Keyboard.FocusedElement;
             var routedEvent = TextCompositionManager.TextInputEvent;

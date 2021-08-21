@@ -1,10 +1,10 @@
-﻿namespace OnlyV.VerseExtraction.Utils
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
+namespace OnlyV.VerseExtraction.Utils
+{
     internal class ChapterAndVersesSpec
     {
         private readonly List<ContiguousVerseSpec> _contiguousVerses = new List<ContiguousVerseSpec>();
@@ -62,7 +62,7 @@
                     if (!bookHasSingleChapter)
                     {
                         sb.Append(spec.Chapter);
-                        sb.Append(":");
+                        sb.Append(':');
                     }
 
                     currentChapter = spec.Chapter;

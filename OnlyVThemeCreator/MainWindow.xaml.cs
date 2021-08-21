@@ -1,15 +1,12 @@
-﻿namespace OnlyVThemeCreator
-{
-    using System.Threading.Tasks;
-    using System.Windows;
-    using CommonServiceLocator;
-    using GalaSoft.MvvmLight.Messaging;
-    using GalaSoft.MvvmLight.Threading;
-    using OnlyV.Themes.Common.Services.WindowPositioning;
-    using OnlyVThemeCreator.ViewModel;
-    using PubSubMessages;
-    using Services;
+﻿using System.Windows;
+using CommonServiceLocator;
+using GalaSoft.MvvmLight.Messaging;
+using OnlyV.Themes.Common.Services.WindowPositioning;
+using OnlyVThemeCreator.PubSubMessages;
+using OnlyVThemeCreator.Services;
 
+namespace OnlyVThemeCreator
+{
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>

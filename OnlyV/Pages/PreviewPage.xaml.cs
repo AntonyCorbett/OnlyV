@@ -1,15 +1,14 @@
-﻿namespace OnlyV.Pages
-{
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using System.Windows;
-    using System.Windows.Controls;
-    using System.Windows.Input;
-    using OnlyV.Helpers;
-    using OnlyV.Services.DragDrop;
-    using OnlyV.ViewModel;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using OnlyV.Helpers;
+using OnlyV.ViewModel;
 
+namespace OnlyV.Pages
+{
     /// <summary>
     /// Interaction logic for PreviewPage.xaml
     /// </summary>

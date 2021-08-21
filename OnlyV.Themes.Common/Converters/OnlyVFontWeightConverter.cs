@@ -1,10 +1,10 @@
-﻿namespace OnlyV.Themes.Common.Converters
-{
-    using System;
-    using System.Globalization;
-    using System.Windows.Data;
-    using OnlyV.Themes.Common.Specs;
+﻿using System;
+using System.Globalization;
+using System.Windows.Data;
+using OnlyV.Themes.Common.Specs;
 
+namespace OnlyV.Themes.Common.Converters
+{
     public class OnlyVFontWeightConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)

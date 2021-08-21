@@ -1,23 +1,23 @@
-﻿namespace OnlyV.Services.Options
-{
-    using System;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Threading;
-    using System.Windows;
-    using System.Windows.Markup;
-    using CommandLine;
-    using EventArgs;
-    using GalaSoft.MvvmLight.Threading;
-    using Helpers;
-    using LoggingLevel;
-    using Monitors;
-    using Newtonsoft.Json;
-    using OnlyV.Themes.Common.Services;
-    using Serilog;
-    using Serilog.Events;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Threading;
+using System.Windows;
+using System.Windows.Markup;
+using GalaSoft.MvvmLight.Threading;
+using Newtonsoft.Json;
+using OnlyV.EventArguments;
+using OnlyV.Helpers;
+using OnlyV.Services.CommandLine;
+using OnlyV.Services.LoggingLevel;
+using OnlyV.Services.Monitors;
+using OnlyV.Themes.Common.Services;
+using Serilog;
+using Serilog.Events;
 
+namespace OnlyV.Services.Options
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class OptionsService : IOptionsService
     {
@@ -354,7 +354,7 @@
             }
         }
 
-        private string GetOptionsSignature(AppOptions.Options options)
+        private static string GetOptionsSignature(AppOptions.Options options)
         {
             // config data is small so simple solution is best...
             return JsonConvert.SerializeObject(options);

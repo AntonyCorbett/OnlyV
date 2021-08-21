@@ -1,25 +1,25 @@
-﻿using OnlyV.ImageCreation.Exceptions;
+﻿using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Text;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using MaterialDesignThemes.Wpf;
+using OnlyV.EventArguments;
+using OnlyV.Helpers;
+using OnlyV.ImageCreation.Exceptions;
+using OnlyV.Services.DisplayWindow;
+using OnlyV.Services.Images;
+using OnlyV.Services.Options;
+using OnlyV.Services.Snackbar;
+using OnlyV.Services.VerseEditor;
+using Serilog;
 
 namespace OnlyV.ViewModel
 {
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Text;
-    using System.Windows;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.CommandWpf;
-    using Helpers;
-    using MaterialDesignThemes.Wpf;
-    using OnlyV.Services.VerseEditor;
-    using Serilog;
-    using Services.DisplayWindow;
-    using Services.Images;
-    using Services.Options;
-    using Services.Snackbar;
-
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class PreviewViewModel : ViewModelBase
     {
@@ -67,7 +67,7 @@ namespace OnlyV.ViewModel
 
                 var sb = new StringBuilder();
                 sb.Append(string.Format(Properties.Resources.X_IMAGES_GENERATED, _imagesService.ImageCount));
-                sb.Append(" ");
+                sb.Append(' ');
                 sb.Append(Properties.Resources.DRAG_INTO_ONLYM);
                 return sb.ToString();
             }
@@ -305,17 +305,17 @@ namespace OnlyV.ViewModel
             ImageIndex = ImageIndex + 1;
         }
 
-        private void HandleMediaMonitorChangedEvent(object sender, OnlyV.EventArgs.MonitorChangedEventArgs e)
+        private void HandleMediaMonitorChangedEvent(object sender, MonitorChangedEventArgs e)
         {
             _displayWindowService.ChangeTargetMonitor();
         }
 
-        private void HandleStyleChangedEvent(object sender, EventArgs e)
+        private void HandleStyleChangedEvent(object sender, System.EventArgs e)
         {
             RefreshImages();
         }
 
-        private void HandleThemePathChangedEvent(object sender, EventArgs e)
+        private void HandleThemePathChangedEvent(object sender, System.EventArgs e)
         {
             RefreshImages();
         }

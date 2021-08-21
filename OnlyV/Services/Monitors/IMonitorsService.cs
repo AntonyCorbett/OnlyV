@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.Monitors
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+namespace OnlyV.Services.Monitors
+{
     public interface IMonitorsService
     {
         IEnumerable<SystemMonitor> GetSystemMonitors();

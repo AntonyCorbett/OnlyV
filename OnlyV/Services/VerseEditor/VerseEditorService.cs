@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.VerseEditor
-{
-    using System.Collections.Generic;
-    using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
+namespace OnlyV.Services.VerseEditor
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class VerseEditorService : IVerseEditorService
     {

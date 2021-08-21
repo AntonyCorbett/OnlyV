@@ -1,10 +1,10 @@
-﻿namespace OnlyV.VerseExtraction.Cache
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using Models;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using OnlyV.VerseExtraction.Models;
 
+namespace OnlyV.VerseExtraction.Cache
+{
     internal class BibleChaptersListCache
     {
         private readonly Dictionary<string, IReadOnlyList<BookChapter>> _data =
@@ -27,7 +27,7 @@
             }
         }
 
-        private string GenerateKey(string epubPath, DateTime creationStamp)
+        private static string GenerateKey(string epubPath, DateTime creationStamp)
         {
             return $"{creationStamp.Ticks}-{Path.GetFileName(epubPath)}";
         }

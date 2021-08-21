@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Themes.Common.Extensions
-{
-    using System.Windows;
-    using Specs;
+﻿using System.Windows;
+using OnlyV.Themes.Common.Specs;
 
+namespace OnlyV.Themes.Common.Extensions
+{
     public static class EnumExtensions
     {
         public static TextAlignment AsWindowsTextAlignment(this OnlyVHorizontalTextAlignment alignment)

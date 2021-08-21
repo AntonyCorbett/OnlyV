@@ -1,7 +1,7 @@
-﻿namespace OnlyV.Themes.Common.Cache
-{
-    using System.Windows.Media;
+﻿using System.Windows.Media;
 
+namespace OnlyV.Themes.Common.Cache
+{
     public class ThemeCacheEntry
     {
         public string ThemePath { get; set; }

@@ -1,19 +1,19 @@
-﻿namespace OnlyV.VerseExtraction.Parser
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.IO.Compression;
-    using System.Linq;
-    using System.Text;
-    using System.Xml;
-    using System.Xml.Linq;
-    using Cache;
-    using Exceptions;
-    using Models;
-    using Serilog;
-    using Utils;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Text;
+using System.Xml;
+using System.Xml.Linq;
+using OnlyV.VerseExtraction.Cache;
+using OnlyV.VerseExtraction.Exceptions;
+using OnlyV.VerseExtraction.Models;
+using OnlyV.VerseExtraction.Utils;
+using Serilog;
 
+namespace OnlyV.VerseExtraction.Parser
+{
     internal sealed class EpubAsArchive : IDisposable
     {
         private const string MetaInfFolderName = "META-INF";
@@ -210,14 +210,14 @@
                         result.Clear();
                         result.Append(tmpStr);
                         result.Append(Ellipsis);
-                        result.Append(" ");
+                        result.Append(' ');
                     }
                     else
                     {
                         result.Append(Ellipsis);
                     }
 
-                    result.Append(" ");
+                    result.Append(' ');
                 }
 
                 for (var verse = vs.StartVerse; verse <= vs.EndVerse; ++verse)
@@ -227,7 +227,7 @@
                     {
                         if (verse > vs.StartVerse)
                         {
-                            result.Append(" ");
+                            result.Append(' ');
                         }
 
                         if (showVerseNumbers)
@@ -365,8 +365,7 @@
             return null;
         }
 
-#pragma warning disable SA1008 // Opening parenthesis must be spaced correctly
-        private (string Text, bool Started, bool Finished) GetParagraph(
+        private static (string Text, bool Started, bool Finished) GetParagraph(
             XElement para, 
             XElement parentPara,
             XNamespace ns,
@@ -435,9 +434,7 @@
 
             return (sb.ToString(), started, finished);
         }
-#pragma warning restore SA1008 // Opening parenthesis must be spaced correctly
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "trust streams behave properly")]
         private XDocument GetXmlFile(string entryPath, bool canCache = false)
         {
             XDocument result = null;
@@ -470,7 +467,7 @@
             return result;
         }
 
-        private string RemoveExtraneousMarkup(string text)
+        private static string RemoveExtraneousMarkup(string text)
         {
             // this markup is found in bi12 format Bibles. It must be removed
             // before converting to xhtml otherwise the "HS" component is treated
@@ -484,7 +481,7 @@
             return text;
         }
 
-        private string RemoveExtraneousMarkup(string text, string token)
+        private static string RemoveExtraneousMarkup(string text, string token)
         {
             const string closingToken = "</sup>,";
             
@@ -571,7 +568,7 @@
 
                 var body = x.Root.Descendants(ns + "body").SingleOrDefault();
 
-                var chapterToken = "#chapter1_verse";
+                const string chapterToken = "#chapter1_verse";
                 var verseElem = body?.Descendants(ns + "a").FirstOrDefault(n =>
                 {
                     var href = n.Attribute("href");
@@ -638,7 +635,7 @@
             return result;
         }
 
-        private VerseRange GetVerseNumbers(XElement verseHref)
+        private static VerseRange GetVerseNumbers(XElement verseHref)
         {
             VerseRange result = null;
 
@@ -684,7 +681,7 @@
 
                 var body = x.Root.Descendants(ns + "body").SingleOrDefault();
 
-                var chapterToken = "chapter";
+                const string chapterToken = "chapter";
                 var verseElems = body?.Descendants(ns + "a").Where(n =>
                 {
                     var idAttr = n.Attribute("id");
@@ -767,7 +764,7 @@
         {
             var result = new List<BookChapter>();
 
-            var linkToken = "link";
+            const string linkToken = "link";
 
             var chapters = body.Descendants(ns + "a").Where(n =>
             {
@@ -857,7 +854,7 @@
             return null;
         }
 
-        private bool ShouldIncludeTextNode(XElement para, XText txtNode, XNamespace ns)
+        private static bool ShouldIncludeTextNode(XElement para, XText txtNode, XNamespace ns)
         {
             if (string.IsNullOrEmpty(txtNode.Value) || int.TryParse(txtNode.Value, out _))
             {
@@ -888,9 +885,7 @@
             return false;
         }
 
-        private string TrimPunctuationAndQuotationMarks(
-            string s, 
-            FormattingOptions formattingOptions)
+        private static string TrimPunctuationAndQuotationMarks(string s, FormattingOptions formattingOptions)
         {
             if (formattingOptions.TrimQuotes)
             {
@@ -906,10 +901,10 @@
             return s;
         }
 
-        private string TrimQuotes(string s)
+        private static string TrimQuotes(string s)
         {
-            var leftQuote = "“";
-            var rightQuote = "”";
+            const string leftQuote = "“";
+            const string rightQuote = "”";
 
             var leftCount = s.Count(x => x == leftQuote[0]);
             var rightCount = s.Count(x => x == rightQuote[0]);
@@ -932,7 +927,7 @@
             return s;
         }
 
-        private string ReplaceFirst(string text, string search, string replace)
+        private static string ReplaceFirst(string text, string search, string replace)
         {
             var pos = text.IndexOf(search, StringComparison.Ordinal);
             if (pos < 0)
@@ -943,7 +938,7 @@
             return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
         }
 
-        private string ReplaceLast(string text, string search, string replace)
+        private static string ReplaceLast(string text, string search, string replace)
         {
             var pos = text.LastIndexOf(search, StringComparison.Ordinal);
             if (pos < 0)
@@ -954,7 +949,7 @@
             return text.Substring(0, pos) + replace + text.Substring(pos + search.Length);
         }
 
-        private void ElideRogueVerses(IReadOnlyCollection<BookChapter> data)
+        private static void ElideRogueVerses(IReadOnlyCollection<BookChapter> data)
         {
             var markChapter16 = data.SingleOrDefault(x => x.Book.BookNumber == 41 && x.Chapter == 16);
             if (markChapter16 != null)
@@ -987,7 +982,7 @@
                 var title = x.Root.Descendants(ns + "title").SingleOrDefault();
                 var result = title?.Value;
 
-                if (result != null && _epubStyle == EpubStyle.Old && result.Trim().EndsWith(")"))
+                if (result != null && _epubStyle == EpubStyle.Old && result.Trim().EndsWith(")", StringComparison.Ordinal))
                 {
                     var trimPos = result.LastIndexOf("(", StringComparison.OrdinalIgnoreCase);
                     if (trimPos > -1)

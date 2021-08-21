@@ -1,8 +1,8 @@
-﻿namespace OnlyV.VerseExtraction.Utils
-{
-    using System;
-    using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
+namespace OnlyV.VerseExtraction.Utils
+{
     internal class MostRecentlyUsedList<TKey, TValue>
     {
         private readonly Dictionary<TKey, Node> _items = new Dictionary<TKey, Node>();

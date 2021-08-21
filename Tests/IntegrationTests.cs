@@ -1,17 +1,17 @@
-﻿namespace Tests
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Diagnostics;
-    using System.IO;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using Newtonsoft.Json;
-    using OnlyV.ImageCreation;
-    using OnlyV.Themes.Common;
-    using OnlyV.Themes.Common.FileHandling;
-    using OnlyV.VerseExtraction.Models;
-    using OnlyV.VerseExtraction.Parser;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
+using OnlyV.ImageCreation;
+using OnlyV.Themes.Common;
+using OnlyV.Themes.Common.FileHandling;
+using OnlyV.VerseExtraction.Models;
+using OnlyV.VerseExtraction.Parser;
 
+namespace Tests
+{
     [TestClass]
     public class IntegrationTests
     {
@@ -98,7 +98,7 @@
             CreateThemeFile("OnlyV Water", "water01.png", "#8B94A8", "#141301", "#1a1d1a", "Cambria");
         }
 
-        private void CreateThemeFile(
+        private static void CreateThemeFile(
             string descriptiveName, 
             string imagePath,
             string backgroundColor,
@@ -133,7 +133,7 @@
 
             file.Create(themePath, theme, imagePath, overwrite: true);
 
-            var result = file.Read(themePath);
+            var result = ThemeFile.Read(themePath);
             Assert.IsNotNull(result);
 
             var s1 = JsonConvert.SerializeObject(result.Theme);

@@ -1,7 +1,7 @@
-﻿namespace OnlyV.Services.DisplayWindow
-{
-    using System.Windows.Media;
+﻿using System.Windows.Media;
 
+namespace OnlyV.Services.DisplayWindow
+{
     internal interface IDisplayWindowService
     {
         bool IsWindowVisible { get; }

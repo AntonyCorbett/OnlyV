@@ -1,11 +1,11 @@
-﻿namespace OnlyV.Services.Monitors
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Windows.Forms;
-    using Serilog;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Windows.Forms;
+using Serilog;
 
+namespace OnlyV.Services.Monitors
+{
     /// <summary>
     /// Service to get display device information
     /// </summary>
@@ -61,19 +61,18 @@
             return GetSystemMonitors().SingleOrDefault(x => x.Monitor.DeviceName.Equals(screen.DeviceName));
         }
 
-        private DisplayDeviceData GetDeviceMatchingScreen(DisplayDeviceData[] devices, Screen screen)
+        private static DisplayDeviceData GetDeviceMatchingScreen(DisplayDeviceData[] devices, Screen screen)
         {
             var deviceName = screen.DeviceName + "\\";
             return devices.SingleOrDefault(x => x.Name.StartsWith(deviceName));
         }
 
-        private string SanitizeScreenDeviceName(string name)
+        private static string SanitizeScreenDeviceName(string name)
         {
             return name.Replace(@"\\.\", string.Empty);
         }
 
-#pragma warning disable SA1009 // Closing parenthesis must be spaced correctly
-        private List<(Screen, DisplayDeviceData)> GetDisplayScreens(DisplayDeviceData[] devices)
+        private static List<(Screen, DisplayDeviceData)> GetDisplayScreens(DisplayDeviceData[] devices)
         {
             var result = new List<(Screen, DisplayDeviceData)>();
 
@@ -93,6 +92,5 @@
 
             return result;
         }
-#pragma warning restore SA1009 // Closing parenthesis must be spaced correctly
     }
 }

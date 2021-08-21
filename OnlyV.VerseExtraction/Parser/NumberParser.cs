@@ -1,8 +1,8 @@
-﻿namespace OnlyV.VerseExtraction.Parser
-{
-    using System;
-    using System.Text;
+﻿using System;
+using System.Text;
 
+namespace OnlyV.VerseExtraction.Parser
+{
     internal static class NumberParser
     {
         public static bool TryParseNumber(string str, out int value)

@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Services.Options
-{
-    using System;
-    using EventArgs;
-    using Serilog.Events;
+﻿using System;
+using OnlyV.EventArguments;
+using Serilog.Events;
 
+namespace OnlyV.Services.Options
+{
     internal interface IOptionsService
     {
         event EventHandler<MonitorChangedEventArgs> MediaMonitorChangedEvent;

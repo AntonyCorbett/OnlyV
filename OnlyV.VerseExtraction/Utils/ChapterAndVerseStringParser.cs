@@ -1,14 +1,14 @@
-﻿namespace OnlyV.VerseExtraction.Utils
-{
-    using System;
+﻿using System;
 
+namespace OnlyV.VerseExtraction.Utils
+{ 
     internal static class ChapterAndVerseStringParser
     {
         public static ChapterAndVersesSpec Parse(string chapterAndVerse)
         {
-            ChapterAndVersesSpec result = new ChapterAndVersesSpec();
+            var result = new ChapterAndVersesSpec();
 
-            string[] tokens = chapterAndVerse.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
+            var tokens = chapterAndVerse.Split(new[] { ':' }, StringSplitOptions.RemoveEmptyEntries);
             if (tokens.Length == 2)
             {
                 if (int.TryParse(tokens[0], out var chapter))

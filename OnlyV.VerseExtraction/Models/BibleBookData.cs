@@ -1,7 +1,7 @@
-﻿namespace OnlyV.VerseExtraction.Models
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace OnlyV.VerseExtraction.Models
+{
     public class BibleBookData
     {
         public string AbbreviatedName { get; set; }

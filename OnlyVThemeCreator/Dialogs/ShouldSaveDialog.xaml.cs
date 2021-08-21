@@ -1,7 +1,7 @@
-﻿namespace OnlyVThemeCreator.Dialogs
-{
-    using System.Windows.Controls;
+﻿using System.Windows.Controls;
 
+namespace OnlyVThemeCreator.Dialogs
+{
     /// <summary>
     /// Interaction logic for ShouldSaveDialog.xaml
     /// </summary>

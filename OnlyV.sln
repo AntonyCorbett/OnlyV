@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyV", "OnlyV\OnlyV.csproj", "{DBFF9EEC-BE27-4D14-B9A6-790AFF75E49F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{6C5A33A4-CE55-4F2A-8F59-74C90F761B75}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{6C5A33A4-CE55-4F2A-8F59-74C90F761B75}"
 	ProjectSection(SolutionItems) = preProject
-		OnlyV.ruleset = OnlyV.ruleset
+		.editorconfig = .editorconfig
 		SolutionInfo.cs = SolutionInfo.cs
 	EndProjectSection
 EndProject

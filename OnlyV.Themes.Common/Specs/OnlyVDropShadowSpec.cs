@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Themes.Common.Specs
+﻿using System.Drawing;
+
+namespace OnlyV.Themes.Common.Specs
 {
     // ReSharper disable MemberCanBePrivate.Global
-    using System.Drawing;
-
     public class OnlyVDropShadowSpec
     {
         public OnlyVDropShadowSpec()

@@ -1,8 +1,8 @@
-﻿namespace OnlyVThemeCreator.ViewModel
-{
-    using GalaSoft.MvvmLight.CommandWpf;
-    using MaterialDesignThemes.Wpf;
+﻿using GalaSoft.MvvmLight.CommandWpf;
+using MaterialDesignThemes.Wpf;
 
+namespace OnlyVThemeCreator.ViewModel
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     public sealed class ShouldSaveViewModel
     {

@@ -1,7 +1,7 @@
-﻿namespace OnlyV.Themes.Common.Cache
+﻿using System.Collections.Concurrent;
+
+namespace OnlyV.Themes.Common.Cache
 {
-    using System.Collections.Concurrent;
-    
     public class ThemeCache
     {
         private readonly ConcurrentDictionary<string, ThemeCacheEntry> _cache = new ConcurrentDictionary<string, ThemeCacheEntry>();

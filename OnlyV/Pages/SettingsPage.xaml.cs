@@ -1,10 +1,10 @@
-﻿namespace OnlyV.Pages
-{
-    using System.Windows;
-    using System.Windows.Controls;
-    using GalaSoft.MvvmLight.Messaging;
-    using PubSubMessages;
+﻿using System.Windows;
+using System.Windows.Controls;
+using GalaSoft.MvvmLight.Messaging;
+using OnlyV.PubSubMessages;
 
+namespace OnlyV.Pages
+{
     /// <summary>
     /// Interaction logic for SettingsPage.xaml
     /// </summary>

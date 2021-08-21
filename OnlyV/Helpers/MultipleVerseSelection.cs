@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Helpers
-{
-    using System.Collections.ObjectModel;
-    using OnlyV.ViewModel;
+﻿using System.Collections.ObjectModel;
+using OnlyV.ViewModel;
 
+namespace OnlyV.Helpers
+{
     internal class MultipleVerseSelection
     {
         public MultipleVerseSelection(int anchorVerse)
@@ -31,7 +31,7 @@
             AddOrRemoveSelection(LowVerse, HighVerse, verseButtons, shouldAdd: true);
         }
 
-        private void AddOrRemoveSelection(
+        private static void AddOrRemoveSelection(
             int startVerse, 
             int endVerse, 
             ObservableCollection<VerseButtonModel> verseButtons,

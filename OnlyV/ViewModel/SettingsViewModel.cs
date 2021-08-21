@@ -1,25 +1,25 @@
-﻿namespace OnlyV.ViewModel
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using Extensions;
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.CommandWpf;
-    using GalaSoft.MvvmLight.Messaging;
-    using Helpers;
-    using Microsoft.WindowsAPICodePack.Dialogs;
-    using OnlyV.Themes.Common.Models;
-    using OnlyV.Themes.Common.Services.UI;
-    using PubSubMessages;
-    using Serilog.Events;
-    using Services.DragDrop;
-    using Services.Monitors;
-    using Services.Options;
-    using Themes.Common.FileHandling;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using OnlyV.Extensions;
+using OnlyV.Helpers;
+using OnlyV.PubSubMessages;
+using OnlyV.Services.DragDrop;
+using OnlyV.Services.Monitors;
+using OnlyV.Services.Options;
+using OnlyV.Themes.Common.FileHandling;
+using OnlyV.Themes.Common.Models;
+using OnlyV.Themes.Common.Services.UI;
+using Serilog.Events;
 
+namespace OnlyV.ViewModel
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class SettingsViewModel : ViewModelBase
     {
@@ -348,7 +348,7 @@
             }
         }
 
-        private LoggingLevel[] GetLoggingLevels()
+        private static LoggingLevel[] GetLoggingLevels()
         {
             var result = new List<LoggingLevel>();
 
@@ -377,18 +377,27 @@
             };
 
             var monitors = _monitorsService.GetSystemMonitors();
-            result.AddRange(monitors.Select(AutoMapper.Mapper.Map<MonitorItem>));
+            result.AddRange(monitors.Select(ToMonitorItem));
 
             return result.ToArray();
         }
 
-        private EpubFileItem[] GetBibleEpubFiles()
+        private MonitorItem ToMonitorItem(SystemMonitor monitor)
+        {
+            return new MonitorItem
+            {
+                FriendlyName = monitor.FriendlyName,
+                Monitor = monitor.Monitor,
+                MonitorId = monitor.MonitorId,
+                MonitorName = monitor.MonitorName
+            };
+        }
+
+        private static EpubFileItem[] GetBibleEpubFiles()
         {
             var result = new List<EpubFileItem>();
 
-            var files = Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub").ToList();
-
-            foreach (var file in files)
+            foreach (var file in Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub"))
             {
                 result.Add(new EpubFileItem
                 {
@@ -401,7 +410,7 @@
             return result.ToArray();
         }
 
-        private ThemeFileItem[] GetThemeFiles()
+        private static ThemeFileItem[] GetThemeFiles()
         {
             var result = new List<ThemeFileItem>();
             
@@ -436,7 +445,7 @@
             _optionsService.Save();
         }
 
-        private void HandleEpubFileListChanged(object sender, EventArgs e)
+        private void HandleEpubFileListChanged(object sender, System.EventArgs e)
         {
             var currentSelection = CurrentEpubFilePath;
 
@@ -468,7 +477,7 @@
             }
         }
 
-        private LanguageItem[] GetSupportedLanguages()
+        private static LanguageItem[] GetSupportedLanguages()
         {
             var result = new List<LanguageItem>();
 

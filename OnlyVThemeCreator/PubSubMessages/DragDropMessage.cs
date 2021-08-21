@@ -1,7 +1,7 @@
-﻿namespace OnlyVThemeCreator.PubSubMessages
-{
-    using System.Windows;
+﻿using System.Windows;
 
+namespace OnlyVThemeCreator.PubSubMessages
+{
     internal class DragDropMessage
     {
         public DragEventArgs DragEventArgs { get; set; }

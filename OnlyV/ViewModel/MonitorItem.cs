@@ -1,7 +1,7 @@
-﻿namespace OnlyV.ViewModel
-{
-    using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
+namespace OnlyV.ViewModel
+{
     internal class MonitorItem
     {
         public Screen Monitor { get; set; }

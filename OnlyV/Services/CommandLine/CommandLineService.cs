@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.CommandLine
-{
-    using System;
-    using Fclp;
+﻿using System;
+using Fclp;
 
+namespace OnlyV.Services.CommandLine
+{
     internal class CommandLineService : ICommandLineService
     {
         public CommandLineService()

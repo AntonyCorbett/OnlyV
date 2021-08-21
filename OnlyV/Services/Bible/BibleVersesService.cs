@@ -1,14 +1,14 @@
-﻿namespace OnlyV.Services.Bible
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Linq;
-    using Options;
-    using Serilog;
-    using VerseExtraction;
-    using VerseExtraction.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using OnlyV.Services.Options;
+using OnlyV.VerseExtraction;
+using OnlyV.VerseExtraction.Models;
+using Serilog;
 
+namespace OnlyV.Services.Bible
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal sealed class BibleVersesService : IBibleVersesService, IDisposable
     {

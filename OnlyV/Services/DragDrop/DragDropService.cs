@@ -1,20 +1,20 @@
-﻿namespace OnlyV.Services.DragDrop
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.Threading;
-    using System.Threading.Tasks;
-    using System.Windows;
-    using Bible;
-    using GalaSoft.MvvmLight.Messaging;
-    using GalaSoft.MvvmLight.Threading;
-    using Helpers;
-    using OnlyV.Themes.Common.Services.UI;
-    using PubSubMessages;
-    using Serilog;
-    using Snackbar;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows;
+using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Threading;
+using OnlyV.Helpers;
+using OnlyV.PubSubMessages;
+using OnlyV.Services.Bible;
+using OnlyV.Services.Snackbar;
+using OnlyV.Themes.Common.Services.UI;
+using Serilog;
 
+namespace OnlyV.Services.DragDrop
+{
     // ReSharper disable once ClassNeverInstantiated.Global
     internal class DragDropService : IDragDropService
     {
@@ -71,7 +71,7 @@
             return result;
         }
 
-        private bool IsEpubFile(string filePath)
+        private static bool IsEpubFile(string filePath)
         {
             var ext = Path.GetExtension(filePath);
             return ext != null && ext.Equals(".epub", StringComparison.OrdinalIgnoreCase);
@@ -150,7 +150,7 @@
             return Path.Combine(FileUtils.GetEpubFolder(), filename);
         }
 
-        private string GetDoneMessage(int fileCount, int validFileCount)
+        private static string GetDoneMessage(int fileCount, int validFileCount)
         {
             if (fileCount == 0)
             {

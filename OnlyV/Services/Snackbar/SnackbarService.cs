@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.Snackbar
-{
-    using System;
-    using MaterialDesignThemes.Wpf;
+﻿using System;
+using MaterialDesignThemes.Wpf;
 
+namespace OnlyV.Services.Snackbar
+{
     internal sealed class SnackbarService : ISnackbarService, IDisposable
     {
         public ISnackbarMessageQueue TheSnackbarMessageQueue { get; } = new SnackbarMessageQueue(TimeSpan.FromSeconds(4));

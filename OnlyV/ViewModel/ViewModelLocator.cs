@@ -1,19 +1,19 @@
+﻿using CommonServiceLocator;
+using GalaSoft.MvvmLight.Ioc;
+using OnlyV.Services.Bible;
+using OnlyV.Services.CommandLine;
+using OnlyV.Services.DisplayWindow;
+using OnlyV.Services.DragDrop;
+using OnlyV.Services.Images;
+using OnlyV.Services.LoggingLevel;
+using OnlyV.Services.Monitors;
+using OnlyV.Services.Options;
+using OnlyV.Services.Snackbar;
+using OnlyV.Services.VerseEditor;
+using OnlyV.Themes.Common.Services.UI;
+
 namespace OnlyV.ViewModel
 {
-    using CommonServiceLocator;
-    using GalaSoft.MvvmLight.Ioc;
-    using OnlyV.Services.LoggingLevel;
-    using OnlyV.Services.VerseEditor;
-    using OnlyV.Themes.Common.Services.UI;
-    using Services.Bible;
-    using Services.CommandLine;
-    using Services.DisplayWindow;
-    using Services.DragDrop;
-    using Services.Images;
-    using Services.Monitors;
-    using Services.Options;
-    using Services.Snackbar;
-
     /// <summary>
     /// This class contains static references to all the view models in the
     /// application and provides an entry point for the bindings.

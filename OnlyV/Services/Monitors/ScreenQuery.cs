@@ -1,4 +1,12 @@
-﻿namespace OnlyV.Services.Monitors
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using Serilog;
+
+namespace OnlyV.Services.Monitors
 {
     // ReSharper disable FieldCanBeMadeReadOnly.Local
     // ReSharper disable FieldCanBeMadeReadOnly.Global
@@ -6,24 +14,17 @@
     // ReSharper disable UnusedMember.Global
     // ReSharper disable InconsistentNaming
     // ReSharper disable IdentifierTypo
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel;
-    using System.Linq;
-    using System.Runtime.InteropServices;
-    using System.Windows.Forms;
-    using Serilog;
 
     //// see https://stackoverflow.com/a/28257839/8576725
 
     public static class ScreenQuery
     {
 #pragma warning disable SA1307 // Accessible fields must begin with upper-case letter
-#pragma warning disable SX1309 // Field names must begin with underscore
 #pragma warning disable SA1202 // Elements must be ordered by access
-#pragma warning disable SA1201 // Elements must appear in the correct order
 #pragma warning disable SA1313 // Parameter names must begin with lower-case letter
 #pragma warning disable IDE0044 // Add readonly modifier
+#pragma warning disable U2U1004 // Public value types should implement equality
+
         private const int ErrorSuccess = 0;
 
         public enum QUERY_DEVICE_CONFIG_FLAGS : uint
@@ -342,11 +343,10 @@
             return null;
         }
 
+#pragma warning restore U2U1004 // Public value types should implement equality
 #pragma warning restore IDE0044 // Add readonly modifier
 #pragma warning restore SA1313 // Parameter names must begin with lower-case letter
-#pragma warning restore SA1201 // Elements must appear in the correct order
 #pragma warning restore SA1202 // Elements must be ordered by access
-#pragma warning restore SX1309 // Field names must begin with underscore
 #pragma warning restore SA1307 // Accessible fields must begin with upper-case letter
     }
 }

@@ -1,7 +1,7 @@
-﻿namespace OnlyV.ViewModel
-{
-    using Serilog.Events;
+﻿using Serilog.Events;
 
+namespace OnlyV.ViewModel
+{
     internal class LoggingLevel
     {
         public string Name { get; set; }

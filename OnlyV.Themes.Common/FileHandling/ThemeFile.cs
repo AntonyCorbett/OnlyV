@@ -1,17 +1,17 @@
-﻿namespace OnlyV.Themes.Common.FileHandling
-{
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-    using System.IO.Compression;
-    using System.Linq;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using Cache;
-    using Newtonsoft.Json;
-    using OnlyV.Themes.Common.Services;
-    using Serilog;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using Newtonsoft.Json;
+using OnlyV.Themes.Common.Cache;
+using OnlyV.Themes.Common.Services;
+using Serilog;
 
+namespace OnlyV.Themes.Common.FileHandling
+{
     public class ThemeFile
     {
         public const string ThemeFileExtension = ".onlyv";
@@ -20,12 +20,11 @@
         
         private static readonly ThemeCache Cache = new ThemeCache();
 
-        public IReadOnlyCollection<string> GetAll(string folder)
+        public static IReadOnlyCollection<string> GetAll(string folder)
         {
             return Directory.GetFiles(folder, $"*.{ThemeFileExtension}");
         }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification = "The.NET types should be safe and the suggested fix is ugly")]
+        
         public void Create(string themePath, OnlyVTheme theme, string backgroundImagePath, bool overwrite)
         {
             if (string.IsNullOrEmpty(themePath) ||
@@ -117,7 +116,7 @@
             }
         }
 
-        public ThemeCacheEntry Read(string themePath)
+        public static ThemeCacheEntry Read(string themePath)
         {
             if (string.IsNullOrEmpty(themePath))
             {
@@ -137,8 +136,7 @@
             return result;
         }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2202:Do not dispose objects multiple times", Justification="The .NET types should be safe and the suggested fix is ugly")]
-        private ThemeCacheEntry ReadInternal(string themePath)
+        private static ThemeCacheEntry ReadInternal(string themePath)
         {
             try
             {
@@ -157,14 +155,12 @@
                                 var theme = serializer.Deserialize<OnlyVTheme>(jsonTextReader);
                                 if (theme != null)
                                 {
-                                    var result = new ThemeCacheEntry
+                                    return new ThemeCacheEntry
                                     {
                                         ThemePath = themePath,
                                         Theme = theme,
                                         BackgroundImage = ReadBackgroundImage(zip)
                                     };
-
-                                    return result;
                                 }
                             }
                         }
@@ -179,7 +175,7 @@
             return null;
         }
 
-        private ImageSource ReadBackgroundImage(ZipArchive zip)
+        private static ImageSource ReadBackgroundImage(ZipArchive zip)
         {
             try
             {

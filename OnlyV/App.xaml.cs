@@ -1,13 +1,12 @@
-﻿namespace OnlyV
-{
-    using System.IO;
-    using System.Threading;
-    using System.Windows;
-    using GalaSoft.MvvmLight.Threading;
-    using OnlyV.Helpers;
-    using OnlyV.Mappings;
-    using Serilog;
+﻿using System.IO;
+using System.Threading;
+using System.Windows;
+using GalaSoft.MvvmLight.Threading;
+using OnlyV.Helpers;
+using Serilog;
 
+namespace OnlyV
+{
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
@@ -20,7 +19,6 @@
         public App()
         {
             DispatcherHelper.Initialize();
-            RegisterMappings();
         }
 
         protected override void OnExit(ExitEventArgs e)
@@ -41,14 +39,21 @@
             }
         }
 
-        private void ConfigureLogger()
+        private static void ConfigureLogger()
         {
             string logsDirectory = FileUtils.GetLogFolder();
 
+#if DEBUG
+            Log.Logger = new LoggerConfiguration()
+                .MinimumLevel.Debug()
+                .WriteTo.File(Path.Combine(logsDirectory, "log-.txt"), retainedFileCountLimit: 28, rollingInterval: RollingInterval.Day)
+                .CreateLogger();
+#else
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
-                .WriteTo.RollingFile(Path.Combine(logsDirectory, "log-{Date}.txt"), retainedFileCountLimit: 28)
+                .WriteTo.File(Path.Combine(logsDirectory, "log-.txt"), retainedFileCountLimit: 28, rollingInterval: RollingInterval.Day)
                 .CreateLogger();
+#endif
 
             Log.Logger.Information("==== Launched ====");
         }
@@ -57,11 +62,6 @@
         {
             _appMutex = new Mutex(true, _appString, out var newInstance);
             return !newInstance;
-        }
-
-        private void RegisterMappings()
-        {
-            AutoMapper.Mapper.Initialize(cfg => cfg.AddProfile<MappingProfile>());
         }
     }
 }

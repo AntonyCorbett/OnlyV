@@ -1,10 +1,10 @@
-﻿namespace OnlyVThemeCreator.Behaviours
-{
-    using System;
-    using System.ComponentModel;
-    using System.Windows;
-    using System.Windows.Input;
+﻿using System;
+using System.ComponentModel;
+using System.Windows;
+using System.Windows.Input;
 
+namespace OnlyVThemeCreator.Behaviours
+{
     public class WindowClosingBehaviour
     {
         public static readonly DependencyProperty ClosedProperty

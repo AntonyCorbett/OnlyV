@@ -1,10 +1,10 @@
-﻿namespace OnlyV.Helpers
-{
-    using System;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
+﻿using System;
+using System.Globalization;
+using System.IO;
+using System.Linq;
 
+namespace OnlyV.Helpers
+{
     /// <summary>
     /// General file / folder utilities
     /// </summary>

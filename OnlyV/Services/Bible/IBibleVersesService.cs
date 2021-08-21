@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.Bible
-{
-    using System.Collections.Generic;
-    using OnlyV.VerseExtraction.Models;
+﻿using System.Collections.Generic;
+using OnlyV.VerseExtraction.Models;
 
+namespace OnlyV.Services.Bible
+{
     internal interface IBibleVersesService
     {
         string EpubPath { get; set; }

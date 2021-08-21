@@ -1,34 +1,34 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Windows;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
+using GalaSoft.MvvmLight.Messaging;
+using GalaSoft.MvvmLight.Threading;
+using Microsoft.WindowsAPICodePack.Dialogs;
+using Newtonsoft.Json;
+using OnlyV.ImageCreation;
+using OnlyV.Themes.Common;
+using OnlyV.Themes.Common.Extensions;
+using OnlyV.Themes.Common.FileHandling;
+using OnlyV.Themes.Common.Models;
+using OnlyV.Themes.Common.Services;
+using OnlyV.Themes.Common.Services.UI;
+using OnlyV.Themes.Common.Specs;
+using OnlyV.VerseExtraction;
+using OnlyVThemeCreator.Helpers;
+using OnlyVThemeCreator.PubSubMessages;
+using OnlyVThemeCreator.Services;
+
 namespace OnlyVThemeCreator.ViewModel
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Collections.ObjectModel;
-    using System.Globalization;
-    using System.IO;
-    using System.Linq;
-    using System.Windows;
-    using System.Windows.Input;
-    using System.Windows.Media;
-    using System.Windows.Media.Imaging;
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.CommandWpf;
-    using GalaSoft.MvvmLight.Messaging;
-    using GalaSoft.MvvmLight.Threading;
-    using Helpers;
-    using Microsoft.WindowsAPICodePack.Dialogs;
-    using Newtonsoft.Json;
-    using OnlyV.ImageCreation;
-    using OnlyV.Themes.Common;
-    using OnlyV.Themes.Common.Extensions;
-    using OnlyV.Themes.Common.FileHandling;
-    using OnlyV.Themes.Common.Models;
-    using OnlyV.Themes.Common.Services;
-    using OnlyV.Themes.Common.Services.UI;
-    using OnlyV.Themes.Common.Specs;
-    using OnlyV.VerseExtraction;
-    using PubSubMessages;
-    using Services;
-
     // ReSharper disable once UnusedMember.Global
     // ReSharper disable once ClassNeverInstantiated.Global
     public class MainViewModel : ViewModelBase
@@ -923,13 +923,11 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        private IReadOnlyCollection<EpubFileItem> GetBibleEpubFiles()
+        private static IReadOnlyCollection<EpubFileItem> GetBibleEpubFiles()
         {
             var result = new List<EpubFileItem>();
 
-            var files = Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub").ToList();
-
-            foreach (var file in files)
+            foreach (var file in Directory.GetFiles(FileUtils.GetEpubFolder(), "*.epub"))
             {
                 result.Add(new EpubFileItem
                 {
@@ -969,7 +967,7 @@ namespace OnlyVThemeCreator.ViewModel
             return !string.IsNullOrEmpty(CurrentEpubFilePath) && File.Exists(CurrentEpubFilePath);
         }
 
-        private string GetSampleName(BibleTextReader reader, StandardTextSample sample)
+        private static string GetSampleName(BibleTextReader reader, StandardTextSample sample)
         {
             return reader.GenerateVerseTitle(
                 sample.BookNumber, sample.ChapterAndVerses, false, true);
@@ -1188,8 +1186,7 @@ namespace OnlyVThemeCreator.ViewModel
                 {
                     _defaultFileOpenFolder = Path.GetDirectoryName(d.FileName);
                     
-                    var f = new ThemeFile();
-                    var t = f.Read(d.FileName);
+                    var t = ThemeFile.Read(d.FileName);
                     if (t != null)
                     {
                         CurrentTheme = t.Theme;
@@ -1206,7 +1203,7 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        private BitmapImage ConvertImageSourceToBitmapImage(ImageSource backgroundImage)
+        private static BitmapImage ConvertImageSourceToBitmapImage(ImageSource backgroundImage)
         {
             var bitmapSource = backgroundImage as BitmapSource;
             if (bitmapSource == null)
@@ -1271,7 +1268,7 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        private string GetDroppedFile(DragEventArgs e)
+        private static string GetDroppedFile(DragEventArgs e)
         {
             if (e.Data is DataObject dataObject && dataObject.ContainsFileDropList())
             {
@@ -1296,7 +1293,7 @@ namespace OnlyVThemeCreator.ViewModel
             message.DragEventArgs.Handled = true;
         }
 
-        private bool CanAcceptDrop(DragEventArgs e)
+        private static bool CanAcceptDrop(DragEventArgs e)
         {
             if (e.Data is DataObject dataObject && dataObject.ContainsFileDropList())
             {
@@ -1312,7 +1309,7 @@ namespace OnlyVThemeCreator.ViewModel
             return false;
         }
 
-        private bool IsImageFile(string filePath)
+        private static bool IsImageFile(string filePath)
         {
             var ext = Path.GetExtension(filePath);
             if (string.IsNullOrEmpty(ext))
@@ -1327,7 +1324,7 @@ namespace OnlyVThemeCreator.ViewModel
                 ext.Equals(".jpeg", StringComparison.OrdinalIgnoreCase);
         }
 
-        private Color ConvertFromString(string htmlColor, Color defaultColor)
+        private static Color ConvertFromString(string htmlColor, Color defaultColor)
         {
             if (string.IsNullOrEmpty(htmlColor))
             {
@@ -1345,7 +1342,7 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        private bool IsValidOpacity(double value)
+        private static bool IsValidOpacity(double value)
         {
             return value >= 0 && value <= 1.0;
         }
@@ -1382,7 +1379,7 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        private SystemFont[] GetSystemFonts()
+        private static SystemFont[] GetSystemFonts()
         {
             var result = new List<SystemFont>();
 
@@ -1445,7 +1442,7 @@ namespace OnlyVThemeCreator.ViewModel
             }
         }
 
-        private LanguageItem[] GetSupportedLanguages()
+        private static LanguageItem[] GetSupportedLanguages()
         {
             var result = new List<LanguageItem>();
 

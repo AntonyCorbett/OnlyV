@@ -1,7 +1,7 @@
-﻿namespace OnlyVThemeCreator.Helpers
-{
-    using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
+namespace OnlyVThemeCreator.Helpers
+{
     internal class StandardTextSample
     {
         public StandardTextSample(int id, int bookNumber, string chapterAndVerses)

@@ -1,9 +1,9 @@
-﻿namespace OnlyV.Themes.Common.Services
-{
-    using System;
-    using System.Threading;
-    using System.Threading.Tasks;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
 
+namespace OnlyV.Themes.Common.Services
+{
     public class SingleExecAction
     {
         private readonly object _locker = new object();

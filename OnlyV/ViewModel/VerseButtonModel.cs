@@ -1,8 +1,8 @@
-﻿namespace OnlyV.ViewModel
-{
-    using GalaSoft.MvvmLight;
-    using GalaSoft.MvvmLight.CommandWpf;
+﻿using GalaSoft.MvvmLight;
+using GalaSoft.MvvmLight.CommandWpf;
 
+namespace OnlyV.ViewModel
+{
     internal class VerseButtonModel : ViewModelBase
     {
         private bool _selected;

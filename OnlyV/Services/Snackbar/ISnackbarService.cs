@@ -1,8 +1,8 @@
-﻿namespace OnlyV.Services.Snackbar
-{
-    using System;
-    using MaterialDesignThemes.Wpf;
+﻿using System;
+using MaterialDesignThemes.Wpf;
 
+namespace OnlyV.Services.Snackbar
+{
     internal interface ISnackbarService
     {
         ISnackbarMessageQueue TheSnackbarMessageQueue { get; }
