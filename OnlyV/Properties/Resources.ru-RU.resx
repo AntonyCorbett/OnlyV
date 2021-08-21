@@ -409,4 +409,7 @@
     <value>Сброс масштабирования текста до темы по умолчанию</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Неизвестная ошибка. Пожалуйста, посмотрите журнал</value>
+  </data>
 </root>

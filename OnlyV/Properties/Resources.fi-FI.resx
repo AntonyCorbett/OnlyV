@@ -409,4 +409,7 @@
     <value>Nollaa tekstin skaalaus teeman oletukseksi</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Tuntematon virhe. Katso loki</value>
+  </data>
 </root>

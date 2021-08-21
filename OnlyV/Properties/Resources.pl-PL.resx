@@ -409,4 +409,7 @@
     <value>Zresetuj skalowanie tekstu dla domyślnego motywu</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Nieznany błąd. Sprawdź dziennik</value>
+  </data>
 </root>

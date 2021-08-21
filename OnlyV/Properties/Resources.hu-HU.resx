@@ -409,4 +409,7 @@
     <value>Visszaállítja a betűméretet az alapbeállításra</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Ismeretlen hiba. Kérlek nézd meg a naplót.</value>
+  </data>
 </root>

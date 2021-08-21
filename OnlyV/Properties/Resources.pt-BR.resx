@@ -409,4 +409,7 @@
     <value>Redefinir a escala do texto para o padrão do tema</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Erro desconhecido. Por favor, veja o relatório</value>
+  </data>
 </root>

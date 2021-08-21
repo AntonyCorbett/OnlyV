@@ -409,4 +409,7 @@
     <value>Metin ölçeklendirmesini tema varsayılanına göre sıfırla</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Unknown error. Please see log</value>
+  </data>
 </root>

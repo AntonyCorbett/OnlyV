@@ -314,7 +314,7 @@
     <comment>Position of title</comment>
   </data>
   <data name="TOGGLE_IMAGE" xml:space="preserve">
-    <value>Ieslēgt fona attēlu</value>
+    <value>Ieslēgt/izslēgt fona attēlu</value>
     <comment>Caption of checkbox below image</comment>
   </data>
   <data name="TOGGLE_IMAGE_TOOLTIP" xml:space="preserve">

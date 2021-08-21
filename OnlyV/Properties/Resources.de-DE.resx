@@ -409,4 +409,7 @@
     <value>Textgröße wird auf Standard der Vorlage zurückgesetzt</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Unbekannter Fehler. Siehe Log</value>
+  </data>
 </root>
