@@ -7,9 +7,8 @@
 #define MyAppURL "https://soundboxsoftware.com"
 #define MyAppExeName "OnlyV.exe"
 #define ThemeCreatorAppExeName "OnlyVThemeCreator.exe"
-#define MySource "d:\ProjectsPersonal\OnlyV\OnlyV"
 
-#define MyAppVersion GetFileVersion(MySource + '\bin\Release\OnlyV.exe');
+#define MyAppVersion GetFileVersion('..\OnlyV\\bin\Release\OnlyV.exe');
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -22,12 +21,11 @@ AppPublisher={#MyAppPublisher}
 AppPublisherURL={#MyAppURL}
 AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
-DefaultDirName={pf}\OnlyV
+DefaultDirName={commonpf}\OnlyV
 DefaultGroupName={#MyAppName}
-OutputDir="..\Installer\Output"
+OutputDir="Output"
 OutputBaseFilename=OnlyVSetup
-SetupIconFile=icon2.ico
-SourceDir={#MySource}
+SetupIconFile=..\OnlyV\icon2.ico
 Compression=lzma
 SolidCompression=yes
 AppContact=antony@corbetts.org.uk
@@ -40,56 +38,59 @@ AppMutex=OnlyVBibleTextImageTool,OnlyVThemeCreator
 [Tasks]
 Name: "desktopicon"; Description: "{cm:CreateDesktopIcon}"; GroupDescription: "{cm:AdditionalIcons}"
 
+[InstallDelete]
+; remove old files
+Type: files; Name: "{app}\AutoMapper.dll"
+Type: files; Name: "{app}\Serilog.Sinks.RollingFile.dll"
+
 [Files]
-Source: "bin\Release\AutoMapper.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\CommonServiceLocator.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\FluentCommandLineParser.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\GalaSoft.MvvmLight.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\GalaSoft.MvvmLight.Extras.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\GalaSoft.MvvmLight.Platform.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\MaterialDesignColors.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\MaterialDesignThemes.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Microsoft.WindowsAPICodePack.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Microsoft.WindowsAPICodePack.Shell.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\OnlyV.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\OnlyV.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\OnlyV.ImageCreation.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\OnlyV.Themes.Common.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\OnlyV.VerseExtraction.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\CommonServiceLocator.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\FluentCommandLineParser.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\GalaSoft.MvvmLight.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\GalaSoft.MvvmLight.Extras.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\GalaSoft.MvvmLight.Platform.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\MaterialDesignColors.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\MaterialDesignThemes.Wpf.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Microsoft.WindowsAPICodePack.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Newtonsoft.Json.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\OnlyV.exe"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\OnlyV.exe.config"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\OnlyV.ImageCreation.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\OnlyV.Themes.Common.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\OnlyV.VerseExtraction.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\OnlyVThemeCreator.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\OnlyVThemeCreator.exe.config"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Serilog.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Serilog.Sinks.Console.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Serilog.Sinks.File.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\Serilog.Sinks.RollingFile.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\System.ValueTuple.dll"; DestDir: "{app}"; Flags: ignoreversion
-Source: "bin\Release\System.Windows.Interactivity.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Serilog.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Serilog.Sinks.Console.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\Serilog.Sinks.File.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\System.ValueTuple.dll"; DestDir: "{app}"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\System.Windows.Interactivity.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\Xceed.Wpf.Toolkit.dll"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\ReleaseThemes\*"; DestDir: "{commonappdata}\OnlyV\ThemeFiles"; Flags: ignoreversion createallsubdirs recursesubdirs
 
 ; localisation
-Source: "bin\Release\cs-CZ\*.dll"; DestDir: "{app}\cs-CZ"; Flags: ignoreversion
-Source: "bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
-Source: "bin\Release\en-US\*.dll"; DestDir: "{app}\en-US"; Flags: ignoreversion
-Source: "bin\Release\es-ES\*.dll"; DestDir: "{app}\es-ES"; Flags: ignoreversion
-Source: "bin\Release\es-MX\*.dll"; DestDir: "{app}\es-MX"; Flags: ignoreversion
-Source: "bin\Release\fi-FI\*.dll"; DestDir: "{app}\fi-FI"; Flags: ignoreversion
-Source: "bin\Release\fr-FR\*.dll"; DestDir: "{app}\fr-FR"; Flags: ignoreversion
-Source: "bin\Release\hu-HU\*.dll"; DestDir: "{app}\hu-HU"; Flags: ignoreversion
-Source: "bin\Release\it-IT\*.dll"; DestDir: "{app}\it-IT"; Flags: ignoreversion
-Source: "bin\Release\lv-LV\*.dll"; DestDir: "{app}\lv-LV"; Flags: ignoreversion
-Source: "bin\Release\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\cs-CZ\*.dll"; DestDir: "{app}\cs-CZ"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\en-US\*.dll"; DestDir: "{app}\en-US"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\es-ES\*.dll"; DestDir: "{app}\es-ES"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\es-MX\*.dll"; DestDir: "{app}\es-MX"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\fi-FI\*.dll"; DestDir: "{app}\fi-FI"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\fr-FR\*.dll"; DestDir: "{app}\fr-FR"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\hu-HU\*.dll"; DestDir: "{app}\hu-HU"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\it-IT\*.dll"; DestDir: "{app}\it-IT"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\lv-LV\*.dll"; DestDir: "{app}\lv-LV"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\no\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
 ; don't include this - Source: "bin\Release\no-NO\*.dll"; DestDir: "{app}\no"; Flags: ignoreversion
-Source: "bin\Release\pl-PL\*.dll"; DestDir: "{app}\pl-PL"; Flags: ignoreversion
-Source: "bin\Release\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
-Source: "bin\Release\pt-PT\*.dll"; DestDir: "{app}\pt-PT"; Flags: ignoreversion
-Source: "bin\Release\ro-RO\*.dll"; DestDir: "{app}\ro-RO"; Flags: ignoreversion
-Source: "bin\Release\ru-RU\*.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
-Source: "bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
-Source: "bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
-Source: "bin\Release\vi-VN\*.dll"; DestDir: "{app}\vi-VN"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\pl-PL\*.dll"; DestDir: "{app}\pl-PL"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\pt-PT\*.dll"; DestDir: "{app}\pt-PT"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\ro-RO\*.dll"; DestDir: "{app}\ro-RO"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\ru-RU\*.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\vi-VN\*.dll"; DestDir: "{app}\vi-VN"; Flags: ignoreversion
 
 Source: "..\OnlyVThemeCreator\bin\Release\cs-CZ\*.dll"; DestDir: "{app}\cs-CZ"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\de-DE\*.dll"; DestDir: "{app}\de-DE"; Flags: ignoreversion
