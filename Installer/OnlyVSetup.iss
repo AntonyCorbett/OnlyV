@@ -88,6 +88,7 @@ Source: "..\OnlyV\bin\Release\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; Flags: ignor
 Source: "..\OnlyV\bin\Release\pt-PT\*.dll"; DestDir: "{app}\pt-PT"; Flags: ignoreversion
 Source: "..\OnlyV\bin\Release\ro-RO\*.dll"; DestDir: "{app}\ro-RO"; Flags: ignoreversion
 Source: "..\OnlyV\bin\Release\ru-RU\*.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
+Source: "..\OnlyV\bin\Release\sl-SI\*.dll"; DestDir: "{app}\sl-SI"; Flags: ignoreversion
 Source: "..\OnlyV\bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
 Source: "..\OnlyV\bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
 Source: "..\OnlyV\bin\Release\vi-VN\*.dll"; DestDir: "{app}\vi-VN"; Flags: ignoreversion
