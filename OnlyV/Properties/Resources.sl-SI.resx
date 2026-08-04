@@ -118,19 +118,19 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ADDED_FILE" xml:space="preserve">
-    <value>Dosya eklendi</value>
+    <value>Datoteka je dodana</value>
   </data>
   <data name="ADDED_X_FILES" xml:space="preserve">
-    <value>{0} dosya eklendi</value>
+    <value>Dodanih je {0} datotek</value>
   </data>
   <data name="APP_VER" xml:space="preserve">
-    <value>OnlyV yazılım sürümü: {0}</value>
+    <value>Različica OnlyV: {0}</value>
   </data>
   <data name="BACK" xml:space="preserve">
-    <value>Geri</value>
+    <value>Nazaj</value>
   </data>
   <data name="BIBLE_EPUB_FILE" xml:space="preserve">
-    <value>Kutsal Kitap epub dosyası</value>
+    <value>EPUB datoteka Svetega pisma</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"/>
@@ -138,263 +138,263 @@
     <value>..\Resources\Blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BOOK" xml:space="preserve">
-    <value>KİTAP</value>
+    <value>KNJIGA</value>
     <comment>See scriptures page. Title of Bible books column</comment>
   </data>
   <data name="CHAPTER" xml:space="preserve">
-    <value>BÖLÜM</value>
+    <value>POGLAVJE</value>
     <comment>See scriptures page. Title of Chapter column</comment>
   </data>
   <data name="COPIED" xml:space="preserve">
-    <value>Panoya kopyalandı</value>
+    <value>Kopirano v odložišče</value>
   </data>
   <data name="COPY_TO_CLIPBOARD" xml:space="preserve">
-    <value>Resmi panoya kopyala</value>
+    <value>Kopiraj sliko v odložišče</value>
     <comment>See preview page. Tooltip for Clipboard button.</comment>
   </data>
   <data name="COULD_NOT_READ_1" xml:space="preserve">
-    <value>Dosyalardan biri okunamıyor!</value>
+    <value>Ene datoteke ni možno prebrati!</value>
   </data>
   <data name="COULD_NOT_READ_ANY" xml:space="preserve">
-    <value>Dosyalardan hiçbiri okunamıyor!</value>
+    <value>Nobene datoteke ni bilo možno prebrati!</value>
   </data>
   <data name="COULD_NOT_READ_FILE" xml:space="preserve">
-    <value>Dosya okunamadı!</value>
+    <value>Ni možno prebrati datoteke!</value>
   </data>
   <data name="COULD_NOT_READ_X" xml:space="preserve">
-    <value>{0} dosya okunamadı!</value>
+    <value>Ni možno prebrati {0} datotek!</value>
   </data>
   <data name="CREATE_FOLDER_ERROR" xml:space="preserve">
-    <value>{0} klasörü oluşturulamadı</value>
+    <value>Ni možno prebrati mape {0}</value>
   </data>
   <data name="DEFAULT_THEME" xml:space="preserve">
-    <value>Varsayılan</value>
+    <value>Privzeto</value>
   </data>
   <data name="DEST_FOLDER" xml:space="preserve">
-    <value>Hedef Klasör</value>
+    <value>Ciljna mapa</value>
   </data>
   <data name="DISPLAY_CMD" xml:space="preserve">
-    <value>Görüntüle (F5)</value>
+    <value>Pogled (F5)</value>
   </data>
   <data name="DRAG_INTO_ONLYM" xml:space="preserve">
-    <value>Bir slayt gösterimi oluşturmak için OnlyM içine sürükleyip bırakın</value>
+    <value>Povleci in spusti v OnlyM, da ustvariš diaprojekcijo</value>
   </data>
   <data name="DROP_BIBLE_INSTRUCTIONS" xml:space="preserve">
-    <value>Jw.org adresinden Kutsal Kitap epub dosyalarını indirip buraya sürükleyin.</value>
+    <value>Z jw.org prenesite EPUB datoteko Svetega pisma in ga povlecite in spuste sem.</value>
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Bu düzenleyici genelde ayetleri kısaltmak için kullanılır (örn. bir cümleyi üç nokta şeklinde değiştirmek için). Yaptığınız değişiklikler OnlyV kapatılana dek kalır.</value>
+    <value>Ta urejevalnik se ponavadi uporablja za skrajševanje vrstic (npr. zamenja izpuščeno vrstico za tripičje). Vaše spremembe so shranjene dokler ne zaprete OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
-    <value>Kutsal Kitap epub dosyası bulunamadı!</value>
+    <value>EPUB Svetega pisma ni mogoče najti!</value>
   </data>
   <data name="EPUB_NOT_SPECIFIED" xml:space="preserve">
-    <value>Kutsal Kitap epub dosyası belirtilmedi!</value>
+    <value>EPUB Svetega pisma ni določen!</value>
   </data>
   <data name="ERROR_SAVING" xml:space="preserve">
-    <value>Resimler kaydedilirken hata oluştu!</value>
+    <value>Napaka s shranjevanjem slik!</value>
   </data>
   <data name="HEADER_BIBLES" xml:space="preserve">
-    <value>KUTSAL KİTAPLAR</value>
+    <value>SVETA PISMA</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_DISPLAY" xml:space="preserve">
-    <value>GÖRÜNTÜLE</value>
+    <value>POGLED</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HIDE_CMD" xml:space="preserve">
-    <value>Gizle (F5)</value>
+    <value>Skrij (F5)</value>
   </data>
   <data name="INSERT_CLOSING_QUOTE" xml:space="preserve">
-    <value>Kapanan tırnak işareti ekle</value>
+    <value>Vstavi zaključni narekovaj</value>
     <comment>See verse editing page. Tooltip for closing quotation mark.</comment>
   </data>
   <data name="INSERT_OPENING_QUOTE" xml:space="preserve">
-    <value>Açılan tırnak işareti ekle</value>
+    <value>Vstavi začetni narekovaj</value>
     <comment>See verse editing page. Tooltip for opening quotation mark.</comment>
   </data>
   <data name="JWL_TRADEMARK" xml:space="preserve">
-    <value>"JW Library" Watch Tower Bible and Tract Society of Pennsylvania'nın tescilli bir markasıdır</value>
+    <value>»JW Library« je registrirana blagovna znamka Watch Tower Bible and Tract Society of Pennsylvania</value>
   </data>
   <data name="JW_COMPAT_MODE" xml:space="preserve">
-    <value>JW Library uyumluluk modu</value>
+    <value>JW Library združljivi način</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="LOG_LEVEL_DEBUG" xml:space="preserve">
-    <value>Hata ayıkla</value>
+    <value>Razhroščevanje</value>
   </data>
   <data name="LOG_LEVEL_ERROR" xml:space="preserve">
-    <value>Hata</value>
+    <value>Napaka</value>
   </data>
   <data name="LOG_LEVEL_FATAL" xml:space="preserve">
-    <value>Kritik</value>
+    <value>Usodna napaka</value>
   </data>
   <data name="LOG_LEVEL_INFORMATION" xml:space="preserve">
-    <value>Bilgi</value>
+    <value>Informacije</value>
   </data>
   <data name="LOG_LEVEL_VERBOSE" xml:space="preserve">
-    <value>Ayrıntılı</value>
+    <value>Podrobno</value>
   </data>
   <data name="LOG_LEVEL_WARNING" xml:space="preserve">
-    <value>Uyarı</value>
+    <value>Opozorilo</value>
   </data>
   <data name="MEDIA_MONITOR" xml:space="preserve">
-    <value>Medya monitörü</value>
+    <value>Predstavni monitor</value>
     <comment>See Settings page, Display section</comment>
   </data>
   <data name="MONITOR_NONE" xml:space="preserve">
-    <value>Yok</value>
+    <value>Brez</value>
   </data>
   <data name="NEW_UPDATE_AVAILABLE" xml:space="preserve">
-    <value>Yeni güncelleme var!</value>
+    <value>Na voljo je nova posodobitev!</value>
   </data>
   <data name="NEXT_IMAGE" xml:space="preserve">
-    <value>Sonraki görüntü</value>
+    <value>Naslednja slika</value>
     <comment>See preview page. Tooltip for "Next Image" button.</comment>
   </data>
   <data name="NEXT_PAGE_PREVIEW" xml:space="preserve">
-    <value>Önizleme sayfasını göster</value>
+    <value>Prikaži predogled</value>
   </data>
   <data name="NO_IMAGES" xml:space="preserve">
-    <value>Kaydedilecek resim yok!</value>
+    <value>Ni slik za shraniti!</value>
   </data>
   <data name="OK" xml:space="preserve">
-    <value>Tamam</value>
+    <value>V REDU</value>
   </data>
   <data name="ONE_IMAGE_GENERATED" xml:space="preserve">
-    <value>1 resim oluşturuldu</value>
+    <value>1 slika je ustvarjena</value>
   </data>
   <data name="PREV_IMAGE" xml:space="preserve">
-    <value>Önceki resim</value>
+    <value>Prejšnja slika</value>
     <comment>See preview page. Tooltip for "Previous Image" button.</comment>
   </data>
   <data name="PREV_PAGE_SCRIPS" xml:space="preserve">
-    <value>Ayetler sayfasını göster</value>
+    <value>Prikaži Sveto pismo</value>
   </data>
   <data name="READER_NOT_INIT" xml:space="preserve">
-    <value>Kutsal Kitap okuyucu başlatılmadı!</value>
+    <value>Bralnik Svetega pisma ni zagnan!</value>
   </data>
   <data name="RESET" xml:space="preserve">
-    <value>SIFIRLA</value>
+    <value>PONASTAVI</value>
     <comment>See verse editing page. Caption for Reset button.</comment>
   </data>
   <data name="RESET_VERSE_TEXT" xml:space="preserve">
-    <value>Ayet metnini sıfırla</value>
+    <value>Ponastavi besedilo vrstice</value>
     <comment>See verse editing page. Tooltip for Reset button.</comment>
   </data>
   <data name="SAVED_IMAGE" xml:space="preserve">
-    <value>Kaydedilen resim</value>
+    <value>Shranjena slika</value>
   </data>
   <data name="SAVED_X_IMAGES" xml:space="preserve">
-    <value>{0} resim kaydedildi</value>
+    <value>{0} slik je shranjenih</value>
   </data>
   <data name="SAVE_TO_IMAGES" xml:space="preserve">
-    <value>Resim klasörüne kaydet</value>
+    <value>Shrani v mapo slik</value>
     <comment>See preview page. Tooltip for Save button.</comment>
   </data>
   <data name="SELECT_FOLDER" xml:space="preserve">
-    <value>Hedef Klasörü Seç</value>
+    <value>Izberi ciljno mapo</value>
   </data>
   <data name="SETTINGS_DISABLED" xml:space="preserve">
-    <value>Ayarlar sistem yöneticisi tarafından devre dışı bırakılmıştır!</value>
+    <value>Nastavitve je onemogočil skrbnik!</value>
   </data>
   <data name="SETTINGS_PAGE" xml:space="preserve">
-    <value>Ayarlar sayfası</value>
+    <value>Stran z nastavitvami</value>
   </data>
   <data name="VERSES" xml:space="preserve">
-    <value>AYETLER</value>
+    <value>STAVKI</value>
     <comment>See scriptures page. Title of Verses column</comment>
   </data>
   <data name="VIEW" xml:space="preserve">
-    <value>GÖRÜNÜM</value>
+    <value>POGLEJ</value>
   </data>
   <data name="X_IMAGES_GENERATED" xml:space="preserve">
-    <value>{0} resim oluşturuldu.</value>
+    <value>Ustvarjenih {0} slik.</value>
   </data>
   <data name="ALLOW_VERSE_EDITING" xml:space="preserve">
-    <value>Ayet düzenlemeye izin ver</value>
+    <value>Dovoli urejanje stavkov</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="ALWAYS_ON_TOP" xml:space="preserve">
-    <value>Ana pencere her zaman üstte</value>
+    <value>Glavno okno je vedno na vrhu</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="AUTO_FIT" xml:space="preserve">
-    <value>Otomatik sığdır</value>
+    <value>Samodejno prilagodi</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="GET_STARTED_INSTRUCTIONS" xml:space="preserve">
-    <value>Başlamak için, jw.org üzerinden bir Kutsal Kitap epub dosyası indirin ve buraya sürükleyin.</value>
+    <value>Za začetek prenesite EPUB datoteko Svetega pisma z jw.org in jo nato povlecite ter spustite sem.</value>
     <comment>See getting started screen (when launched after first installation)</comment>
   </data>
   <data name="HEADER_IMAGE_STYLE" xml:space="preserve">
-    <value>RESİM STİLİ</value>
+    <value>STIL SLIKE</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="HEADER_MISC" xml:space="preserve">
-    <value>DİĞER</value>
+    <value>RAZNO</value>
     <comment>See Settings page, groupbox header</comment>
   </data>
   <data name="IMAGES_FOLDER" xml:space="preserve">
-    <value>Resim klasörü</value>
+    <value>Mapa s slikami</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="LOGGING_LEVEL" xml:space="preserve">
-    <value>Günlük düzeyi</value>
+    <value>Stopnja beleženja</value>
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Ayet numaralarını göster</value>
+    <value>Prikaži številko vrstic</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
-    <value>Metin ölçeklendirme</value>
+    <value>Velikost besedila</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_PUNCTUATION" xml:space="preserve">
-    <value>Noktalama işaretlerini kırp</value>
+    <value>Odreži ločila</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TRIM_QUOTES" xml:space="preserve">
-    <value>Tırnak işaretlerini kırp</value>
+    <value>Odreži narekovaje</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Arka plan resmi kullan</value>
+    <value>Uporabi sliko ozadja</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
-    <value>Birbirini takip etmeyen ayetler için üç nokta kullan</value>
+    <value>Uporabi tripičje (...) za označitev izpuščenih stavkov</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Tek bir ayette yer alan paragraflar arasında tilde işareti göster</value>
+    <value>Prikaži znak ~ (tildo) med odstavki v vrstici</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
-    <value>Başlık ayet numaraları arasındaki boşluk</value>
+    <value>Presledek med številkami vrstic v citatu</value>
   </data>
   <data name="ELLIPSIS_CONTINUATION" xml:space="preserve">
-    <value>Devam ettiğini göstermek için üç nokta kullan</value>
+    <value>Prikaži tripičje (...) za nadaljevanje</value>
   </data>
   <data name="ABBREVIATED_BOOK_NAME" xml:space="preserve">
-    <value>Kısaltılmış kitap isimleri kullan</value>
+    <value>Uporabi okrajšana imena knjig</value>
   </data>
   <data name="LANGUAGE" xml:space="preserve">
-    <value>Dil</value>
+    <value>Jezik</value>
     <comment>See settings page</comment>
   </data>
   <data name="RESTART_LANGUAGE" xml:space="preserve">
-    <value>Dili değiştirdikten sonra OnlyV'yi yeniden başlatın.</value>
+    <value>Prosimo da ponovno zaženete OnlyV po spremembi jezika.</value>
     <comment>See Settings page</comment>
   </data>
   <data name="NO_WRITE_ACCESS" xml:space="preserve">
-    <value>OnlyV '{0}' klasörüne yazamıyor</value>
+    <value>OnlyV ne more pisati v mapo {0}</value>
     <comment>Error displayed if OnlyV doesn't have correct permissions to write to the epub folder</comment>
   </data>
   <data name="DISPLAY_HELP_TOOLTIP" xml:space="preserve">
-    <value>Yardımı görüntüle</value>
+    <value>Prikaži pomoč</value>
     <comment>Tooltip on Help button</comment>
   </data>
   <data name="THEME" xml:space="preserve">
@@ -402,14 +402,14 @@
     <comment>See Settings, Image Style section</comment>
   </data>
   <data name="RESET_SCALING" xml:space="preserve">
-    <value>SIFIRLA</value>
+    <value>PONASTAVI</value>
     <comment>See Settings page, Text Scaling button caption</comment>
   </data>
   <data name="RESET_SCALING_TOOLTIP" xml:space="preserve">
-    <value>Metin ölçeklendirmesini tema varsayılanına göre sıfırla</value>
+    <value>Ponastavi velikost pisava na privzeto nastavitev teme</value>
     <comment>Tooltip for Settings page, Text Scaling button</comment>
   </data>
   <data name="UNKNOWN_ERROR" xml:space="preserve">
-    <value>Bilinmeyen hata. Lütfen günlğk kaydına bakın</value>
+    <value>Neznana napaka. Prosimo poglejte v dnevnik napak</value>
   </data>
 </root>
