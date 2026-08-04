@@ -8,7 +8,7 @@
 #define MyAppExeName "OnlyV.exe"
 #define ThemeCreatorAppExeName "OnlyVThemeCreator.exe"
 
-#define MyAppVersion GetFileVersion('..\OnlyV\\bin\Release\OnlyV.exe');
+#define MyAppVersion GetFileVersion('..\OnlyV\bin\Release\OnlyV.exe');
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -109,6 +109,7 @@ Source: "..\OnlyVThemeCreator\bin\Release\pt-BR\*.dll"; DestDir: "{app}\pt-BR"; 
 Source: "..\OnlyVThemeCreator\bin\Release\pt-PT\*.dll"; DestDir: "{app}\pt-PT"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\ro-RO\*.dll"; DestDir: "{app}\ro-RO"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\ru-RU\*.dll"; DestDir: "{app}\ru-RU"; Flags: ignoreversion
+Source: "..\OnlyVThemeCreator\bin\Release\sl-SI\*.dll"; DestDir: "{app}\sl-SI"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\sv-SE\*.dll"; DestDir: "{app}\sv-SE"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\tr-TR\*.dll"; DestDir: "{app}\tr-TR"; Flags: ignoreversion
 Source: "..\OnlyVThemeCreator\bin\Release\vi-VN\*.dll"; DestDir: "{app}\vi-VN"; Flags: ignoreversion
