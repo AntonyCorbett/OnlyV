@@ -3,8 +3,8 @@
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Antony Corbett")]
 [assembly: AssemblyProduct("OnlyV Bible Image Text Creator")]
-[assembly: AssemblyCopyright("Copyright © 2018, 2021 Antony Corbett")]
+[assembly: AssemblyCopyright("Copyright © 2018, 2026 Antony Corbett")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
-[assembly: AssemblyVersion("1.2.0.33")]
+[assembly: AssemblyVersion("1.2.0.34")]
