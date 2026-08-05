@@ -369,7 +369,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_TILDE" xml:space="preserve">
-    <value>Prikaži znak ~ (tildo) med odstavki v vrstici</value>
+    <value>Prikaži znak ~ (tilda) med odstavki v vrstici</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TITLE_VERSE_NOS" xml:space="preserve">
