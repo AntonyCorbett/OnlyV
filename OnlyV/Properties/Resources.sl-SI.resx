@@ -184,7 +184,7 @@
     <comment>See Settings page, Bibles section</comment>
   </data>
   <data name="EDIT_INSTRUCTIONS" xml:space="preserve">
-    <value>Ta urejevalnik se ponavadi uporablja za skrajševanje vrstic (npr. zamenja izpuščeno vrstico za tripičje). Vaše spremembe so shranjene dokler ne zaprete OnlyV.</value>
+    <value>Ta urejevalnik se ponavadi uporablja za skrajševanje vrstic (npr. zamenjava izpuščene vrstice za tripičje). Vaše spremembe so shranjene vse dokler ne zaprete OnlyV.</value>
   </data>
   <data name="EPUB_NOT_FOUND" xml:space="preserve">
     <value>EPUB Svetega pisma ni mogoče najti!</value>
@@ -345,7 +345,7 @@
     <comment>See Settings page, Misc section</comment>
   </data>
   <data name="SHOW_VERSE_NOS" xml:space="preserve">
-    <value>Prikaži številko vrstic</value>
+    <value>Prikaži številke vrstic</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="TEXT_SCALING" xml:space="preserve">
@@ -361,7 +361,7 @@
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_BACKGROUND_IMAGE" xml:space="preserve">
-    <value>Uporabi sliko ozadja</value>
+    <value>Za ozadje uporabi sliko</value>
     <comment>See Settings page, Image Style section</comment>
   </data>
   <data name="USE_ELLIPSES" xml:space="preserve">
